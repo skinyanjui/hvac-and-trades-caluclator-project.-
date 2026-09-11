@@ -540,7 +540,7 @@ field('shortCircuit','Short-circuit supply into hood','cfm',0,0,1e6,'any','Air s
   const rate=hoodRateFor(heaviest,v.style);
   if(rate==null){
     const dutyLabel=(hoodDutyOptions.find(([k])=>k===heaviest)||[heaviest,heaviest])[1];
-    throw Error(`${styleLabel} is not allowed for ${dutyLabel} (IMC 2024 ${imcHoodCapacity.table}). Choose another hood style or duty.`);
+    throw Error(`${styleLabel} is not allowed for ${dutyLabel} (${imcHoodCapacity.table}). Choose another hood style or duty.`);
   }
   const net=rate*v.length;
   const total=net+v.shortCircuit;
@@ -701,9 +701,6 @@ function inactiveField(id,key,v){
     const catI=v.category==='I';
     if(['draft','height','lateral','diameter','connectorDia','connectorIntoPos'].includes(key))return !catI;
     if(key==='mfrPath')return catI;
-    return false;
-  }
-  if(id==='hoodcfm'){
     return false;
   }
   if(id==='gaspipesize'){
