@@ -15,7 +15,7 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **Venting category (IFGC Ch 5)** — Category I–IV / direct-vent / integral routing, Category I §504 input prep (tables not digitized), §503.10.4 hard block
 - **Dryer duct length (IMC 504.9.4.1)** — Method 1 equivalent-length screen vs 35 ft, with fitting EL screening helpers and makeup-air note
 - **Hood capacity (IMC §§507.2.10 / 507.3.4)** — exact Type I / Type II cfm-per-linear-foot × length; short-circuit supply → min total exhaust; mixed duties use heaviest rate; §508.1 makeup tip
-- **Gas pipe sizer (IFGC 402)** — longest / branch / hybrid method helper, required cfh + developed length (no invented diameters), CSST bonding checklist (§310.2 / §310.3)
+- **Gas pipe sizer (IFGC 402)** — longest / branch / hybrid method helper, required cfh + developed length (no invented diameters), CSST bonding checklist (§310.2 / §310.3 stays source), and `crosscode.csst_bonding_nec_handoff` when CSST is present
 - **Machinery-room vent (IMC / ASHRAE 15 · Phase 1)** — continuous `max(0.5×ft², 20×persons)` tagged `EXAMPLE_UNVERIFIED`; `non_2L_sqrtG` (A1/A2/A3/B1/B2/B3) `Q=100√G` per IMC §1105.6.3.2 Eq 11-2; `a2l_level1_level2` (A2L **and** B2L) hard-stop citing IMC §1106.4 / §1106.4.3 + Table 1106.4.2 (no √G, no invented ppm); optional UMC → `verify_manual`
 - **T&P discharge (IPC §§504.4–504.6)** — screening checklist of typical relief-valve and discharge-piping items
 
