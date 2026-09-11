@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **34** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **37** calculators with code-oriented screening tools:
 
 - **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
@@ -17,6 +17,8 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **Hood capacity (IMC §§507.2.10 / 507.3.4)** — exact Type I / Type II cfm-per-linear-foot × length; short-circuit supply → min total exhaust; mixed duties use heaviest rate; §508.1 makeup tip
 - **Gas pipe sizer (IFGC 402)** — longest / branch / hybrid method helper, required cfh + developed length (no invented diameters), CSST bonding checklist (§310.2 / §310.3 stays source), and `crosscode.csst_bonding_nec_handoff` when CSST is present
 - **Machinery-room vent (ASHRAE 15 · Phase 1)** — continuous `max(0.5×ft², 20×persons)` tagged `EXAMPLE_UNVERIFIED`; emergency `Q=100√G` for non-A2L; hard-stop A2L from √G path; no invented ppm tables
+- **IRC bath/kitchen + WHMV (IRC M1503 / M1505)** — residential local exhaust (kitchen 100/25, bath 50/20), makeup trigger, WHMV Eq 15-1 (`0.01A`), bath duct-length screen; EXAMPLE_UNVERIFIED; refuses IMC `code_set`; distinct from IMC vent tools
+- **ASHRAE 15.2 path gate** — SPEC-ASHRAE152-PATH-GATE only (`15_2_residential` | `std15_imc_ch11` | `blocked_need_ahj`); flags + deep-link to IRC install checklist shell; **no** charge/RCL/mmax numerics; `verified=false`
 - **T&P discharge (IPC §§504.4–504.6)** — screening checklist of typical relief-valve and discharge-piping items
 
 Open `index.html` in a browser, or deploy the repo root as a static site.
