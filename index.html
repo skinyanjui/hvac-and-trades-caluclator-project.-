@@ -77,6 +77,7 @@ calculators.find(c=>c.id==='water').group='HYDRONICS';
 const imcOccupancies={
 office:{label:'Offices · Office spaces',density:5,rp:5,ra:.06},
 conference:{label:'Offices · Conference rooms',density:50,rp:5,ra:.06},
+hotelconference:{label:'Hotels · Conference / meeting',density:50,rp:5,ra:.06},
 officebreak:{label:'Offices · Break rooms',density:50,rp:5,ra:.12},
 lobby:{label:'Offices · Main entry lobbies',density:10,rp:5,ra:.06},
 reception:{label:'Offices · Reception areas',density:30,rp:5,ra:.06},
@@ -96,7 +97,7 @@ supermarket:{label:'Specialty · Supermarkets',density:8,rp:7.5,ra:.06},
 dining:{label:'Food service · Dining rooms',density:70,rp:7.5,ra:.18},
 cafeteria:{label:'Food service · Cafeteria / fast food',density:100,rp:7.5,ra:.18},
 bars:{label:'Food service · Bars / cocktail lounges',density:100,rp:7.5,ra:.18},
-kitchen:{label:'Food service · Kitchens (cooking)',density:20,rp:7.5,ra:.12,exhaust:.7,exhaustNote:'Note b · mechanical exhaust; no recirculation from the space'},
+kitchen:{label:'Food service · Kitchens (cooking)',density:20,rp:7.5,ra:.12,exhaust:.7,notes:['b'],exhaustNote:'Note b · mechanical exhaust; recirculation from the space prohibited'},
 foodbreak:{label:'Food service · Break rooms',density:25,rp:5,ra:.06},
 coffee:{label:'Food service · Coffee stations',density:20,rp:5,ra:.06},
 corridor:{label:'Public spaces · Corridors',density:null,rp:null,ra:.06},
@@ -105,7 +106,6 @@ museum:{label:'Public spaces · Museums / galleries',density:40,rp:7.5,ra:.06},
 worship:{label:'Public spaces · Places of religious worship',density:120,rp:5,ra:.06},
 courtroom:{label:'Public spaces · Courtrooms',density:70,rp:5,ra:.06},
 hotelbedroom:{label:'Hotels · Bedroom / living room',density:10,rp:5,ra:.06},
-hotelconference:{label:'Hotels · Conference / meeting',density:50,rp:5,ra:.06},
 hotellobby:{label:'Hotels · Lobbies / prefunction',density:30,rp:7.5,ra:.06},
 bank:{label:'Specialty · Banks or lobbies',density:15,rp:7.5,ra:.06},
 aerobics:{label:'Sports · Health club / aerobics',density:40,rp:20,ra:.06},
@@ -126,20 +126,20 @@ displace:['Floor supply cool + ceiling return (displacement)',1.2]
 };
 // Exhaust column helpers: area = cfm/ft²; fixture = cfm per WC/urinal (Note e); room = cfm per room (Note f). Low = continuous, high = intermittent.
 const imcExhaust={
-publictoilet:{label:'Public spaces · Toilet rooms — public',kind:'fixture',low:50,high:70,note:'Note e · per water closet or urinal; Note g · mechanical exhaust'},
-privatetoilet:{label:'Hotels · Bathrooms / toilet — private',kind:'room',low:25,high:50,note:'Note f · per room; Note g · mechanical exhaust'},
-dwellingtoilet:{label:'Private dwellings · Toilet rooms and bathrooms',kind:'room',low:25,high:50,note:'Note f · per room; Note g · mechanical exhaust'},
-locker:{label:'Education · Locker / dressing rooms',kind:'area',rate:.25,note:'Note g · mechanical exhaust'},
-sportslocker:{label:'Education · Sports locker rooms',kind:'area',rate:.5,note:'Note g · mechanical exhaust'},
-retaildressing:{label:'Retail · Dressing rooms',kind:'area',rate:.25,note:''},
-kitchenex:{label:'Food service · Kitchens (cooking)',kind:'area',rate:.7,note:'Note b · mechanical exhaust; recirculation from the space prohibited'},
-parking:{label:'Storage · Enclosed parking garages',kind:'area',rate:.75,note:'Notes b, d · also see IMC §404; full-on rate'},
-art:{label:'Education · Art classroom',kind:'area',rate:.7,note:'Note g · mechanical exhaust'},
-science:{label:'Education · Science laboratories',kind:'area',rate:1,note:'Note g · mechanical exhaust'},
-copy:{label:'Workrooms · Copy / printing rooms',kind:'area',rate:.5,note:''},
-barber:{label:'Specialty · Barber',kind:'area',rate:.5,note:''},
-beauty:{label:'Specialty · Beauty salons',kind:'area',rate:.6,note:'Note b · mechanical exhaust; recirculation from the space prohibited'},
-dwellingkitchen:{label:'Private dwellings · Kitchens',kind:'room',low:50,high:100,note:'Note f · per room; Note b · mechanical exhaust'}
+publictoilet:{label:'Public spaces · Toilet rooms — public',kind:'fixture',low:50,high:70,notes:['e','g'],note:'Notes e, g · per water closet or urinal; mechanical exhaust; recirculation limits apply'},
+privatetoilet:{label:'Hotels · Bathrooms / toilet — private',kind:'room',low:25,high:50,notes:['f','g'],note:'Notes f, g · per room; mechanical exhaust; recirculation limits apply'},
+dwellingtoilet:{label:'Private dwellings · Toilet rooms and bathrooms',kind:'room',low:25,high:50,notes:['f','g'],note:'Notes f, g · per room. Detached 1–2 family & townhouses ≤3 stories may use IMC or IRC (IMC §101.2 Exception) when that path is adopted.'},
+locker:{label:'Education · Locker / dressing rooms',kind:'area',rate:.25,notes:['g'],note:'Note g · mechanical exhaust; recirculation limits apply'},
+sportslocker:{label:'Education · Sports locker rooms',kind:'area',rate:.5,notes:['g'],note:'Note g · mechanical exhaust; recirculation limits apply'},
+retaildressing:{label:'Retail · Dressing rooms',kind:'area',rate:.25,notes:[],note:''},
+kitchenex:{label:'Food service · Kitchens (cooking)',kind:'area',rate:.7,notes:['b'],note:'Note b · mechanical exhaust; recirculation from the space prohibited'},
+parking:{label:'Storage · Enclosed parking garages',kind:'area',rate:.75,notes:['b','d'],note:'Notes b, d · also see IMC §404; full-on rate; recirculation from the space prohibited'},
+art:{label:'Education · Art classroom',kind:'area',rate:.7,notes:['g'],note:'Note g · mechanical exhaust; recirculation limits apply'},
+science:{label:'Education · Science laboratories',kind:'area',rate:1,notes:['g'],note:'Note g · mechanical exhaust; recirculation limits apply'},
+copy:{label:'Workrooms · Copy / printing rooms',kind:'area',rate:.5,notes:[],note:''},
+barber:{label:'Specialty · Barber',kind:'area',rate:.5,notes:[],note:''},
+beauty:{label:'Specialty · Beauty salons',kind:'area',rate:.6,notes:['b'],note:'Note b · mechanical exhaust; recirculation from the space prohibited'},
+dwellingkitchen:{label:'Private dwellings · Kitchens',kind:'room',low:50,high:100,notes:['b','f'],note:'Notes b, f · per room; mechanical exhaust. Detached 1–2 family & townhouses ≤3 stories may use IMC or IRC (IMC §101.2 Exception) when that path is adopted.'}
 };
 const occOptions=Object.entries(imcOccupancies).map(([k,o])=>[k,o.label]);
 const ezOptions=Object.entries(imcEz).map(([k,[label,ez]])=>[k,`${label} (Ez = ${ez})`]);
@@ -151,11 +151,14 @@ choice('occupancy','Occupancy classification',occOptions,'office'),
 field('area','Zone floor area Az','ft²',2000,.001),
 choice('population','Zone population Pz',[['density','Default from table density × Az / 1000'],['manual','Enter population manually']],'density'),
 field('people','Zone population Pz','people',10,0,100000),
-choice('ez','Air distribution effectiveness Ez',ezOptions,'cool')
+choice('ez','Air distribution effectiveness Ez',ezOptions,'cool'),
+choice('ezMode','Ez source',[['table','Use selected air-distribution configuration'],['override','Override Ez manually']],'table'),
+field('ezOverride','Ez override','Ez',1,.1,2)
 ],calculate:v=>{
   const occ=imcOccupancies[v.occupancy];if(!occ)throw Error('Choose a valid occupancy classification.');
   const ezEntry=imcEz[v.ez];if(!ezEntry)throw Error('Choose a valid air distribution effectiveness.');
-  const Ez=ezEntry[1];
+  const Ez=v.ezMode==='override'?v.ezOverride:ezEntry[1];
+  if(v.ezMode==='override'&&(!Number.isFinite(Ez)||Ez<=0))throw Error('Ez override must be greater than zero.');
   const hasPeople=occ.rp!=null,hasArea=occ.ra!=null;
   if(!hasPeople&&!hasArea)throw Error('This occupancy has no outdoor-air rates in the embedded table subset.');
   let Pz=0;
@@ -166,16 +169,19 @@ choice('ez','Air distribution effectiveness Ez',ezOptions,'cool')
       Pz=v.people;
     }
   }
-  const peopleOA=hasPeople?occ.rp*Pz:0,areaOA=hasArea?occ.ra*v.area:0,Vbz=peopleOA+areaOA,Voz=Vbz/Ez;
+  const Rp=occ.rp??0,Ra=occ.ra??0,peopleOA=Rp*Pz,areaOA=Ra*v.area,Vbz=peopleOA+areaOA,Voz=Vbz/Ez;
+  const notes=occ.notes||[],recircBanned=notes.includes('b')||notes.includes('g');
   const rows=[];
   if(occ.density!=null)rows.push(['Occupant density',occ.density,'#/1000 ft²']);
-  if(hasPeople){rows.push(['People outdoor-air rate Rp',occ.rp,'cfm/person']);rows.push(['Zone population Pz',Pz,'people']);rows.push(['People outdoor air Rp × Pz',peopleOA,'cfm']);}
-  if(hasArea){rows.push(['Area outdoor-air rate Ra',occ.ra,'cfm/ft²']);rows.push(['Area outdoor air Ra × Az',areaOA,'cfm']);}
-  rows.push(['Breathing-zone outdoor air Vbz',Vbz,'cfm'],['Air distribution effectiveness Ez',Ez,'']);
-  if(occ.exhaust!=null)rows.push(['Table exhaust rate (see Local exhaust)',occ.exhaust,'cfm/ft²']);
+  if(hasPeople){rows.push(['People outdoor-air rate Rp',Rp,'cfm/person']);rows.push(['Zone population Pz',Pz,'people']);rows.push(['People outdoor air Rp × Pz',peopleOA,'cfm']);}
+  if(hasArea){rows.push(['Area outdoor-air rate Ra',Ra,'cfm/ft²']);rows.push(['Area outdoor air Ra × Az',areaOA,'cfm']);}
+  rows.push(['Breathing-zone outdoor air Vbz',Vbz,'cfm'],['Air distribution effectiveness Ez',Ez,v.ezMode==='override'?'(override)':'']);
+  if(occ.exhaust!=null)rows.push(['Exhaust required (table)',occ.exhaust,'cfm/ft²']);
+  if(recircBanned)rows.push(['Recirculation from space banned',1,'yes (Note b/g)']);
+  const cite='Citations: 2024 IMC §403.3.1.1 (Table), §403.3.1.1.1.1 Eq. 4-1, §403.3.1.1.1.2 (Ez), §403.3.1.1.1.3 Eq. 4-2. Jurisdiction: IMC §101.1 — confirm the AHJ-adopted edition and amendments; these are model 2024 IMC values for screening only.';
   return result(Voz,'cfm',rows,
-    `Vbz = Rp×Pz + Ra×Az = ${occ.rp??0}×${fmt(Pz,4)} + ${occ.ra??0}×${fmt(v.area)} = ${fmt(Vbz,4)} cfm; Voz = Vbz/Ez = ${fmt(Vbz,4)}/${Ez} = ${fmt(Voz,4)} cfm`,
-    `Model-code screening from 2024 IMC Table 403.3.1.1 and Equations 4-1 / 4-2 (${ezEntry[0]}). Rates assume no smoking except smoking lounges. Confirm the AHJ-adopted IMC edition, local amendments, exceptions, and any approved alternate occupant density. This tool does not certify code compliance.${occ.exhaustNote?` ${occ.exhaustNote}.`:''}`,
+    `Vbz = Rp×Pz + Ra×Az = ${Rp}×${fmt(Pz,4)} + ${Ra}×${fmt(v.area)} = ${fmt(Vbz,4)} cfm; Voz = Vbz/Ez = ${fmt(Vbz,4)}/${Ez} = ${fmt(Voz,4)} cfm`,
+    `${cite} Air distribution: ${ezEntry[0]}. Rates assume no smoking except smoking lounges. Missing Rp or Ra treated as 0. Not a compliance certificate.${occ.exhaustNote?` ${occ.exhaustNote}.`:''}${recircBanned?' Recirculation from this occupancy is restricted by Table notes b/g.':''}`,
     [[Vbz,'cfm Vbz'],[peopleOA,'cfm people OA'],[areaOA,'cfm area OA']]);
 }},
 {id:'exhaust',name:'Local exhaust (IMC)',group:'CODE & VENTILATION',icon:'air',desc:'Estimate local exhaust from the 2024 IMC Table 403.3.1.1 exhaust column.',badge:'IMC Table 403.3.1.1',sources:['imc'],fields:[
@@ -196,16 +202,19 @@ field('rooms','Number of rooms','rooms',1,1,500,1)
     label=row.kind==='fixture'?'Fixtures':'Rooms';
     total=rate*qty;
   }
-  return result(total,'cfm',[
+  const notes=row.notes||[],recircBanned=notes.includes('b')||notes.includes('g');
+  const rows=[
     ['Exhaust rate used',rate,unit],
     [label,qty,row.kind==='area'?'ft²':row.kind==='fixture'?'fixtures':'rooms'],
-  ],
+  ];
+  if(recircBanned)rows.push(['Recirculation from space banned',1,'yes (Note b/g)']);
+  return result(total,'cfm',rows,
   `Exhaust = ${rate} ${unit} × ${fmt(qty)} = ${fmt(total)} cfm`,
-  `Model-code screening from the 2024 IMC Table 403.3.1.1 exhaust column. ${row.note||'Verify notes and AHJ amendments.'} Makeup / transfer air and outdoor-air requirements are separate (see Outdoor air calculator). This tool does not certify code compliance.`);
+  `Model-code screening from 2024 IMC Table 403.3.1.1 exhaust column (IMC §101.1 — verify AHJ-adopted edition). ${row.note||'Verify table notes and amendments.'} Makeup / transfer air and outdoor-air requirements are separate (see Outdoor air calculator). Appendices are not applied unless your AHJ adopts them. Fuel-gas appliances and venting are IFGC scope (IMC §101.2), not this tool. This does not certify code compliance.`);
 }}
 );
 
-const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp']};
+const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride']};
 Object.assign(units,{
 'Mass':{'lb':.45359237,'oz':.028349523125,'kg':1,'g':.001},
 'Specific enthalpy':{'BTU/lb':2326,'kJ/kg':1000,'J/kg':1},
@@ -221,7 +230,7 @@ const pretty=(n,d=3)=>n!==0&&Math.abs(n)<.0001?n.toExponential(3):fmt(n,d);
 const groups=['HEATING & COOLING','AIR & DUCTS','CODE & VENTILATION','REFRIGERATION','HYDRONICS','ENERGY & MATH'];
 const groupNames={'HEATING & COOLING':'Heat & cooling','AIR & DUCTS':'Air & ducts','CODE & VENTILATION':'Code & ventilation',REFRIGERATION:'Refrigeration',HYDRONICS:'Hydronics','ENERGY & MATH':'Energy & math'};
 const keywords={btu:'btu air conditioner capacity',humidity:'psychrometrics relative humidity rh dewpoint enthalpy moisture',totalheat:'enthalpy air conditioning total cooling',latent:'moisture grains dehumidification',rise:'furnace temperature rise delta t',roundduct:'duct sizing diameter',static:'tesp pressure drop',eer:'coefficient performance efficiency cop',targetach:'ventilation cfm air changes',fan:'rpm affinity speed horsepower',outdoorair:'imc 403 outdoor air vbz voz ventilation occupancy table 403.3.1.1 breathing zone',exhaust:'imc local exhaust toilet locker kitchen parking garage table 403'};
-const essentials={btu:'Room AC estimate · 8 ft ceilings · not a Manual J load.',heat:'One assembly only; excludes other building loads.',furnace:'Nameplate output/input ratio; not seasonal AFUE.',airflow:'Sensible heat only; default air coefficient is 1.08.',ach:'Air changes do not establish outdoor ventilation compliance.',duct:'Velocity check; not a complete duct-system design.',water:'Approximate liquid water properties; not glycol.',electric:'Real electrical input; not heat-pump thermal output.',cost:'Constant power during the entered run hours.',geometry:'Rectangular dimensions only.',humidity:'Dew point above freezing; frost point below freezing.',superheat:'Use dew-point saturation temperature for blends.',subcooling:'Use bubble-point saturation temperature for blends.',totalheat:'Positive = cooling; match both enthalpy reference datums.',latent:'Positive = moisture removal; negative = moisture added.',fan:'Same fan, density and similar operating conditions.',targetach:'You supply the target ACH; no code target is selected.',mixed:'Dry-air mass share; equal specific heat; no condensation.',roundduct:'Geometric diameter; verify pressure, fittings and sound.',static:'Use signed readings at manufacturer-specified locations.',waterflow:'Use fluid properties at the actual concentration and temperature.',eer:'Same-condition ratio; not SEER2 or HSPF2.',rvalue:'Use effective assembly resistance, including thermal bridges.',rise:'Use furnace heat output, not rated fuel input.',outdoorair:'2024 IMC model-code rates · screening only · verify AHJ edition.',exhaust:'Exhaust column only · makeup and outdoor air are separate.'};
+const essentials={btu:'Room AC estimate · 8 ft ceilings · not a Manual J load.',heat:'One assembly only; excludes other building loads.',furnace:'Nameplate output/input ratio; not seasonal AFUE.',airflow:'Sensible heat only; default air coefficient is 1.08.',ach:'Air changes do not establish outdoor ventilation compliance.',duct:'Velocity check; not a complete duct-system design.',water:'Approximate liquid water properties; not glycol.',electric:'Real electrical input; not heat-pump thermal output.',cost:'Constant power during the entered run hours.',geometry:'Rectangular dimensions only.',humidity:'Dew point above freezing; frost point below freezing.',superheat:'Use dew-point saturation temperature for blends.',subcooling:'Use bubble-point saturation temperature for blends.',totalheat:'Positive = cooling; match both enthalpy reference datums.',latent:'Positive = moisture removal; negative = moisture added.',fan:'Same fan, density and similar operating conditions.',targetach:'You supply the target ACH; no code target is selected.',mixed:'Dry-air mass share; equal specific heat; no condensation.',roundduct:'Geometric diameter; verify pressure, fittings and sound.',static:'Use signed readings at manufacturer-specified locations.',waterflow:'Use fluid properties at the actual concentration and temperature.',eer:'Same-condition ratio; not SEER2 or HSPF2.',rvalue:'Use effective assembly resistance, including thermal bridges.',rise:'Use furnace heat output, not rated fuel input.',outdoorair:'Model 2024 IMC rates (IMC §101.1) · verify AHJ edition · screening only.',exhaust:'Exhaust column only · makeup and outdoor air are separate · verify AHJ edition.'};
 const values=Object.fromEntries(calculators.map(c=>[c.id,Object.fromEntries(c.fields.map(f=>[f.key,f.value]))]));
 let active='btu',search='',currentResult=null,timer,conv={category:'Power / capacity',from:'BTU/h',to:'tons refrigeration',value:12000};
 const routeValid=id=>calculators.some(c=>c.id===id)||id==='convert'||id==='references';
@@ -232,6 +241,8 @@ function inactiveField(id,key,v){
     const occ=imcOccupancies[v.occupancy];
     if(key==='population')return !occ||occ.density==null;
     if(key==='people')return !occ||(occ.density!=null?v.population==='density':occ.rp==null);
+    if(key==='ez')return v.ezMode==='override';
+    if(key==='ezOverride')return v.ezMode!=='override';
     return false;
   }
   if(id==='exhaust'){
@@ -269,7 +280,7 @@ function heading(title,desc,tag){return `<div class="page-title"><div><h1>${esc(
 function links(ids){return ids.length?`<div class="source-links">${ids.map(id=>`<a href="${sourceLinks[id][1]}" target="_blank" rel="noopener noreferrer">${esc(sourceLinks[id][0])} ↗</a>`).join('')}</div>`:'<p class="method-note">Derived from the displayed mathematical relationship. No code threshold is applied.</p>';}
 function fieldHTML(f,v){return `<div class="field" data-field="${f.key}"><label for="${f.key}">${esc(f.label)}</label>${f.options?`<select id="${f.key}" name="${f.key}">${f.options.map(([k,label])=>`<option value="${k}" ${v===k?'selected':''}>${esc(label)}</option>`).join('')}</select>`:`<div class="input-wrap"><input id="${f.key}" name="${f.key}" type="number" inputmode="${f.min<0?'text':'decimal'}" value="${v}" min="${f.min}" max="${f.max}" step="${f.step}" aria-describedby="${f.key}-unit" required><span id="${f.key}-unit">${esc(f.unit)}</span></div>`}</div>`;}
 function render(){renderNav();document.querySelector('#mobile-calc').value=active;const main=document.querySelector('main');if(active==='references'){main.innerHTML=references();currentResult=null;document.querySelector('#print').disabled=false;return;}if(active==='convert'){main.innerHTML=converter();bindConverter();return;}const c=calculators.find(x=>x.id===active),adv=advancedFields[active]||[],normal=c.fields.filter(f=>!adv.includes(f.key));
-  main.innerHTML=heading(active==='btu'?'BTU calculator':c.name,c.desc,c.badge)+`<div class="workspace"><section class="panel input-panel"><div class="panel-head"><h2>Inputs</h2><button id="reset" type="button" class="text-button">Reset</button></div><form id="calc-form" novalidate><div class="fields">${normal.map(f=>fieldHTML(f,values[active][f.key])).join('')}</div>${adv.length?`<details class="advanced" ${adv.some(k=>values[active][k]!==c.fields.find(f=>f.key===k).value)?'open':''}><summary>${active==='waterflow'?'Fluid properties':'Air properties'}</summary><div class="fields">${c.fields.filter(f=>adv.includes(f.key)).map(f=>fieldHTML(f,values[active][f.key])).join('')}</div></details>`:''}<div class="form-status">Updates as you type</div><div id="error" role="alert"></div></form></section><section class="panel result-panel" id="result" aria-label="Calculation result"></section></div><div class="workspace-foot"><span>${essentials[active]}</span></div>`;
+  main.innerHTML=heading(active==='btu'?'BTU calculator':c.name,c.desc,c.badge)+`<div class="workspace"><section class="panel input-panel"><div class="panel-head"><h2>Inputs</h2><button id="reset" type="button" class="text-button">Reset</button></div><form id="calc-form" novalidate><div class="fields">${normal.map(f=>fieldHTML(f,values[active][f.key])).join('')}</div>${adv.length?`<details class="advanced" ${adv.some(k=>values[active][k]!==c.fields.find(f=>f.key===k).value)?'open':''}><summary>${active==='waterflow'?'Fluid properties':active==='outdoorair'?'Ez override':'Air properties'}</summary><div class="fields">${c.fields.filter(f=>adv.includes(f.key)).map(f=>fieldHTML(f,values[active][f.key])).join('')}</div></details>`:''}<div class="form-status">Updates as you type</div><div id="error" role="alert"></div></form></section><section class="panel result-panel" id="result" aria-label="Calculation result"></section></div><div class="workspace-foot"><span>${essentials[active]}</span></div>`;
   const form=document.querySelector('#calc-form');form.onsubmit=e=>{e.preventDefault();clearTimeout(timer);readForm(c);run(c);};
   form.oninput=()=>{readForm(c);conditionalFields(c);clearTimeout(timer);run(c);};
   form.onchange=()=>{readForm(c);conditionalFields(c);clearTimeout(timer);run(c);};
@@ -297,6 +308,6 @@ function references(){const entries=[
 ['Units','NIST SP 811','SI unit definitions and conversion conventions. Conversion does not reconcile different enthalpy reference datums.',sourceLinks.nist[1]],
 ['Product reference','Calculator.net · BTU calculator','Reference for the room-calculation input flow. Our estimate uses the published ENERGY STAR method.',sourceLinks.calc[1]],
 ['Product reference','Calculator.net · Conversion calculator','Reference for the familiar value/from/to conversion flow.',sourceLinks.conversion[1]]];
-return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+`<p class="reference-intro">The 2024 code links are reference editions. Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions.</p><div class="reference-list">${entries.map(([topic,title,description,url])=>`<article class="reference-row"><div class="ref-topic">${esc(topic)}</div><div><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(title)} ↗</a><p>${esc(description)}</p></div></article>`).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
+return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+`<p class="reference-intro">The 2024 code links are reference editions (IMC §101.1). Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions. IMC outdoor-air and local-exhaust tools use published model-code table rates for screening only. Appendices apply only if adopted by the AHJ. ASHRAE standards are referenced to the extent cited in the code; where they conflict with IMC text, the IMC governs (§102.8). Fuel-gas piping, appliances and venting are IFGC scope (IMC §101.2), not this app.</p><div class="reference-list">${entries.map(([topic,title,description,url])=>`<article class="reference-row"><div class="ref-topic">${esc(topic)}</div><div><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(title)} ↗</a><p>${esc(description)}</p></div></article>`).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
 shell();const initial=location.hash.slice(1);if(routeValid(initial))active=initial;render();window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(id!==active&&routeValid(id)){active=id;render();}});
 </script></body></html>
