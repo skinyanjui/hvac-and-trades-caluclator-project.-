@@ -482,57 +482,88 @@ field('exhaustCfm','Dryer exhaust airflow','cfm',150,0,2000,'any','If exhaust ex
 }}
 );
 
-// IMC §507 hood capacity — screening cfm/ft defaults styled after common Type I / Type II tables.
-// Edition section numbers vary (e.g. 507.2.1 / 507.5 / 507.2.10 / 507.3.4). Verify every cell with the AHJ-adopted edition.
-// null = not allowed for that duty × hood style combination in the common table pattern.
-const hoodStyles={
-  wall:['Wall-mounted canopy',{extra:550,heavy:400,medium:300,light:200,dish:100}],
-  single:['Single-island canopy',{extra:700,heavy:600,medium:500,light:400,dish:100}],
-  double:['Double-island canopy (per side)',{extra:550,heavy:400,medium:300,light:250,dish:100}],
-  eyebrow:['Eyebrow',{extra:null,heavy:null,medium:250,light:250,dish:100}],
-  backshelf:['Backshelf / pass-over',{extra:null,heavy:400,medium:300,light:250,dish:100}]
+// Exact IMC 2024 §§507.2.10 / 507.3.4 hood capacity rates (cfm per linear foot). Do not invent cells.
+const imcHoodCapacity={
+  table:'IMC 2024 §§507.2.10 / 507.3.4',
+  type_I:{
+    extra_heavy:{backshelf:null,double_island_per_side:550,eyebrow:null,single_island:700,wall_canopy:550},
+    heavy:{backshelf:400,double_island_per_side:400,eyebrow:null,single_island:600,wall_canopy:400},
+    medium:{backshelf:300,double_island_per_side:300,eyebrow:250,single_island:500,wall_canopy:300}
+  },
+  type_II:{
+    light_duty:{backshelf:250,double_island_per_side:250,eyebrow:250,single_island:400,wall_canopy:200},
+    dishwashing_cfm_per_ft:100
+  },
+  units:'cfm per linear foot of hood'
 };
-const hoodDuties={
-  type1_extra:['Type I · extra-heavy duty','extra','I','Type I grease hood · extra-heavy appliances'],
-  type1_heavy:['Type I · heavy duty','heavy','I','Type I grease hood · heavy-duty appliances'],
-  type1_medium:['Type I · medium duty','medium','I','Type I grease hood · medium-duty appliances'],
-  type2_light:['Type II · light-duty cooking / prep','light','II','Type II non-grease hood · light-duty cooking / food-prep'],
-  type2_dish:['Type II · dishwashing appliances','dish','II','Type II hood · dishwashing · common table uses 100 cfm/ft']
-};
-calculators.push(
-{id:'hoodcfm',name:'Hood capacity (IMC 507)',group:'CODE & VENTILATION',icon:'air',desc:'Screen commercial kitchen hood exhaust from IMC §507 Type I / Type II cfm-per-linear-foot rates.',badge:'IMC §507 · screening',sources:['imc'],fields:[
-choice('duty','Hood type / duty',Object.entries(hoodDuties).map(([k,v])=>[k,v[0]]),'type1_medium','Use the heaviest-duty appliance under the hood for the entire hood length (IMC §507 capacity rules).'),
-choice('style','Hood style',Object.entries(hoodStyles).map(([k,v])=>[k,v[0]]),'wall','Rates differ by hood style in the IMC capacity tables.'),
-field('length','Hood length','ft',10,.001,200,'any','Linear feet of hood. For double-island, enter one side length (table is per side).'),
-choice('rateMode','cfm/ft source',[['table','Use embedded screening default'],['custom','Override cfm/ft (AHJ / label / engineer)']],'table','Defaults are screening values matching common IMC Table 507 patterns — verify every cell with the AHJ edition.'),
-field('cfmPerFt','cfm per linear foot','cfm/ft',300,1,2000,'any','Editable override when not using the embedded default.')
-],calculate:v=>{
-  const duty=hoodDuties[v.duty];if(!duty)throw Error('Choose a valid hood type / duty.');
-  const style=hoodStyles[v.style];if(!style)throw Error('Choose a valid hood style.');
-  const [,rateKey,hoodClass,dutyNote]=duty;
-  const tableRate=style[1][rateKey];
-  if(v.rateMode==='table'&&(tableRate==null||!Number.isFinite(tableRate))){
-    throw Error(`${style[0]} is not allowed for ${duty[0]} in the common IMC §507 table pattern. Choose another hood style or enter a custom AHJ/label rate.`);
+const hoodStyleOptions=[
+  ['wall_canopy','Wall-mounted canopy'],
+  ['single_island','Single-island canopy'],
+  ['double_island_per_side','Double-island canopy (per side)'],
+  ['eyebrow','Eyebrow'],
+  ['backshelf','Backshelf / pass-over']
+];
+const hoodDutyRank={extra_heavy:4,heavy:3,medium:2,light_duty:1,dishwashing:0};
+const hoodDutyOptions=[
+  ['extra_heavy','Type I · extra-heavy duty'],
+  ['heavy','Type I · heavy duty'],
+  ['medium','Type I · medium duty'],
+  ['light_duty','Type II · light-duty cooking / prep'],
+  ['dishwashing','Type II · dishwashing appliances']
+];
+function hoodRateFor(duty,style){
+  if(duty==='dishwashing')return imcHoodCapacity.type_II.dishwashing_cfm_per_ft;
+  if(duty==='light_duty'){
+    const r=imcHoodCapacity.type_II.light_duty[style];
+    return r==null?null:r;
   }
-  const rate=v.rateMode==='custom'?v.cfmPerFt:tableRate;
-  if(!Number.isFinite(rate)||rate<=0)throw Error('cfm per linear foot must be greater than zero.');
-  const cfm=rate*v.length;
+  const row=imcHoodCapacity.type_I[duty];
+  if(!row)return null;
+  const r=row[style];
+  return r==null?null:r;
+}
+calculators.push(
+{id:'hoodcfm',name:'Hood capacity (IMC 507)',group:'CODE & VENTILATION',icon:'air',desc:'Size commercial kitchen hood exhaust from IMC 2024 §§507.2.10 / 507.3.4 cfm-per-linear-foot tables.',badge:'IMC §§507.2.10 / 507.3.4',sources:['imc'],fields:[
+choice('duty','Heaviest duty under hood',hoodDutyOptions,'heavy','Where mixed duties share one hood, use the heaviest-duty appliance rate for the entire hood (IMC §507.2.10).'),
+choice('duty2','Also under hood (optional)',[['none','None — single duty only'],...hoodDutyOptions],'none','Optional second duty; the tool applies the heaviest rate among selected duties.'),
+choice('duty3','Also under hood (optional)',[['none','None'],...hoodDutyOptions],'none','Optional third duty; heaviest rate wins.'),
+choice('style','Hood style',hoodStyleOptions,'wall_canopy','Table cells differ by hood style. Double-island rates are per side.'),
+field('length','Hood length','ft',10,.001,200,'any','Linear feet of hood. For double-island, enter one side length (table is per side).'),
+field('shortCircuit','Short-circuit supply into hood','cfm',0,0,1e6,'any','Air supplied directly into the hood cavity. min total exhaust = required net + short-circuit supply.')
+],calculate:v=>{
+  const styleLabel=(hoodStyleOptions.find(([k])=>k===v.style)||[])[1];
+  if(!styleLabel)throw Error('Choose a valid hood style.');
+  const selected=[v.duty,v.duty2,v.duty3].filter(d=>d&&d!=='none');
+  if(!selected.length)throw Error('Choose at least one duty classification.');
+  // Heaviest among selected (extra_heavy > heavy > medium > light_duty > dishwashing)
+  const heaviest=selected.reduce((a,b)=>(hoodDutyRank[b]??-1)>(hoodDutyRank[a]??-1)?b:a);
+  const rate=hoodRateFor(heaviest,v.style);
+  if(rate==null){
+    const dutyLabel=(hoodDutyOptions.find(([k])=>k===heaviest)||[heaviest,heaviest])[1];
+    throw Error(`${styleLabel} is not allowed for ${dutyLabel} (IMC 2024 ${imcHoodCapacity.table}). Choose another hood style or duty.`);
+  }
+  const net=rate*v.length;
+  const total=net+v.shortCircuit;
+  const hoodClass=heaviest==='dishwashing'||heaviest==='light_duty'?'II':'I';
+  const cite=hoodClass==='I'?'IMC §507.2.10':'IMC §507.3.4';
   const rows=[
+    ['Table',1,imcHoodCapacity.table],
     ['Hood class',hoodClass==='I'?1:2,hoodClass==='I'?'Type I':'Type II'],
-    ['Duty / application',1,duty[0]],
-    ['Hood style',1,style[0]],
+    ['Duties selected',selected.length,selected.map(d=>(hoodDutyOptions.find(([k])=>k===d)||[d,d])[1]).join('; ')],
+    ['Heaviest duty applied',hoodDutyRank[heaviest],(hoodDutyOptions.find(([k])=>k===heaviest)||[])[1]],
+    ['Hood style',1,styleLabel],
     ['Hood length',v.length,'ft'],
-    ['Rate used',rate,'cfm/ft'],
-    ['Rate source',v.rateMode==='table'?1:0,v.rateMode==='table'?'embedded screening default':'user / AHJ override'],
-    ['Required net exhaust',cfm,'cfm']
+    ['Table rate',rate,'cfm/ft'],
+    ['Required net exhaust',net,'cfm'],
+    ['Short-circuit supply into hood',v.shortCircuit,'cfm'],
+    ['Minimum total exhaust',total,'cfm']
   ];
-  if(tableRate!=null)rows.push(['Embedded table default for this pick',tableRate,'cfm/ft']);
-  const ahj='Model-code screening only (IMC §101.1). Confirm the AHJ-adopted edition, amendments, and the exact §507 capacity table cells. Edition section numbers vary (commonly cited as Tables under §507.2 / §507.5 / §507.2.10 / §507.3.4). Net exhaust = total exhaust − air supplied directly into the hood cavity. Not a compliance certificate.';
-  return result(cfm,'cfm',rows,
-    `Required cfm = (cfm/ft) × length = ${fmt(rate)} × ${fmt(v.length)} = ${fmt(cfm)} cfm`,
-    `${dutyNote}. ${ahj} Makeup air is separate (IMC §508).`,
-    [[rate,'cfm/ft'],[v.length,'ft hood'],[cfm,'cfm required']],
-    ['IMC §507','Type I / Type II capacity','AHJ-verify cells']);
+  const ahj='Model 2024 IMC (IMC §101.1). Confirm the AHJ-adopted edition and amendments. Rates are exact embedded cells from IMC 2024 §§507.2.10 / 507.3.4 — not invented. Screening tool only — not a compliance certificate.';
+  return result(net,'cfm net',rows,
+    `required_net_cfm = rate × length = ${fmt(rate)} × ${fmt(v.length)} = ${fmt(net)} cfm; min_total_exhaust = required_net + shortCircuitSupply = ${fmt(net)} + ${fmt(v.shortCircuit)} = ${fmt(total)} cfm`,
+    `Citation: ${cite} (${imcHoodCapacity.table}). Mixed duties → heaviest rate for the entire hood. Null table cells are not allowed. Makeup / replacement air: see IMC §508.1 (and kitchen air balance). ${ahj}`,
+    [[rate,'cfm/ft'],[net,'cfm net'],[total,'cfm min total exhaust']],
+    [cite,'IMC §508.1 makeup tip','AHJ-verify edition']);
 }}
 );
 
@@ -615,7 +646,7 @@ choice('arcInstall','§310.3 · installed per listing (bonding per mfr if requir
 }}
 );
 
-const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride'],combustionair:['freeAreaPct'],hoodcfm:['rateMode','cfmPerFt'],gaspipesize:['heatContent','fittings','csstFit','otherEL']};
+const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride'],combustionair:['freeAreaPct'],gaspipesize:['heatContent','fittings','csstFit','otherEL']};
 Object.assign(units,{
 'Mass':{'lb':.45359237,'oz':.028349523125,'kg':1,'g':.001},
 'Specific enthalpy':{'BTU/lb':2326,'kJ/kg':1000,'J/kg':1},
@@ -673,7 +704,6 @@ function inactiveField(id,key,v){
     return false;
   }
   if(id==='hoodcfm'){
-    if(key==='cfmPerFt')return v.rateMode!=='custom';
     return false;
   }
   if(id==='gaspipesize'){
