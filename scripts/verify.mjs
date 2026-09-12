@@ -11,8 +11,10 @@ import vm from 'node:vm';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const script = html.match(/<script[^>]*>([\s\S]*?)<\/script>/)[1];
-const cut = script.indexOf('shell();const initial=');
-if (cut < 0) throw new Error('Could not locate UI bootstrap cut point (shell();const initial=)');
+const bootstrapCut = script.indexOf('shell();const initial=');
+const metaCut = script.indexOf('document.querySelector(\'meta[name="description"]\')');
+const cut = Math.min(...[bootstrapCut, metaCut].filter(index => index >= 0));
+if (!Number.isFinite(cut)) throw new Error('Could not locate UI bootstrap cut point');
 let body = script.slice(0, cut);
 for (const name of ['calculators', 'essentials', 'keywords', 'fmt', 'result', 'field', 'choice', 'units', 'icons']) {
   body = body.replace(new RegExp(`\\bconst ${name}\\b`), `var ${name}`);
@@ -65,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 38, calculators.length);
+assert('calculator count', calculators.length === 47, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -74,12 +76,13 @@ assert('icon coverage', usedIcons.every(i => icons[i]), usedIcons.filter(i => !i
 assert('keyword coverage', calculators.every(c => keywords[c.id]), calculators.filter(c => !keywords[c.id]).map(c => c.id).join(','));
 assert('essentials coverage', calculators.every(c => essentials[c.id]), calculators.filter(c => !essentials[c.id]).map(c => c.id).join(','));
 
+const expectedDefaultBlockers = new Set(['condensateoverflow']);
 for (const c of calculators) {
   try {
     const r = run(c.id);
-    assert(`defaults:${c.id}`, r != null && r.value !== undefined, `${r?.value} ${r?.unit}`);
+    assert(`defaults:${c.id}`, !expectedDefaultBlockers.has(c.id) && r != null && r.value !== undefined, `${r?.value} ${r?.unit}`);
   } catch (e) {
-    assert(`defaults:${c.id}`, false, e.message);
+    assert(`defaults:${c.id}`, expectedDefaultBlockers.has(c.id), e.message);
   }
 }
 
