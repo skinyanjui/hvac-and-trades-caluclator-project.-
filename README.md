@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **38** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **47** calculators with code-oriented screening tools:
 
 - **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
@@ -21,5 +21,15 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **IRC bath/kitchen + WHMV (IRC M1503 / M1505)** — residential local exhaust (kitchen 100/25, bath 50/20), makeup trigger, WHMV Eq 15-1 (`0.01A`), bath duct-length screen; EXAMPLE_UNVERIFIED; refuses IMC `code_set`; distinct from IMC vent tools
 - **ASHRAE 15.2 path gate** — SPEC-ASHRAE152-PATH-GATE only (`15_2_residential` | `std15_imc_ch11` | `blocked_need_ahj`); flags + deep-link to IRC install checklist shell; **no** charge/RCL/mmax numerics; `verified=false`
 - **T&P discharge (IPC §§504.4–504.6)** — screening checklist of typical relief-valve and discharge-piping items
+- **Condensate overflow protection (IMC §307.2.3)** — path gate for auxiliary pans, overflow drains, and listed shutoff devices when primary-drain overflow could damage building components
+- **Duct smoke detector gate (IMC §606.2)** — screens individual return-air, shared-duct, and multistory-riser airflow triggers while keeping exceptions, detector layout, controls, and NFPA 72 coordination manual
+- **Duct friction rate (Manual D preparation)** — available static pressure and total effective length calculation without pretending to complete a duct design
+- **Exhaust / makeup-air balance (IMC §508)** — replacement-air deficit arithmetic; pressure targets and transfer-air approval remain with the designer and AHJ
+- **Multizone outdoor air (IMC §403)** — aggregate diversity, uncorrected outdoor air, and system intake using a source-verified `Ev` (no embedded efficiency table)
+- **Parking garage ventilation (IMC §404)** — full-on / standby airflow with a CO + NO₂ automatic-control gate and no invented ppm setpoints
+- **ASHRAE 15 / 15.2 charge reviews** — downstream documentation gates from the path selector; no charge, RCL, OEL, or `mmax` limits are calculated
+- **CSST bonding handoff receiver** — receives the IFGC §310 cross-code handoff for adopted NEC / listing verification without calculating conductor size
+
+See [`AUDIT.md`](AUDIT.md) for the current coverage audit, explicit source-data blockers, and prioritized follow-up work.
 
 Open `index.html` in a browser, or deploy the repo root as a static site.
