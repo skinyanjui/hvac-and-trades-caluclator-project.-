@@ -1,0 +1,99 @@
+# HVAC Workbench coverage audit
+
+Reviewed September 12, 2026.
+
+## Scope
+
+HVAC Workbench is a national-US **screening and engineering-math** utility. It is not an adopted-code database, load-calculation package, fire-alarm design tool, or compliance certificate. The AHJ-adopted code, local amendments, equipment listings, manufacturer instructions, and licensed design professionals govern.
+
+“All codes” is not a safe or finite implementation target: adoption varies by jurisdiction, many referenced standards and tables are licensed, and project-specific exceptions change outcomes. This audit therefore separates:
+
+1. calculations that can be derived from public formulas,
+2. bounded path gates and checklists,
+3. table-driven tools that require verified source data before implementation.
+
+## Current coverage
+
+The app now contains 47 calculators across:
+
+- heating and cooling engineering math,
+- air and duct calculations,
+- refrigeration field measurements,
+- hydronics,
+- energy and unit conversion,
+- IMC ventilation, exhaust, condensate, hood, dryer, machinery-room, and smoke-detection screening,
+- IFGC combustion-air, venting-path, gas-pipe-method, and clearance screening,
+- IPC T&P discharge screening,
+- IRC local/whole-house ventilation and installation path gates,
+- ASHRAE 15 / 15.2 path routing.
+
+## Priority additions completed in this audit
+
+### IMC §307.2.3 condensate overflow protection
+
+Added a path gate for the damage trigger and auxiliary protection families. It intentionally does not certify pan dimensions, termination locations, device listing, or wiring.
+
+### IMC §606.2 duct smoke detector gate
+
+Added screens for:
+
+- individual return systems over 2,000 cfm,
+- shared common ducts/plenums over 2,000 cfm combined,
+- return-air risers serving two or more stories over 15,000 cfm.
+
+Exceptions, physical detector count/location, shutdown sequence, alarm integration, and NFPA 72 coordination remain manual.
+
+### Manual D friction-rate preparation
+
+Added:
+
+`FR = (equipment external static − component deductions) × 100 / total effective length`
+
+This is preliminary engineering math, not a replacement for blower tables, fitting effective lengths, room-by-room airflow, sound, leakage, or balancing.
+
+### IMC §508 exhaust / makeup-air balance
+
+Added replacement-air deficit arithmetic using `required replacement = total exhaust + design net exfiltration` and user-approved dedicated, transfer, and HVAC air credits. The tool does not invent an allowable pressure target or approve an air source.
+
+### IMC §403 multizone outdoor air
+
+Added population diversity, uncorrected outdoor air, and system-intake calculations. System ventilation efficiency remains a source-verified user input; no efficiency table cells are copied.
+
+### IMC §404 parking-garage ventilation
+
+Added full-on and nonzero standby airflow plus a CO + NO₂ detector/listing/control gate for automatic operation. No generic contaminant setpoints are invented.
+
+### Cross-code and refrigerant-path handoffs
+
+Added a CSST electrical-bonding receiver and nonnumeric ASHRAE 15 / 15.2 charge-review checklists. The existing path gate now links to those reviews and machinery-room ventilation.
+
+### Code-context selector trust fix
+
+The selector now states that non-2024 choices are project context only and do not transform embedded 2024 values. This removes the prior implication that changing a label swapped the underlying data pack.
+
+## Needs verified source data before implementation
+
+These are important, but should not be filled with guessed values:
+
+1. **IFGC Tables 504.2 / 504.3 vent capacity** — current tool prepares the required inputs only.
+2. **IFGC Table 402.4(x) gas-pipe sizing** — current tool calculates demand and developed length, then hands off to the adopted table.
+3. **ASHRAE 15.2 charge / RCL / mmax** — current tool is a path gate only.
+4. **ASHRAE 15 A2L/B2L detector concentration rows** — no ppm rows are digitized.
+5. **Full Manual J / D / S implementations** — ACCA procedures are broader than a compact formula and require licensed methodology/data.
+6. **IECC equipment efficiency, economizer, insulation, and controls tables** — climate zone, system type, capacity, exceptions, and adopted edition must be modeled together.
+
+## Recommended next sequence
+
+1. Independently verify every existing `EXAMPLE_UNVERIFIED` table/formula cell against an authorized source.
+2. Replace the IRC installation shell with a section-mapped checklist after source review.
+3. Add a jurisdiction/adoption profile only when trustworthy adoption data and amendment provenance are available.
+4. Add table-backed calculators one model pack at a time, with source edition, row/column provenance, and regression fixtures.
+5. Split the single-file app into tested data, calculation, and UI modules before the table inventory grows substantially.
+
+## Public references used for this audit
+
+- [2024 International Mechanical Code](https://codes.iccsafe.org/content/IMC2024V1.0)
+- [2024 International Fuel Gas Code](https://codes.iccsafe.org/content/IFGC2024V1.0)
+- [ICC CodeNotes: indoor combustion-air methods](https://www.iccsafe.org/building-safety-journal/bsj-technical/codenotes-gas-appliance-combustion-ventilation-and-dilution-air-part-2-indoor-combustion-air-methods/)
+- [ACCA technical manuals](https://www.acca.org/standards/technical-manuals)
+- [ASHRAE Standards 15 and 15.2](https://www.ashrae.org/technical-resources/bookstore/standards-15-34)
