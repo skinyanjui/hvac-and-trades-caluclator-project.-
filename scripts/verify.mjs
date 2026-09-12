@@ -137,6 +137,19 @@ for (const [vals, expect] of pathCases) {
   assert('ircinstall no charge fields', /not present/.test(JSON.stringify(r.rows)));
 }
 
+{
+  const unk = run('tpdischarge', {});
+  assert('tpdischarge defaults need attention', unk.unit === 'items needing attention' && unk.value === 17, `${unk.value} ${unk.unit}`);
+  const yes = Object.fromEntries(byId.tpdischarge.fields.filter(f => f.key !== 'heaterType').map(f => [f.key, 'yes']));
+  const ok = run('tpdischarge', yes);
+  assert('tpdischarge all-yes → 0 needing attention', ok.unit === 'items needing attention' && ok.value === 0, `${ok.value} ${ok.unit}`);
+}
+
+assert('hoodcfm no fake rate-override title', !/hoodcfm:'Rate override'/.test(html));
+assert('hoodcfm essentials not editable rates', !/hoodcfm:'[^']*Editable rates/.test(html));
+assert('hoodcfm disclaimer exact cells', /Hood rates are exact embedded cells/.test(html));
+assert('resultLabelFor attention units', /unit\.includes\('needing attention'\)/.test(html));
+
 const failed = tests.filter(t => !t.ok);
 const passed = tests.length - failed.length;
 console.log(`verify: ${passed}/${tests.length} passed`);
