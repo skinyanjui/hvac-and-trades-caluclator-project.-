@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="38 compact HVAC calculators, 16 unit conversion groups, live results, formulas, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#20313b;background:#f7f8fa;font-synthesis:none;--accent:#077989;--line:#dce3e7;--muted:#657780;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;--geist-mono:ui-monospace,'Geist Mono',SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #07869b;outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--line);background:#fff;gap:10px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:650;text-decoration:none;color:#17333f;letter-spacing:-.4px;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:27px;height:28px;background:#173b49;color:#8ce0e3;border-radius:6px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:38px;padding:5px 10px;font-size:14px;color:#506976;border-radius:5px}.header-actions button:hover{background:#f0f5f7}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:196px minmax(0,1fr);min-height:calc(100vh - 54px)}.sidebar{background:#fff;border-right:1px solid var(--line);padding:12px 10px;position:sticky;top:54px;height:calc(100vh - 54px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:#f6f8fa;border:1px solid #dfe5e9;padding:9px 7px 9px 29px;width:100%;border-radius:5px;font-size:13px;color:#234654;height:36px;min-width:0}.search-wrap input::placeholder{color:#71818a}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 4px;padding:2px 9px;color:#768790;font-size:12px;font-weight:550}.nav-item{display:block;width:100%;text-align:left;min-height:32px;padding:6px 9px;border-radius:5px;font-size:14px;line-height:1.35;color:#435d6a}.nav-item:hover{background:#f2f6f7}.nav-item.active{background:#e7f2f4;color:#056779;font-weight:600}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1160px;min-width:0;padding:25px clamp(18px,2.8vw,42px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:25px;letter-spacing:-.7px;line-height:1.25;font-weight:650;margin:0 0 7px}.page-title p{font-size:14px;line-height:1.5;color:var(--muted);margin:0;max-width:580px}.tag{font-size:12px;padding:5px 8px;border:1px solid #d8e5e9;border-radius:4px;background:#eef5f6;color:#44707d;white-space:nowrap;flex:none;margin-top:2px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:8px;min-width:0;overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #cdd7dd;border-radius:5px;background:white;min-height:39px;min-width:0}.input-wrap:focus-within{border-color:#238c9a;box-shadow:0 0 0 2px #e6f5f5}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:39px;border:1px solid #cdd7dd;border-radius:5px;padding:8px 24px 8px 9px;background:#fff;color:#243d49;font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.5;color:#5a7380;background:#f3f7f8;border:1px solid #e2eaed;border-radius:5px;padding:10px 12px;margin:0 17px 14px}.legal-banner{background:#1a333d;color:#d7ecef;padding:10px 20px;font-size:12px;line-height:1.55;border-bottom:1px solid #0f242c}.legal-banner strong{color:#fff;font-weight:650}.legal-banner a{color:#8ce0e3}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:8px 20px;background:#eef5f6;border-bottom:1px solid #d5e4e8;font-size:13px;color:#355867}.ahj-bar label{font-weight:550;color:#1f4554}.ahj-bar select{min-height:34px;border:1px solid #b8cdd4;border-radius:5px;padding:4px 28px 4px 8px;background:#fff;color:#243d49;font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:#5d7884;font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:17px 17px 16px;background:#eaf4f5;border-bottom:1px solid #d8e9ec}.result-label{font-size:12px;color:#527d86}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:38px;font-weight:550;line-height:1.2;letter-spacing:-1px;color:#154552;margin-top:8px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:#517980;overflow-wrap:anywhere}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin:10px 0 0;padding:0;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 17px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:var(--geist-mono);font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 17px 13px;color:#955523}.empty-result{padding:19px;min-height:150px;background:#f2f6f8;color:#6c828d}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:var(--geist-mono);font-size:13px;line-height:1.6;padding:15px 17px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 17px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid #c5dde3;background:#f4fafb;border-radius:6px;padding:11px 12px}.crosscode-chip-id{font-family:var(--geist-mono);font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:600;color:#1f4554;margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="47 compact HVAC calculators, 16 unit conversion groups, live results, formulas, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#20313b;background:#f7f8fa;font-synthesis:none;--accent:#077989;--line:#dce3e7;--muted:#657780;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;--geist-mono:ui-monospace,'Geist Mono',SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #07869b;outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--line);background:#fff;gap:10px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:650;text-decoration:none;color:#17333f;letter-spacing:-.4px;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:27px;height:28px;background:#173b49;color:#8ce0e3;border-radius:6px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:38px;padding:5px 10px;font-size:14px;color:#506976;border-radius:5px}.header-actions button:hover{background:#f0f5f7}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:196px minmax(0,1fr);min-height:calc(100vh - 54px)}.sidebar{background:#fff;border-right:1px solid var(--line);padding:12px 10px;position:sticky;top:54px;height:calc(100vh - 54px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:#f6f8fa;border:1px solid #dfe5e9;padding:9px 7px 9px 29px;width:100%;border-radius:5px;font-size:13px;color:#234654;height:36px;min-width:0}.search-wrap input::placeholder{color:#71818a}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 4px;padding:2px 9px;color:#768790;font-size:12px;font-weight:550}.nav-item{display:block;width:100%;text-align:left;min-height:32px;padding:6px 9px;border-radius:5px;font-size:14px;line-height:1.35;color:#435d6a}.nav-item:hover{background:#f2f6f7}.nav-item.active{background:#e7f2f4;color:#056779;font-weight:600}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1160px;min-width:0;padding:25px clamp(18px,2.8vw,42px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:25px;letter-spacing:-.7px;line-height:1.25;font-weight:650;margin:0 0 7px}.page-title p{font-size:14px;line-height:1.5;color:var(--muted);margin:0;max-width:580px}.tag{font-size:12px;padding:5px 8px;border:1px solid #d8e5e9;border-radius:4px;background:#eef5f6;color:#44707d;white-space:nowrap;flex:none;margin-top:2px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:8px;min-width:0;overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #cdd7dd;border-radius:5px;background:white;min-height:39px;min-width:0}.input-wrap:focus-within{border-color:#238c9a;box-shadow:0 0 0 2px #e6f5f5}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:39px;border:1px solid #cdd7dd;border-radius:5px;padding:8px 24px 8px 9px;background:#fff;color:#243d49;font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.5;color:#5a7380;background:#f3f7f8;border:1px solid #e2eaed;border-radius:5px;padding:10px 12px;margin:0 17px 14px}.legal-banner{background:#1a333d;color:#d7ecef;padding:10px 20px;font-size:12px;line-height:1.55;border-bottom:1px solid #0f242c}.legal-banner strong{color:#fff;font-weight:650}.legal-banner a{color:#8ce0e3}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:8px 20px;background:#eef5f6;border-bottom:1px solid #d5e4e8;font-size:13px;color:#355867}.ahj-bar label{font-weight:550;color:#1f4554}.ahj-bar select{min-height:34px;border:1px solid #b8cdd4;border-radius:5px;padding:4px 28px 4px 8px;background:#fff;color:#243d49;font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:#5d7884;font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:17px 17px 16px;background:#eaf4f5;border-bottom:1px solid #d8e9ec}.result-label{font-size:12px;color:#527d86}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:38px;font-weight:550;line-height:1.2;letter-spacing:-1px;color:#154552;margin-top:8px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:#517980;overflow-wrap:anywhere}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin:10px 0 0;padding:0;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 17px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:var(--geist-mono);font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 17px 13px;color:#955523}.empty-result{padding:19px;min-height:150px;background:#f2f6f8;color:#6c828d}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:var(--geist-mono);font-size:13px;line-height:1.6;padding:15px 17px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 17px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid #c5dde3;background:#f4fafb;border-radius:6px;padding:11px 12px}.crosscode-chip-id{font-family:var(--geist-mono);font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:600;color:#1f4554;margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}
 </style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});
 const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
 const sourceLinks={energy:['ENERGY STAR · Room AC sizing','https://www.energystar.gov/products/room_air_conditioners'],calc:['Calculator.net · BTU reference','https://www.calculator.net/btu-calculator.html'],conversion:['Calculator.net · Conversion reference','https://www.calculator.net/conversion-calculator.html'],manual:['ACCA · Manual J','https://www.acca.org/standards/technical-manuals/manual-j'],ashrae:['ASHRAE · Psychrometrics','https://handbook.ashrae.org/Handbooks/F21/SI/F21_Ch01/F21_Ch01_si.aspx'],nist:['NIST · SI conversion reference','https://www.nist.gov/pml/special-publication-811'],imc:['ICC · 2024 IMC','https://codes.iccsafe.org/content/IMC2024V1.0'],ipc:['ICC · 2024 IPC','https://codes.iccsafe.org/content/IPC2024P1'],ifc:['ICC · 2024 IFC','https://codes.iccsafe.org/content/IFC2024V1.0'],ifgc:['ICC · 2024 IFGC','https://codes.iccsafe.org/content/IFGC2024V1.0'],iecc:['ICC · 2024 IECC','https://codes.iccsafe.org/content/IECC2024V1.0'],ashrae15:['ASHRAE · Standard 15','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],irc:['ICC · 2024 IRC','https://codes.iccsafe.org/content/IRC2024P1'],ashrae152:['ASHRAE · Standard 15.2','https://www.ashrae.org/technical-resources/bookstore/standards-15-34']};
@@ -53,7 +53,8 @@ function moistAir(t,rh,p) {
 }
 Object.assign(sourceLinks,{
   copeland:['Copeland · Dew & bubble points','https://e360blog.copeland.com/refrigeration-basics-understanding-refrigerants-with-glide/'],
-  manuald:['ACCA · Manual D','https://www.acca.org/standards/technical-manuals/manual-d']
+  manuald:['ACCA · Manual D','https://www.acca.org/standards/technical-manuals/manual-d'],
+  nec:['NFPA · National Electrical Code','https://www.nfpa.org/codes-and-standards/nfpa-70-standard-development/70']
 });
 calculators.push(
 {id:'humidity',name:'Humidity & dew point',group:'AIR & DUCTS',icon:'water',desc:'Find dew point, moisture content and enthalpy from temperature and humidity.',badge:'Psychrometric estimate',sources:['ashrae'],fields:[field('temperature','Dry-bulb temperature','°F',77,32,122),field('rh','Relative humidity','%',50,.1,100),field('pressure','Absolute air pressure','kPa',101.325,50,110)],calculate:v=>{const t=(v.temperature-32)*5/9,r=moistAir(t,v.rh,v.pressure);return result(r.dew*1.8+32,'°F',[['Humidity ratio',r.w*1000,'g/kg dry air'],['Moisture content',r.w*7000,'grains/lb dry air'],['Enthalpy · 0 °C datum',r.h,'kJ/kg dry air'],['Specific volume',r.volume,'m³/kg dry air']],`pᵥ = RH × pₛ(T); W = 0.621945pᵥ/(p − pᵥ); h = 1.006T + W(2501 + 1.86T). Solve pₛ(Tpoint) = pᵥ.`,'Dew point above freezing; frost point over ice below freezing. Uses ideal moist-air relationships and IAPWS saturation pressure. Supported dry bulb: 32–122 °F.',[[r.dew,'°C dew/frost']]);}},
@@ -661,6 +662,16 @@ choice('arcInstall','§310.3 · installed per listing (bonding per mfr if requir
         note:'Fuel-gas CSST bonding checklist remains IFGC §310 in this tool. Hand off electrical bonding verification to the electrician / adopted NEC and the CSST listing. This chip is not an NEC calculator.'
       }
     });
+    chips.push({
+      id:'deeplink.csst_bonding_receiver',
+      kind:'deeplink',
+      label:'Open CSST electrical-bonding receiver',
+      body:'Continue the IFGC §310 handoff with an adopted NEC / CSST-listing verification checklist. Conductor sizing is not calculated.',
+      route:'csstbonding',
+      cta:'Open bonding checklist',
+      source:'IFGC §310',
+      target:'csstbonding'
+    });
     rows.push(['Crosscode chip',1,'crosscode.csst_bonding_nec_handoff'],['NEC handoff · checklist source',310,'IFGC §310 (stays source)'],['NEC handoff · target',250,'NEC · electrical bonding']);
   }
   return result(cfh,'cfh required',rows,
@@ -992,7 +1003,7 @@ choice('insertUpsize','§504.6 · If insert fittings: tubing one nominal size la
   const passRate=answered?ok/answered*100:0;
   rows.push(['Checklist items OK',ok,'ea'],['Deficient',fail,'ea'],['N/A',na,'ea'],['Unknown',unk,'ea']);
   const ahj='Model IPC §§504.4–504.6 screening checklist (typical discharge-pipe items). Confirm the AHJ-adopted edition and amendments. Not a substitute for adopted code, AHJ, or PE. Screening only — not a compliance certificate.';
-  return result(fail===0&&unk===0?ok:ok,'items OK',rows,
+  return result(fail+unk,'items needing attention',rows,
     `Checklist score = ${ok} OK / ${fail} deficient / ${na} N/A / ${unk} unknown (of ${total} items)`,
     `${fail?fail+' deficient item(s) flagged. ':''}${unk?unk+' item(s) still unknown — verify in the field. ':''}Citations: IPC §504.4 (relief valves) and §504.6 (discharge piping), with related §504.5 context as adopted. Item text is a practical screening paraphrase of typical checklist requirements — verify each clause against the AHJ edition. ${ahj}`,
     [[ok,'OK'],[fail,'deficient'],[unk,'unknown'],[passRate,'% of answered OK']],
@@ -1262,6 +1273,42 @@ choice('ahj_confirmed','AHJ confirmed this path?',[['no','No — verified stays 
       target:'ircinstall'
     });
   }
+  if(f.flag_ashrae_152_charge){
+    chips.push({
+      id:'deeplink.ashrae152_charge_review',
+      kind:'deeplink',
+      label:'Open ASHRAE 15.2 charge review',
+      body:'Continue to a documentation checklist. No charge, RCL, or mmax values are calculated.',
+      route:'ashrae152charge',
+      cta:'Open 15.2 review',
+      source:'ASHRAE 15.2 path',
+      target:'ashrae152charge'
+    });
+  }
+  if(f.flag_ashrae_15_charge){
+    chips.push({
+      id:'deeplink.ashrae15_charge_review',
+      kind:'deeplink',
+      label:'Open Standard 15 charge review',
+      body:'Continue to a documentation checklist for the Standard 15 / IMC Chapter 11 path. No limit values are calculated.',
+      route:'ashrae15charge',
+      cta:'Open Standard 15 review',
+      source:'ASHRAE 15 / IMC Ch 11',
+      target:'ashrae15charge'
+    });
+  }
+  if(f.flag_imc_machinery_room){
+    chips.push({
+      id:'deeplink.imc_machinery_room',
+      kind:'deeplink',
+      label:'Open machinery-room ventilation',
+      body:'Continue the IMC Chapter 11 machinery-room path in the Phase 2 ventilation screen.',
+      route:'mrvent',
+      cta:'Open machinery-room tool',
+      source:'IMC Ch 11',
+      target:'mrvent'
+    });
+  }
   const ahj=`SPEC-ASHRAE152-PATH-GATE. Path gate only — no numeric charge, RCL, or mmax. verified=false until AHJ confirms. Not a substitute for adopted code, AHJ, or PE. Global model pack: ${codeEditionLabel()}.`;
   return result(pathCode,g.path,rows,
     `path=${g.path}; reasons=[${g.reasons.join(', ')}]; flags irc_install=${f.flag_irc_install}, 152_charge=${f.flag_ashrae_152_charge}, 15_charge=${f.flag_ashrae_15_charge}, imc_mr=${f.flag_imc_machinery_room}; verified=false`,
@@ -1286,6 +1333,7 @@ const ircInstallItems=[
 ];
 calculators.push(
 {id:'ircinstall',name:'IRC install checklist',group:'CODE & VENTILATION',icon:'book',desc:'IRC equipment install screening checklist with section citations (condensate, ducts, clearances, access). No refrigerant charge / RCL / mmax fields — companion to ASHRAE 15.2 path gate.',badge:'IRC install · Phase 2',sources:['irc'],fields:[
+
 choice('context','Install context',[['new','New equipment'],['replace','Replacement'],['other','Other / verify']],'new'),
 choice('condensate','Condensate disposal path OK (IRC M1411.3 / M1411.3.1 screen)',ircInstallYn,'unk'),
 choice('ducts','Duct construction / support / clearances OK (IRC M1601 screen)',ircInstallYn,'unk'),
@@ -1314,6 +1362,238 @@ choice('supports','Equipment supports / platforms OK (IRC M1305 / listing screen
 }}
 );
 
+function chargeReviewResult(v,path,keys,cites){
+  let ok=0,fail=0,unk=0,na=0;
+  const rows=[['Resolved documentation path',1,path],['Charge / RCL / mmax calculated',0,'no']];
+  for(const key of keys){
+    const ans=v[key];
+    if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
+    rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
+  }
+  rows.push(['OK',ok,'ea'],['Deficient',fail,'ea'],['Unknown',unk,'ea'],['N/A',na,'ea']);
+  return result(fail+unk,'items needing attention',rows,
+    `${path} documentation review = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; numeric limits = not calculated`,
+    'Documentation gate only. Obtain refrigerant-specific charge limits, RCL/OEL values, mitigation requirements, and calculation procedures from the authorized adopted standard, manufacturer listing, project engineer, and AHJ. This tool intentionally does not invent or reproduce those values.',
+    [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],[...cites,'No numeric limits','AHJ + PE']);
+}
+
+// AUDIT-2026-09 — safe formula/path additions that do not reproduce proprietary table cells.
+calculators.push(
+{id:'csstbonding',name:'CSST bonding handoff receiver',group:'CODE & FUEL GAS',icon:'bolt',desc:'Receive the IFGC §310 handoff and verify adopted NEC / CSST-listing documentation without calculating conductor size.',badge:'IFGC → NEC handoff',sources:['ifgc','nec'],fields:[
+choice('ifgcPath','IFGC source path',[['310_2','IFGC §310.2 bonding jumper'],['310_3','IFGC §310.3 arc-resistant CSST'],['unknown','Unknown / verify']],'unknown'),
+choice('listing','CSST manufacturer listing and instructions available?',ircInstallYn,'unk'),
+choice('bondPoint','Bonding connection point verified by electrician / listing?',ircInstallYn,'unk'),
+choice('electrodePath','Connection to building grounding-electrode system verified?',ircInstallYn,'unk'),
+choice('conductor','Bonding conductor material, routing, protection, and size verified?',ircInstallYn,'unk'),
+choice('inspection','Electrical and fuel-gas AHJ inspection responsibilities confirmed?',ircInstallYn,'unk')
+],calculate:v=>{
+  const checks=['listing','bondPoint','electrodePath','conductor','inspection'];
+  let ok=0,fail=0,unk=0,na=0;
+  const rows=[['Received handoff',1,'crosscode.csst_bonding_nec_handoff'],['IFGC source path',1,v.ifgcPath],['Conductor size calculated',0,'no']];
+  for(const key of checks){
+    const ans=v[key];if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
+    rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
+  }
+  rows.push(['OK',ok,'ea'],['Deficient',fail,'ea'],['Unknown',unk,'ea'],['N/A',na,'ea']);
+  return result(fail+unk,'items needing attention',rows,
+  `handoff receiver = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; conductor size = not calculated`,
+  'IFGC §310 remains the fuel-gas checklist source. Electrical bonding must be verified under the adopted NEC, the specific CSST listing, and local amendments by qualified parties. This receiver does not select conductor size, connection hardware, or inspection acceptance.',
+  [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IFGC §310','Adopted NEC','CSST listing + AHJ']);
+}},
+{id:'ashrae152charge',name:'ASHRAE 15.2 charge review',group:'CODE & VENTILATION',icon:'snow',desc:'Documentation gate for the residential ASHRAE 15.2 charge path; no RCL, mmax, or charge limit is calculated.',badge:'15.2 · documentation gate',sources:['ashrae152','irc'],fields:[
+choice('refrigerant','Refrigerant and safety classification confirmed?',ircInstallYn,'unk'),
+choice('listing','System listing and manufacturer charge data available?',ircInstallYn,'unk'),
+choice('space','Connected-space geometry and occupancy documented?',ircInstallYn,'unk'),
+choice('mitigation','Required mitigation / ventilation / detection path documented?',ircInstallYn,'unk'),
+choice('install','IRC installation checklist completed?',ircInstallYn,'unk'),
+choice('ahj','AHJ review / permit documentation complete?',ircInstallYn,'unk')
+],calculate:v=>chargeReviewResult(v,'ASHRAE 15.2 residential',['refrigerant','listing','space','mitigation','install','ahj'],['ASHRAE 15.2','IRC installation path'])},
+{id:'ashrae15charge',name:'Standard 15 charge review',group:'CODE & VENTILATION',icon:'snow',desc:'Documentation gate for the Standard 15 / IMC Chapter 11 charge path; no RCL, OEL, or charge limit is calculated.',badge:'ASHRAE 15 · documentation gate',sources:['ashrae15','imc'],fields:[
+choice('refrigerant','Refrigerant, safety group, and circuit charge confirmed?',ircInstallYn,'unk'),
+choice('occupancy','Occupancy and refrigerating-system location classified?',ircInstallYn,'unk'),
+choice('authorizedLimits','Authorized Standard 15 charge-limit source available?',ircInstallYn,'unk'),
+choice('machinery','Machinery-room applicability and ventilation reviewed?',ircInstallYn,'unk'),
+choice('relief','Relief discharge / detection / emergency controls coordinated?',ircInstallYn,'unk'),
+choice('pe','Engineer and AHJ review complete?',ircInstallYn,'unk')
+],calculate:v=>chargeReviewResult(v,'ASHRAE 15 / IMC Chapter 11',['refrigerant','occupancy','authorizedLimits','machinery','relief','pe'],['ASHRAE 15','IMC Chapter 11'])},
+{id:'multizoneoa',name:'Multizone outdoor air (IMC 403)',group:'CODE & VENTILATION',icon:'air',desc:'Calculate uncorrected and system outdoor-air intake from aggregate multizone inputs and a source-verified system ventilation efficiency.',badge:'IMC §403 · multizone',sources:['imc'],fields:[
+field('systemPopulation','System population Ps','people',80,0,1e6),
+field('sumZonePopulation','Sum of zone populations ΣPz','people',100,0.001,1e6),
+field('sumPeopleOA','Sum of people outdoor air Σ(Rp×Pz)','cfm',120,0,1e8),
+field('sumAreaOA','Sum of area outdoor air Σ(Ra×Az)','cfm',80,0,1e8),
+field('ev','System ventilation efficiency Ev','0–1',0.9,0.01,1,'any','Enter a value verified from the adopted IMC table or an approved ASHRAE 62.1 procedure. No Ev table cells are embedded.'),
+field('criticalVoz','Critical-zone outdoor airflow Voz','cfm',100,0,1e8),
+field('criticalVpz','Critical-zone primary airflow Vpz','cfm',500,0.001,1e8)
+],calculate:v=>{
+  const D=Math.min(1,v.systemPopulation/v.sumZonePopulation);
+  const Zp=v.criticalVoz/v.criticalVpz;
+  const Vou=D*v.sumPeopleOA+v.sumAreaOA;
+  const Vot=Vou/v.ev;
+  return result(Vot,'cfm system intake',[
+    ['Population diversity D',D,''],
+    ['Critical-zone outdoor-air fraction Zp',Zp,''],
+    ['People component after diversity',D*v.sumPeopleOA,'cfm'],
+    ['Area component',v.sumAreaOA,'cfm'],
+    ['Uncorrected outdoor air Vou',Vou,'cfm'],
+    ['Source-verified system efficiency Ev',v.ev,''],
+    ['System outdoor-air intake Vot',Vot,'cfm'],
+    ['Embedded Ev table cells',0,'none']
+  ],`D = min(1, Ps/ΣPz) = ${fmt(D,4)}; Vou = D×Σ(RpPz) + Σ(RaAz) = ${fmt(Vou,4)} cfm; Vot = Vou/Ev = ${fmt(Vot,4)} cfm`,
+  'Aggregate multiple-zone recirculating-system screen. Enter zone values from the single-zone outdoor-air tool and use the lowest expected primary airflow for a fully occupied VAV critical zone. Ev must come from the adopted source or approved procedure; this tool does not reproduce the table or perform the full primary/secondary system analysis.',
+  [[Vou,'cfm Vou'],[Zp,'critical Zp']],['IMC §403 multiple-zone procedure','Ev user verified','AHJ + mechanical designer']);
+}},
+{id:'parkinggarage',name:'Parking garage ventilation (IMC 404)',group:'CODE & VENTILATION',icon:'air',desc:'Calculate full-on and standby enclosed-parking-garage airflow and gate automatic operation on CO plus NO₂ detection.',badge:'IMC §404 · operating modes',sources:['imc'],fields:[
+field('area','Enclosed garage floor area','ft²',20000,0.001,1e8),
+choice('operation','Operating path',[['continuous','Continuous full-on ventilation'],['automatic','Automatic contaminant-controlled ventilation']],'automatic'),
+choice('co','CO detection provided?',ircInstallYn,'unk'),
+choice('no2','NO₂ detection provided?',ircInstallYn,'unk'),
+choice('listed','Detection equipment listed / labeled for the application?',ircInstallYn,'unk'),
+choice('sequence','Controls maintain nonzero standby and full-on operation?',ircInstallYn,'unk')
+],calculate:v=>{
+  const full=v.area*0.75,standby=v.area*0.05;
+  const checks=['co','no2','listed','sequence'];
+  const open=v.operation==='automatic'?checks.filter(k=>v[k]!=='yes').length:0;
+  const design=v.operation==='continuous'?full:standby;
+  return result(design,v.operation==='continuous'?'cfm continuous':'cfm standby',[
+    ['Full-on rate',0.75,'cfm/ft²'],
+    ['Full-on airflow',full,'cfm'],
+    ['Standby rate',0.05,'cfm/ft²'],
+    ['Standby airflow',standby,'cfm'],
+    ['Automatic-control open checks',open,'ea'],
+    ['CO detector',v.co==='yes'?1:0,v.co],
+    ['NO₂ detector',v.no2==='yes'?1:0,v.no2],
+    ['Listed / labeled',v.listed==='yes'?1:0,v.listed],
+    ['Control sequence',v.sequence==='yes'?1:0,v.sequence],
+    ['Generic ppm setpoints supplied',0,'no']
+  ],`Q_full = 0.75×area = ${fmt(full)} cfm; Q_standby = 0.05×area = ${fmt(standby)} cfm`,
+  `${v.operation==='automatic'&&open?'Automatic path is incomplete: resolve every detector/listing/control check. ':''}Model 2024 IMC §404 screening. Do not invent generic CO/NO₂ setpoints; use listed equipment, manufacturer instructions, the adopted code, and approved control sequences. Coordinate fire/life-safety operation and local amendments.`,
+  [[full,'cfm full-on'],[standby,'cfm standby'],[open,'open checks']],['IMC §404','CO + NO₂ detection','AHJ + controls designer']);
+}},
+{id:'condensateoverflow',name:'Condensate overflow protection',group:'CODE & VENTILATION',icon:'water',desc:'Route IMC §307.2.3 auxiliary condensate protection when primary-drain overflow could damage building components.',badge:'IMC §307.2.3 · path gate',sources:['imc'],fields:[
+choice('damageRisk','Could primary-drain overflow damage building components?',[['unknown','Unknown — inspect / verify'],['yes','Yes'],['no','No']],'unknown','This is the trigger question for the §307.2.3 auxiliary-protection path. Primary condensate disposal remains required separately.'),
+choice('method','Selected auxiliary-protection method',[
+['secondary_pan_drain','Auxiliary pan with separate drain'],
+['overflow_line','Separate overflow drain from equipment pan'],
+['pan_shutoff','Auxiliary pan + listed water-level shutoff'],
+['primary_shutoff','Listed water-level shutoff at primary / overflow / equipment pan'],
+['internal_monitor','Internal primary-pan monitoring device where external pan / secondary drain is impracticable'],
+['none','None selected']
+],'none'),
+choice('separateTermination','Auxiliary / overflow path is separate and conspicuous?',[['unknown','Unknown / verify'],['yes','Yes'],['no','No'],['na','N/A — shutoff-only method']],'unknown'),
+choice('listedShutoff','Water-level device is listed and shuts equipment off before overflow?',[['unknown','Unknown / verify'],['yes','Yes'],['no','No'],['na','N/A — drain method']],'unknown'),
+choice('serviceAccess','Protection remains accessible for inspection and service?',[['unknown','Unknown / verify'],['yes','Yes'],['no','No']],'unknown')
+],calculate:v=>{
+  const ahj='Model 2024 IMC §307.2.3 screening. Confirm the AHJ-adopted edition, amendments, equipment listing, discharge location, pan construction, and device standard. Primary condensate disposal and drain sizing are separate. Not a compliance certificate.';
+  if(v.damageRisk==='unknown')throw Error('Determine whether a primary-drain overflow could damage building components before selecting a §307.2.3 path.');
+  if(v.damageRisk==='no'){
+    return result(0,'auxiliary path not triggered',[
+      ['Overflow damage trigger',0,'no'],
+      ['Primary condensate disposal',1,'still required'],
+      ['AHJ / listing review',1,'required']
+    ],'damageRisk = no → §307.2.3 auxiliary-protection trigger not established by this screen',
+    `This result does not waive primary drainage, manufacturer instructions, or another adopted-code trigger. ${ahj}`,
+    [],['IMC §307.2.3','Primary drain separate','AHJ verify']);
+  }
+  if(v.method==='none')throw Error('Overflow damage is possible: select one adopted §307.2.3 auxiliary-protection method.');
+  const drainMethod=v.method==='secondary_pan_drain'||v.method==='overflow_line';
+  const shutoffMethod=v.method==='pan_shutoff'||v.method==='primary_shutoff'||v.method==='internal_monitor';
+  const issues=[];
+  if(drainMethod&&v.separateTermination!=='yes')issues.push('verify a separate, conspicuous auxiliary / overflow discharge path');
+  if(shutoffMethod&&v.listedShutoff!=='yes')issues.push('verify a listed water-level device that shuts equipment off before overflow');
+  if(v.serviceAccess!=='yes')issues.push('verify inspection and service access');
+  const methodLabels={
+    secondary_pan_drain:'auxiliary pan + separate drain',
+    overflow_line:'separate equipment-pan overflow line',
+    pan_shutoff:'auxiliary pan + water-level shutoff',
+    primary_shutoff:'primary / overflow / equipment-pan shutoff',
+    internal_monitor:'internal primary-pan monitoring device'
+  };
+  const ready=issues.length===0;
+  return result(ready?1:0,ready?'screen ready':'verification open',[
+    ['Overflow damage trigger',1,'yes'],
+    ['Selected path',1,methodLabels[v.method]],
+    ['Separate / conspicuous discharge',v.separateTermination==='yes'?1:0,v.separateTermination],
+    ['Listed shutoff before overflow',v.listedShutoff==='yes'?1:0,v.listedShutoff],
+    ['Inspection / service access',v.serviceAccess==='yes'?1:0,v.serviceAccess],
+    ['Open verification items',issues.length,'ea']
+  ],`damageRisk=yes → ${methodLabels[v.method]}; open verification items = ${issues.length}`,
+  `${ready?'Selected path has no open answers in this screen.':'Open: '+issues.join('; ')+'.'} This does not verify pan dimensions, material, termination location, device listing, wiring, or installation. ${ahj}`,
+  [[issues.length,'open checks']],['IMC §307.2.3','Auxiliary protection','AHJ + listing verify']);
+}},
+{id:'ductsmoke',name:'Duct smoke detector gate',group:'CODE & VENTILATION',icon:'air',desc:'Screen IMC §606.2 return-air, common-duct, and multistory-riser airflow triggers without claiming exception approval.',badge:'IMC §606.2 · path gate',sources:['imc'],fields:[
+field('systemCfm','Individual return-air system design capacity','cfm',1800,0,1e7),
+choice('shared','Multiple systems share common supply / return ducts or plenums?',[['no','No'],['yes','Yes']],'no'),
+field('combinedCfm','Combined design capacity at common duct / plenum','cfm',0,0,1e8),
+field('riserStories','Stories served by return-air riser','stories',1,1,200,1),
+field('riserCfm','Return-air riser design capacity','cfm',0,0,1e8),
+choice('exceptionPath','Is an adopted exception being claimed?',[['no','No'],['yes','Yes — verify manually'],['unknown','Unknown / needs review']],'no','This tool does not decide exception eligibility or fire-alarm sequence compliance.')
+],calculate:v=>{
+  const individual=v.systemCfm>2000;
+  const common=v.shared==='yes'&&v.combinedCfm>2000;
+  const riser=v.riserStories>=2&&v.riserCfm>15000;
+  const triggers=[individual,common,riser].filter(Boolean).length;
+  const manual=v.exceptionPath!=='no';
+  const status=manual?'verify exception':triggers?'detector path triggered':'no airflow trigger';
+  return result(triggers,status,[
+    ['Individual return > 2,000 cfm',individual?1:0,individual?'triggered':'not triggered'],
+    ['Common-duct combined > 2,000 cfm',common?1:0,common?'triggered':'not triggered'],
+    ['Return riser ≥2 stories and > 15,000 cfm',riser?1:0,riser?'triggered':'not triggered'],
+    ['Trigger categories',triggers,'ea'],
+    ['Exception path',manual?1:0,v.exceptionPath],
+    ['NFPA 72 / controls coordination',1,'required when applicable'],
+    ['Inspection / maintenance access',1,'required']
+  ],`triggers = (systemCFM > 2000) + (shared && combinedCFM > 2000) + (stories ≥ 2 && riserCFM > 15000) = ${triggers}`,
+  `${manual?'An exception is claimed or unresolved; do not use this screen as approval. ':''}A trigger category is not a physical detector count. Verify detector location, entire-airflow monitoring, fan shutdown / alarm sequence, exceptions, UL listing, NFPA 72 coordination, and AHJ amendments. Model 2024 IMC §606.2 screening only; not a fire-alarm design or compliance certificate.`,
+  [[triggers,'trigger categories']],['IMC §606.2','NFPA 72 coordination','AHJ + fire alarm designer']);
+}},
+{id:'frictionrate',name:'Duct friction rate',group:'AIR & DUCTS',icon:'duct',desc:'Calculate preliminary available-static-pressure friction rate from total effective length.',badge:'Manual D prep · engineering',sources:['manuald'],fields:[
+field('externalStatic','Equipment available external static pressure','in. w.c.',0.5,0.001,20),
+field('filterDrop','Filter pressure drop','in. w.c.',0.1,0,20),
+field('coilDrop','Coil pressure drop outside equipment rating','in. w.c.',0,0,20),
+field('accessoryDrop','Grilles, registers, dampers, and accessories','in. w.c.',0.1,0,20),
+field('reserve','Design reserve / other losses','in. w.c.',0.05,0,20),
+field('tel','Total effective length','ft',200,0.1,10000)
+],calculate:v=>{
+  const deductions=v.filterDrop+v.coilDrop+v.accessoryDrop+v.reserve;
+  const asp=v.externalStatic-deductions;
+  if(asp<=0)throw Error('Pressure-drop deductions consume all available external static pressure. Revise the system or equipment selection.');
+  const fr=asp*100/v.tel;
+  return result(fr,'in. w.c. / 100 ft',[
+    ['Equipment external static',v.externalStatic,'in. w.c.'],
+    ['Pressure-drop deductions',deductions,'in. w.c.'],
+    ['Available static pressure',asp,'in. w.c.'],
+    ['Total effective length',v.tel,'ft'],
+    ['Preliminary friction rate',fr,'in. w.c. / 100 ft']
+  ],`ASP = ESP − Σ component drops = ${fmt(v.externalStatic,4)} − ${fmt(deductions,4)} = ${fmt(asp,4)} in. w.c.; FR = ASP × 100 / TEL = ${fmt(fr,4)}`,
+  'Preliminary Manual D preparation only. Confirm which filter, coil, and accessory losses are already included in the equipment rating; do not double-count. Final duct design requires manufacturer blower data, fitting effective lengths, room-by-room airflow, sound, leakage, balancing, and actual installed performance.',
+  [[asp,'in. w.c. available']],['ACCA Manual D','Manufacturer blower table','Engineering calculation']);
+}},
+{id:'makeupbalance',name:'Exhaust / makeup-air balance',group:'CODE & VENTILATION',icon:'air',desc:'Quantify replacement-air deficit for a kitchen or process exhaust system; the AHJ decides what is approximately equal.',badge:'IMC §508 · balance',sources:['imc'],fields:[
+field('exhaust','Total mechanical exhaust','cfm',2000,0,1e7),
+field('dedicated','Dedicated makeup air delivered','cfm',1600,0,1e7),
+field('transfer','Approved transfer air available','cfm',200,0,1e7),
+field('hvacCredit','Outdoor / supply air credit approved for replacement','cfm',0,0,1e7,'any','Use only air that is available during exhaust operation and approved by the designer / AHJ.'),
+field('netExfiltration','Design net exfiltration','cfm',0,0,1e7,'any','Enter the project-design net exfiltration quantity. This calculator does not select it or an allowable pressure target.')
+],calculate:v=>{
+  const replacement=v.dedicated+v.transfer+v.hvacCredit;
+  const requiredReplacement=v.exhaust+v.netExfiltration;
+  const deficit=Math.max(0,requiredReplacement-replacement);
+  const surplus=Math.max(0,replacement-requiredReplacement);
+  const coverage=v.exhaust>0?replacement/v.exhaust*100:100;
+  return result(deficit,'cfm deficit',[
+    ['Total exhaust',v.exhaust,'cfm'],
+    ['Replacement air credited',replacement,'cfm'],
+    ['Design net exfiltration',v.netExfiltration,'cfm'],
+    ['Replacement target used',requiredReplacement,'cfm'],
+    ['Unfilled replacement-air deficit',deficit,'cfm'],
+    ['Replacement surplus',surplus,'cfm'],
+    ['Replacement / exhaust ratio',coverage,'%']
+  ],`required replacement = total exhaust + net exfiltration = ${fmt(requiredReplacement)} cfm; provided replacement = dedicated + transfer + approved HVAC credit = ${fmt(replacement)} cfm; deficit = max(0, required − provided) = ${fmt(deficit)} cfm`,
+  'Air-balance arithmetic only. This tool does not select an allowable building pressure, approve transfer-air sources, or establish code compliance. Verify simultaneous operation, short-circuiting, temperature control, capture and containment, combustion-appliance effects, energy-code controls, and the AHJ-adopted IMC §508 requirements.',
+  [[replacement,'cfm replacement'],[coverage,'% of exhaust']],['IMC §508','User-supplied air credits','AHJ + mechanical designer']);
+}}
+);
+
 
 const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride'],combustionair:['freeAreaPct'],gaspipesize:['heatContent','fittings','csstFit','otherEL'],mrvent:['charge2','dp2','charge3','dp3','riseNote']};
 Object.assign(units,{
@@ -1332,13 +1612,36 @@ const groups=['HEATING & COOLING','AIR & DUCTS','CODE & VENTILATION','CODE & FUE
 const groupNames={'HEATING & COOLING':'Heat & cooling','AIR & DUCTS':'Air & ducts','CODE & VENTILATION':'Code & ventilation','CODE & FUEL GAS':'Fuel gas / IFGC',REFRIGERATION:'Refrigeration',HYDRONICS:'Hydronics','ENERGY & MATH':'Energy & math'};
 const keywords={btu:'btu air conditioner capacity room cooling tonnage',heat:'heat transfer conduction q ua delta t assembly load',furnace:'furnace efficiency afue output input nameplate',airflow:'sensible airflow cfm 1.08 delta t cooling heating',ach:'air changes per hour ventilation room volume cfm',duct:'duct velocity fpm rectangular round cross section',water:'hydronic heat water flow gpm delta t btuh',electric:'electrical power volts amps pf three phase single phase kw',cost:'operating cost kwh rate run hours energy bill',geometry:'area volume rectangular room dimensions ft2 ft3',humidity:'psychrometrics relative humidity rh dewpoint enthalpy moisture',superheat:'superheat dew point suction saturation refrigerant',subcooling:'subcooling bubble point liquid line refrigerant',totalheat:'enthalpy air conditioning total cooling',latent:'moisture grains dehumidification',fan:'rpm affinity speed horsepower',targetach:'ventilation cfm air changes',mixed:'mixed air temperature outdoor return damper',roundduct:'duct sizing diameter',static:'tesp pressure drop',waterflow:'hydronic flow gpm density specific heat',eer:'coefficient performance efficiency cop',rvalue:'r-value u-factor insulation thermal resistance',rise:'furnace temperature rise delta t',outdoorair:'imc 403 outdoor air vbz voz ventilation occupancy table 403.3.1.1 breathing zone',exhaust:'imc local exhaust toilet locker kitchen parking garage table 403',combustionair:'ifgc 304 combustion air opening louver volume kair outdoor indoor mechanical fuel gas',condensate:'imc 307.2.2 ipc 314.2.2 condensate drain size slope cooling tons',venting:'ifgc chapter 5 venting category 503.4 504 connector positive pressure condensate direct-vent',dryerduct:'imc 504.9.4.1 dryer exhaust duct equivalent length fittings 35 ft makeup air',hoodcfm:'imc 507 type i type ii hood capacity cfm per linear foot canopy island dishwasher grease',gaspipesize:'ifgc 402 gas pipe sizing longest branch hybrid table 402.4 cfh csst bonding 310.2 310.3',mrvent:'imc 1105.6.3.1 1105.6.3.2 eq 11-2 ashrae 15 addendum q level 2 machinery room ventilation continuous emergency sqrt G A2L B2L 1106.4 table 1106.4.2 EXAMPLE_UNVERIFIED umc verify_manual Qstar Gstar',clearance308:'ifgc 308.1 308.2 table 308.2 clearance reduction combustibles interpolation masonry ul 1618 EXAMPLE_UNVERIFIED phoenix',tpdischarge:'ipc 504.4 504.6 temperature pressure relief valve t&p discharge piping checklist air gap',ircvent:'irc m1503 m1505 bath kitchen exhaust whmv whole house ventilation eq 15-1 makeup air duct length residential',ashrae152path:'ashrae 15.2 path gate residential standard 15 imc chapter 11 rcl charge listing dwelling',ircinstall:'irc install checklist condensate ducts clearances m1411 m1601 m1307 access supports no charge'};
 const essentials={btu:'Room AC estimate · 8 ft ceilings · not a Manual J load.',heat:'One assembly only; excludes other building loads.',furnace:'Nameplate output/input ratio; not seasonal AFUE.',airflow:'Sensible heat only; default air coefficient is 1.08.',ach:'Air changes do not establish outdoor ventilation compliance.',duct:'Velocity check; not a complete duct-system design.',water:'Approximate liquid water properties; not glycol.',electric:'Real electrical input; not heat-pump thermal output.',cost:'Constant power during the entered run hours.',geometry:'Rectangular dimensions only.',humidity:'Dew point above freezing; frost point below freezing.',superheat:'Use dew-point saturation temperature for blends.',subcooling:'Use bubble-point saturation temperature for blends.',totalheat:'Positive = cooling; match both enthalpy reference datums.',latent:'Positive = moisture removal; negative = moisture added.',fan:'Same fan, density and similar operating conditions.',targetach:'You supply the target ACH; no code target is selected.',mixed:'Dry-air mass share; equal specific heat; no condensation.',roundduct:'Geometric diameter; verify pressure, fittings and sound.',static:'Use signed readings at manufacturer-specified locations.',waterflow:'Use fluid properties at the actual concentration and temperature.',eer:'Same-condition ratio; not SEER2 or HSPF2.',rvalue:'Use effective assembly resistance, including thermal bridges.',rise:'Use furnace heat output, not rated fuel input.',outdoorair:'Model 2024 IMC (IMC §101.1) · verify AHJ edition · screening only · not a compliance certificate.',exhaust:'Exhaust column only · makeup/OA separate · model 2024 IMC §101.1 · verify AHJ edition.',combustionair:'Model 2024 IFGC §304 · verify AHJ edition · screening only · not a compliance certificate.',condensate:'IMC §307.2.2 ≡ IPC §314.2.2 · verify AHJ edition · slope ≥⅛ in/ft · never decrease toward disposal.',venting:'IFGC Ch 5 category route · Table 504 cells not digitized · §503.10.4 hard block · verify AHJ edition.',dryerduct:'IMC §504.9.4.1 Method 1 · 35 ft EL · fitting EL are screening helpers · verify Table 504.9.4.1 with AHJ.',hoodcfm:'IMC §507 Type I/II · cfm/ft × length · editable rates · verify AHJ table cells · not compliance.',gaspipesize:'IFGC §402 method helper · required cfh + developed length · select size from Table 402.4(x) · no invented diameters · §310 CSST checklist · NEC handoff chip when CSST present.',mrvent:'IMC default · §1105.6.3.1 continuous EXAMPLE_UNVERIFIED · non_2L_sqrtG Eq 11-2 · A2L/B2L Level 1/2 (Addendum q; never √G) · UMC verify_manual · no ppm rows.',clearance308:'IFGC §308.1/§308.2 Table 308.2 LOOKUP · interpolate 36/18/12/9/6 · masonry Above N/A · UL 1618 listing-only · EXAMPLE_UNVERIFIED.',tpdischarge:'IPC §§504.4–504.6 T&P / discharge checklist · typical items · verify AHJ edition · screening only.',ircvent:'IRC M1503 / M1505 only · EXAMPLE_UNVERIFIED · refuse IMC · kitchen 25 / bath 20 continuous · Eq 15-1 0.01A.',ashrae152path:'Path gate only · no charge/RCL/mmax · verified=false · AHJ + PE.',ircinstall:'IRC install Phase 2 · citation screens (M1411/M1601/M1305–M1307/M1401/Ch 24) · EXAMPLE_UNVERIFIED · no charge fields · companion to 15.2 path gate.'};
+Object.assign(keywords,{
+  csstbonding:'csst electrical bonding handoff receiver ifgc 310 nec listing grounding electrode',
+  ashrae152charge:'ashrae 15.2 residential charge documentation rcl mmax mitigation review',
+  ashrae15charge:'ashrae 15 imc chapter 11 charge documentation rcl oel machinery room review',
+  multizoneoa:'imc 403 multizone outdoor air diversity vou vot ev critical zone zp',
+  parkinggarage:'imc 404 enclosed parking garage ventilation co no2 full standby automatic',
+  condensateoverflow:'imc 307.2.3 auxiliary pan overflow drain water level detector condensate protection',
+  ductsmoke:'imc 606.2 duct smoke detector return air 2000 cfm common plenum 15000 riser nfpa 72',
+  frictionrate:'manual d available static pressure total effective length friction rate asp tel',
+  makeupbalance:'imc 508 kitchen hood process exhaust makeup replacement transfer air balance deficit'
+});
+Object.assign(essentials,{
+  csstbonding:'Receives the IFGC §310 handoff · conductor size and electrical acceptance remain with listing/NEC/AHJ.',
+  ashrae152charge:'Documentation gate only · no ASHRAE 15.2 charge, RCL, or mmax values are calculated.',
+  ashrae15charge:'Documentation gate only · no Standard 15 charge, RCL, or OEL values are calculated.',
+  multizoneoa:'Aggregate IMC multizone screen · Ev must come from an authorized adopted source.',
+  parkinggarage:'IMC §404 operating-mode screen · no generic CO/NO₂ setpoints are supplied.',
+  condensateoverflow:'IMC §307.2.3 path gate · primary drainage remains separate · verify pan/device details and listing.',
+  ductsmoke:'Airflow-trigger screen only · exceptions, detector count/location, controls, and NFPA 72 remain manual.',
+  frictionrate:'Preliminary Manual D preparation · confirm blower data and avoid double-counting component losses.',
+  makeupbalance:'Air-balance arithmetic · the AHJ/designer selects pressure targets and approves replacement-air credits.'
+});
+
 const values=Object.fromEntries(calculators.map(c=>[c.id,Object.fromEntries(c.fields.map(f=>[f.key,f.value]))]));
 const codeEditionOptions=[
-['2024','2024 US model pack (IMC / IFGC / IPC / IECC)'],
-['2021','2021 US model pack'],
-['2018','2018 US model pack'],
-['mixed','Mixed / phased adoption — verify each code with AHJ'],
-['other','Other / local amendments only — AHJ governs']
+['2024','2024 embedded screening data (IMC / IFGC / IPC / IECC)'],
+['2021','2021 project context · embedded values remain 2024'],
+['2018','2018 project context · embedded values remain 2024'],
+['mixed','Mixed adoption · embedded values remain 2024'],
+['other','Other / local amendments · embedded values remain 2024']
 ];
 const CODE_EDITION_KEY='hvac-wb-code-edition';
 function loadCodeEdition(){
@@ -1348,6 +1651,7 @@ function loadCodeEdition(){
 let codeEdition=loadCodeEdition();
 function codeEditionLabel(){return (codeEditionOptions.find(([k])=>k===codeEdition)||codeEditionOptions[0])[1];}
 function saveCodeEdition(v){codeEdition=v;try{localStorage.setItem(CODE_EDITION_KEY,v);}catch(e){}}
+function codeEditionDataNote(){return codeEdition==='2024'?'Embedded code values use the 2024 model data identified by each tool.':'Project context only: selecting this option does not transform embedded 2024 code values. Verify every value against the AHJ-adopted edition.';}
 const LEGAL_DISCLAIMER='Not a substitute for the adopted code, the Authority Having Jurisdiction (AHJ), or a licensed professional engineer (PE). National US model-code / model-standard screening only — confirm edition, amendments, and project-specific requirements before design or compliance decisions.';
 let active='btu',search='',currentResult=null,timer,conv={category:'Power / capacity',from:'BTU/h',to:'tons refrigeration',value:12000};
 const routeValid=id=>calculators.some(c=>c.id===id)||id==='convert'||id==='references'||id==='changelog';
@@ -1419,6 +1723,10 @@ function inactiveField(id,key,v){
     if(key==='equipment_type')return m!=='kitchen_equipment';
     if(key==='floor_area'||key==='bedrooms'||key==='balanced_credit'||key==='runtime_pct')return m!=='whmv';
     if(key==='duct_run_ft'||key==='duct_limit_ft'||key==='elbows')return m!=='bath_duct_length';
+    return false;
+  }
+  if(id==='ductsmoke'){
+    if(key==='combinedCfm')return v.shared!=='yes';
     return false;
   }
   return false;
@@ -1528,7 +1836,7 @@ function resultLabelFor(c,r){
     default:return 'Result';
   }
 }
-function render(){renderNav();const ed=document.querySelector('#code-edition');if(ed&&ed.value!==codeEdition)ed.value=codeEdition;const ahjNote=document.querySelector('.ahj-note');if(ahjNote)ahjNote.innerHTML=`App-wide screening pack: <strong>${esc(codeEditionLabel())}</strong>. AHJ-adopted text always governs.`;document.querySelector('#mobile-calc').value=active;const main=document.querySelector('main');if(active==='references'){main.innerHTML=references();currentResult=null;document.querySelector('#print').disabled=false;return;}if(active==='changelog'){main.innerHTML=changelog();currentResult=null;document.querySelector('#print').disabled=false;return;}if(active==='convert'){main.innerHTML=converter();bindConverter();return;}const c=calculators.find(x=>x.id===active),adv=advancedFields[active]||[],normal=c.fields.filter(f=>!adv.includes(f.key)),vals=values[active];
+function render(){renderNav();const ed=document.querySelector('#code-edition');if(ed&&ed.value!==codeEdition)ed.value=codeEdition;const ahjNote=document.querySelector('.ahj-note');if(ahjNote)ahjNote.innerHTML=`App-wide screening pack: <strong>${esc(codeEditionLabel())}</strong>. ${esc(codeEditionDataNote())} AHJ-adopted text always governs.`;document.querySelector('#mobile-calc').value=active;const main=document.querySelector('main');if(active==='references'){main.innerHTML=references();currentResult=null;document.querySelector('#print').disabled=false;return;}if(active==='changelog'){main.innerHTML=changelog();currentResult=null;document.querySelector('#print').disabled=false;return;}if(active==='convert'){main.innerHTML=converter();bindConverter();return;}const c=calculators.find(x=>x.id===active),adv=advancedFields[active]||[],normal=c.fields.filter(f=>!adv.includes(f.key)),vals=values[active];
   const advOpen=adv.some(k=>vals[k]!==c.fields.find(f=>f.key===k).value);
   const advFields=c.fields.filter(f=>adv.includes(f.key));
   const inputBody=panelHead('Inputs','<button id="reset" type="button" class="text-button">Reset</button>')+`<form id="calc-form" novalidate>${fieldsGrid(normal,vals)}${adv.length?advancedSection(advancedTitleFor(active),advFields,vals,advOpen):''}${calculatorDisclaimers(active)}${formStatus()}</form>`;
@@ -1570,6 +1878,14 @@ function references(){const entries=[
 ['Machinery rooms','IMC §1105.6.3.1 / §1105.6.3.2 / §1106.4 · ASHRAE 15','Phase 2: continuous EXAMPLE_UNVERIFIED (§1105.6.3.1); non_2L_sqrtG Eq 11-2; A2L/B2L Level 1/2 with Addendum q Level 2 equations (never √G); UMC → verify_manual. No invented ppm tables.',sourceLinks.imc[1]],
 ['Clearance reduction','2024 IFGC · §§308.1–308.2','Table 308.2 reduced-clearance LOOKUP with linear interpolation; EXAMPLE_UNVERIFIED Phoenix FG 2024 cells; UL 1618 listing path only; hard blocks for listing/service conflicts.',sourceLinks.ifgc[1]],
 ['T&P discharge','2024 IPC · §§504.4–504.6','Temperature-and-pressure relief valve and discharge-piping screening checklist. Typical §504.6 items; verify AHJ edition.',sourceLinks.ipc[1]],
+['Condensate overflow','2024 IMC · §307.2.3','Auxiliary drain-pan, overflow-line, and listed shutoff-device path gate where primary-drain overflow could damage building components.',sourceLinks.imc[1]],
+['Duct smoke detection','2024 IMC · §606.2','Return-air, shared-duct, and multistory-riser airflow trigger screen. Exceptions, detector layout, controls, and NFPA 72 coordination remain manual.',sourceLinks.imc[1]],
+['Makeup-air balance','2024 IMC · §508','Replacement-air deficit arithmetic for kitchen/process exhaust. The tool does not select a pressure target or approve transfer-air sources.',sourceLinks.imc[1]],
+['Multizone outdoor air','2024 IMC · §403','Population diversity, uncorrected outdoor air, and system intake with source-verified system ventilation efficiency.',sourceLinks.imc[1]],
+['Parking garages','2024 IMC · §404','Full-on and standby airflow with a CO + NO₂ automatic-control gate; no generic ppm setpoints.',sourceLinks.imc[1]],
+['Refrigerant charge review','ASHRAE 15 / 15.2','Documentation gates only. Refrigerant-specific charge, RCL, OEL, and mmax limits require the authorized standard, engineer, and AHJ.',sourceLinks.ashrae15[1]],
+['CSST electrical handoff','IFGC §310 → adopted NEC / listing','Cross-code receiver checklist. It does not calculate conductor size or establish electrical approval.',sourceLinks.nec[1]],
+['Duct friction rate','ACCA Manual D preparation','Available-static-pressure and total-effective-length friction-rate calculation; final duct design still requires blower and fitting data.',sourceLinks.manuald[1]],
 ['Energy','2024 IECC','Energy-code reference; this app does not certify building energy compliance.',sourceLinks.iecc[1]],
 ['Room cooling','ENERGY STAR','Floor-area table plus sun, occupancy and kitchen adjustments. 100–2,500 ft², 8 ft ceiling basis; shared boundaries use the higher band.',sourceLinks.energy[1]],
 ['Detailed loads','ACCA Manual J','Residential load-design reference. Room estimates and single-assembly heat transfer do not implement Manual J.',sourceLinks.manual[1]],
@@ -1584,7 +1900,9 @@ return heading('Codes & sources','Open the source behind a calculation.','Refere
 function changelog(){
   const items=[
     ['2026-09-12','UI uniformity · reusable components','<ul><li>Extracted shared UI renderers (<code>panelHead</code>, <code>fieldsGrid</code>, <code>advancedSection</code>, <code>codeDisclaimer</code>, <code>workspace</code>, <code>resultHero</code>, <code>resultRows</code>, <code>chipHTML</code>, <code>methodDetails</code>, <code>emptyResult</code>).</li><li>Moved per-calculator disclaimer copy and result labels out of the inline <code>render</code>/<code>run</code> templates.</li><li>Replaced inline cite-tag styles with a shared <code>.cite-tags</code> class aligned to equivalents spacing.</li><li>Unit converter now reuses the same workspace/result panel composition.</li></ul>'],
+    ['2026-09-12','Project coverage audit · priority calculators and handoffs','<ul><li><strong>Condensate overflow protection</strong> — IMC §307.2.3 auxiliary-protection path gate.</li><li><strong>Duct smoke detector gate</strong> — IMC §606.2 airflow-trigger screen with exceptions kept manual.</li><li><strong>Duct friction rate</strong> — available static pressure / total effective length Manual D preparation.</li><li><strong>Exhaust / makeup-air balance</strong> — IMC §508 documented balance arithmetic without inventing pressure limits.</li><li><strong>Multizone outdoor air + parking garage</strong> — IMC §403 / §404 formula and control screens.</li><li><strong>Handoff completion</strong> — CSST electrical receiver, ASHRAE 15 / 15.2 charge-review gates, and machinery-room deep link.</li><li>Calculator count: <strong>47</strong>.</li></ul>'],
     ['2026-09-12','Audit fixes + IRC install Phase 2','<ul><li>Restored missing nav icons (<code>snow</code>, <code>heat</code>, <code>duct</code>, <code>water</code>, <code>bolt</code>, <code>cost</code>) that previously fell back to the air glyph.</li><li>Completed search <code>keywords</code> for all 38 calculators (14 engineering tools were invisible to sidebar search).</li><li>Corrected ASHRAE 15.2 path-gate reason for commercial + single-unit cases to <code>commercial_building_not_15_2_residential</code>.</li><li><strong>IRC install Phase 2</strong> — citation-backed screening checklist (IRC M1411 / M1601 / M1305–M1307 / M1401 / Ch 24 + access/supports); still no charge/RCL/mmax fields; tagged EXAMPLE_UNVERIFIED.</li><li>Prefer Geist Sans via @font-face (jsDelivr woff2) over Inter for UI type.</li><li>Added Node regression harness <code>scripts/verify.mjs</code>.</li></ul>'],
+
     ['2026-09-11','IFGC §308 clearance LOOKUP + MRVENT Phase 2','<ul><li><strong>Clearance reduction (IFGC §308)</strong> — deep Table 308.2 8×5×2 LOOKUP with linear interpolation on columns 36/18/12/9/6; all cells <code>EXAMPLE_UNVERIFIED</code> (Phoenix FG 2024 screen); hard blocks for listing disallow / CA·draft-hood·service interference / no extrapolate below 6 in / MVP stop &gt;36 in / masonry Above N/A; UL 1618 listing path only.</li><li><strong>MRVENT Phase 2</strong> — continuous cites IMC §1105.6.3.1 + optional 18°F rise note; non-2L Eq 11-2 unchanged; A2L/B2L never √G; Level 2 from ASHRAE 15 Addendum q (P=DP+14.70; Q*/G*; Eq 8-1/8-2/8-3; Q≥Q1; 2-sig round-up; multi-refrig max Q) tagged <code>EXAMPLE_UNVERIFIED</code> / 15-2024 confirm.</li><li>Calculator count: <strong>38</strong>.</li></ul>'],
     ['2026-09-11','IRC M1503/M1505 WHMV + ASHRAE 15.2 path gate','<ul><li><strong>IRC bath/kitchen + WHMV</strong> — modes local_kitchen / local_bath / kitchen_equipment / whmv / bath_duct_length; labels IRC M1503 / M1505; <code>imc_delta_banner</code>; EXAMPLE_UNVERIFIED; refuses IMC <code>code_set</code>.</li><li><strong>SPEC-ASHRAE152-PATH-GATE</strong> — path only (<code>15_2_residential</code> | <code>std15_imc_ch11</code> | <code>blocked_need_ahj</code>); flags + IRC install checklist deep-link; no charge/RCL/mmax; <code>verified=false</code>.</li><li>Calculator count: <strong>38</strong>.</li></ul>'],
     ['2026-09-11','CSST bonding NEC handoff chip','<ul><li>Gas pipe tool emits <code>crosscode.csst_bonding_nec_handoff</code> when CSST is present (CSST table class, §310 path, or CSST fitting allowance).</li><li>IFGC §310 remains the bonding checklist source; chip hands electrical bonding verification to adopted NEC / listing.</li></ul>'],
@@ -1596,5 +1914,6 @@ function changelog(){
   ];
   return heading('Changelog','What changed in this workbench.','Public notes')+editionNote(`Tools are built for <em>national US screening</em> against selectable <em>model packs</em> (active: ${esc(codeEditionLabel())}). Model packs organize defaults and citations; they do not replace the law. <strong>Always verify the AHJ-adopted edition and amendments.</strong> ${LEGAL_DISCLAIMER}`)+`<div class="changelog-list">${items.map(([when,title,html])=>changelogItem(when,title,html)).join('')}</div><p class="smallprint">Changelog summarizes product changes only. It is not a code adoption history for any jurisdiction.</p>`;
 }
+document.querySelector('meta[name="description"]').content=`${calculators.length} compact HVAC calculators, ${Object.keys(units).length} unit conversion groups, live results, formulas, and source references.`;
 shell();const initial=location.hash.slice(1);if(routeValid(initial))active=initial;render();window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(id!==active&&routeValid(id)){active=id;render();}});
 </script></body></html>
