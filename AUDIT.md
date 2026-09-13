@@ -121,9 +121,9 @@ Added published-distance and formula screens without inventing proprietary table
 - Heat-exchanger effectiveness, Darcy friction head (user-supplied f)
 - Steam mass from load, refrigerant mass flow, fitting equivalent-length sum
 
-### Code-context selector trust fix
+### Single 2024 code edition
 
-The selector now states that non-2024 choices are project context only and do not transform embedded 2024 values. This removes the prior implication that changing a label swapped the underlying data pack.
+The code-edition dropdown was removed. Screening is fixed to the latest embedded 2024 model-code pack (IMC / IFGC / IPC / IECC). Copy still states that the AHJ-adopted edition and amendments govern.
 
 ## Needs verified source data before implementation
 

@@ -6,8 +6,8 @@ Live site: https://hvac-workbench.vercel.app
 
 Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **112** calculators with code-oriented screening tools:
 
-- **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
-- **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
+- **2024 model-code screening** — fixed to the latest embedded 2024 IMC / IFGC / IPC / IECC pack, with a strong legal disclaimer (not a substitute for adopted code, AHJ, or PE)
+- **Changelog** — public SPA changelog (national US screening against 2024 model codes; AHJ always)
 - **Outdoor air (IMC 403)** — breathing-zone and zone outdoor airflow (`Vbz`, `Voz`) from a practical subset of 2024 IMC Table 403.3.1.1 rates, with air-distribution effectiveness `Ez`
 - **Local exhaust (IMC)** — exhaust-column helper for toilets, lockers, kitchens, parking garages, and similar spaces
 - **Combustion air (IFGC 304)** — indoor volume, outdoor openings, combination, and mechanical combustion-air screening
