@@ -97,7 +97,7 @@ assert('mrvent A1 G=100 → 1000', Math.abs(run('mrvent', {mode: 'emergency', sa
   const r = run('mrvent', {mode: 'emergency', safetyGroup: 'A2L', charge: 100, designPressure: 250, area: 400, persons: 2});
   assert('mrvent A2L Level2 → 9800', Math.abs(r.value - 9800) < 1, r.value);
 }
-assert('mrvent UMC verify_manual', /verify_manual/.test(JSON.stringify(run('mrvent', {codeFamily: 'umc', mode: 'emergency', safetyGroup: 'A1', charge: 100}))));
+assert('mrvent UMC verify manually', /verify manually/i.test(JSON.stringify(run('mrvent', {codeFamily: 'umc', mode: 'emergency', safetyGroup: 'A1', charge: 100}))));
 
 assert('308 18→6', Math.abs(run('clearance308', {protection: '5', orientation: 'Above', required: 18, listingAllows: 'yes', interferes: 'no'}).value - 6) < 1e-9);
 assert('308 15→5', Math.abs(run('clearance308', {protection: '5', orientation: 'Above', required: 15, listingAllows: 'yes', interferes: 'no'}).value - 5) < 1e-9);

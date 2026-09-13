@@ -670,11 +670,11 @@ choice('arcInstall','§310.3 · installed per listing (bonding per mfr if requir
       source:'IFGC §310',
       target:'csstbonding'
     });
-    rows.push(['Crosscode chip',1,'crosscode.csst_bonding_nec_handoff'],['NEC handoff · checklist source',310,'IFGC §310 (stays source)'],['NEC handoff · target',250,'NEC · electrical bonding']);
+    rows.push(['Bonding handoff card',1,'CSST bonding → NEC'],['NEC handoff · checklist source',310,'IFGC §310 (stays source)'],['NEC handoff · target',250,'NEC · electrical bonding']);
   }
   return result(cfh,'cfh required',rows,
     `cfh = ${v.loadUnit==='btuh'?`Btuh ÷ heat content = ${fmt(v.loadBtuh)} ÷ ${fmt(heat)}`:`entered cfh = ${fmt(cfh)}`}; developed length = ${fmt(v.runLength)} + ${fmt(fitEL)} + ${fmt(v.otherEL)} = ${fmt(developed)} ft → select size from ${cls[1]} (AHJ edition).`,
-    `${methodNotes[v.method]} ${cls[3]}. ${ahj} CSST electrical bonding checklist source remains IFGC §310.2 / §310.3. When CSST is present, emit crosscode.csst_bonding_nec_handoff so electrical bonding is verified under the adopted NEC / listing — this tool does not calculate NEC sizes.`,
+    `${methodNotes[v.method]} ${cls[3]}. ${ahj} CSST electrical bonding checklist source remains IFGC §310.2 / §310.3. When CSST is present, a bonding handoff card appears so electrical bonding is verified under the adopted NEC / listing — this tool does not calculate NEC sizes.`,
     [[developed,'ft developed'],[btuh,'BTU/h'],[cfh,'cfh']],
     ['IFGC §402.4','Table 402.4(x) · AHJ','IFGC §310.2 / §310.3'],
     chips);
@@ -818,12 +818,12 @@ function mrventLevel2({G,DP,Q1}){
 }
 calculators.push(
 {id:'mrvent',name:'Machinery-room ventilation',group:'CODE & VENTILATION',icon:'air',desc:'Screen continuous and emergency ventilation for refrigeration machinery rooms. Confirm coefficients with your adopted edition.',badge:'Machinery room',sources:['imc','ashrae15'],fields:[
-choice('codeFamily','Code family',[['imc','IMC (national US model — default)'],['umc','UMC (verify manually — different B2L/√G lineage)']],'imc','Default is IMC for national US screening. UMC does not use the IMC √G lineage in this tool — verify_manual only.'),
+choice('codeFamily','Code family',[['imc','IMC (national US model — default)'],['umc','UMC (verify manually — different B2L/√G lineage)']],'imc','Default is IMC for national US screening. UMC does not use the IMC √G lineage in this tool — verify manually only.'),
 choice('mode','Ventilation mode',[['continuous','Continuous / occupied (Level 1)'],['emergency','Emergency / Level 2 purge']],'continuous','Continuous uses the unverified example max(0.5×ft², 20×persons) per IMC §1105.6.3.1 screen. Emergency path depends on safety group + code family.'),
 field('area','Machinery-room floor area','ft²',400,.001,1e6,'any','Room floor area used in the continuous / Level 1 unverified example screen (also Q1 floor for Level 2).'),
 field('persons','Design occupants','people',2,0,500,1,'People count for the continuous / Level 1 unverified example screen.'),
 field('charge','Largest system charge G (system 1)','lb',500,.001,1e6,'any','Mass of refrigerant in the largest independent circuit with any part in the machinery room (G).'),
-choice('safetyGroup','Refrigerant safety group (system 1)',[['A1','A1'],['A2','A2'],['A3','A3'],['B1','B1'],['B2','B2'],['B3','B3'],['A2L','A2L'],['B2L','B2L']],'A1','non_2L_sqrtG: A1/A2/A3/B1/B2/B3 only. a2l_level1_level2: A2L and B2L (never √G).'),
+choice('safetyGroup','Refrigerant safety group (system 1)',[['A1','A1'],['A2','A2'],['A3','A3'],['B1','B1'],['B2','B2'],['B3','B3'],['A2L','A2L'],['B2L','B2L']],'A1','A1/A2/A3/B1/B2/B3 use the √G emergency-exhaust path (IMC Eq 11-2); A2L and B2L use the ASHRAE 15 Level 1/2 path (never √G).'),
 field('designPressure','High-side design pressure DP (system 1)','psi gage',400,0,1e5,'any','Required for A2L/B2L Level 2. P = DP + 14.70 psia (Addendum q I-P). Unverified-example coefficients pending 15-2024 confirm.'),
 field('charge2','System 2 charge G (optional)','lb',0,0,1e6,'any','Multi-refrigerant room: evaluate each system; governing Q is the maximum. Enter 0 to ignore.'),
 field('dp2','System 2 high-side DP','psi gage',0,0,1e5,'any','Used with system 2 charge for A2L/B2L Level 2 multi-refrig max-Q rule.'),
@@ -843,7 +843,7 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
   if(v.codeFamily==='umc'){
     const rows=[
       ['Code family',1,'UMC'],
-      ['Resolved path',1,'verify_manual'],
+      ['Resolved path',1,'UMC — verify manually'],
       ['Safety group',1,v.safetyGroup],
       ['Would-be IMC path (not applied)',1,path],
       ['Largest charge G (context)',v.charge,'lb'],
@@ -852,11 +852,11 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
       ['Addendum q Level 2',0,'not applied under UMC'],
       ['ppm / RCL / OEL tables',0,'not invented']
     ];
-    return result(0,'verify_manual',rows,
-      `codeFamily=UMC → verify_manual (do not run IMC §1105.6.3.2 Eq 11-2 √G or Addendum q Level 2 here; UMC B2L/√G lineage differs)`,
+    return result(0,'UMC — verify manually',rows,
+      `code family UMC → verify manually (do not run IMC §1105.6.3.2 Eq 11-2 √G or Addendum q Level 2 here; UMC B2L/√G lineage differs)`,
       `UMC selected. This tool’s digitized emergency relationships are the IMC national-US √G path and Addendum q Level 2 (A2L/B2L) only. Verify machinery-room ventilation manually against the adopted UMC (and referenced ASHRAE 15 as adopted). Do not invent ppm tables. Continuous (unverified example) context Q = max(0.5×A, 20×persons) = ${fmt(continuous)} cfm is shown for reference only and is not a UMC compliance value.${riseTxt} ${ahj}`,
-      [[0,'verify_manual'],[continuous,'cfm continuous context'],[v.charge,'lb G']],
-      ['UMC · verify_manual','Do not use IMC √G here','AHJ + PE verify']);
+      [[0,'cfm — verify manually'],[continuous,'cfm continuous context'],[v.charge,'lb G']],
+      ['UMC · verify manually','Do not use IMC √G here','AHJ + PE verify']);
   }
 
   if(v.mode==='continuous'){
@@ -904,7 +904,7 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
     const rows=[
       ['Code family',1,'IMC'],
       ['Mode',2,'Emergency · Level 2'],
-      ['Resolved path',1,'a2l_level1_level2'],
+      ['Resolved path',1,'ASHRAE 15 Level 1/2 (A2L · B2L)'],
       ['Safety group',1,v.safetyGroup],
       ['√G / Eq 11-2',0,'HARD-STOP — never for A2L/B2L'],
       ['Level 1 continuous rate (unverified example)',Q1,'cfm'],
@@ -919,7 +919,7 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
     ];
     return result(best.Q,'cfm Level 2',rows,
       `A2L/B2L Level 2 (never √G): P=DP+14.70; Q*=646×P^0.62; G*=21200×P^-0.72; Eq ${best.eqId}; Q=max(Qeq,Q1) → round up 2 sig figs = ${fmt(best.Q)} cfm  [Unverified example · Addendum q]`,
-      `Do not use the √G method for ${v.safetyGroup} (path=a2l_level1_level2). Cite IMC §1106.4 / §1106.4.3 → ASHRAE 15 Level 1/Level 2. Level 2 airflow from ASHRAE 15 Addendum q calculation method (I-P): P = DP + 14.70; Q* = 646 × P^0.62; G* = 21200 × P^-0.72; Eq 8-1 / 8-2 / 8-3; Q ≥ Q1; round up to 2 significant figures. When multiple refrigerating systems are present, the highest airflow applies. Detector / notification: IMC Table 1106.4.2 (setpoints not digitized; not invented). Coefficients and section numbering are unverified examples — confirm against ASHRAE 15-2024 / adopted code text.${riseTxt} ${ahj}`,
+      `Do not use the √G method for ${v.safetyGroup}. Cite IMC §1106.4 / §1106.4.3 → ASHRAE 15 Level 1/Level 2. Level 2 airflow from ASHRAE 15 Addendum q calculation method (I-P): P = DP + 14.70; Q* = 646 × P^0.62; G* = 21200 × P^-0.72; Eq 8-1 / 8-2 / 8-3; Q ≥ Q1; round up to 2 significant figures. When multiple refrigerating systems are present, the highest airflow applies. Detector / notification: IMC Table 1106.4.2 (setpoints not digitized; not invented). Coefficients and section numbering are unverified examples — confirm against ASHRAE 15-2024 / adopted code text.${riseTxt} ${ahj}`,
       [[best.Q,'cfm Level 2'],[Q1,'cfm Level 1 Q1'],[best.Qstar,'cfm Q*'],[best.Gstar,'lb G*']],
       ['IMC §1106.4 / §1106.4.3','Addendum q Level 2','Unverified example · confirm with AHJ + PE']);
   }
@@ -929,7 +929,7 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
   const rows=[
     ['Code family',1,'IMC'],
     ['Mode',2,'Emergency purge'],
-    ['Resolved path',1,'non_2L_sqrtG'],
+    ['Resolved path',1,'√G emergency exhaust (A1–B3)'],
     ['Safety group',1,v.safetyGroup],
     ['Largest system charge G',v.charge,'lb'],
     ['Emergency Q = 100√G (Eq 11-2)',Q,'cfm'],
@@ -941,9 +941,9 @@ choice('ashraeEdition','ASHRAE 15 / IMC edition screen',[['2024','IMC 2024 + ASH
   ];
   return result(Q,'cfm emergency',rows,
     `Q_em = 100 × √G = 100 × √${fmt(v.charge)} = ${fmt(Q)} cfm  [IMC §1105.6.3.2 Eq 11-2 · path=non_2L_sqrtG]`,
-    `Emergency √G screening for safety groups A1/A2/A3/B1/B2/B3 only (path=non_2L_sqrtG). B2L is not on this path. Same √G relationship as ASHRAE 15 Addendum q. A2L/B2L use IMC §1106.4 / §1106.4.3 → ASHRAE 15 Level 1/2 (never √G; Level 2 equations available on that path). Do not invent ppm tables. Verify section numbering, exceptions, and simultaneous continuous/emergency requirements with the adopted IMC / ASHRAE 15.${riseTxt} ${ahj}`,
+    `Emergency √G screening for safety groups A1/A2/A3/B1/B2/B3 only. B2L is not on this path. Same √G relationship as ASHRAE 15 Addendum q. A2L/B2L use IMC §1106.4 / §1106.4.3 → ASHRAE 15 Level 1/2 (never √G; Level 2 equations available on that path). Do not invent ppm tables. Verify section numbering, exceptions, and simultaneous continuous/emergency requirements with the adopted IMC / ASHRAE 15.${riseTxt} ${ahj}`,
     [[Q,'cfm emergency'],[continuous,'cfm continuous context'],[v.charge,'lb G']],
-    ['IMC §1105.6.3.2 Eq 11-2','non_2L_sqrtG only','AHJ + PE verify']);
+    ['IMC §1105.6.3.2 Eq 11-2','A1–B3 √G path only','AHJ + PE verify']);
 }}
 );
 
@@ -1031,8 +1031,8 @@ choice('mode','Task / mode',[['local_kitchen','Local kitchen exhaust (Table M150
 choice('operation','Exhaust operation',[['continuous','Continuous'],['intermittent','Intermittent']],'continuous','Continuous or intermittent operation sets which IRC Table M1505.4.4 rate applies.'),
 field('provided_cfm','Provided / design exhaust','cfm',20,0,5000,'any','Fan or system airflow to compare against the IRC rate.'),
 field('static_in_wc','Fan rated static pressure','in. wc',0.25,0,5,'any','Bath continuous fans: IRC screening expects ≥0.25 in. wc static capability (unverified example).'),
-field('exhaust_cfm','Kitchen / hood exhaust airflow','cfm',100,0,10000,'any','Used for makeup-air trigger when exhaust_cfm > 400.'),
-choice('atmos_fuel_in_air_barrier','Atmospherically vented fuel appliances inside air barrier?',[['yes','Yes — atmospheric fuel in air barrier'],['no','No'],['direct_vent_only','Direct-vent / sealed combustion only']],'no','Makeup required when exhaust_cfm > 400 AND atmospheric fuel appliances are inside the air barrier.'),
+field('exhaust_cfm','Kitchen / hood exhaust airflow','cfm',100,0,10000,'any','Used for the makeup-air trigger when kitchen exhaust exceeds 400 cfm.'),
+choice('atmos_fuel_in_air_barrier','Atmospherically vented fuel appliances inside air barrier?',[['yes','Yes — atmospheric fuel in air barrier'],['no','No'],['direct_vent_only','Direct-vent / sealed combustion only']],'no','Makeup air is required when kitchen exhaust exceeds 400 cfm and atmospheric fuel appliances are inside the air barrier.'),
 choice('equipment_type','Kitchen equipment class',[['range_hood','Range hood / microwave hood'],['downdraft','Downdraft exhaust'],['other_m1503','Other M1503 exhaust equipment']],'range_hood','Range hood, downdraft, or other equipment covered by IRC §M1503.'),
 field('floor_area','Conditioned floor area A','ft²',2000,.001,1e6,'any','WHMV Eq 15-1 floor area A.'),
 field('bedrooms','Bedrooms','bedrooms',3,0,50,1,'WHMV Eq 15-1 bedroom count.'),
@@ -1074,7 +1074,7 @@ field('elbows','90° elbows (screening count)','ea',2,0,40,1,'Each elbow adds a 
     }
     if(space==='kitchen'){
       const makeup=(v.exhaust_cfm>400&&v.atmos_fuel_in_air_barrier==='yes')?1:0;
-      rows.push(['Exhaust for makeup screen',v.exhaust_cfm,'cfm'],['Atmos fuel in air barrier',1,v.atmos_fuel_in_air_barrier],['makeup_required',makeup,makeup?'true':'false']);
+      rows.push(['Exhaust for makeup screen',v.exhaust_cfm,'cfm'],['Atmos fuel in air barrier',1,v.atmos_fuel_in_air_barrier],['Makeup air required',makeup,makeup?'yes':'no']);
     }
     rows.push(['Overall pass',pass,pass?'pass':'fail']);
     return result(pass?required:v.provided_cfm,pass?'cfm · pass':'cfm · fail',rows,formula,
@@ -1097,17 +1097,17 @@ field('elbows','90° elbows (screening count)','ea',2,0,40,1,'Each elbow adds a 
       ['Exhaust airflow',v.exhaust_cfm,'cfm'],
       ['Capacity pass',pass,pass?'pass':'fail'],
       ['Atmos fuel in air barrier',1,v.atmos_fuel_in_air_barrier],
-      ['makeup_required',makeup,makeup?'true':'false'],
-      ['Makeup rule',400,'exhaust_cfm>400 AND atmos_fuel_in_air_barrier'],
+      ['Makeup air required',makeup,makeup?'yes':'no'],
+      ['Makeup rule',400,'exhaust > 400 cfm and atmospheric fuel appliance inside the air barrier'],
       ['Direct-vent only blocks makeup',v.atmos_fuel_in_air_barrier==='direct_vent_only'?1:0,v.atmos_fuel_in_air_barrier==='direct_vent_only'?'yes':'no'],
       ['IRC M1503',1503,'duct / termination / listing — verify AHJ'],
       ['Status',1,'Unverified example'],
       ['IRC vs IMC difference',1,'IRC cont kitchen 25 vs IMC 50']
     ];
-    return result(makeup,'makeup_required',rows,
-      `kitchen_equipment: exhaust ${fmt(v.exhaust_cfm)} cfm vs required ${required}; makeup_required=${makeup===1} (exhaust_cfm>400 && atmos_fuel_in_air_barrier===yes)`,
-      `${banner} IRC M1503 kitchen exhaust equipment screen + Table M1505.5 rate check. Direct-vent-only fuel appliances do not set makeup_required. ${ahj}`,
-      [[required,'cfm required'],[v.exhaust_cfm,'cfm exhaust'],[makeup,'makeup']],
+    return result(makeup,makeup?'makeup air required':'no makeup air trigger',rows,
+      `kitchen equipment: exhaust ${fmt(v.exhaust_cfm)} cfm vs required ${required} cfm; makeup air ${makeup===1?'required':'not triggered'} (exhaust > 400 cfm and atmospheric fuel appliance inside the air barrier)`,
+      `${banner} IRC M1503 kitchen exhaust equipment screen + Table M1505.5 rate check. Direct-vent-only fuel appliances do not trigger makeup air. ${ahj}`,
+      [[required,'cfm required'],[v.exhaust_cfm,'cfm exhaust'],[makeup,makeup?'makeup required':'no makeup trigger']],
       ['IRC M1503','IRC Table M1505.5','Unverified example · confirm with AHJ + PE']);
   }
 
@@ -1384,7 +1384,7 @@ choice('inspection','Electrical and fuel-gas AHJ inspection responsibilities con
 ],calculate:v=>{
   const checks=['listing','bondPoint','electrodePath','conductor','inspection'];
   let ok=0,fail=0,unk=0,na=0;
-  const rows=[['Received handoff',1,'crosscode.csst_bonding_nec_handoff'],['IFGC source path',1,v.ifgcPath],['Conductor size calculated',0,'no']];
+  const rows=[['Received handoff',1,'CSST bonding → NEC'],['IFGC source path',1,v.ifgcPath],['Conductor size calculated',0,'no']];
   for(const key of checks){
     const ans=v[key];if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
     rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
