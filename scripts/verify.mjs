@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 185, calculators.length);
+assert('calculator count', calculators.length === 209, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -358,6 +358,38 @@ assert('mixgrains 0.25*90+0.75*65', Math.abs(run('mixgrains', {}).value - (0.25*
   assert('staticregain defaults', Math.abs(run('staticregain', {}).value - (vp1-vp2)*0.75) < 1e-9);
 }
 
+
+
+
+assert('fluidq 40gpm 12dt water', Math.abs(run('fluidq', {}).value - 8.33*60*1*1*40*12) < 1e-6);
+assert('waterdt 120000/(500*24) → 10', Math.abs(run('waterdt', {}).value - 10) < 1e-12);
+assert('leaveair cool 75-36000/(1.08*1200)', Math.abs(run('leaveair', {}).value - (75-36000/(1.08*1200))) < 1e-9);
+assert('scfmacfm 2000/0.85', Math.abs(run('scfmacfm', {}).value - 2000/0.85) < 1e-12);
+assert('pumpbhp 120*60/(3960*0.7)', Math.abs(run('pumpbhp', {}).value - (120*60*1)/(3960*0.7)) < 1e-9);
+assert('bhptokw 5*0.745699872', Math.abs(run('bhptokw', {}).value - 5*0.745699872) < 1e-12);
+assert('tonhours 20*8 → 160', Math.abs(run('tonhours', {}).value - 160) < 1e-12);
+assert('mcfgas 100*24/1000 → 2.4', Math.abs(run('mcfgas', {}).value - 2.4) < 1e-12);
+assert('propanegal defaults', Math.abs(run('propanegal', {}).value - ((80000/0.8)/91500)*1) < 1e-9);
+assert('towerevap 1000*10*0.001 → 10', Math.abs(run('towerevap', {}).value - 10) < 1e-12);
+assert('blowdown 10/(4-1)', Math.abs(run('blowdown', {}).value - 10/3) < 1e-12);
+assert('chillerlift 95-44 → 51', Math.abs(run('chillerlift', {}).value - 51) < 1e-12);
+assert('diversity 500000*0.7', Math.abs(run('diversity', {}).value - 350000) < 1e-9);
+assert('loadfactor 120/200 → 0.6', Math.abs(run('loadfactor', {}).value - 0.6) < 1e-12);
+assert('uaseries 1/(0.68+13+0.45)', Math.abs(run('uaseries', {}).value - 1/(0.68+13+0.45)) < 1e-12);
+assert('windpressure 0.00256*90*90', Math.abs(run('windpressure', {}).value - 0.00256*90*90) < 1e-12);
+assert('heatreclaim 48000*0.4', Math.abs(run('heatreclaim', {}).value - 19200) < 1e-12);
+assert('vavfraction 800*0.6 → 480', Math.abs(run('vavfraction', {}).value - 480) < 1e-12);
+assert('dryerexdocs defaults need attention', run('dryerexdocs', {}).value >= 1);
+assert('evapcoolerdocs defaults need attention', run('evapcoolerdocs', {}).value >= 1);
+assert('thermostatdocs defaults need attention', run('thermostatdocs', {}).value >= 1);
+assert('ductconstdocs defaults need attention', run('ductconstdocs', {}).value >= 1);
+assert('ventingdocs defaults need attention', run('ventingdocs', {}).value >= 1);
+{
+  const t=(80-32)*5/9, rh=50;
+  const tw=t*Math.atan(0.151977*Math.sqrt(rh+8.313659))+Math.atan(t+rh)-Math.atan(rh-1.676331)+0.00391838*Math.pow(rh,1.5)*Math.atan(0.023101*rh)-4.686035;
+  const twf=tw*9/5+32;
+  assert('wetbulbstull 80F 50%', Math.abs(run('wetbulbstull', {}).value - twf) < 1e-6);
+}
 
 
 const failed = tests.filter(t => !t.ok);

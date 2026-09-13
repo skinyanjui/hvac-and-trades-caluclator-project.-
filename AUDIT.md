@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now has **185** calculators across:
+The app now has **209** calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -181,6 +181,23 @@ Added documentation gates and formula tools without inventing proprietary table 
 
 The code-edition dropdown was removed. Screening is fixed to the latest embedded 2024 model-code pack (IMC / IFGC / IPC / IECC). Copy still states that the AHJ-adopted edition and amendments govern.
 
+### Audit continue — public math + code docs (2026-09-13)
+
+Added **24** calculators from the coverage audit without digitizing licensed tables:
+
+**Field / engineering math**
+- Fluid volumetric flow from mass · SG · cp path, water ΔT from load/GPM, leaving-air dry-bulb, SCFM↔ACFM
+- Pump brake horsepower, hp↔kW, ton-hours, natural-gas MCF, propane gallons from BTU
+- Cooling-tower evaporation, blowdown from cycles of concentration, chiller lift
+- Diversity factor, load factor, series U-factor, wind velocity pressure, Stull wet-bulb estimate
+- Heat reclaim, VAV fraction of design
+
+**Documentation gates**
+- IMC §504 dryer exhaust docs, §928 evaporative cooler docs, §309 thermostat/control docs, §603 duct construction docs
+- IFGC Chapter 5 venting documentation gate
+
+Nav cleanup: Sources and Changelog removed from the top header (deep links still work). Global Please note banner already removed; AHJ bar remains.
+
 ## Needs verified source data before implementation
 
 These are important, but should not be filled with guessed values:
@@ -194,11 +211,12 @@ These are important, but should not be filled with guessed values:
 
 ## Recommended next sequence
 
-1. Independently verify every existing `EXAMPLE_UNVERIFIED` table/formula cell against an authorized source.
-2. Replace the IRC installation shell with a section-mapped checklist after source review.
-3. Add a jurisdiction/adoption profile only when trustworthy adoption data and amendment provenance are available.
-4. Add table-backed calculators one model pack at a time, with source edition, row/column provenance, and regression fixtures.
-5. Split the single-file app into tested data, calculation, and UI modules before the table inventory grows substantially.
+1. More **docs / path / checklist** tools (IMC kitchen CFM path without rates, IFGC Category I/IV vent path detail) — no table cells.
+2. Public **psych / air / hydronic** estimators only when the equation is industry-standard and not a copyrighted table.
+3. Independently verify every existing `EXAMPLE_UNVERIFIED` table/formula cell against an authorized source.
+4. Never paste Manual J/D worksheet grids, IMC Table 403.3.1.1 full rates, or IFGC Annex A tables into the SPA.
+5. Optional UX: pin favorites — does not require new licensed content.
+6. Split the single-file app into tested data, calculation, and UI modules before the table inventory grows substantially.
 
 ## Public references used for this audit
 
