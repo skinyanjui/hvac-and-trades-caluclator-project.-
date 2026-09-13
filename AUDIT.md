@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 88 calculators across:
+The app now contains 100 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -92,6 +92,23 @@ Added published-distance and formula screens without inventing proprietary table
 - IMC §506.3.6 grease-duct clearances to combustibles / noncombustibles
 - IMC §603.9 duct sealing documentation gate (no invented leakage %)
 - Net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude estimate, open-belt length
+
+### Cleanout / combustion / more trades math (follow-on)
+
+- IMC §506.3.8 grease-duct cleanout spacing (≤20 ft horizontal)
+- IFGC §304.9 mechanical combustion air (0.35 cfm per 1,000 BTU/h)
+- IMC §507 Type I hood documentation gate (no overhang table cells)
+- IMC §603.6 flexible-duct installation checklist (no invented max length)
+- Hydraulic diameter, velocity pressure, stack-effect pressure, pipe volume/fill, LMTD, evaporator/condenser TD, net oil pressure
+
+### Roof access, dryer termination, and more trades math (follow-on)
+
+- IMC §306.5 roof-appliance access documentation gate
+- IMC §908 cooling-tower / evaporative-condenser documentation gate
+- IMC §504.9 dryer-exhaust termination key-row clearances
+- Duct aspect ratio, fan brake horsepower, coil sensible capacity
+- Condenser heat rejection, wet-bulb depression, Reynolds number
+- Valve Cv flow, expansion-tank acceptance estimate, condensate from latent load
 
 ### Code-context selector trust fix
 

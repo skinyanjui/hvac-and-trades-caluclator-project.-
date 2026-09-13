@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="88 calm HVAC calculators with live results, clear formulas, unit conversion, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#0a0a0a;background:#f5f5f5;font-synthesis:none;--ink:#0a0a0a;--ink-soft:#262626;--accent:#087e8b;--line:#e5e5e5;--muted:#6b6b6b;--quiet:#999;--paper:#fff;--canvas:#f5f5f5;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);background:var(--paper);gap:12px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:560;text-decoration:none;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:28px;height:28px;background:var(--ink);color:#fff;border-radius:8px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:36px;padding:6px 14px;font-size:13px;color:var(--muted);border-radius:999px;background:transparent;transition:background .15s ease,color .15s ease}.header-actions button:hover{background:rgba(0,0,0,.05);color:var(--ink)}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 56px)}.sidebar{background:var(--paper);border-right:1px solid var(--line);padding:16px 12px;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:var(--canvas);border:1px solid var(--line);padding:9px 10px 9px 32px;width:100%;border-radius:999px;font-size:13px;color:var(--ink-soft);height:36px;min-width:0}.search-wrap input::placeholder{color:var(--quiet)}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 6px;padding:2px 10px;color:var(--quiet);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-item{display:block;width:100%;text-align:left;min-height:34px;padding:7px 10px;border-radius:8px;font-size:13.5px;line-height:1.35;color:var(--ink-soft);transition:background .15s ease,color .15s ease}.nav-item:hover{background:rgba(0,0,0,.04)}.nav-item.active{background:rgba(0,0,0,.06);color:var(--ink);font-weight:560;box-shadow:inset 2px 0 0 var(--ink)}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1200px;min-width:0;padding:32px clamp(20px,3vw,48px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em;line-height:1.08;font-weight:560;margin:0 0 10px;color:var(--ink)}.page-title p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:34em}.tag{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);white-space:nowrap;flex:none;margin-top:6px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0;overflow:hidden;box-shadow:none}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px;font-weight:500}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #d4d4d4;border-radius:12px;background:var(--paper);min-height:40px;min-width:0;transition:border-color .15s ease,box-shadow .15s ease}.input-wrap:focus-within{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:40px;border:1px solid #d4d4d4;border-radius:12px;padding:8px 28px 8px 12px;background:var(--paper);color:var(--ink-soft);font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.55;color:var(--muted);background:#f7f7f7;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;padding:12px 14px;margin:0 17px 14px}.legal-banner{background:#141414;color:#d4d4d4;padding:12px 24px;font-size:12px;line-height:1.55;border-bottom:1px solid #0a0a0a}.legal-banner strong{color:#fff;font-weight:560}.legal-banner a{color:#7dd3da}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 24px;background:#eee;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-soft)}.ahj-bar label{font-weight:550;color:var(--ink)}.ahj-bar select{min-height:34px;border:1px solid #d4d4d4;border-radius:999px;padding:4px 28px 4px 12px;background:#fff;color:var(--ink-soft);font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:var(--muted);font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:20px 22px 18px;background:#fafafa;border-bottom:1px solid var(--line)}.result-label{font-size:12px;color:var(--muted);letter-spacing:.02em}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:clamp(36px,5vw,52px);font-weight:560;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-top:10px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted);overflow-wrap:anywhere}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 19px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 19px 13px;color:#955523}.empty-result{padding:22px;min-height:150px;background:#fafafa;color:var(--muted)}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;padding:15px 19px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 19px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid var(--line);background:#fafafa;border-radius:4px;padding:14px 14px}.crosscode-chip-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:560;color:var(--ink);margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}</style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="100 calm HVAC calculators with live results, clear formulas, unit conversion, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#0a0a0a;background:#f5f5f5;font-synthesis:none;--ink:#0a0a0a;--ink-soft:#262626;--accent:#087e8b;--line:#e5e5e5;--muted:#6b6b6b;--quiet:#999;--paper:#fff;--canvas:#f5f5f5;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);background:var(--paper);gap:12px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:560;text-decoration:none;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:28px;height:28px;background:var(--ink);color:#fff;border-radius:8px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:36px;padding:6px 14px;font-size:13px;color:var(--muted);border-radius:999px;background:transparent;transition:background .15s ease,color .15s ease}.header-actions button:hover{background:rgba(0,0,0,.05);color:var(--ink)}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 56px)}.sidebar{background:var(--paper);border-right:1px solid var(--line);padding:16px 12px;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:var(--canvas);border:1px solid var(--line);padding:9px 10px 9px 32px;width:100%;border-radius:999px;font-size:13px;color:var(--ink-soft);height:36px;min-width:0}.search-wrap input::placeholder{color:var(--quiet)}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 6px;padding:2px 10px;color:var(--quiet);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-item{display:block;width:100%;text-align:left;min-height:34px;padding:7px 10px;border-radius:8px;font-size:13.5px;line-height:1.35;color:var(--ink-soft);transition:background .15s ease,color .15s ease}.nav-item:hover{background:rgba(0,0,0,.04)}.nav-item.active{background:rgba(0,0,0,.06);color:var(--ink);font-weight:560;box-shadow:inset 2px 0 0 var(--ink)}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1200px;min-width:0;padding:32px clamp(20px,3vw,48px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em;line-height:1.08;font-weight:560;margin:0 0 10px;color:var(--ink)}.page-title p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:34em}.tag{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);white-space:nowrap;flex:none;margin-top:6px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0;overflow:hidden;box-shadow:none}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px;font-weight:500}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #d4d4d4;border-radius:12px;background:var(--paper);min-height:40px;min-width:0;transition:border-color .15s ease,box-shadow .15s ease}.input-wrap:focus-within{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:40px;border:1px solid #d4d4d4;border-radius:12px;padding:8px 28px 8px 12px;background:var(--paper);color:var(--ink-soft);font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.55;color:var(--muted);background:#f7f7f7;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;padding:12px 14px;margin:0 17px 14px}.legal-banner{background:#141414;color:#d4d4d4;padding:12px 24px;font-size:12px;line-height:1.55;border-bottom:1px solid #0a0a0a}.legal-banner strong{color:#fff;font-weight:560}.legal-banner a{color:#7dd3da}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 24px;background:#eee;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-soft)}.ahj-bar label{font-weight:550;color:var(--ink)}.ahj-bar select{min-height:34px;border:1px solid #d4d4d4;border-radius:999px;padding:4px 28px 4px 12px;background:#fff;color:var(--ink-soft);font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:var(--muted);font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:20px 22px 18px;background:#fafafa;border-bottom:1px solid var(--line)}.result-label{font-size:12px;color:var(--muted);letter-spacing:.02em}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:clamp(36px,5vw,52px);font-weight:560;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-top:10px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted);overflow-wrap:anywhere}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 19px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 19px 13px;color:#955523}.empty-result{padding:22px;min-height:150px;background:#fafafa;color:var(--muted)}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;padding:15px 19px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 19px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid var(--line);background:#fafafa;border-radius:4px;padding:14px 14px}.crosscode-chip-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:560;color:var(--ink);margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}</style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
 const sourceLinks={energy:['ENERGY STAR · Room AC sizing','https://www.energystar.gov/products/room_air_conditioners'],calc:['Calculator.net · BTU reference','https://www.calculator.net/btu-calculator.html'],conversion:['Calculator.net · Conversion reference','https://www.calculator.net/conversion-calculator.html'],manual:['ACCA · Manual J','https://www.acca.org/standards/technical-manuals/manual-j'],ashrae:['ASHRAE · Psychrometrics','https://handbook.ashrae.org/Handbooks/F21/SI/F21_Ch01/F21_Ch01_si.aspx'],nist:['NIST · SI conversion reference','https://www.nist.gov/pml/special-publication-811'],imc:['ICC · 2024 IMC','https://codes.iccsafe.org/content/IMC2024V1.0'],ipc:['ICC · 2024 IPC','https://codes.iccsafe.org/content/IPC2024P1'],ifc:['ICC · 2024 IFC','https://codes.iccsafe.org/content/IFC2024V1.0'],ifgc:['ICC · 2024 IFGC','https://codes.iccsafe.org/content/IFGC2024V1.0'],iecc:['ICC · 2024 IECC','https://codes.iccsafe.org/content/IECC2024V1.0'],ashrae15:['ASHRAE · Standard 15','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],irc:['ICC · 2024 IRC','https://codes.iccsafe.org/content/IRC2024P1'],ashrae152:['ASHRAE · Standard 15.2','https://www.ashrae.org/technical-resources/bookstore/standards-15-34']};
 const field=(key,label,unit,value,min=0,max=1e9,step='any',hint='')=>({key,label,unit,value,min,max,step,hint});
 const choice=(key,label,options,value,hint='')=>({key,label,options,value,hint});
@@ -2412,8 +2412,212 @@ field('crank','Crankcase / suction pressure','psig',20,-15,500)
     ['Net oil pressure',net,'psi']
   ],`Pnet = Poil − Pcrankcase = ${fmt(v.oil)} − ${fmt(v.crank)}`,
   'Compare with the compressor manufacturer’s oil-pressure safety switch cut-out / cut-in settings. Gauge references must match the manufacturer’s definition. Does not diagnose oil failure causes.');
+}},
+{id:'roofaccess',name:'Roof appliance access',group:'CODE & VENTILATION',icon:'duct',desc:'Screen IMC §306.5 roof-appliance access and permanent-ladder documentation without inventing unlisted dimensions.',badge:'IMC §306.5 · roof access',sources:['imc'],fields:[
+choice('permanent','Permanent means of access to the roof appliance is provided?',ircInstallYn,'unk'),
+choice('ladder','Permanent ladder / stair / other approved access meets the adopted §306.5 path?',ircInstallYn,'unk'),
+choice('platform','Required working platform / landing at the appliance is provided?',ircInstallYn,'unk'),
+choice('guards','Roof edge / platform guards addressed where required?',ircInstallYn,'na'),
+choice('receptacle','Service receptacle / lighting path addressed where required?',ircInstallYn,'na'),
+choice('obstruction','Access path remains clear of ducts, piping, and equipment?',ircInstallYn,'unk')
+],calculate:v=>{
+  const keys=['permanent','ladder','platform','guards','receptacle','obstruction'];
+  let ok=0,fail=0,unk=0,na=0;
+  const rows=[['Numeric ladder geometry table invented',0,'no']];
+  for(const key of keys){
+    const ans=v[key];
+    if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
+    rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
+  }
+  rows.push(['OK',ok,'ea'],['Deficient',fail,'ea'],['Unknown',unk,'ea'],['N/A',na,'ea']);
+  return result(fail+unk,'items needing attention',rows,
+  `IMC §306.5 roof-access documentation = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; ladder geometry table = not digitized`,
+  'IMC §306.5 documentation gate only. It does not invent rung spacing, cage, or landing dimensions from the code text. Confirm adopted IMC §306.5 / §306.5.1 details, listing, and AHJ amendments.',
+  [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §306.5','Listing / manufacturer','AHJ']);
+}},
+{id:'towerdocs',name:'Cooling tower documentation',group:'CODE & VENTILATION',icon:'water',desc:'Screen IMC §908 cooling-tower / evaporative-condenser documentation items without inventing location-table distances.',badge:'IMC §908 · tower docs',sources:['imc'],fields:[
+choice('listing','Tower / evaporative equipment is listed / labeled for the duty?',ircInstallYn,'unk'),
+choice('location','Location clearances to intakes, property lines, and openings documented?',ircInstallYn,'unk'),
+choice('drain','Drain / overflow / bleed discharge path documented?',ircInstallYn,'unk'),
+choice('drift','Drift eliminators / water treatment path addressed where required?',ircInstallYn,'na'),
+choice('supports','Supports, vibration isolation, and structural path coordinated?',ircInstallYn,'unk'),
+choice('electrical','Disconnect, controls, and freeze-protection path documented?',ircInstallYn,'unk')
+],calculate:v=>{
+  const keys=['listing','location','drain','drift','supports','electrical'];
+  let ok=0,fail=0,unk=0,na=0;
+  const rows=[['Numeric tower location-table distances invented',0,'no']];
+  for(const key of keys){
+    const ans=v[key];
+    if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
+    rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
+  }
+  rows.push(['OK',ok,'ea'],['Deficient',fail,'ea'],['Unknown',unk,'ea'],['N/A',na,'ea']);
+  return result(fail+unk,'items needing attention',rows,
+  `IMC §908 cooling-tower documentation = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; location table distances = not digitized`,
+  'IMC §908 documentation gate only. It does not invent separation distances from code tables. Confirm adopted IMC §908, manufacturer listing, water-discharge approvals, and AHJ amendments.',
+  [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §908','Listing / manufacturer','AHJ']);
+}},
+{id:'dryerterm',name:'Dryer exhaust termination',group:'CODE & VENTILATION',icon:'air',desc:'Screen key IMC §504.9 dryer-exhaust termination clearances to openings and intake openings.',badge:'IMC §504.9 · termination',sources:['imc'],fields:[
+field('toOpening','Clearance to operable openings into buildings','ft',3,0,100),
+field('toIntake','Clearance to mechanical air intakes','ft',3,0,100),
+field('aboveGrade','Height of outlet above finished grade / walking surface','ft',1,0,100),
+choice('backdraft','Backdraft damper / termination fitting installed per listing?',ircInstallYn,'unk'),
+choice('screen','Outlet protected from weather / debris without blocking flow?',ircInstallYn,'unk')
+],calculate:v=>{
+  const openOk=v.toOpening+1e-9>=3;
+  const intakeOk=v.toIntake+1e-9>=3;
+  const gradeOk=v.aboveGrade+1e-9>=1;
+  const fails=[openOk,intakeOk,gradeOk,v.backdraft!=='no',v.screen!=='no'].filter(x=>!x).length+(v.backdraft==='unk'||v.screen==='unk'?1:0);
+  return result(fails,'open termination checks',[
+    ['≥3 ft to operable openings',openOk?1:0,`${fmt(v.toOpening)} ft`],
+    ['≥3 ft to mechanical intakes',intakeOk?1:0,`${fmt(v.toIntake)} ft`],
+    ['≥1 ft above grade / walking surface',gradeOk?1:0,`${fmt(v.aboveGrade)} ft`],
+    ['Backdraft damper / listed termination',v.backdraft==='yes'?1:v.backdraft==='na'?-1:0,v.backdraft],
+    ['Weather / debris protection without blockage',v.screen==='yes'?1:v.screen==='na'?-1:0,v.screen],
+    ['Open checks',fails,'ea']
+  ],`IMC §504.9 screen: ≥3 ft to openings and mechanical intakes; ≥1 ft above grade; listed termination / damper path`,
+  'Model 2024 IMC §504.9 key-row termination screen. Confirm adopted numbering, exceptions, manufacturer termination fittings, and AHJ amendments. Not a duct design approval.',
+  [[fails,'open']],['IMC §504.9','Listing / manufacturer','AHJ']);
+}},
+{id:'aspect',name:'Duct aspect ratio',group:'AIR & DUCTS',icon:'duct',desc:'Find the aspect ratio of a rectangular duct from inside width and height.',badge:'Duct geometry',sources:[],fields:[
+field('width','Inside width','in',24,.001,1000),
+field('height','Inside height','in',8,.001,1000)
+],calculate:v=>{
+  const long=Math.max(v.width,v.height),short=Math.min(v.width,v.height);
+  const ar=long/short;
+  return result(ar,'aspect ratio',[
+    ['Long side',long,'in'],
+    ['Short side',short,'in'],
+    ['Aspect ratio (long ÷ short)',ar,'']
+  ],`AR = long ÷ short = ${fmt(long)} ÷ ${fmt(short)}`,
+  'Geometric aspect ratio only. Equal-friction design often prefers AR ≤ 4:1 as a practice guideline — that preference is not applied as a code limit here.');
+}},
+{id:'fanbhp',name:'Fan brake horsepower',group:'AIR & DUCTS',icon:'air',desc:'Estimate fan shaft brake horsepower from airflow, static pressure, and fan efficiency.',badge:'Fan power',sources:[],fields:[
+field('cfm','Airflow','cfm',2000,0),
+field('sp','Fan static pressure','in. w.c.',1.5,0,50),
+field('eff','Fan static efficiency','%',65,1,100)
+],calculate:v=>{
+  const eta=v.eff/100;
+  if(eta<=0)throw Error('Fan efficiency must be greater than zero.');
+  const bhp=v.cfm*v.sp/(6356*eta);
+  return result(bhp,'bhp',[
+    ['Airflow',v.cfm,'cfm'],
+    ['Static pressure',v.sp,'in. w.c.'],
+    ['Fan static efficiency',v.eff,'%'],
+    ['Brake horsepower',bhp,'bhp'],
+    ['Approx shaft watts',bhp*745.7,'W']
+  ],`BHP = CFM × SP / (6356 × η) = ${fmt(v.cfm)} × ${fmt(v.sp)} / (6356 × ${fmt(eta)})`,
+  'Uses the common I-P fan static-efficiency form. Enter fan (not motor) efficiency. Does not size the motor, account for drive losses, or replace the fan curve.');
+}},
+{id:'coilsens',name:'Coil sensible capacity',group:'HEATING & COOLING',icon:'snow',desc:'Estimate sensible coil capacity from airflow and air-side temperature change.',badge:'Sensible capacity',sources:['ashrae'],fields:[
+field('cfm','Airflow','cfm',1200,0),
+field('dt','Air temperature change across coil','°F',20,.001,100),
+field('factor','Air sensible factor','BTU/(h·cfm·°F)',1.08,.5,1.5)
+],calculate:v=>{
+  const q=v.factor*v.cfm*v.dt;
+  return result(q,'BTU/h',[
+    ['Airflow',v.cfm,'cfm'],
+    ['Temperature change',v.dt,'°F'],
+    ['Sensible factor',v.factor,'BTU/(h·cfm·°F)'],
+    ['Sensible capacity',q,'BTU/h'],
+    ['Sensible tons',q/12000,'tons']
+  ],`Qs = factor × CFM × ΔT = ${fmt(v.factor)} × ${fmt(v.cfm)} × ${fmt(v.dt)}`,
+  'Sensible heat only. The default 1.08 factor is for standard-density air; adjust for altitude and mixed-air conditions. Does not include latent capacity.');
+}},
+{id:'heatrej',name:'Condenser heat rejection',group:'REFRIGERATION',icon:'snow',desc:'Estimate condenser / heat-rejection load from cooling capacity plus compressor electrical input.',badge:'Heat rejection',sources:[],fields:[
+field('cooling','Net cooling capacity','BTU/h',36000,0),
+field('power','Compressor / unit electrical input','kW',3.5,0)
+],calculate:v=>{
+  const heatIn=v.power*3412.141633;
+  const reject=v.cooling+heatIn;
+  return result(reject,'BTU/h',[
+    ['Cooling capacity',v.cooling,'BTU/h'],
+    ['Electrical input',v.power,'kW'],
+    ['Electrical heat equivalent',heatIn,'BTU/h'],
+    ['Heat rejection',reject,'BTU/h'],
+    ['Heat rejection',reject/12000,'tons']
+  ],`Qreject ≈ Qcool + 3412.14 × kW = ${fmt(v.cooling)} + 3412.14 × ${fmt(v.power)}`,
+  'Steady-state energy balance for the refrigeration loop. Enter electrical input at the same operating condition as capacity. Does not size a condenser or cooling tower by itself.');
+}},
+{id:'wbdep',name:'Wet-bulb depression',group:'AIR & DUCTS',icon:'air',desc:'Find wet-bulb depression from dry-bulb and wet-bulb temperatures.',badge:'Psychrometric delta',sources:[],fields:[
+field('db','Dry-bulb temperature','°F',80,-40,140),
+field('wb','Wet-bulb temperature','°F',67,-40,140)
+],calculate:v=>{
+  if(v.wb>v.db+1e-9)throw Error('Wet-bulb temperature cannot exceed dry-bulb temperature.');
+  const dep=v.db-v.wb;
+  return result(dep,'°F',[
+    ['Dry-bulb',v.db,'°F'],
+    ['Wet-bulb',v.wb,'°F'],
+    ['Wet-bulb depression',dep,'°F']
+  ],`Depression = Tdb − Twb = ${fmt(v.db)} − ${fmt(v.wb)}`,
+  'Definitional psychrometric difference. Useful for evaporative cooling and cooling-tower discussions. Does not compute relative humidity by itself.');
+}},
+{id:'reynolds',name:'Reynolds number (pipe)',group:'HYDRONICS',icon:'water',desc:'Estimate pipe-flow Reynolds number from velocity, inside diameter, and kinematic viscosity.',badge:'Flow regime',sources:[],fields:[
+field('velocity','Mean velocity','ft/s',4,0,100),
+field('id','Inside diameter','in',1.049,.001,100),
+field('nu','Kinematic viscosity','ft²/s',0.0000121,1e-8,1e-3)
+],calculate:v=>{
+  const dFt=v.id/12;
+  const re=v.velocity*dFt/v.nu;
+  const regime=re<2300?'laminar':re>4000?'turbulent':'transitional';
+  return result(re,'Reynolds',[
+    ['Velocity',v.velocity,'ft/s'],
+    ['Inside diameter',dFt,'ft'],
+    ['Kinematic viscosity',v.nu,'ft²/s'],
+    ['Reynolds number',re,''],
+    ['Approximate regime',regime==='turbulent'?1:regime==='laminar'?0:-1,regime]
+  ],`Re = V × D / ν = ${fmt(v.velocity)} × ${fmt(dFt)} / ${v.nu}`,
+  'Default viscosity approximates 60 °F water (~1.21×10⁻⁵ ft²/s). Adjust ν for temperature and glycol mixes. Regime bands are approximate engineering guides, not code limits.');
+}},
+{id:'valvecv',name:'Valve Cv flow',group:'HYDRONICS',icon:'water',desc:'Estimate liquid flow from valve flow coefficient, pressure drop, and specific gravity.',badge:'Valve sizing helper',sources:[],fields:[
+field('cv','Valve flow coefficient Cv','—',10,.001,1e6),
+field('dp','Pressure drop across valve','psi',5,0,10000),
+field('sg','Fluid specific gravity','—',1,.1,3)
+],calculate:v=>{
+  if(v.dp<0)throw Error('Pressure drop cannot be negative.');
+  const gpm=v.cv*Math.sqrt(v.dp/v.sg);
+  return result(gpm,'gpm',[
+    ['Cv',v.cv,''],
+    ['Pressure drop',v.dp,'psi'],
+    ['Specific gravity',v.sg,''],
+    ['Estimated flow',gpm,'gpm']
+  ],`Q = Cv × √(ΔP / SG) = ${fmt(v.cv)} × √(${fmt(v.dp)} / ${fmt(v.sg)})`,
+  'Liquid Cv definition at the stated conditions. Does not include flashing, cavitation, or compressible-flow corrections. Confirm manufacturer Cv charts.');
+}},
+{id:'expansank',name:'Expansion tank volume',group:'HYDRONICS',icon:'water',desc:'Estimate closed-system expansion-tank acceptance volume from system volume and fluid expansion.',badge:'Expansion tank',sources:[],fields:[
+field('system','System fluid volume','gal',200,.001),
+field('expandPct','Net fluid expansion (fill to hot)','%',3,0,20),
+field('acceptance','Tank acceptance factor','—',0.5,.05,0.95)
+],calculate:v=>{
+  const expand=v.system*(v.expandPct/100);
+  if(v.acceptance<=0||v.acceptance>=1)throw Error('Tank acceptance factor must be between 0 and 1.');
+  const tank=expand/v.acceptance;
+  return result(tank,'gal tank',[
+    ['System volume',v.system,'gal'],
+    ['Expansion volume',expand,'gal'],
+    ['Acceptance factor',v.acceptance,''],
+    ['Approximate tank volume',tank,'gal']
+  ],`Vtank ≈ Vsystem × (% expansion) / acceptance = ${fmt(v.system)} × ${fmt(v.expandPct)}% / ${fmt(v.acceptance)}`,
+  'Preliminary closed-loop estimate. Acceptance factor depends on fill pressure, relief setting, and precharge — enter the manufacturer’s value when available. Does not replace ASME/manufacturer sizing methods.');
+}},
+{id:'latcond',name:'Condensate from latent',group:'HEATING & COOLING',icon:'water',desc:'Estimate condensate generation from latent cooling load and water latent heat.',badge:'Condensate rate',sources:[],fields:[
+field('latent','Latent cooling load','BTU/h',6000,0),
+field('hfg','Latent heat of vaporization','BTU/lb',1061,900,1200)
+],calculate:v=>{
+  if(v.hfg<=0)throw Error('Latent heat must be greater than zero.');
+  const lbh=v.latent/v.hfg;
+  const gph=lbh/8.33;
+  return result(gph,'gal/h',[
+    ['Latent load',v.latent,'BTU/h'],
+    ['Latent heat hfg',v.hfg,'BTU/lb'],
+    ['Condensate mass rate',lbh,'lb/h'],
+    ['Condensate volume rate',gph,'gal/h'],
+    ['Condensate volume rate',gph*24,'gal/day']
+  ],`ṁ = Qlatent / hfg; gal/h ≈ ṁ / 8.33`,
+  'Assumes condensate is liquid water near the coil temperature. Does not size the drain, trap, or pump. Confirm hfg for the actual condensate temperature.');
 }}
 );
+
 
 const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride'],combustionair:['freeAreaPct'],gaspipesize:['heatContent','fittings','csstFit','otherEL'],mrvent:['charge2','dp2','charge3','dp3','riseNote'],gascost:['heatContent']};
 Object.assign(units,{
@@ -2483,7 +2687,21 @@ Object.assign(keywords,{
   evaptd:'evaporator temperature difference box sst refrigeration coil td',
   condtd:'condenser temperature difference saturated condensing entering air water td',
   oilpd:'net oil pressure oil pump discharge crankcase suction compressor safety'
+,
+  roofaccess:'imc 306.5 roof appliance access permanent ladder platform guards service',
+  towerdocs:'imc 908 cooling tower evaporative condenser location drain drift documentation',
+  dryerterm:'imc 504.9 dryer exhaust termination openings intakes grade backdraft damper',
+  aspect:'duct aspect ratio rectangular width height long short geometry',
+  fanbhp:'fan brake horsepower cfm static pressure efficiency shaft power',
+  coilsens:'coil sensible capacity 1.08 cfm delta t air side cooling heating',
+  heatrej:'condenser heat rejection cooling capacity compressor kilowatts',
+  wbdep:'wet bulb depression dry bulb wet bulb evaporative cooling',
+  reynolds:'reynolds number pipe velocity diameter kinematic viscosity laminar turbulent',
+  valvecv:'valve cv flow coefficient pressure drop specific gravity gpm',
+  expansank:'expansion tank volume system expansion acceptance factor closed loop',
+  latcond:'condensate generation latent load hfg gallons per hour coil'
 });
+
 Object.assign(essentials,{
   csstbonding:'Receives the IFGC §310 handoff · conductor size and electrical acceptance remain with listing/NEC/AHJ.',
   ashrae152charge:'Documentation gate only · no ASHRAE 15.2 charge, RCL, or mmax values are calculated.',
@@ -2535,7 +2753,21 @@ Object.assign(essentials,{
   evaptd:'Definitional box − SST · compare with manufacturer application TD.',
   condtd:'Definitional SCT − entering · compare with manufacturer application TD.',
   oilpd:'Net oil pressure only · use the compressor manufacturer’s cut-out settings.'
+,
+  roofaccess:'IMC §306.5 documentation gate · ladder geometry table cells are not invented.',
+  towerdocs:'IMC §908 documentation gate · location-table distances are not invented.',
+  dryerterm:'IMC §504.9 key-row termination screen · confirm adopted exceptions and fittings.',
+  aspect:'Geometric long÷short only · no code AR limit is applied here.',
+  fanbhp:'Fan static-efficiency form · does not size the motor or replace the fan curve.',
+  coilsens:'Sensible only · default 1.08 factor is for standard-density air.',
+  heatrej:'Qcool + electrical heat · same operating condition for both inputs.',
+  wbdep:'Definitional Tdb − Twb · does not compute relative humidity.',
+  reynolds:'Default ν ≈ 60 °F water · adjust for temperature and glycol.',
+  valvecv:'Liquid Cv definition · flashing/cavitation corrections are not included.',
+  expansank:'Preliminary acceptance estimate · use manufacturer acceptance when available.',
+  latcond:'ṁ = Qlatent/hfg · does not size the drain, trap, or pump.'
 });
+
 
 const values=Object.fromEntries(calculators.map(c=>[c.id,Object.fromEntries(c.fields.map(f=>[f.key,f.value]))]));
 const codeEditionOptions=[
@@ -2782,6 +3014,18 @@ function resultLabelFor(c,r){
     case 'evaptd':return 'Evaporator TD';
     case 'condtd':return 'Condenser TD';
     case 'oilpd':return 'Net oil pressure';
+    case 'roofaccess':return 'Roof-access items needing attention';
+    case 'towerdocs':return 'Tower items needing attention';
+    case 'dryerterm':return 'Open dryer termination checks';
+    case 'aspect':return 'Duct aspect ratio';
+    case 'fanbhp':return 'Fan brake horsepower';
+    case 'coilsens':return 'Coil sensible capacity';
+    case 'heatrej':return 'Condenser heat rejection';
+    case 'wbdep':return 'Wet-bulb depression';
+    case 'reynolds':return 'Reynolds number';
+    case 'valvecv':return 'Valve flow';
+    case 'expansank':return 'Expansion tank volume';
+    case 'latcond':return 'Condensate rate';
     default:return 'Result';
   }
 }
@@ -2847,6 +3091,7 @@ function references(){const entries=[
 return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+editionNote(`This workbench provides <em>national US model-code / model-standard screening</em> using selectable <em>model packs</em> (currently: ${esc(codeEditionLabel())}). Model packs are not the law. <strong>The AHJ-adopted edition, local amendments, and PE judgment always govern.</strong> ${LEGAL_DISCLAIMER}`)+`<p class="reference-intro">Linked IMC / IFGC / IPC / IECC / ASHRAE 15 materials are reference editions. Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions. Code tools (outdoor air, exhaust, IRC bath/kitchen + WHMV, ASHRAE 15.2 path gate, condensate, dryer duct, hood capacity, combustion air, venting, gas pipe, machinery-room ventilation, T&amp;P discharge) use published model values or EXAMPLE_UNVERIFIED screens for screening only. Appendices apply only if adopted by the AHJ. ASHRAE standards are referenced to the extent cited; where they conflict with IMC text, the IMC governs (§102.8). Fuel-gas piping, appliances and venting are IFGC scope (IMC §101.2).</p><div class="reference-list">${entries.map(([topic,title,description,url])=>referenceRow(topic,title,description,url)).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
 function changelog(){
   const items=[
+    ['2026-09-13','Roof access, dryer termination, and more trades math','<ul><li><strong>Roof appliance access</strong> — IMC §306.5 documentation gate.</li><li><strong>Cooling tower documentation</strong> — IMC §908 listing/location/drain gate.</li><li><strong>Dryer exhaust termination</strong> — IMC §504.9 key-row clearances.</li><li><strong>Duct aspect ratio</strong> — rectangular long÷short geometry.</li><li><strong>Fan brake horsepower</strong> — CFM × SP / (6356η).</li><li><strong>Coil sensible capacity</strong> — factor × CFM × ΔT.</li><li><strong>Condenser heat rejection</strong> — cooling + compressor input.</li><li><strong>Wet-bulb depression</strong> — Tdb − Twb.</li><li><strong>Reynolds number</strong> — pipe flow regime estimate.</li><li><strong>Valve Cv flow</strong> — Q = Cv√(ΔP/SG).</li><li><strong>Expansion tank volume</strong> — closed-loop acceptance estimate.</li><li><strong>Condensate from latent</strong> — Qlatent / hfg → gal/h.</li><li>Calculator count: <strong>100</strong>.</li></ul>'],
     ['2026-09-13','More cleanout / combustion / trades tools','<ul><li><strong>Grease duct cleanouts</strong> — IMC §506.3.8 ≤20 ft horizontal spacing screen.</li><li><strong>Mechanical combustion air</strong> — IFGC §304.9 0.35 cfm/1,000 BTU/h rate.</li><li><strong>Type I hood documentation</strong> — IMC §507 listing/docs gate (no overhang table).</li><li><strong>Flexible duct checklist</strong> — IMC §603.6 installation gate (no invented max length).</li><li><strong>Hydraulic diameter</strong> — rectangular duct Dh = 2ab/(a+b).</li><li><strong>Velocity pressure</strong> — VP ≈ (V/4005)².</li><li><strong>Stack-effect pressure</strong> — buoyancy ΔP from height and absolute temperatures.</li><li><strong>Pipe volume &amp; fill</strong> — internal gallons and fill time.</li><li><strong>LMTD</strong> — counterflow / parallel-flow heat-exchanger ΔT.</li><li><strong>Evaporator / condenser TD</strong> — definitional coil temperature differences.</li><li><strong>Net oil pressure</strong> — oil pump minus crankcase.</li><li>Calculator count: <strong>88</strong>.</li></ul>'],
     ['2026-09-13','More code screens + trades math','<ul><li><strong>Vent terminal clearances</strong> — IFGC §503.8 key-row through-wall screen.</li><li><strong>Dryer makeup air</strong> — IMC §504.7 &gt;200 cfm / closet opening trigger.</li><li><strong>Grease duct clearances</strong> — IMC §506.3.6 combustibles / noncombustibles.</li><li><strong>Duct sealing checklist</strong> — IMC §603.9 documentation gate.</li><li><strong>Net free area</strong> — louver / grille free-area convert.</li><li><strong>Boiler horsepower</strong> — BTU/h ↔ boiler hp.</li><li><strong>Chiller kW/ton</strong> — efficiency ratio with COP/EER equivalents.</li><li><strong>Cooling tower approach</strong> — range and approach temperatures.</li><li><strong>Compression ratio</strong> — absolute suction/discharge pressures.</li><li><strong>Pump head from pressure</strong> — psi → feet of head.</li><li><strong>Air density altitude</strong> — standard-atmosphere density correction.</li><li><strong>Belt length</strong> — open-belt pitch-diameter estimate.</li><li>Calculator count: <strong>76</strong>.</li></ul>'],
     ['2026-09-13','More model-code screening tools','<ul><li><strong>Outdoor-air intake separation</strong> — IMC §401.4 lot-line / contaminant / street-relief clearances.</li><li><strong>Exhaust outlet location</strong> — IMC §501.3.1 class-based termination distances.</li><li><strong>Grease duct velocity</strong> — IMC §506.3.4 ≥500 fpm screen.</li><li><strong>Grease duct slope</strong> — IMC §506.3.7 1/4:12 or 1:12 geometric screen.</li><li><strong>Appliance access</strong> — IMC §306 working-space / passageway checklist.</li><li><strong>Return-air source restrictions</strong> — IMC §601.5 prohibition path gate.</li><li><strong>Gas shutoff &amp; connector</strong> — IFGC §409.5 / §411.1.3 location and 6 ft connector screen.</li><li><strong>Refrigerant pipe protection</strong> — IMC Chapter 11 documentation gate (no charge limits).</li><li>Calculator count: <strong>64</strong>.</li></ul>'],

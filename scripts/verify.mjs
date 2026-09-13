@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 88, calculators.length);
+assert('calculator count', calculators.length === 100, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -228,7 +228,27 @@ assert('evaptd 35−25 → 10', Math.abs(run('evaptd', {box: 35, sst: 25}).value
 assert('condtd 110−95 → 15', Math.abs(run('condtd', {sct: 110, enter: 95}).value - 15) < 1e-12);
 assert('oilpd 60−20 → 40', Math.abs(run('oilpd', {oil: 60, crank: 20}).value - 40) < 1e-12);
 
+
+assert('roofaccess defaults need attention', run('roofaccess', {}).value >= 1);
+assert('towerdocs defaults need attention', run('towerdocs', {}).value >= 1);
+assert('dryerterm defaults clear distances with fittings yes', run('dryerterm', {backdraft: 'yes', screen: 'yes'}).value === 0);
+assert('dryerterm short opening fails', run('dryerterm', {toOpening: 2, backdraft: 'yes', screen: 'yes'}).value >= 1);
+assert('aspect 24×8 → 3', Math.abs(run('aspect', {width: 24, height: 8}).value - 3) < 1e-12);
+assert('fanbhp 2000×1.5 / (6356×0.65)', Math.abs(run('fanbhp', {cfm: 2000, sp: 1.5, eff: 65}).value - (2000 * 1.5) / (6356 * 0.65)) < 1e-9);
+assert('coilsens 1.08×1200×20 → 25920', Math.abs(run('coilsens', {cfm: 1200, dt: 20, factor: 1.08}).value - 25920) < 1e-9);
+assert('heatrej 36000 + 3.5×3412.141633', Math.abs(run('heatrej', {cooling: 36000, power: 3.5}).value - (36000 + 3.5 * 3412.141633)) < 1e-6);
+assert('wbdep 80−67 → 13', Math.abs(run('wbdep', {db: 80, wb: 67}).value - 13) < 1e-12);
+{
+  const dFt = 1.049 / 12;
+  const expect = 4 * dFt / 0.0000121;
+  assert('reynolds 4 fps / 1.049 in', Math.abs(run('reynolds', {velocity: 4, id: 1.049, nu: 0.0000121}).value - expect) < 1e-6);
+}
+assert('valvecv 10√(5/1) → ~22.361', Math.abs(run('valvecv', {cv: 10, dp: 5, sg: 1}).value - 10 * Math.sqrt(5)) < 1e-9);
+assert('expansank 200×3%/0.5 → 12', Math.abs(run('expansank', {system: 200, expandPct: 3, acceptance: 0.5}).value - 12) < 1e-12);
+assert('latcond 6000/1061 / 8.33', Math.abs(run('latcond', {latent: 6000, hfg: 1061}).value - (6000 / 1061) / 8.33) < 1e-9);
+
 const failed = tests.filter(t => !t.ok);
+
 const passed = tests.length - failed.length;
 console.log(`verify: ${passed}/${tests.length} passed`);
 if (failed.length) {
