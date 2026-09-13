@@ -128,6 +128,8 @@ Method: screenshots and DOM measurements of representative tools (`btu`, `combus
 
 Follow-up: form controls are now driven by one set of tokens (`--control-h` 38 px, 44 px on coarse pointers; `--control-font` 15 px, 16 px under 800 px; shared border, radius, text colour and 10 px inset). Number inputs, selects, the converter controls, the sidebar/header/glossary search fields, the mobile tool picker and header buttons all resolve to the same height, and inputs and selects share the same text size and colour (they were 16 px vs 14 px, and different inks). A scripted pass over every control on all 214 tools plus the reference pages at 1280/1920 shows a single height for every input and select and no row where two controls differ in top or height.
 
+Inner edges: panel heading, field labels, advanced section, form status, error box and code disclaimer share one left edge inside the inputs panel, and hero label, result rows, method formula/note/cites, negative note and cross-code chips share one edge inside the results panel, at every breakpoint (10 px under 620 px, 12/14 px by default, 14/16 px from 1650 px). Previously the error box (17 px), cross-code chips (17 px) and, at ≥ 1650 px, the panel heading and method body were 2–5 px off. Long-option selects carry a `title` with the selected label so an 80-character option can be read in full even where the box clips it.
+
 After the pass: 0 misaligned rows and 0 clipped selects at 1280/1920; at 1024 the only remaining clipped selects are single-column 85-character option labels (the open list shows the full text). Verify 512/512, all-page smoke and fuzz unchanged.
 
 ## NIST security survey (2026-09-13)
