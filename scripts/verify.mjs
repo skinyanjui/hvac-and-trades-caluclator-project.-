@@ -570,6 +570,12 @@ for (const id of ['co2ss', 'co2vent', 'co2decay', 'ventcool', 'lcc']) {
   assert('glossary terms unique', dupTerms.length === 0, dupTerms.join(', '));
   const emptyDef = terms.filter(([, , def]) => !def || def.length < 20).map(([t]) => t);
   assert('glossary definitions present', emptyDef.length === 0, emptyDef.join(', '));
+  // Field keys become element ids; they must not collide with the shell's structural ids (a `method` field once hid the Method panel).
+  const structuralIds = new Set(['app', 'main', 'nav', 'print', 'reset', 'result', 'error', 'calc-form', 'calculator-search', 'header-search', 'mobile-calc', 'mobile-results', 'method-panel']);
+  const clash = calculators.flatMap(c => c.fields.filter(f => structuralIds.has(f.key) || structuralIds.has(`${f.key}-hint`) || structuralIds.has(`${f.key}-unit`)).map(f => `${c.id}.${f.key}`));
+  assert('field keys do not collide with structural ids', clash.length === 0, clash.join(', '));
+  const dupKeys = calculators.flatMap(c => c.fields.map(f => f.key).filter((k, i, a) => a.indexOf(k) !== i).map(k => `${c.id}.${k}`));
+  assert('field keys unique within each tool', dupKeys.length === 0, dupKeys.join(', '));
 }
 
 const failed = tests.filter(t => !t.ok);
