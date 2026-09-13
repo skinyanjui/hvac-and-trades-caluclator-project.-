@@ -51,9 +51,12 @@ vm.runInContext(body + `
   globalThis.icons = icons;
   globalThis.convert = typeof convert !== 'undefined' ? convert : null;
   globalThis.ashrae152PathGate = typeof ashrae152PathGate !== 'undefined' ? ashrae152PathGate : null;
+  globalThis.sourceLinks = sourceLinks;
+  globalThis.glossaryTopics = glossaryTopics;
+  globalThis.glossarySymbols = glossarySymbols;
 `, sandbox);
 
-const {calculators, essentials, keywords, units, icons, convert} = sandbox;
+const {calculators, essentials, keywords, units, icons, convert, sourceLinks, glossaryTopics, glossarySymbols} = sandbox;
 const byId = Object.fromEntries(calculators.map(c => [c.id, c]));
 const tests = [];
 const assert = (name, cond, detail) => {
@@ -547,6 +550,26 @@ for (const id of ['co2ss', 'co2vent', 'co2decay', 'ventcool', 'lcc']) {
   const r = run(id, {});
   assert(`${id} default result finite`, Number.isFinite(r.value) && r.rows.every(([, n]) => Number.isFinite(n)));
   assert(`${id} has cites`, Array.isArray(r.cites) && r.cites.length > 0);
+}
+
+// Content completeness: every field hinted, every tool referenced, every link and glossary target resolvable.
+{
+  const noHint = calculators.flatMap(c => c.fields.filter(f => !f.hint).map(f => `${c.id}.${f.key}`));
+  assert('every field has a hint', noHint.length === 0, noHint.slice(0, 5).join(', '));
+  const noSource = calculators.filter(c => !Array.isArray(c.sources) || !c.sources.length).map(c => c.id);
+  assert('every calculator has a source link', noSource.length === 0, noSource.slice(0, 5).join(', '));
+  const badSource = calculators.flatMap(c => (c.sources || []).filter(k => !sourceLinks[k]).map(k => `${c.id}:${k}`));
+  assert('every source key resolves', badSource.length === 0, badSource.join(', '));
+  const badLink = Object.entries(sourceLinks).filter(([, v]) => !Array.isArray(v) || !/^https:\/\//.test(v[1])).map(([k]) => k);
+  assert('every source link is https', badLink.length === 0, badLink.join(', '));
+  const terms = glossaryTopics.flatMap(([, list]) => list);
+  assert('glossary has terms and symbols', terms.length >= 150 && glossarySymbols.length >= 20, `${terms.length}/${glossarySymbols.length}`);
+  const badUse = terms.flatMap(([term, , , ids]) => ids.filter(id => id !== 'references' && !byId[id]).map(id => `${term}:${id}`));
+  assert('glossary "used in" ids resolve', badUse.length === 0, badUse.join(', '));
+  const dupTerms = terms.map(([t]) => t.toLowerCase()).filter((t, i, a) => a.indexOf(t) !== i);
+  assert('glossary terms unique', dupTerms.length === 0, dupTerms.join(', '));
+  const emptyDef = terms.filter(([, , def]) => !def || def.length < 20).map(([t]) => t);
+  assert('glossary definitions present', emptyDef.length === 0, emptyDef.join(', '));
 }
 
 const failed = tests.filter(t => !t.ok);
