@@ -68,7 +68,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 209, calculators.length);
+assert('calculator count', calculators.length === 214, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 32', Object.keys(units).length === 32, Object.keys(units).join(', '));
 
@@ -461,6 +461,93 @@ assert('hoodcfm essentials not editable rates', !/hoodcfm:'[^']*Editable rates/.
 assert('hoodcfm disclaimer exact cells', /Hood rates are exact embedded cells/.test(html));
 assert('resultLabelFor attention units', /unit\.includes\('needing attention'\)/.test(html));
 assert('no checklist hero hardcoded as OK', !/case '(tpdischarge|ircinstall)':return 'Checklist items marked OK'/.test(html));
+
+{
+  // NIST QICO2 published per-person generation rates (L/s) at 23 °C, 101.325 kPa.
+  const near = (a, b, tol) => Math.abs(a - b) <= tol;
+  const gen = r => r.rows.find(([l]) => l === 'CO₂ generation per person')[1];
+  assert('co2 gen: male 85 kg 30–59 y 1.3 met ≈ 0.0053 L/s', near(gen(run('co2ss', {sex:'m', age:'a30', mass:85, met:1.3})), 0.0053, 0.0001));
+  assert('co2 gen: female 75 kg 30–59 y 1.3 met ≈ 0.0042 L/s', near(gen(run('co2ss', {sex:'f', age:'a30', mass:75, met:1.3})), 0.0042, 0.0001));
+  assert('co2 gen: male child 23 kg 3–9 y 2 met ≈ 0.0045 L/s', near(gen(run('co2ss', {sex:'m', age:'a3', mass:23, met:2})), 0.0045, 0.0001));
+  assert('co2 gen: female child 23 kg 3–9 y 2 met ≈ 0.0042 L/s', near(gen(run('co2ss', {sex:'f', age:'a3', mass:23, met:2})), 0.0042, 0.0001));
+  // Steady state: Css = Cout + G/Q × 1e6 with Q in L/s.
+  const ss = run('co2ss', {occupants:1, sex:'m', age:'a30', mass:85, met:1.3, ventmode:'total', oaTotal:10 / 0.4719474432, outdoorCo2:400});
+  const g1 = gen(ss);
+  assert('co2ss steady state matches G/Q', near(ss.value, 400 + g1 / 10 * 1e6, 0.5), ss.value);
+  // Transient at t → ∞ equals steady state; at t = 0 equals initial.
+  const t0 = run('co2ss', {elapsed:0, initial:500});
+  assert('co2ss C(0) = initial', near(t0.rows.find(([l]) => l.startsWith('Indoor CO₂ after'))[1], 500, 1e-6));
+  const tInf = run('co2ss', {elapsed:48, volume:100, initial:500});
+  assert('co2ss C(∞) → Css', near(tInf.rows.find(([l]) => l.startsWith('Indoor CO₂ after'))[1], tInf.value, 1e-3));
+  // Inverse tool round-trips the forward tool.
+  const inv = run('co2vent', {occupants:10, sex:'m', age:'a30', mass:75, met:1.3, indoorCo2:run('co2ss', {}).value, outdoorCo2:420});
+  assert('co2vent round-trips 15 CFM/person', near(inv.value, 15, 1e-6), inv.value);
+  let blocked = false;
+  try { run('co2vent', {indoorCo2:400, outdoorCo2:420}); } catch { blocked = true; }
+  assert('co2vent rejects indoor ≤ outdoor', blocked);
+  // Decay: 1500→900 over 30 min with 420 outdoor → ln(1080/480)/0.5 h.
+  const dec = run('co2decay', {});
+  assert('co2decay ACH', near(dec.value, Math.log(1080 / 480) / 0.5, 1e-9), dec.value);
+  blocked = false;
+  try { run('co2decay', {c0:900, ct:1500}); } catch { blocked = true; }
+  assert('co2decay rejects rising concentration', blocked);
+}
+{
+  const near = (a, b, tol) => Math.abs(a - b) <= tol;
+  const row = (r, label) => r.rows.find(([l]) => l === label)?.[1];
+  // NIST Handbook 135 worked factors: d=3 %, n=15 → SPV 0.642, UPV 11.94; e=2 % → UPV* 13.89; d=3 %, e=2 %, n=5 → UPV* 4.8562.
+  const r15 = run('lcc', {period:15, discount:3, escalation:2});
+  assert('lcc SPV(3 %, 15 y) = 0.642', near(row(r15, 'Single present value factor (SPV)'), 0.642, 0.0005));
+  assert('lcc UPV(3 %, 15 y) = 11.94', near(row(r15, 'Uniform present value factor (UPV)'), 11.94, 0.005));
+  assert('lcc UPV*(3 %, 2 %, 15 y) = 13.89', near(row(r15, 'Escalating present value factor (UPV*)'), 13.89, 0.005));
+  const r5 = run('lcc', {period:5, discount:3, escalation:2});
+  assert('lcc UPV*(3 %, 2 %, 5 y) = 4.8562', near(row(r5, 'Escalating present value factor (UPV*)'), 4.8562, 0.0001));
+  // Degenerate rates: d = e and d = 0 both collapse to n.
+  const same = run('lcc', {period:10, discount:2, escalation:2});
+  assert('lcc UPV* with d = e equals n', near(row(same, 'Escalating present value factor (UPV*)'), 10, 1e-9));
+  const zero = run('lcc', {period:10, discount:0, escalation:0});
+  assert('lcc UPV with d = 0 equals n', near(row(zero, 'Uniform present value factor (UPV)'), 10, 1e-9));
+  // Net savings and SIR/AIRR consistency: NS = PV savings − net investment; AIRR = (1+d)·SIR^(1/n) − 1.
+  const base = run('lcc', {});
+  const pv = row(base, 'Total PV savings'), ni = row(base, 'Net investment (cost − PV residual)');
+  assert('lcc NS = PV savings − net investment', near(base.value, pv - ni, 1e-6));
+  const sir = row(base, 'Savings-to-investment ratio (SIR)');
+  assert('lcc SIR = PV savings / net investment', near(sir, pv / ni, 1e-9));
+  assert('lcc AIRR formula', near(row(base, 'Adjusted internal rate of return (AIRR)'), ((1.03) * Math.pow(sir, 1 / 20) - 1) * 100, 1e-6));
+  assert('lcc simple payback 25000/4000 = 6.25', near(row(base, 'Simple payback'), 6.25, 1e-9));
+  assert('lcc discounted payback is an integer year ≥ simple payback', Number.isInteger(row(base, 'Discounted payback (first year cumulative PV ≥ cost)')) && row(base, 'Discounted payback (first year cumulative PV ≥ cost)') >= 7);
+  const never = run('lcc', {invest:1e9});
+  assert('lcc omits discounted payback when never reached', row(never, 'Discounted payback (first year cumulative PV ≥ cost)') === undefined && /never reach/.test(never.note));
+  for (const r of [base, r15, r5, same, zero, never]) assert('lcc rows finite', r.rows.every(([, n]) => Number.isFinite(n)), r.rows.filter(([, n]) => !Number.isFinite(n)).map(([l]) => l).join(', '));
+}
+{
+  const near = (a, b, tol) => Math.abs(a - b) <= tol;
+  const row = (r, label) => r.rows.find(([l]) => l === label)?.[1];
+  // Cooling window: qi = 2.5 W/ft² × 5000 ft² = 12500 W = 42651.8 BTU/h; ΔT = 10 °F → CFM = qi/(1.08·10).
+  const cool = run('ventcool', {});
+  const qi = 2.5 * 5000 * 3.412141633;
+  assert('ventcool cooling airflow = qi / (1.08 ΔT)', near(cool.value, qi / 10.8, 1e-6), cool.value);
+  assert('ventcool balance point = Thsp − qi/(1.08·CFMmin)', near(row(cool, 'Heating balance point'), 68 - qi / (1.08 * 750), 1e-9));
+  // Envelope conduction reduces the cooling airflow requirement.
+  const withUa = run('ventcool', {ua:1000});
+  assert('ventcool UA lowers cooling airflow', withUa.value < cool.value && near(withUa.value, (qi - 1000 * 10) / 10.8, 1e-6));
+  // Below the balance point only the minimum ventilation is needed.
+  const cold = run('ventcool', {outdoor:-20});
+  assert('ventcool cold hour → minimum outdoor air', near(cold.value, 750, 1e-9) && /Below heating balance point/.test(cold.note));
+  let blocked = false;
+  try { run('ventcool', {outdoor:78}); } catch { blocked = true; }
+  assert('ventcool rejects outdoor ≥ cooling setpoint', blocked);
+  blocked = false;
+  try { run('ventcool', {minVent:0, ua:0}); } catch { blocked = true; }
+  assert('ventcool rejects zero conductance', blocked);
+  assert('ventcool flags > 5 ACH', /Above 5 air changes/.test(run('ventcool', {height:2}).note));
+}
+for (const id of ['co2ss', 'co2vent', 'co2decay', 'ventcool', 'lcc']) {
+  assert(`${id} has keywords and essentials`, typeof keywords[id] === 'string' && typeof essentials[id] === 'string');
+  const r = run(id, {});
+  assert(`${id} default result finite`, Number.isFinite(r.value) && r.rows.every(([, n]) => Number.isFinite(n)));
+  assert(`${id} has cites`, Array.isArray(r.cites) && r.cites.length > 0);
+}
 
 const failed = tests.filter(t => !t.ok);
 

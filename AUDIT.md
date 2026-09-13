@@ -93,6 +93,23 @@ Content audit of all 209 calculators (script-driven: description, badge, icon, g
 
 Remaining gaps are content, not structure: field hints for the 181 math and checklist tools, and optional reference links (ASHRAE Fundamentals, ACCA manuals) for the pure-math group.
 
+## NIST.gov calculator survey (2026-09-13)
+
+Surveyed NIST-published tools and methods for content that fits a single-file, public-domain workbench. Adopted where the method is a closed-form equation published by NIST; linked where NIST hosts the authoritative data or software.
+
+| NIST tool / publication | Disposition | Result in this app |
+| --- | --- | --- |
+| Quick Indoor CO₂ (QICO2) tool · NIST TN 2213 · Persily & de Jonge (2017) | **Implemented** | `co2ss` (steady-state and transient indoor CO₂ from occupants and outdoor air) and `co2vent` (outdoor air per person from a steady-state reading). Schofield BMR × met × (T/P) × 0.000179 generation; verified against the published per-person rates (0.0053 / 0.0042 / 0.0045 / 0.0042 L/s). |
+| Tracer-gas decay (ASTM E741 as used in NIST ventilation studies) | **Implemented** | `co2decay` — air change rate from CO₂ decay after a space empties. |
+| Climate Suitability Tool / NISTIR 6781 / NIST GCR 01-820 (Axley single-zone model) | **Implemented (steady-state relations)** | `ventcool` — direct ventilative-cooling airflow and heating balance point; flags > 5 ACH as NIST does. Hourly climate-file analysis stays with the NIST tool. |
+| NIST Handbook 135 (FEMP LCC) + NISTIR 85-3273 annual supplement + BLCC | **Implemented (chapter 6 & 17 formulas)** | `lcc` — SPV / UPV / UPV* factors, net savings, SIR, AIRR, simple and discounted payback. Verified against the Handbook’s worked factors (SPV 0.642, UPV 11.94, UPV* 13.89 and 4.8562). Regional fuel-price indices are not embedded; the tool uses one real escalation rate and points to the annual supplement / BLCC. |
+| NIST Chemistry WebBook · Thermophysical Properties of Fluid Systems / REFPROP | **Linked** | Reference row plus source link on the superheat and subcooling tools for obtaining saturation temperatures. Tabulating refrigerant equations of state is out of scope for a single file. |
+| CONTAM, LoopDA, HVAC-Cx, HVACSIM+ | **Linked only** | Multizone airflow networks, loop-equation opening sizing and fault detection need weather files and building models; a reference row points to the NIST multizone modeling page. |
+| Energy Savings and Moisture Transfer Calculator (ORNL / NIST / ABAA) | **Not adopted** | Driven by a database of pre-run EnergyPlus / CONTAM results, not a formula. |
+| NIST SP 811 | Already used | Unit-conversion factors; remains the source for the converter. |
+
+Calculator count: **214**. New tools carry hints on every field, cite tags, source links, hero labels and essentials; `scripts/verify.mjs` gained 47 assertions covering them.
+
 ## Bug and security pass (2026-09-13)
 
 Method: static review of every `innerHTML` sink, a headless fuzz of all 209 calculators (boundary values, every select option, 8,360 in-range random input sets) and all 32 × n² unit-pair conversions, plus a `localStorage` tampering test and a desktop/mobile UI smoke run.
