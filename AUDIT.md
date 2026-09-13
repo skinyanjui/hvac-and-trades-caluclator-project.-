@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 100 calculators across:
+The app now contains 112 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -109,6 +109,17 @@ Added published-distance and formula screens without inventing proprietary table
 - Duct aspect ratio, fan brake horsepower, coil sensible capacity
 - Condenser heat rejection, wet-bulb depression, Reynolds number
 - Valve Cv flow, expansion-tank acceptance estimate, condensate from latent load
+
+
+### Attic / underfloor access and more trades math (follow-on)
+
+- IMC §306.3 attic-appliance access documentation gate
+- IMC §306.4 underfloor-appliance access documentation gate
+- IMC §603.10 duct support / hanger documentation gate
+- IMC §1105 machinery-room documentation gate (no rate/ppm tables)
+- Outdoor-air fraction, coil bypass factor, air horsepower
+- Heat-exchanger effectiveness, Darcy friction head (user-supplied f)
+- Steam mass from load, refrigerant mass flow, fitting equivalent-length sum
 
 ### Code-context selector trust fix
 

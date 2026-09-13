@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **100** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **112** calculators with code-oriented screening tools:
 
 - **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
@@ -36,6 +36,7 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **More trades math** — net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude correction, open-belt length, hydraulic diameter, velocity pressure, stack effect, pipe volume, LMTD, evaporator/condenser TD, and net oil pressure
 - **More kitchen / combustion screens** — IMC §506.3.8 grease-duct cleanout spacing, IFGC §304.9 mechanical combustion air (0.35 cfm/1,000 BTU/h), IMC §507 Type I hood documentation, and IMC §603.6 flexible-duct installation checklist
 - **More access / termination / trades tools** — IMC §306.5 roof-appliance access docs, IMC §908 cooling-tower documentation, IMC §504.9 dryer termination key-row screen, duct aspect ratio, fan BHP, coil sensible capacity, condenser heat rejection, wet-bulb depression, Reynolds number, valve Cv flow, expansion-tank estimate, and condensate from latent load
+- **Attic / underfloor / machinery docs + more trades math** — IMC §306.3 attic access, IMC §306.4 underfloor access, IMC §603.10 duct support docs, IMC §1105 machinery-room docs, outdoor-air fraction, coil bypass factor, air horsepower, heat-exchanger effectiveness, Darcy friction head (user f), steam mass from load, refrigerant mass flow, and fitting equivalent-length sum
 
 See [`AUDIT.md`](AUDIT.md) for the current coverage audit, explicit source-data blockers, and prioritized follow-up work.
 

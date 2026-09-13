@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 100, calculators.length);
+assert('calculator count', calculators.length === 112, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -246,6 +246,24 @@ assert('wbdep 80−67 → 13', Math.abs(run('wbdep', {db: 80, wb: 67}).value - 1
 assert('valvecv 10√(5/1) → ~22.361', Math.abs(run('valvecv', {cv: 10, dp: 5, sg: 1}).value - 10 * Math.sqrt(5)) < 1e-9);
 assert('expansank 200×3%/0.5 → 12', Math.abs(run('expansank', {system: 200, expandPct: 3, acceptance: 0.5}).value - 12) < 1e-12);
 assert('latcond 6000/1061 / 8.33', Math.abs(run('latcond', {latent: 6000, hfg: 1061}).value - (6000 / 1061) / 8.33) < 1e-9);
+
+assert('atticaccess defaults need attention', run('atticaccess', {}).value >= 1);
+assert('underfloor defaults need attention', run('underfloor', {}).value >= 1);
+assert('ductsupport defaults need attention', run('ductsupport', {}).value >= 1);
+assert('mrdocs defaults need attention', run('mrdocs', {}).value >= 1);
+assert('oafrac 300/1200 → 0.25', Math.abs(run('oafrac', {oa: 300, supply: 1200}).value - 0.25) < 1e-12);
+assert('bypassfac (55−50)/(80−50) → 1/6', Math.abs(run('bypassfac', {eat: 80, lat: 55, adp: 50}).value - (5/30)) < 1e-12);
+assert('airhp 2000×1.5/6356', Math.abs(run('airhp', {cfm: 2000, sp: 1.5}).value - (2000 * 1.5) / 6356) < 1e-9);
+assert('hxeff 48k/60k → 0.8', Math.abs(run('hxeff', {actual: 48000, max: 60000}).value - 0.8) < 1e-12);
+{
+  const d = 1.049 / 12;
+  const expect = 0.02 * (100 / d) * (4 * 4) / (2 * 32.174);
+  assert('darcyhead defaults', Math.abs(run('darcyhead', {}).value - expect) < 1e-9);
+}
+assert('steamflow 500000/970', Math.abs(run('steamflow', {load: 500000, hfg: 970}).value - 500000 / 970) < 1e-9);
+assert('refrigmass 36000/70', Math.abs(run('refrigmass', {capacity: 36000, dh: 70}).value - 36000 / 70) < 1e-9);
+assert('fittingel 50+15+10+5 → 80', Math.abs(run('fittingel', {}).value - 80) < 1e-12);
+
 
 const failed = tests.filter(t => !t.ok);
 
