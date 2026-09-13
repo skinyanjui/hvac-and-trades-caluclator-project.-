@@ -82,6 +82,7 @@ Results:
 - Fixed: `Recent` ignored deep links and browser back/forward; the hashchange path now records recents.
 - Hardened: `localStorage` prefs are sanitized on load (favorites/recents filtered to known ids, `collapsed` reduced to known groups with boolean values, filter allow-listed) so a tampered or stale payload cannot grow or break the nav.
 - Hardened: added a `Content-Security-Policy` meta (no remote scripts, no connect/frames/objects, fonts only from jsdelivr, `base-uri 'none'`) and a `vercel.json` with CSP + `frame-ancestors 'none'`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and `COOP`. Inline script/style still need `'unsafe-inline'` because the app is a single file; a hash-pinned `script-src` is the next step if the build ever emits a separate JS asset.
+- Fixed (ported from PR #15, which had gone stale against `main`): checklist heroes said "Checklist items marked OK" while the scored unit was `items needing attention` (T&P discharge, IRC install, and every documentation gate that fell through to the generic label). `resultLabelFor` now keys the hero off the unit. Hood-capacity copy no longer implies editable rates or a "Rate override" section; the cells are fixed IMC 2024 table values.
 - Cleanup: removed a dead debounce timer, a hidden duplicate mobile search input, and a duplicated favorite-toggle handler on the context chip; escaped group names / calculator names in the mobile menu and `data-group` attributes.
 
 ## Priority additions completed in this audit

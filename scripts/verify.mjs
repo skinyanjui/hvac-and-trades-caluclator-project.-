@@ -449,6 +449,19 @@ assert('ventingdocs defaults need attention', run('ventingdocs', {}).value >= 1)
 
 
 
+{
+  const unk = run('tpdischarge', {});
+  assert('tpdischarge defaults need attention', unk.unit === 'items needing attention' && unk.value >= 1, `${unk.value} ${unk.unit}`);
+  const yes = Object.fromEntries(byId.tpdischarge.fields.filter(f => f.options && f.options.some(([k]) => k === 'yes')).map(f => [f.key, 'yes']));
+  const ok = run('tpdischarge', yes);
+  assert('tpdischarge all-yes → 0 needing attention', ok.unit === 'items needing attention' && ok.value === 0, `${ok.value} ${ok.unit}`);
+}
+assert('hoodcfm no fake rate-override title', !/hoodcfm:'Rate override'/.test(html));
+assert('hoodcfm essentials not editable rates', !/hoodcfm:'[^']*Editable rates/.test(html));
+assert('hoodcfm disclaimer exact cells', /Hood rates are exact embedded cells/.test(html));
+assert('resultLabelFor attention units', /unit\.includes\('needing attention'\)/.test(html));
+assert('no checklist hero hardcoded as OK', !/case '(tpdischarge|ircinstall)':return 'Checklist items marked OK'/.test(html));
+
 const failed = tests.filter(t => !t.ok);
 
 const passed = tests.length - failed.length;
