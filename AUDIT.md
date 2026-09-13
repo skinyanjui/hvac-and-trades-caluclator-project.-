@@ -64,10 +64,34 @@ Follow-on audit after the first accuracy/unit expansion:
 
 Shell improvements for denser calculator browsing:
 
-- Favorites and recent tools (persisted in `localStorage`)
-- Sidebar filter chips: All · Math · Code · Favorites; collapsible groups
-- Header/mobile search with `/` focus, ↑/↓/Enter list navigation, and an active-tool context chip with favorite toggle
+- Favorites and recent tools (persisted in `localStorage`); collapsible groups
+- Header/mobile search with `/` focus and ↑/↓/Enter list navigation
 - Sidebar footer links to Units, Sources, and Changelog
+- Removed later the same day at the owner's request: the All · Math · Code · Favorites filter pills and the header context-chip pill. Favorites remain as a sidebar section with per-row stars.
+
+## Consolidation and content audit (2026-09-13)
+
+Consolidation:
+
+- Removed the nav filter pills and header context chip plus their state (`navFilter`, `filterPool`, `updateContextChip`, `activeLabel`, `CODE_GROUPS` / `MATH_GROUPS`, the `filter` key in saved prefs).
+- Removed dead code-edition remnants (`codeEdition`, `codeEditionDataNote`) left over from the old AHJ selector bar.
+- Deleted the stale `.superdesign/` tooling artifacts (design-system notes describing a 47-tool app, an unrelated `business.x.com` capture, and a tool `resume.json`).
+
+Content audit of all 209 calculators (script-driven: description, badge, icon, group, essentials, keywords, sources, field hints/units/ranges/defaults, duplicate labels, result unit/formula/note/rows/cites, hero label, disclaimer block):
+
+| Check | Before | After | Notes |
+| --- | --- | --- | --- |
+| Description, badge, icon, group, essentials, keywords | complete | complete | no gaps |
+| Fields with shifted arguments (max = `'any'`, step = hint text) | 2 (`combustionair`) | 0 | `sumConnectors`, `availableVolume` never range-checked and lost their hints |
+| Code tools without cite tags | 5 | 0 | `outdoorair` and `exhaust` now cite IMC §403.3.1.1 / Table 403.3.1.1; the other three are unit-math tools that intentionally carry no code cites |
+| Code-group tools without a model-code disclaimer block | 58 | 0 | generic IMC / IFGC fallback block; `manifoldkpa`, `gascfh`, `mcfgas` excluded as pure conversions |
+| Hero label falling back to "Result" | 27 | 0 | named labels for the 22 original engineering tools and the five IMC gates |
+| Duplicate field labels within a tool | 3 | 0 material | hood duties renamed Second/Third; `outdoorair` manual population relabelled; `gaspipesize` keeps two "Section gas load" fields that are mutually exclusive by unit toggle |
+| Fields without a hint | 751 across 206 tools | 668 across 181 tools | hints added for the 26 core engineering tools; the remainder are mostly yes/no checklist items and single-purpose math inputs whose labels carry units |
+| Tools with no source links | 117 | 117 | all are pure-math relationships; the Method panel states that no code threshold applies |
+| Defaults that throw | 1 (`condensateoverflow`) | 1 | intentional path-gate that requires an answer first |
+
+Remaining gaps are content, not structure: field hints for the 181 math and checklist tools, and optional reference links (ASHRAE Fundamentals, ACCA manuals) for the pure-math group.
 
 ## Bug and security pass (2026-09-13)
 
