@@ -130,6 +130,8 @@ Follow-up: form controls are now driven by one set of tokens (`--control-h` 38 p
 
 Inner edges: panel heading, field labels, advanced section, form status, error box and code disclaimer share one left edge inside the inputs panel, and hero label, result rows, method formula/note/cites, negative note and cross-code chips share one edge inside the results panel, at every breakpoint (10 px under 620 px, 12/14 px by default, 14/16 px from 1650 px). Previously the error box (17 px), cross-code chips (17 px) and, at ≥ 1650 px, the panel heading and method body were 2–5 px off. Long-option selects carry a `title` with the selected label so an 80-character option can be read in full even where the box clips it.
 
+Chrome and reference pages: the header now pads 20 px so the brand mark sits on the same vertical line as the sidebar search icon and group dots; surfaces (panels, reference/changelog/glossary lists, symbol cards) share `--radius-surface` and callouts (formula, disclaimers, errors, edition note, cross-code chips) share `--radius-callout`, replacing a spread of 2/4/5/6/7 px radii; reference and changelog rows use the same 14 px inner padding as panels. Reading pages (Sources, Changelog, Glossary) cap every block at 1040 px from the same left edge as the calculators, and the edition note and intro paragraph share the list's right edge instead of stopping at 840 px. Glossary symbol badges are a fixed 56 × 44 px column so titles and definitions align across cards.
+
 After the pass: 0 misaligned rows and 0 clipped selects at 1280/1920; at 1024 the only remaining clipped selects are single-column 85-character option labels (the open list shows the full text). Verify 512/512, all-page smoke and fuzz unchanged.
 
 ## NIST security survey (2026-09-13)
