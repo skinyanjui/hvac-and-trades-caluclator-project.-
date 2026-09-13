@@ -1,6 +1,6 @@
-# HVAC Workbench
+# HVACR Tools
 
-Single-file static HVAC calculator workbench (`index.html`).
+Single-file static HVACR calculator app (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 

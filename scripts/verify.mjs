@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Headless regression harness for HVAC Workbench (index.html).
+ * Headless regression harness for HVACR Tools (index.html).
  * Extracts calculator logic (cuts UI bootstrap) and runs acceptance checks.
  */
 import fs from 'node:fs';

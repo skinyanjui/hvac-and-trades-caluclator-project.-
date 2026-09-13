@@ -1,10 +1,10 @@
-# HVAC Workbench coverage audit
+# HVACR Tools coverage audit
 
 Reviewed September 12, 2026.
 
 ## Scope
 
-HVAC Workbench is a national-US **screening and engineering-math** utility. It is not an adopted-code database, load-calculation package, fire-alarm design tool, or compliance certificate. The AHJ-adopted code, local amendments, equipment listings, manufacturer instructions, and licensed design professionals govern.
+HVACR Tools is a national-US **screening and engineering-math** utility. It is not an adopted-code database, load-calculation package, fire-alarm design tool, or compliance certificate. The AHJ-adopted code, local amendments, equipment listings, manufacturer instructions, and licensed design professionals govern.
 
 “All codes” is not a safe or finite implementation target: adoption varies by jurisdiction, many referenced standards and tables are licensed, and project-specific exceptions change outcomes. This audit therefore separates:
 
