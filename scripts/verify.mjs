@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 47, calculators.length);
+assert('calculator count', calculators.length === 56, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -136,6 +136,24 @@ for (const [vals, expect] of pathCases) {
   assert('ircinstall 8 items unknown by default', /8 unknown/.test(r.formula) || /of 8/.test(r.formula), r.formula);
   assert('ircinstall no charge fields', /not present/.test(JSON.stringify(r.rows)));
 }
+
+{
+  const de = run('equivduct', {width: 12, height: 8}).value;
+  assert('equivduct 12x8 ≈ 10.66', Math.abs(de - 1.30 * Math.pow(96, 0.625) / Math.pow(20, 0.25)) < 1e-9, de);
+}
+assert('facevelocity 1200 / 5 ft² → 240', Math.abs(run('facevelocity', {flow: 1200, width: 30, height: 24}).value - 240) < 1e-9);
+assert('cfmton 1400 / 3 → ~466.67', Math.abs(run('cfmton', {flow: 1400, capacity: 36000}).value - 1400 / 3) < 1e-9);
+assert('shr 28k/36k → 7/9', Math.abs(run('shr', {sensible: 28000, total: 36000}).value - 28000 / 36000) < 1e-12);
+assert('tons 36000 → 3', Math.abs(run('tons', {capacity: 36000}).value - 3) < 1e-12);
+assert('pumplaws half speed → half flow', Math.abs(run('pumplaws', {rpm1: 1750, rpm2: 875, flow: 40, head: 40, power: 1.5}).value - 20) < 1e-9);
+assert('sheave 1750×4/6 → ~1166.67', Math.abs(run('sheave', {rpmDriver: 1750, driverDia: 4, drivenDia: 6}).value - 1750 * 4 / 6) < 1e-9);
+{
+  const r = run('pipevelocity', {flow: 20, diameter: 1.049});
+  const area = Math.PI * Math.pow(1.049 / 12, 2) / 4;
+  const expect = (20 / (7.48051948 * 60)) / area;
+  assert('pipevelocity 20 gpm / 1.049 in', Math.abs(r.value - expect) < 1e-9, r.value);
+}
+assert('gascost 80k×8×30 / 1e5 × 1.2', Math.abs(run('gascost', {input: 80000, hours: 8, days: 30, rate: 1.2}).value - (80000 * 8 * 30 / 100000) * 1.2) < 1e-9);
 
 const failed = tests.filter(t => !t.ok);
 const passed = tests.length - failed.length;
