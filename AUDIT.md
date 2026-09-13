@@ -69,6 +69,21 @@ Shell improvements for denser calculator browsing:
 - Header/mobile search with `/` focus, ↑/↓/Enter list navigation, and an active-tool context chip with favorite toggle
 - Sidebar footer links to Units, Sources, and Changelog
 
+## Bug and security pass (2026-09-13)
+
+Method: static review of every `innerHTML` sink, a headless fuzz of all 209 calculators (boundary values, every select option, 8,360 in-range random input sets) and all 32 × n² unit-pair conversions, plus a `localStorage` tampering test and a desktop/mobile UI smoke run.
+
+Results:
+
+- Calculator engine: no `NaN` / `Infinity` / `undefined` reached the result panel; every out-of-range input produced a labelled validation message. All user-controlled strings pass through `esc()`; select values are validated against the option list before use.
+- Fixed: collapsible group headers rendered `<h2>` inside `<button>` (invalid HTML) and a late CSS rule made the Favorites / Recent headings lose their section styling. Headers are now `<h2><button>` with a single style source.
+- Fixed: on mobile the header search had no visible result list, so Enter navigated blindly. A results list now appears under the search field; picking a result clears the search.
+- Fixed: a persisted `favorites` filter with zero favorites produced an empty sidebar on load. It now falls back to All, and the empty state explains how to pin a tool.
+- Fixed: `Recent` ignored deep links and browser back/forward; the hashchange path now records recents.
+- Hardened: `localStorage` prefs are sanitized on load (favorites/recents filtered to known ids, `collapsed` reduced to known groups with boolean values, filter allow-listed) so a tampered or stale payload cannot grow or break the nav.
+- Hardened: added a `Content-Security-Policy` meta (no remote scripts, no connect/frames/objects, fonts only from jsdelivr, `base-uri 'none'`) and a `vercel.json` with CSP + `frame-ancestors 'none'`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and `COOP`. Inline script/style still need `'unsafe-inline'` because the app is a single file; a hash-pinned `script-src` is the next step if the build ever emits a separate JS asset.
+- Cleanup: removed a dead debounce timer, a hidden duplicate mobile search input, and a duplicated favorite-toggle handler on the context chip; escaped group names / calculator names in the mobile menu and `data-group` attributes.
+
 ## Priority additions completed in this audit
 
 ### IMC §307.2.3 condensate overflow protection
