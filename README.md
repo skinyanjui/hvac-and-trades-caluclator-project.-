@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **47** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **56** calculators with code-oriented screening tools:
 
 - **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
@@ -30,6 +30,7 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **Parking garage ventilation (IMC §404)** — full-on / standby airflow with a CO + NO₂ automatic-control gate and no invented ppm setpoints
 - **ASHRAE 15 / 15.2 charge reviews** — downstream documentation gates from the path selector; no charge, RCL, OEL, or `mmax` limits are calculated
 - **CSST bonding handoff receiver** — receives the IFGC §310 cross-code handoff for adopted NEC / listing verification without calculating conductor size
+- **Engineering & trades helpers** — equivalent round duct, coil/grille face velocity, CFM per ton, sensible heat ratio, cooling tons, pump affinity laws, hydronic pipe velocity, fuel-gas operating cost, and sheave/belt RPM
 
 See [`AUDIT.md`](AUDIT.md) for the current coverage audit, explicit source-data blockers, and prioritized follow-up work.
 

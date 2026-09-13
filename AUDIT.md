@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 47 calculators across:
+The app now contains 56 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -25,7 +25,8 @@ The app now contains 47 calculators across:
 - IFGC combustion-air, venting-path, gas-pipe-method, and clearance screening,
 - IPC T&P discharge screening,
 - IRC local/whole-house ventilation and installation path gates,
-- ASHRAE 15 / 15.2 path routing.
+- ASHRAE 15 / 15.2 path routing,
+- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM).
 
 ## Priority additions completed in this audit
 
