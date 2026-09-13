@@ -41,6 +41,7 @@ Includes public field-formula helpers (1.08/0.69/4.5/500, pitot velocity, therms
 - **NIST methods** — indoor CO₂ estimate and outdoor air from CO₂ (NIST TN 2213 / QICO2), air change rate from CO₂ decay, ventilative cooling and heating balance point (NIST climate-suitability model), and FEMP life-cycle cost (NIST Handbook 135: SPV/UPV/UPV*, net savings, SIR, AIRR, paybacks)
 - **Audit continue (public math + docs)** — fluid Q, water ΔT, leaving-air DB, SCFM↔ACFM, pump BHP, hp↔kW, ton-hours, gas MCF, propane gallons, tower evaporation/blowdown, chiller lift, diversity/load factor, series U-factor, wind VP, Stull wet-bulb, heat reclaim, VAV fraction, plus IMC §504 / §928 / §309 / §603 and IFGC Ch 5 documentation gates
 
+- **Shareable links** — Copy link in any Inputs panel writes the current non-default inputs into the URL (`#gaspipesize?loadBtuh=120000&runLength=60`); opening the link restores them
 - **Glossary & symbols** (`#glossary`) — 170 industry terms in nine topics with abbreviations, working definitions and "Used in" links to the calculators, plus a legend for every symbol the app prints (Δ Σ × ÷ ≈ ≥ √ η ρ ṁ § ↗ …); filterable, and surfaced by the sidebar search
 
 Every input field carries a hint, and every calculator links a public reference (model code, ASHRAE / ACCA / AHRI / AMCA / SMACNA / HI / CTI / EIA / NIST). Calculator groups are color-coded with the Geist palette.
