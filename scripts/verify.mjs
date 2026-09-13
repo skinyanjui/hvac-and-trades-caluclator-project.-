@@ -11,6 +11,8 @@ import vm from 'node:vm';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const script = html.match(/<script[^>]*>([\s\S]*?)<\/script>/)[1];
+// Parse the whole inline script first: a syntax error anywhere (including the bootstrap tail below the cut point) leaves users with a blank page.
+new vm.Script(script, {filename: 'index.html#script'});
 const bootstrapCut = script.indexOf('shell();const initial=');
 const metaCut = script.indexOf('document.querySelector(\'meta[name="description"]\')');
 const cut = Math.min(...[bootstrapCut, metaCut].filter(index => index >= 0));
