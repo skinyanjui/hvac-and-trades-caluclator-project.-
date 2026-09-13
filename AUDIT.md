@@ -36,7 +36,22 @@ The app now has **209** calculators across:
 
 Added technician/field relationships published on open vendor and trade references (e.g. Belimo-style 1.08 / 0.69 / 4.5 / 500 constants, pitot V=4005√VP, CFM=A×V, therms, chiller GPM≈tons×24/ΔT). These do not digitize IFGC/IMC pipe or vent tables.
 
-Removed the global **Please note** legal banner; the AHJ model-code bar remains.
+Removed the global **Please note** legal banner; the AHJ / 2024 model-code screening note now lives in the site footer.
+
+## Accuracy audit + unit converter expansion (2026-09-13)
+
+Re-tested public engineering identities (sensible CFM, hydronic GPM, duct velocity, VP↔V, superheat/subcooling, EER, tons, fan laws) and unit conversions against SI / NIST factors.
+
+**Fixes**
+- Division-by-zero / non-finite guards on duct area, fan & pump base speed, compression-ratio suction pressure, pipe diameter, design velocity, ΔT / density / cp, room volume, specific volume, EER input, sheave driven diameter, hydraulic diameter / aspect sides, Reynolds viscosity & ID, valve SG, pipe fill time, friction TEL, kW/ton capacity, belt centers, and pump-head SG.
+- Pipe-volume fill time no longer reports `Infinity` when flow is zero.
+
+**Unit converter**
+- Expanded from **16 → 26** measurement groups.
+- Added units within existing groups (hp, bar/atm/mercury columns, yd/mil/mile, yd², mL/qt, Wh/MMBtu/kcal, ft/s·km/h, gph·m³/h, grains·ton·tonne).
+- New groups: Force, Torque, Density, Specific heat, Specific volume, Heat flux, Dynamic viscosity, Time, Frequency, Angle.
+
+Verify harness now includes accuracy regressions (`scripts/verify.mjs`).
 
 ## Priority additions completed in this audit
 

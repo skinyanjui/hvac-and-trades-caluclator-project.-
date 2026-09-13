@@ -49,10 +49,11 @@ vm.runInContext(body + `
   globalThis.keywords = keywords;
   globalThis.units = units;
   globalThis.icons = icons;
+  globalThis.convert = typeof convert !== 'undefined' ? convert : null;
   globalThis.ashrae152PathGate = typeof ashrae152PathGate !== 'undefined' ? ashrae152PathGate : null;
 `, sandbox);
 
-const {calculators, essentials, keywords, units, icons} = sandbox;
+const {calculators, essentials, keywords, units, icons, convert} = sandbox;
 const byId = Object.fromEntries(calculators.map(c => [c.id, c]));
 const tests = [];
 const assert = (name, cond, detail) => {
@@ -69,7 +70,7 @@ const run = (id, vals = {}) => {
 
 assert('calculator count', calculators.length === 209, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
-assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
+assert('unit groups 26', Object.keys(units).length === 26, Object.keys(units).join(', '));
 
 const usedIcons = [...new Set(calculators.map(c => c.icon))];
 assert('icon coverage', usedIcons.every(i => icons[i]), usedIcons.filter(i => !icons[i]).join(','));
@@ -390,6 +391,49 @@ assert('ventingdocs defaults need attention', run('ventingdocs', {}).value >= 1)
   const twf=tw*9/5+32;
   assert('wetbulbstull 80F 50%', Math.abs(run('wetbulbstull', {}).value - twf) < 1e-6);
 }
+
+
+
+// Accuracy regression — public HVAC identities
+{
+  const near = (a,b,tol=1e-6) => Math.abs(a-b) <= tol * (1+Math.abs(b));
+  const cases = [
+    ['airflow', {load:25920, dt:20, density:0.075, cp:0.24}, 1200, 1e-9],
+    ['cfmfromq', {load:25920, dt:20, factor:1.08}, 1200, 1e-9],
+    ['waterflow', {load:100000, dt:20, density:8.33, cp:1}, 100000/(60*8.33*1*20), 1e-9],
+    ['gpmfromq', {load:100000, dt:20, factor:500}, 10, 1e-9],
+    ['duct', {shape:'round', diameter:12, width:12, height:8, flow:400}, 400/(Math.PI*0.25), 1e-9],
+    ['airfromvp', {vp:1}, 4005, 1],
+    ['velpress', {velocity:4005}, 1, 1e-3],
+    ['superheat', {line:52, saturation:40}, 12, 1e-9],
+    ['subcooling', {saturation:110, line:100}, 10, 1e-9],
+    ['eer', {capacity:36000, input:3000}, 12, 1e-9],
+    ['tons', {capacity:36000}, 3, 1e-9],
+    ['fan', {rpm1:1000, rpm2:2000, cfm:1000, pressure:1, power:1}, 2000, 1e-9],
+  ];
+  for (const [id, vals, exp, tol] of cases) {
+    if (!byId[id]) { assert('accuracy:'+id+' exists', false, 'missing'); continue; }
+    try {
+      const r = run(id, vals);
+      assert('accuracy:'+id, near(r.value, exp, tol), `got ${r.value} expected ${exp}`);
+    } catch (e) {
+      assert('accuracy:'+id, false, e.message);
+    }
+  }
+  assert('convert available', typeof convert === 'function');
+  assert('convert 12k BTU/h → ton', near(convert('Power / capacity', 12000, 'BTU/h', 'tons refrigeration'), 1, 1e-9));
+  assert('convert 32 F → C', near(convert('Temperature', 32, '°F', '°C'), 0, 1e-12));
+  assert('convert 1 bar → kPa', near(convert('Pressure', 1, 'bar', 'kPa'), 100, 1e-12));
+  assert('convert 1800 rpm → Hz', near(convert('Frequency', 1800, 'rpm', 'Hz'), 30, 1e-12));
+  assert('convert 1 hp → W', near(convert('Power / capacity', 1, 'hp (mechanical)', 'W'), 745.6998715822702, 1e-9));
+  let blocked = false;
+  try { run('duct', {shape:'round', diameter:0, width:12, height:8, flow:400}); } catch { blocked = true; }
+  assert('duct rejects zero area', blocked);
+  blocked = false;
+  try { run('fan', {rpm1:0, rpm2:1000, cfm:1000, pressure:1, power:1}); } catch { blocked = true; }
+  assert('fan rejects zero base rpm', blocked);
+}
+
 
 
 const failed = tests.filter(t => !t.ok);
