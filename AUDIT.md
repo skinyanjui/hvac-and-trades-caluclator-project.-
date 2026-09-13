@@ -36,7 +36,7 @@ The app now has **209** calculators across:
 
 Added technician/field relationships published on open vendor and trade references (e.g. Belimo-style 1.08 / 0.69 / 4.5 / 500 constants, pitot V=4005√VP, CFM=A×V, therms, chiller GPM≈tons×24/ΔT). These do not digitize IFGC/IMC pipe or vent tables.
 
-Removed the global **Please note** legal banner; the AHJ model-code bar remains.
+Removed the global **Please note** legal banner; the AHJ / 2024 model-code screening note now lives in the site footer.
 
 ## Priority additions completed in this audit
 
@@ -196,7 +196,7 @@ Added **24** calculators from the coverage audit without digitizing licensed tab
 - IMC §504 dryer exhaust docs, §928 evaporative cooler docs, §309 thermostat/control docs, §603 duct construction docs
 - IFGC Chapter 5 venting documentation gate
 
-Nav cleanup: Sources and Changelog removed from the top header (deep links still work). Global Please note banner already removed; AHJ bar remains.
+Nav cleanup: Sources and Changelog removed from the top header (deep links still work). Global Please note banner already removed; AHJ / 2024 model-code screening note moved to the site footer.
 
 ## Needs verified source data before implementation
 
