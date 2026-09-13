@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 64 calculators across:
+The app now contains 76 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -26,10 +26,11 @@ The app now contains 64 calculators across:
 - IPC T&P discharge screening,
 - IRC local/whole-house ventilation and installation path gates,
 - ASHRAE 15 / 15.2 path routing,
-- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM),
-- IMC intake/exhaust location and grease-duct velocity/slope screens,
+- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM, net free area, boiler hp, kW/ton, tower approach, compression ratio, pump head, air density, belt length),
+- IMC intake/exhaust location and grease-duct velocity/slope/clearance screens,
+- IMC dryer makeup-air and duct-sealing documentation gates,
 - IMC appliance-access and return-air restriction gates,
-- IFGC shutoff/connector screening and IMC Chapter 11 refrigerant-piping documentation.
+- IFGC shutoff/connector and §503.8 vent-terminal screening, plus IMC Chapter 11 refrigerant-piping documentation.
 
 ## Priority additions completed in this audit
 
@@ -83,6 +84,14 @@ Added published-distance and formula screens without inventing proprietary table
 - IMC §601.5 return-air source restriction gate
 - IFGC §409.5 / §411.1.3 shutoff location and flexible-connector length
 - IMC Chapter 11 refrigerant-piping documentation gate (still no charge / RCL / mmax)
+
+### Additional code screens and trades math (follow-on)
+
+- IFGC §503.8 through-wall vent-terminal key-row screen
+- IMC §504.7 dryer makeup-air trigger (>200 cfm / closet opening)
+- IMC §506.3.6 grease-duct clearances to combustibles / noncombustibles
+- IMC §603.9 duct sealing documentation gate (no invented leakage %)
+- Net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude estimate, open-belt length
 
 ### Code-context selector trust fix
 

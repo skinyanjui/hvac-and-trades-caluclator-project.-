@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 64, calculators.length);
+assert('calculator count', calculators.length === 76, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -178,6 +178,30 @@ assert('returnair closet yes flags', run('returnair', {closet: 'yes'}).value >= 
 assert('gasshutoff flex defaults open unk', run('gasshutoff', {}).value >= 1);
 assert('gasshutoff flex ok path', run('gasshutoff', {accessible: 'yes', upstream: 'yes'}).value === 0);
 assert('refrigpipe defaults need attention', run('refrigpipe', {}).value >= 1);
+
+assert('ventterm defaults clear', run('ventterm', {}).value === 0);
+assert('ventterm nondirect beside needs 48 in', run('ventterm', {ventType: 'nondirect', windowRel: 'side_below', windowDist: 36}).value >= 1);
+assert('dryermakeup defaults clear', run('dryermakeup', {}).value === 0);
+assert('dryermakeup closet short opening fails', run('dryermakeup', {closet: 'yes', opening: 50, otherMakeup: 'na'}).value >= 1);
+assert('dryermakeup high flow without makeup fails', run('dryermakeup', {exhaust: 250, closet: 'no', otherMakeup: 'na'}).value >= 1);
+assert('greaseclear field defaults clear', run('greaseclear', {}).value === 0);
+assert('greaseclear short combustible fails', run('greaseclear', {toCombust: 12}).value >= 1);
+assert('ductseal defaults need attention', run('ductseal', {}).value >= 1);
+assert('netfree 24×12×60% → 172.8', Math.abs(run('netfree', {width: 24, height: 12, freePct: 60, quantity: 1}).value - 172.8) < 1e-9);
+assert('boilerhp 334750 → 10', Math.abs(run('boilerhp', {output: 334750}).value - 10) < 1e-12);
+assert('kwton 70/200 → 0.35', Math.abs(run('kwton', {power: 70, capacity: 200}).value - 0.35) < 1e-12);
+assert('tower 95/85/78 → 7 approach', Math.abs(run('tower', {hot: 95, cold: 85, wetbulb: 78}).value - 7) < 1e-12);
+assert('compratio 250/70 → ~3.571', Math.abs(run('compratio', {suction: 70, discharge: 250}).value - 250 / 70) < 1e-12);
+assert('pumphead 12 psi SG1 → ~27.727', Math.abs(run('pumphead', {dp: 12, sg: 1}).value - 12 * 2.3106) < 1e-9);
+{
+  const r = run('airdensity', {elevation: 5000, seaLevelCfm: 1000});
+  const pr = Math.pow(1 - 6.87535e-6 * 5000, 5.2559);
+  assert('airdensity 5000 ft density', Math.abs(r.value - 0.075 * pr) < 1e-9, r.value);
+}
+{
+  const expect = 2 * 20 + 1.57 * (4 + 6) + Math.pow(2, 2) / (4 * 20);
+  assert('beltlength 4/6/20', Math.abs(run('beltlength', {d1: 4, d2: 6, centers: 20}).value - expect) < 1e-9);
+}
 
 const failed = tests.filter(t => !t.ok);
 const passed = tests.length - failed.length;

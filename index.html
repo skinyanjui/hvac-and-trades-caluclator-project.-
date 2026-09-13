@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="64 calm HVAC calculators with live results, clear formulas, unit conversion, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#0a0a0a;background:#f5f5f5;font-synthesis:none;--ink:#0a0a0a;--ink-soft:#262626;--accent:#087e8b;--line:#e5e5e5;--muted:#6b6b6b;--quiet:#999;--paper:#fff;--canvas:#f5f5f5;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);background:var(--paper);gap:12px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:560;text-decoration:none;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:28px;height:28px;background:var(--ink);color:#fff;border-radius:8px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:36px;padding:6px 14px;font-size:13px;color:var(--muted);border-radius:999px;background:transparent;transition:background .15s ease,color .15s ease}.header-actions button:hover{background:rgba(0,0,0,.05);color:var(--ink)}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 56px)}.sidebar{background:var(--paper);border-right:1px solid var(--line);padding:16px 12px;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:var(--canvas);border:1px solid var(--line);padding:9px 10px 9px 32px;width:100%;border-radius:999px;font-size:13px;color:var(--ink-soft);height:36px;min-width:0}.search-wrap input::placeholder{color:var(--quiet)}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 6px;padding:2px 10px;color:var(--quiet);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-item{display:block;width:100%;text-align:left;min-height:34px;padding:7px 10px;border-radius:8px;font-size:13.5px;line-height:1.35;color:var(--ink-soft);transition:background .15s ease,color .15s ease}.nav-item:hover{background:rgba(0,0,0,.04)}.nav-item.active{background:rgba(0,0,0,.06);color:var(--ink);font-weight:560;box-shadow:inset 2px 0 0 var(--ink)}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1200px;min-width:0;padding:32px clamp(20px,3vw,48px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em;line-height:1.08;font-weight:560;margin:0 0 10px;color:var(--ink)}.page-title p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:34em}.tag{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);white-space:nowrap;flex:none;margin-top:6px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0;overflow:hidden;box-shadow:none}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px;font-weight:500}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #d4d4d4;border-radius:12px;background:var(--paper);min-height:40px;min-width:0;transition:border-color .15s ease,box-shadow .15s ease}.input-wrap:focus-within{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:40px;border:1px solid #d4d4d4;border-radius:12px;padding:8px 28px 8px 12px;background:var(--paper);color:var(--ink-soft);font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.55;color:var(--muted);background:#f7f7f7;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;padding:12px 14px;margin:0 17px 14px}.legal-banner{background:#141414;color:#d4d4d4;padding:12px 24px;font-size:12px;line-height:1.55;border-bottom:1px solid #0a0a0a}.legal-banner strong{color:#fff;font-weight:560}.legal-banner a{color:#7dd3da}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 24px;background:#eee;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-soft)}.ahj-bar label{font-weight:550;color:var(--ink)}.ahj-bar select{min-height:34px;border:1px solid #d4d4d4;border-radius:999px;padding:4px 28px 4px 12px;background:#fff;color:var(--ink-soft);font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:var(--muted);font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:20px 22px 18px;background:#fafafa;border-bottom:1px solid var(--line)}.result-label{font-size:12px;color:var(--muted);letter-spacing:.02em}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:clamp(36px,5vw,52px);font-weight:560;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-top:10px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted);overflow-wrap:anywhere}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 19px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 19px 13px;color:#955523}.empty-result{padding:22px;min-height:150px;background:#fafafa;color:var(--muted)}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;padding:15px 19px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 19px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid var(--line);background:#fafafa;border-radius:4px;padding:14px 14px}.crosscode-chip-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:560;color:var(--ink);margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}</style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="76 calm HVAC calculators with live results, clear formulas, unit conversion, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#0a0a0a;background:#f5f5f5;font-synthesis:none;--ink:#0a0a0a;--ink-soft:#262626;--accent:#087e8b;--line:#e5e5e5;--muted:#6b6b6b;--quiet:#999;--paper:#fff;--canvas:#f5f5f5;--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);background:var(--paper);gap:12px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:560;text-decoration:none;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:28px;height:28px;background:var(--ink);color:#fff;border-radius:8px}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:36px;padding:6px 14px;font-size:13px;color:var(--muted);border-radius:999px;background:transparent;transition:background .15s ease,color .15s ease}.header-actions button:hover{background:rgba(0,0,0,.05);color:var(--ink)}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 56px)}.sidebar{background:var(--paper);border-right:1px solid var(--line);padding:16px 12px;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:11px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input{background:var(--canvas);border:1px solid var(--line);padding:9px 10px 9px 32px;width:100%;border-radius:999px;font-size:13px;color:var(--ink-soft);height:36px;min-width:0}.search-wrap input::placeholder{color:var(--quiet)}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:12px}.nav-group h2{margin:0 0 6px;padding:2px 10px;color:var(--quiet);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-item{display:block;width:100%;text-align:left;min-height:34px;padding:7px 10px;border-radius:8px;font-size:13.5px;line-height:1.35;color:var(--ink-soft);transition:background .15s ease,color .15s ease}.nav-item:hover{background:rgba(0,0,0,.04)}.nav-item.active{background:rgba(0,0,0,.06);color:var(--ink);font-weight:560;box-shadow:inset 2px 0 0 var(--ink)}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3;white-space:nowrap}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}main{width:100%;max-width:1200px;min-width:0;padding:32px clamp(20px,3vw,48px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em;line-height:1.08;font-weight:560;margin:0 0 10px;color:var(--ink)}.page-title p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:34em}.tag{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);white-space:nowrap;flex:none;margin-top:6px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0;overflow:hidden;box-shadow:none}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:5px 17px;border-bottom:1px solid #e9eef0;min-height:43px}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px;font-weight:500}.text-button:hover{text-decoration:underline}.fields{padding:17px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}.field{min-width:0}.field label{display:block;font-size:14px;font-weight:450;line-height:1.35;margin:0 0 6px}.input-wrap{display:flex;align-items:center;border:1px solid #d4d4d4;border-radius:12px;background:var(--paper);min-height:40px;min-width:0;transition:border-color .15s ease,box-shadow .15s ease}.input-wrap:focus-within{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}.input-wrap input{padding:9px 10px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:9px;color:#6f8089;font-size:12px;line-height:1.25;text-align:right;overflow-wrap:anywhere;max-width:48%;flex:none}.field select{width:100%;min-height:40px;border:1px solid #d4d4d4;border-radius:12px;padding:8px 28px 8px 12px;background:var(--paper);color:var(--ink-soft);font-size:14px}.full{grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 17px}.advanced summary{font-size:13px;color:#576f7b;min-height:39px;padding:11px 0}.advanced .fields{padding:2px 0 15px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.55;color:var(--muted);background:#f7f7f7;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;padding:12px 14px;margin:0 17px 14px}.legal-banner{background:#141414;color:#d4d4d4;padding:12px 24px;font-size:12px;line-height:1.55;border-bottom:1px solid #0a0a0a}.legal-banner strong{color:#fff;font-weight:560}.legal-banner a{color:#7dd3da}.ahj-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 24px;background:#eee;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-soft)}.ahj-bar label{font-weight:550;color:var(--ink)}.ahj-bar select{min-height:34px;border:1px solid #d4d4d4;border-radius:999px;padding:4px 28px 4px 12px;background:#fff;color:var(--ink-soft);font-size:13px;max-width:min(100%,420px)}.ahj-bar .ahj-note{color:var(--muted);font-size:12px;flex:1 1 220px}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:#1f4554}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:#f3f7f8;border:1px solid #e2eaed;border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.legal-banner,.ahj-bar{padding-left:13px;padding-right:13px}.ahj-bar select{width:100%;max-width:none}}.form-status{font-size:12px;color:#788992;padding:0 17px 14px}.advanced+.form-status{padding-top:0}.result-hero{padding:20px 22px 18px;background:#fafafa;border-bottom:1px solid var(--line)}.result-label{font-size:12px;color:var(--muted);letter-spacing:.02em}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:clamp(36px,5vw,52px);font-weight:560;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-top:10px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted);overflow-wrap:anywhere}.cite-tags{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.cite-tags b{color:#234d5a;font-size:14px;font-weight:550}.equivalents{display:flex;flex-wrap:wrap;gap:7px 21px;margin-top:10px;font-size:12px;color:#63808a}.equivalents b{color:#234d5a;font-size:14px;font-weight:550}.result-rows{padding:9px 19px}.result-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;line-height:1.4;color:#607581}.result-row>span:last-child{color:#263e4b;text-align:right;font-variant-numeric:tabular-nums;max-width:53%;overflow-wrap:anywhere}.result-row small{color:#657b85;font-size:12px}.method{border-top:1px solid #e5ecef}.method summary{font-size:13px;min-height:40px;padding:12px 19px;color:#416879;background:#fbfcfd}.method-body{padding:0 19px 16px}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;background:#f5f8fa;color:#375566;border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.6;color:#71818c;margin-top:12px}.negative-note{font-size:13px;line-height:1.6;margin:0;padding:8px 19px 13px;color:#955523}.empty-result{padding:22px;min-height:150px;background:#fafafa;color:var(--muted)}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:36px;font-weight:400;margin:5px 0}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:#fff4ed;color:#934827;border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 17px 11px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;padding:15px 19px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:#778b96;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 19px 14px;display:grid;gap:10px}.crosscode-chip{border:1px solid var(--line);background:#fafafa;border-radius:4px;padding:14px 14px}.crosscode-chip-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:#3f6a76;margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:560;color:var(--ink);margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:184px minmax(0,1fr)}main{padding:22px 20px}.tag{display:none}.fields{grid-template-columns:1fr}.workspace{gap:14px}.nav-item{font-size:13px}.result-number{font-size:34px}}@media(max-width:800px){.app-header{padding:0 15px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white;padding:7px 15px}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.fields{grid-template-columns:1fr}main{padding:20px 17px}.page-title{margin-bottom:15px}.field select{font-size:16px}.brand{font-size:16px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:23px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:13px}.fields{grid-template-columns:repeat(2,minmax(0,1fr));padding:15px;gap:14px 12px}.app-header{height:51px;padding:0 13px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:7px;font-size:15px;letter-spacing:-.2px}.brand-mark{width:25px;height:26px}.page-title p{font-size:14px}.result-number{font-size:35px}.result-hero{padding:14px 17px}.result-rows{padding:6px 17px}.result-row{font-size:14px;padding:6px 0}.panel-head{padding:4px 15px}.advanced{margin:0 15px}.form-status{padding:0 15px 12px}.method summary{padding:12px 17px}.reference-row{grid-template-columns:1fr;gap:5px;padding:14px}.ref-topic{font-size:12px}.workspace-foot{margin-top:10px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}}</style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
 const sourceLinks={energy:['ENERGY STAR · Room AC sizing','https://www.energystar.gov/products/room_air_conditioners'],calc:['Calculator.net · BTU reference','https://www.calculator.net/btu-calculator.html'],conversion:['Calculator.net · Conversion reference','https://www.calculator.net/conversion-calculator.html'],manual:['ACCA · Manual J','https://www.acca.org/standards/technical-manuals/manual-j'],ashrae:['ASHRAE · Psychrometrics','https://handbook.ashrae.org/Handbooks/F21/SI/F21_Ch01/F21_Ch01_si.aspx'],nist:['NIST · SI conversion reference','https://www.nist.gov/pml/special-publication-811'],imc:['ICC · 2024 IMC','https://codes.iccsafe.org/content/IMC2024V1.0'],ipc:['ICC · 2024 IPC','https://codes.iccsafe.org/content/IPC2024P1'],ifc:['ICC · 2024 IFC','https://codes.iccsafe.org/content/IFC2024V1.0'],ifgc:['ICC · 2024 IFGC','https://codes.iccsafe.org/content/IFGC2024V1.0'],iecc:['ICC · 2024 IECC','https://codes.iccsafe.org/content/IECC2024V1.0'],ashrae15:['ASHRAE · Standard 15','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],irc:['ICC · 2024 IRC','https://codes.iccsafe.org/content/IRC2024P1'],ashrae152:['ASHRAE · Standard 15.2','https://www.ashrae.org/technical-resources/bookstore/standards-15-34']};
 const field=(key,label,unit,value,min=0,max=1e9,step='any',hint='')=>({key,label,unit,value,min,max,step,hint});
 const choice=(key,label,options,value,hint='')=>({key,label,options,value,hint});
@@ -1971,6 +1971,244 @@ choice('machinery','Machinery-room or occupied-space location path coordinated?'
   `refrigerant piping documentation = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; charge limits = not calculated`,
   'IMC Chapter 11 / ASHRAE 15 piping documentation gate only. It does not select pipe size, shaft rating, support spacing, or refrigerant charge limits. Confirm adopted IMC Chapter 11, ASHRAE 15, listing, and AHJ requirements with the project engineer.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC Chapter 11','ASHRAE 15','AHJ + PE']);
+}},
+
+// Additional model-code screens + engineering/trades math
+{id:'ventterm',name:'Vent terminal clearances',group:'CODE & FUEL GAS',icon:'heat',desc:'Screen key IFGC §503.8 through-the-wall vent terminal clearances for direct-vent and nondirect-vent appliances.',badge:'IFGC §503.8 · termination',sources:['ifgc'],fields:[
+choice('ventType','Terminal type',[['direct','Direct-vent'],['nondirect','Nondirect-vent']],'direct'),
+field('input','Appliance input rating','BTU/h',80000,0,1e7),
+field('grade','Clearance above finished grade / deck','in',12,0,1000),
+choice('windowRel','Relationship to nearest openable window / door',[
+['na','N/A — no openable opening nearby'],
+['side_below','Beside or below the opening'],
+['above','Above the opening'],
+['other','Other / verify']
+],'side_below'),
+field('windowDist','Clearance to that openable window / door','in',12,0,1000),
+field('mechHoriz','Horizontal distance to mechanical air intake','ft',12,0,1000),
+field('mechAbove','Height of terminal above mechanical air intake','ft',0,0,1000),
+choice('publicWalk','Located above a public sidewalk / driveway?',[['no','No'],['yes','Yes'],['unk','Unknown']],'no')
+],calculate:v=>{
+  const gradeOk=v.grade>=12;
+  let winNeed=0,winOk=true,winNote='n/a';
+  if(v.windowRel!=='na'){
+    if(v.ventType==='direct'){
+      if(v.input>150000){winNeed=48;winNote='>150 kBTU/h → not less than nondirect Row B (use 4 ft beside/below as screen floor)';}
+      else if(v.input>50000){winNeed=12;winNote='direct-vent 50–150 kBTU/h → 12 in';}
+      else if(v.input>10000){winNeed=9;winNote='direct-vent 10–50 kBTU/h → 9 in';}
+      else {winNeed=6;winNote='direct-vent ≤10 kBTU/h → 6 in';}
+      winOk=v.windowDist+1e-9>=winNeed;
+      if(v.input>150000&&v.windowRel==='above'){winNeed=12;winOk=v.windowDist>=12;winNote='>150 kBTU/h above opening → ≥1 ft screen (confirm nondirect Row B)';}
+    }else{
+      if(v.windowRel==='above'){winNeed=12;winOk=v.windowDist>=12;winNote='nondirect above opening → ≥1 ft';}
+      else if(v.windowRel==='side_below'){winNeed=48;winOk=v.windowDist>=48;winNote='nondirect beside/below opening → ≥4 ft';}
+      else {winOk=false;winNote='verify nondirect Row B geometry';}
+    }
+  }
+  const mechOk=v.mechHoriz>=10||v.mechAbove>=3;
+  const walkOk=v.publicWalk!=='yes';
+  const fails=[gradeOk,winOk,mechOk,walkOk].filter(x=>!x).length+(v.publicWalk==='unk'?1:0);
+  return result(fails,'open clearance checks',[
+    ['Terminal type',1,v.ventType],
+    ['≥12 in above grade / deck',gradeOk?1:0,`${fmt(v.grade)} in`],
+    ['Openable window / door clearance',v.windowRel==='na'?-1:(winOk?1:0),winNote],
+    ['Measured window / door clearance',v.windowRel==='na'?-1:v.windowDist,v.windowRel==='na'?'n/a':'in'],
+    ['Mechanical intake 10 ft horiz or 3 ft above',mechOk?1:0,`${fmt(v.mechHoriz)} ft horiz / ${fmt(v.mechAbove)} ft above`],
+    ['Not above public walkway / driveway',walkOk?1:0,v.publicWalk],
+    ['Open checks',fails,'ea']
+  ],`IFGC §503.8 screen: grade≥12 in; window Row B by vent type/input; mechanical intake ≥10 ft horiz or ≥3 ft above; no public-walk nuisance location`,
+  'Model 2024 IFGC Table 503.8 key-row screen only (A/B/I/J themes). Other table rows (corners, meters, veranda undersides, manufacturer-specific values) remain manual. Direct-vent combustion-air intakes are excepted from this table. Confirm listing, manufacturer instructions, and AHJ amendments. Not a termination design approval.',
+  [[fails,'open']],['IFGC §503.8','Listing + manufacturer','AHJ']);
+}},
+{id:'dryermakeup',name:'Dryer makeup air',group:'CODE & VENTILATION',icon:'air',desc:'Screen IMC §504.7 clothes-dryer makeup-air triggers for >200 cfm exhaust and dryer closets.',badge:'IMC §504.7 · makeup',sources:['imc'],fields:[
+field('exhaust','Dryer exhaust airflow','cfm',150,0,5000),
+choice('closet','Installed in a closet designed for a clothes dryer?',[['no','No'],['yes','Yes']],'no'),
+field('opening','Closet makeup opening area','in²',100,0,5000),
+choice('otherMakeup','Other approved makeup-air method provided?',ircInstallYn,'na')
+],calculate:v=>{
+  const highFlow=v.exhaust>200;
+  const closet=v.closet==='yes';
+  const openingOk=!closet||v.opening+1e-9>=100||v.otherMakeup==='yes';
+  const makeupNeeded=highFlow||closet;
+  const makeupOk=!makeupNeeded||(highFlow&&!closet?v.otherMakeup==='yes'||v.opening>=100:openingOk);
+  // For high flow not in closet, still need makeup air somehow
+  const highFlowOk=!highFlow||v.otherMakeup==='yes'||(closet&&(v.opening>=100||v.otherMakeup==='yes'));
+  const fails=[highFlowOk,openingOk].filter(x=>!x).length+(v.otherMakeup==='unk'?1:0);
+  return result(fails,'open makeup checks',[
+    ['Exhaust > 200 cfm',highFlow?1:0,`${fmt(v.exhaust)} cfm`],
+    ['Dryer closet installation',closet?1:0,v.closet],
+    ['Closet opening ≥ 100 in² or other approved makeup',closet?(openingOk?1:0):-1,closet?`${fmt(v.opening)} in² / ${v.otherMakeup}`:'n/a'],
+    ['Makeup air addressed for >200 cfm',highFlow?(highFlowOk?1:0):-1,highFlow?v.otherMakeup:'n/a'],
+    ['Open checks',fails,'ea']
+  ],`IMC §504.7: makeup required when exhaust > 200 cfm; dryer closet needs ≥100 in² opening or other approved makeup`,
+  'Model 2024 IMC §504.7 screening. Confirm adopted section numbering (some editions label this §504.5), manufacturer airflow, and AHJ-approved makeup methods. Does not size makeup openings for combustion appliances or pressure limits.',
+  [[fails,'open']],['IMC §504.7','Manufacturer airflow','AHJ']);
+}},
+{id:'greaseclear',name:'Grease duct clearances',group:'CODE & VENTILATION',icon:'duct',desc:'Screen IMC §506.3.6 Type I grease-duct clearances to combustibles and noncombustibles.',badge:'IMC §506.3.6 · clearance',sources:['imc'],fields:[
+choice('construction','Grease duct construction path',[
+['field','Field-fabricated / ordinary'],
+['listed','Listed factory-built grease duct'],
+['unk','Unknown']
+],'field'),
+field('toCombust','Clearance to combustibles','in',18,0,1000),
+field('toNoncombust','Clearance to noncombustible construction','in',3,0,1000),
+choice('enclosure','Located in a shaft / enclosure with required rating?',ircInstallYn,'na'),
+choice('listingClear','Listed assembly clearances followed where using a listing?',ircInstallYn,'na')
+],calculate:v=>{
+  const listed=v.construction==='listed';
+  const combOk=listed?v.listingClear!=='no':v.toCombust+1e-9>=18;
+  const nonOk=listed?true:v.toNoncombust+1e-9>=3;
+  const fails=[combOk,nonOk,v.construction!=='unk',v.enclosure!=='no',v.listingClear!=='no'].filter(x=>!x).length+(v.construction==='unk'||v.enclosure==='unk'||v.listingClear==='unk'?1:0);
+  return result(fails,'open clearance checks',[
+    ['Construction path',1,v.construction],
+    ['≥18 in to combustibles (field path)',listed?-1:(combOk?1:0),listed?'use listing':`${fmt(v.toCombust)} in`],
+    ['≥3 in to noncombustibles (field path)',listed?-1:(nonOk?1:0),listed?'use listing':`${fmt(v.toNoncombust)} in`],
+    ['Listing clearances followed',listed?(v.listingClear==='yes'?1:0):-1,v.listingClear],
+    ['Shaft / enclosure path',v.enclosure==='yes'?1:v.enclosure==='na'?-1:0,v.enclosure],
+    ['Open checks',fails,'ea']
+  ],`IMC §506.3.6 screen: field-fabricated ≥18 in combustibles / ≥3 in noncombustibles; listed ducts follow listing`,
+  'Model 2024 IMC §506.3.6 clearance screen. Reduced clearances require an approved method / listing — this tool does not credit unlisted reductions. Confirm shaft ratings, cleanouts, wrap systems, and AHJ amendments. Not a grease-duct design approval.',
+  [[fails,'open']],['IMC §506.3.6','Listing / wrap system','AHJ']);
+}},
+{id:'ductseal',name:'Duct sealing checklist',group:'CODE & VENTILATION',icon:'duct',desc:'Screen IMC §603.9 duct joint and seam sealing documentation without inventing leakage limits.',badge:'IMC §603.9 · sealing',sources:['imc'],fields:[
+choice('joints','Joints and seams sealed per adopted IMC / listing?',ircInstallYn,'unk'),
+choice('closures','Closure systems are listed / approved for the duct type?',ircInstallYn,'unk'),
+choice('flexible','Flexible duct connections installed without tears and within length limits?',ircInstallYn,'na'),
+choice('penetrations','Wall / floor / ceiling penetrations sealed and firestopped as required?',ircInstallYn,'unk'),
+choice('leakageTest','Duct-leakage testing path documented where required by energy code?',ircInstallYn,'na'),
+choice('access','Dampers and access openings remain operable after sealing?',ircInstallYn,'unk')
+],calculate:v=>{
+  const keys=['joints','closures','flexible','penetrations','leakageTest','access'];
+  let ok=0,fail=0,unk=0,na=0;
+  const rows=[['Numeric leakage limit calculated',0,'no']];
+  for(const key of keys){
+    const ans=v[key];
+    if(ans==='yes')ok++;else if(ans==='no')fail++;else if(ans==='na')na++;else unk++;
+    rows.push([key,ans==='yes'?1:ans==='no'?0:-1,ans]);
+  }
+  rows.push(['OK',ok,'ea'],['Deficient',fail,'ea'],['Unknown',unk,'ea'],['N/A',na,'ea']);
+  return result(fail+unk,'items needing attention',rows,
+  `IMC §603.9 sealing documentation = ${ok} OK / ${fail} deficient / ${unk} unknown / ${na} N/A; leakage % / cfm limit = not calculated`,
+  'IMC §603.9 sealing documentation gate only. It does not set IECC/IRC leakage percentages or test pressures. Confirm adopted mechanical and energy-code duct-sealing/testing requirements, listed tapes/mastic, and AHJ amendments.',
+  [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §603.9','Adopted energy code','AHJ']);
+}},
+{id:'netfree',name:'Net free area',group:'AIR & DUCTS',icon:'air',desc:'Convert a louver, grille, or combustion-air opening’s gross area into net free area.',badge:'Opening free area',sources:[],fields:[
+field('width','Opening width','in',24,.001,1000),
+field('height','Opening height','in',12,.001,1000),
+field('freePct','Free-area percentage','%',60,0.1,100),
+field('quantity','Number of identical openings','ea',1,1,1000,1)
+],calculate:v=>{
+  const gross=v.width*v.height*v.quantity;
+  const net=gross*(v.freePct/100);
+  return result(net,'in² net free',[
+    ['Gross area (all openings)',gross,'in²'],
+    ['Free-area fraction',v.freePct/100,''],
+    ['Net free area',net,'in²'],
+    ['Net free area',net/144,'ft²']
+  ],`NFA = width × height × quantity × free-area% = ${fmt(v.width)} × ${fmt(v.height)} × ${fmt(v.quantity)} × ${fmt(v.freePct)}%`,
+  'Uses the manufacturer’s free-area percentage when available. Insect screens, filters, and dampers can reduce free area further. For combustion air, confirm IFGC opening sizing rules separately.',
+  [[net/144,'ft² NFA']]);
+}},
+{id:'boilerhp',name:'Boiler horsepower',group:'HEATING & COOLING',icon:'heat',desc:'Convert boiler heat output between BTU/h and boiler horsepower.',badge:'Boiler capacity',sources:['nist'],fields:[
+field('output','Boiler heat output','BTU/h',334750,0)
+],calculate:v=>{
+  const bhp=v.output/33475;
+  return result(bhp,'boiler hp',[
+    ['Heat output',v.output,'BTU/h'],
+    ['Boiler horsepower',bhp,'bhp'],
+    ['Approx lb steam/h (from and at 212 °F)',bhp*34.5,'lb/h']
+  ],`boiler hp = BTU/h ÷ 33,475 = ${fmt(v.output)} ÷ 33,475`,
+  'One boiler horsepower equals 33,475 BTU/h by definition (also associated with 34.5 lb/h evaporation from and at 212 °F). This converts capacity only; it does not size a boiler, burner, or relief valve.');
+}},
+{id:'kwton',name:'Chiller kW per ton',group:'ENERGY & MATH',icon:'bolt',desc:'Express cooling efficiency as electrical input per ton of refrigeration.',badge:'Efficiency ratio',sources:[],fields:[
+field('power','Electrical input','kW',70,0),
+field('capacity','Cooling capacity','tons',200,.001)
+],calculate:v=>{
+  const kwton=v.power/v.capacity;
+  const cop=3.5168525/kwton;
+  const eer=cop*3.412141633;
+  return result(kwton,'kW/ton',[
+    ['Electrical input',v.power,'kW'],
+    ['Cooling capacity',v.capacity,'tons'],
+    ['Approximate COP',cop,''],
+    ['Approximate EER',eer,'BTU/Wh']
+  ],`kW/ton = kW ÷ tons = ${fmt(v.power)} ÷ ${fmt(v.capacity)}; COP ≈ 3.51685 ÷ (kW/ton)`,
+  'Same operating condition and system boundary for power and capacity. Does not calculate IPLV/NPLV or certify a rated efficiency.');
+}},
+{id:'tower',name:'Cooling tower approach',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower range and approach from water and ambient wet-bulb temperatures.',badge:'Tower temperatures',sources:[],fields:[
+field('hot','Hot water temperature','°F',95,32,212),
+field('cold','Cold water temperature','°F',85,32,212),
+field('wetbulb','Entering air wet-bulb temperature','°F',78,-40,120)
+],calculate:v=>{
+  if(v.hot<=v.cold)throw Error('Hot water temperature must be greater than cold water temperature.');
+  if(v.cold<=v.wetbulb)throw Error('Cold water temperature must be greater than entering wet-bulb for a positive approach.');
+  const range=v.hot-v.cold,approach=v.cold-v.wetbulb;
+  return result(approach,'°F approach',[
+    ['Tower range',range,'°F'],
+    ['Tower approach',approach,'°F'],
+    ['Hot water',v.hot,'°F'],
+    ['Cold water',v.cold,'°F'],
+    ['Entering wet-bulb',v.wetbulb,'°F']
+  ],`range = Thot − Tcold; approach = Tcold − Twetbulb`,
+  'Definitions only. Does not select tower size, fan power, drift, or water treatment. Confirm manufacturer rating conditions.');
+}},
+{id:'compratio',name:'Compression ratio',group:'REFRIGERATION',icon:'snow',desc:'Calculate compressor compression ratio from absolute suction and discharge pressures.',badge:'Compressor ratio',sources:['copeland'],fields:[
+field('suction','Suction pressure','psia',70,0.1,10000),
+field('discharge','Discharge pressure','psia',250,0.1,10000)
+],calculate:v=>{
+  if(v.discharge<=v.suction)throw Error('Discharge pressure must be greater than suction pressure.');
+  const ratio=v.discharge/v.suction;
+  return result(ratio,'compression ratio',[
+    ['Suction pressure',v.suction,'psia'],
+    ['Discharge pressure',v.discharge,'psia'],
+    ['Compression ratio',ratio,'']
+  ],`CR = Pdischarge ÷ Psuction = ${fmt(v.discharge)} ÷ ${fmt(v.suction)}`,
+  'Use absolute pressures (psia), not gauge. Does not set manufacturer limits or account for pressure drop in valves and lines.');
+}},
+{id:'pumphead',name:'Pump head from pressure',group:'HYDRONICS',icon:'water',desc:'Convert a differential pressure reading into feet of fluid head.',badge:'Head convert',sources:[],fields:[
+field('dp','Differential pressure','psi',12,0,10000),
+field('sg','Fluid specific gravity','—',1,.1,3)
+],calculate:v=>{
+  const head=v.dp*2.3106/v.sg;
+  return result(head,'ft head',[
+    ['Differential pressure',v.dp,'psi'],
+    ['Specific gravity',v.sg,''],
+    ['Fluid head',head,'ft']
+  ],`head ≈ 2.3106 × ΔP(psi) ÷ SG = 2.3106 × ${fmt(v.dp)} ÷ ${fmt(v.sg)}`,
+  'Uses the common water-column conversion (≈2.31 ft/psi at SG 1). Confirm gauge locations and fluid density at operating temperature. Does not size the pump.');
+}},
+{id:'airdensity',name:'Air density altitude',group:'AIR & DUCTS',icon:'air',desc:'Estimate air density and a simple airflow density correction from site elevation.',badge:'Altitude density',sources:['ashrae'],fields:[
+field('elevation','Site elevation','ft',0,-1000,15000),
+field('seaLevelCfm','Sea-level or standard-density airflow','cfm',1000,0)
+],calculate:v=>{
+  // Standard atmosphere approximation: P/P0 ≈ (1 - 6.87535e-6 * Z)^5.2559
+  const z=v.elevation;
+  const pr=Math.pow(Math.max(1-6.87535e-6*z,0.1),5.2559);
+  const density=.075*pr; // lb/ft³ relative to standard 0.075
+  const actualCfm=v.seaLevelCfm/pr; // more cfm needed at altitude for same mass
+  return result(density,'lb/ft³',[
+    ['Pressure ratio P/P₀',pr,''],
+    ['Estimated density',density,'lb/ft³'],
+    ['Density vs sea level',pr*100,'%'],
+    ['Approx CFM for same mass flow',actualCfm,'cfm']
+  ],`P/P₀ ≈ (1 − 6.87535×10⁻⁶ Z)^5.2559; ρ ≈ 0.075 × P/P₀; CFM_actual ≈ CFM_std ÷ (P/P₀)`,
+  'Standard-atmosphere approximation at roughly 59 °F. Does not replace manufacturer altitude tables, psychrometric density, or fan selection software. Heating capacity and motor cooling also change with altitude.',
+  [[actualCfm,'cfm same mass'],[pr,'pressure ratio']]);
+}},
+{id:'beltlength',name:'Belt length',group:'ENERGY & MATH',icon:'bolt',desc:'Estimate open-belt length from two sheave diameters and center distance.',badge:'Belt geometry',sources:[],fields:[
+field('d1','Sheave 1 pitch diameter','in',4,.001,1000),
+field('d2','Sheave 2 pitch diameter','in',6,.001,1000),
+field('centers','Center distance','in',20,.001,1000)
+],calculate:v=>{
+  const sum=v.d1+v.d2,diff=Math.abs(v.d1-v.d2);
+  const len=2*v.centers+1.57*sum+(diff*diff)/(4*v.centers);
+  return result(len,'in belt',[
+    ['Sum of diameters',sum,'in'],
+    ['Difference of diameters',diff,'in'],
+    ['Center distance',v.centers,'in'],
+    ['Approximate belt length',len,'in']
+  ],`L ≈ 2C + 1.57(D₁+D₂) + (D₁−D₂)² / (4C)`,
+  'Common open-belt approximation using pitch diameters. Confirm exact belt section, tensioner allowance, and manufacturer length charts before ordering.');
 }}
 );
 
@@ -2017,7 +2255,19 @@ Object.assign(keywords,{
   access306:'imc 306 appliance access service space attic underfloor roof working clearance',
   returnair:'imc 601.5 return air source restrictions closet bathroom garage dwelling',
   gasshutoff:'ifgc 409.5 appliance shutoff valve 411.1.3 flexible connector length 6 ft',
-  refrigpipe:'imc chapter 11 refrigerant piping protection shaft identification pressure test'
+  refrigpipe:'imc chapter 11 refrigerant piping protection shaft identification pressure test',
+  ventterm:'ifgc 503.8 through wall vent terminal clearances direct vent nondirect window intake grade',
+  dryermakeup:'imc 504.7 clothes dryer makeup air 200 cfm closet opening 100 square inches',
+  greaseclear:'imc 506.3.6 type i grease duct clearance combustibles 18 noncombustible 3 listing',
+  ductseal:'imc 603.9 duct joint seam sealing mastic tape leakage testing documentation',
+  netfree:'net free area louver grille combustion air opening free area percentage',
+  boilerhp:'boiler horsepower btu output 33475 steam equivalent capacity convert',
+  kwton:'chiller kw per ton efficiency cop eer cooling performance',
+  tower:'cooling tower range approach hot cold water wet bulb temperature',
+  compratio:'compressor compression ratio discharge suction absolute pressure psia',
+  pumphead:'pump head feet from differential pressure psi specific gravity',
+  airdensity:'air density altitude elevation pressure ratio airflow mass correction',
+  beltlength:'open belt length sheave pitch diameter center distance approximation'
 });
 Object.assign(essentials,{
   csstbonding:'Receives the IFGC §310 handoff · conductor size and electrical acceptance remain with listing/NEC/AHJ.',
@@ -2045,7 +2295,19 @@ Object.assign(essentials,{
   access306:'IMC §306 access checklist · attic/underfloor/roof paths have extra dimensional rules.',
   returnair:'IMC §601.5 prohibition screen · exceptions remain manual with the AHJ/designer.',
   gasshutoff:'IFGC §409.5 / §411.1.3 screen · does not size pipe or approve the connection method.',
-  refrigpipe:'IMC Ch 11 / ASHRAE 15 documentation gate · no charge or RCL values are calculated.'
+  refrigpipe:'IMC Ch 11 / ASHRAE 15 documentation gate · no charge or RCL values are calculated.',
+  ventterm:'IFGC §503.8 key-row screen · other table rows and listing instructions remain manual.',
+  dryermakeup:'IMC §504.7 makeup trigger screen · confirm adopted numbering and approved makeup methods.',
+  greaseclear:'IMC §506.3.6 clearance screen · listed/wrap reductions are not auto-credited.',
+  ductseal:'IMC §603.9 sealing documentation gate · no leakage % or test pressure is invented.',
+  netfree:'Uses manufacturer free-area % · screens/filters can reduce free area further.',
+  boilerhp:'Definitional convert · 33,475 BTU/h per boiler horsepower.',
+  kwton:'Same-condition kW ÷ tons · not IPLV/NPLV certification.',
+  tower:'Range and approach definitions only · not a tower selection.',
+  compratio:'Absolute pressures only · compare with manufacturer limits separately.',
+  pumphead:'≈2.31 ft/psi at SG 1 · confirm fluid density and gauge locations.',
+  airdensity:'Standard-atmosphere estimate · not a substitute for manufacturer altitude tables.',
+  beltlength:'Open-belt pitch-diameter estimate · confirm belt section charts before ordering.'
 });
 
 const values=Object.fromEntries(calculators.map(c=>[c.id,Object.fromEntries(c.fields.map(f=>[f.key,f.value]))]));
@@ -2069,6 +2331,8 @@ const routeValid=id=>calculators.some(c=>c.id===id)||id==='convert'||id==='refer
 function inactiveField(id,key,v){
   if(id==='duct'||id==='greasevel')return key==='diameter'?v.shape!=='round':['width','height'].includes(key)?v.shape==='round':false;
   if(id==='intakesep')return key==='streetAbove'&&v.streetRelief!=='yes';
+  if(id==='ventterm')return key==='windowDist'&&v.windowRel==='na';
+  if(id==='dryermakeup')return key==='opening'&&v.closet!=='yes';
   if(id==='gasshutoff'){
     if(key==='sameRoom')return v.path!=='same_room';
     if(key==='connectorLength'||key==='oneConnector')return v.connectorType!=='flex';
@@ -2267,6 +2531,18 @@ function resultLabelFor(c,r){
     case 'returnair':return 'Return-air restriction flags';
     case 'gasshutoff':return 'Shutoff / connector items open';
     case 'refrigpipe':return 'Piping items needing attention';
+    case 'ventterm':return 'Open vent clearance checks';
+    case 'dryermakeup':return 'Open dryer makeup checks';
+    case 'greaseclear':return 'Open grease clearance checks';
+    case 'ductseal':return 'Sealing items needing attention';
+    case 'netfree':return 'Net free area';
+    case 'boilerhp':return 'Boiler horsepower';
+    case 'kwton':return 'kW per ton';
+    case 'tower':return 'Tower approach';
+    case 'compratio':return 'Compression ratio';
+    case 'pumphead':return 'Pump head';
+    case 'airdensity':return 'Air density';
+    case 'beltlength':return 'Belt length';
     default:return 'Result';
   }
 }
@@ -2332,6 +2608,7 @@ function references(){const entries=[
 return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+editionNote(`This workbench provides <em>national US model-code / model-standard screening</em> using selectable <em>model packs</em> (currently: ${esc(codeEditionLabel())}). Model packs are not the law. <strong>The AHJ-adopted edition, local amendments, and PE judgment always govern.</strong> ${LEGAL_DISCLAIMER}`)+`<p class="reference-intro">Linked IMC / IFGC / IPC / IECC / ASHRAE 15 materials are reference editions. Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions. Code tools (outdoor air, exhaust, IRC bath/kitchen + WHMV, ASHRAE 15.2 path gate, condensate, dryer duct, hood capacity, combustion air, venting, gas pipe, machinery-room ventilation, T&amp;P discharge) use published model values or EXAMPLE_UNVERIFIED screens for screening only. Appendices apply only if adopted by the AHJ. ASHRAE standards are referenced to the extent cited; where they conflict with IMC text, the IMC governs (§102.8). Fuel-gas piping, appliances and venting are IFGC scope (IMC §101.2).</p><div class="reference-list">${entries.map(([topic,title,description,url])=>referenceRow(topic,title,description,url)).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
 function changelog(){
   const items=[
+    ['2026-09-13','More code screens + trades math','<ul><li><strong>Vent terminal clearances</strong> — IFGC §503.8 key-row through-wall screen.</li><li><strong>Dryer makeup air</strong> — IMC §504.7 &gt;200 cfm / closet opening trigger.</li><li><strong>Grease duct clearances</strong> — IMC §506.3.6 combustibles / noncombustibles.</li><li><strong>Duct sealing checklist</strong> — IMC §603.9 documentation gate.</li><li><strong>Net free area</strong> — louver / grille free-area convert.</li><li><strong>Boiler horsepower</strong> — BTU/h ↔ boiler hp.</li><li><strong>Chiller kW/ton</strong> — efficiency ratio with COP/EER equivalents.</li><li><strong>Cooling tower approach</strong> — range and approach temperatures.</li><li><strong>Compression ratio</strong> — absolute suction/discharge pressures.</li><li><strong>Pump head from pressure</strong> — psi → feet of head.</li><li><strong>Air density altitude</strong> — standard-atmosphere density correction.</li><li><strong>Belt length</strong> — open-belt pitch-diameter estimate.</li><li>Calculator count: <strong>76</strong>.</li></ul>'],
     ['2026-09-13','More model-code screening tools','<ul><li><strong>Outdoor-air intake separation</strong> — IMC §401.4 lot-line / contaminant / street-relief clearances.</li><li><strong>Exhaust outlet location</strong> — IMC §501.3.1 class-based termination distances.</li><li><strong>Grease duct velocity</strong> — IMC §506.3.4 ≥500 fpm screen.</li><li><strong>Grease duct slope</strong> — IMC §506.3.7 1/4:12 or 1:12 geometric screen.</li><li><strong>Appliance access</strong> — IMC §306 working-space / passageway checklist.</li><li><strong>Return-air source restrictions</strong> — IMC §601.5 prohibition path gate.</li><li><strong>Gas shutoff &amp; connector</strong> — IFGC §409.5 / §411.1.3 location and 6 ft connector screen.</li><li><strong>Refrigerant pipe protection</strong> — IMC Chapter 11 documentation gate (no charge limits).</li><li>Calculator count: <strong>64</strong>.</li></ul>'],
     ['2026-09-13','More engineering & trades calculators','<ul><li><strong>Equivalent round duct</strong> — rectangular → De for equal-friction comparison.</li><li><strong>Face velocity</strong> — coil / filter / grille face speed.</li><li><strong>Airflow per ton</strong> — CFM ÷ tons field check.</li><li><strong>Sensible heat ratio</strong> — sensible ÷ total cooling.</li><li><strong>Cooling tons</strong> — BTU/h ↔ tons of refrigeration.</li><li><strong>Pump affinity laws</strong> — speed → flow / head / power.</li><li><strong>Pipe velocity</strong> — GPM and inside diameter → liquid speed.</li><li><strong>Fuel-gas operating cost</strong> — therms and $ from rated input.</li><li><strong>Sheave / belt RPM</strong> — driven speed from pitch diameters.</li><li>Calculator count: <strong>56</strong>.</li></ul>'],
     ['2026-09-12','UI uniformity · reusable components','<ul><li>Extracted shared UI renderers (<code>panelHead</code>, <code>fieldsGrid</code>, <code>advancedSection</code>, <code>codeDisclaimer</code>, <code>workspace</code>, <code>resultHero</code>, <code>resultRows</code>, <code>chipHTML</code>, <code>methodDetails</code>, <code>emptyResult</code>).</li><li>Moved per-calculator disclaimer copy and result labels out of the inline <code>render</code>/<code>run</code> templates.</li><li>Replaced inline cite-tag styles with a shared <code>.cite-tags</code> class aligned to equivalents spacing.</li><li>Unit converter now reuses the same workspace/result panel composition.</li></ul>'],
