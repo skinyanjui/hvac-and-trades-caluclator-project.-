@@ -114,6 +114,20 @@ Method: headless pass over all 214 tools and four reference pages collecting con
 
 Not changed: `condensateoverflow` still shows the empty result state with its defaults (intentional gate). After the fixes: verify 512/512, zero console or network errors on any page, zero duplicate ids, zero horizontal overflow at 390 px, fuzz unchanged (only the intentional hood-style messages), typing-then-navigating no longer contaminates state.
 
+## Layout audit: large screens, spacing, responsiveness (2026-09-13)
+
+Method: screenshots and DOM measurements of representative tools (`btu`, `combustionair`, `gaspipesize`, `outdoorair`, `tpdischarge`, `lcc`) and the four reference pages at 390, 820, 1024, 1280, 1440, 1650, 1920 and 2560 px; then a scripted pass over all 214 tools at 1024/1280/1920 checking panel overflow, controls sharing a row with different tops, select options wider than their box, clipped unit spans, wrapping result values and clipped hero numbers.
+
+| Finding | Fix |
+| --- | --- |
+| At ≥ 1650 px `main{margin-left:30px}` pinned a 1120 px workspace to the sidebar, leaving ~1,200 px of empty space on a 2560 px display. | Workspace is centred; max-width 1280 px from 1650 px and 1400 px from 2200 px, with slightly larger panel padding/gaps at that size. Sidebar scales `clamp(200px, 13vw, 250px)` so long tool names wrap less. |
+| Controls in the same row sat at different heights: `.field` was a flex column with `margin-top:auto` on the control, so a long hint on the neighbour pushed the other field's input down (visible on every checklist tool). | `.field` is now a `subgrid` spanning three shared tracks (label / control / hint) so labels bottom-align, controls top-align and hints start on the same line; flex fallback kept for browsers without subgrid. |
+| Text inputs were 38 px tall (36 + borders) but selects 36 px, a 2 px step in every mixed row. | Both border-box 38 px (44 px on coarse pointers). |
+| Between 801 and 1000 px the two panels sat side by side at ~300 px each, and between 1000 and 1250 px the two field columns were ~180 px, so select text such as "Outdoor · two openings (vertical ducts)" was clipped. | Workspace stacks below 1000 px; a container query drops `.fields` to one column whenever the panel is narrower than 430 px, independent of viewport. |
+| 57 choice fields have option labels longer than 28 characters and were clipped even at half a 1280 px panel. | Choice fields with any option over 28 characters span both columns; a field left alone in its row (because the next field is full-width or a neighbour is conditionally hidden) also spans both. Re-evaluated on every input, not only at render. |
+
+After the pass: 0 misaligned rows and 0 clipped selects at 1280/1920; at 1024 the only remaining clipped selects are single-column 85-character option labels (the open list shows the full text). Verify 512/512, all-page smoke and fuzz unchanged.
+
 ## NIST security survey (2026-09-13)
 
 Reviewed NIST publications for controls that apply to a public, static, no-backend web app: CSF 2.0 and SP 1300 (small-business quick start), SP 800-53 Rev. 5, SP 800-218 SSDF v1.1, SP 800-52 Rev. 2 (TLS), SP 800-44 v2 (public web servers), SP 800-122 (PII). SP 800-63 (digital identity) and SP 800-95 (SOAP web services) do not apply — there are no accounts and no API.
