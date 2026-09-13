@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 56, calculators.length);
+assert('calculator count', calculators.length === 64, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -154,6 +154,30 @@ assert('sheave 1750×4/6 → ~1166.67', Math.abs(run('sheave', {rpmDriver: 1750,
   assert('pipevelocity 20 gpm / 1.049 in', Math.abs(r.value - expect) < 1e-9, r.value);
 }
 assert('gascost 80k×8×30 / 1e5 × 1.2', Math.abs(run('gascost', {input: 80000, hours: 8, days: 30, rate: 1.2}).value - (80000 * 8 * 30 / 100000) * 1.2) < 1e-9);
+
+{
+  const r = run('intakesep', {});
+  assert('intakesep defaults open flood unk', r.value >= 1, r.value);
+}
+assert('intakesep clear defaults with flood yes', run('intakesep', {flood: 'yes'}).value === 0);
+assert('exhaustterm environmental defaults pass', run('exhaustterm', {}).value === 0);
+assert('exhaustterm environmental too close to intake', run('exhaustterm', {intake: 5}).value >= 1);
+{
+  const r = run('greasevel', {flow: 2000, shape: 'rect', width: 18, height: 10});
+  assert('greasevel 2000/1.25 → 1600', Math.abs(r.value - 1600) < 1e-9, r.value);
+}
+assert('greasevel below 500 fails note', /below 500|short of|is below/i.test(run('greasevel', {flow: 400, shape: 'rect', width: 18, height: 10}).note));
+{
+  const r = run('greaseslope', {run: 40, drop: 10, factoryBuilt: 'no'});
+  assert('greaseslope 10in/40ft → 0.25 in/ft', Math.abs(r.value - 0.25) < 1e-9, r.value);
+}
+assert('greaseslope long run needs 1:12', /1:12/.test(run('greaseslope', {run: 80, drop: 20, factoryBuilt: 'no'}).formula));
+assert('access306 defaults need attention', run('access306', {}).value >= 1);
+assert('returnair defaults no flags', run('returnair', {}).value === 0);
+assert('returnair closet yes flags', run('returnair', {closet: 'yes'}).value >= 1);
+assert('gasshutoff flex defaults open unk', run('gasshutoff', {}).value >= 1);
+assert('gasshutoff flex ok path', run('gasshutoff', {accessible: 'yes', upstream: 'yes'}).value === 0);
+assert('refrigpipe defaults need attention', run('refrigpipe', {}).value >= 1);
 
 const failed = tests.filter(t => !t.ok);
 const passed = tests.length - failed.length;

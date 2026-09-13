@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 56 calculators across:
+The app now contains 64 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -26,7 +26,10 @@ The app now contains 56 calculators across:
 - IPC T&P discharge screening,
 - IRC local/whole-house ventilation and installation path gates,
 - ASHRAE 15 / 15.2 path routing,
-- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM).
+- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM),
+- IMC intake/exhaust location and grease-duct velocity/slope screens,
+- IMC appliance-access and return-air restriction gates,
+- IFGC shutoff/connector screening and IMC Chapter 11 refrigerant-piping documentation.
 
 ## Priority additions completed in this audit
 
@@ -67,6 +70,19 @@ Added full-on and nonzero standby airflow plus a CO + NO₂ detector/listing/con
 ### Cross-code and refrigerant-path handoffs
 
 Added a CSST electrical-bonding receiver and nonnumeric ASHRAE 15 / 15.2 charge-review checklists. The existing path gate now links to those reviews and machinery-room ventilation.
+
+### Model-code location, kitchen, access, and piping screens (follow-on)
+
+Added published-distance and formula screens without inventing proprietary table cells:
+
+- IMC §401.4 outdoor-air intake separation
+- IMC §501.3.1 exhaust outlet termination by class
+- IMC §506.3.4 grease-duct velocity (≥500 fpm)
+- IMC §506.3.7 grease-duct slope (1/4:12 or 1:12)
+- IMC §306 appliance access / service-space checklist
+- IMC §601.5 return-air source restriction gate
+- IFGC §409.5 / §411.1.3 shutoff location and flexible-connector length
+- IMC Chapter 11 refrigerant-piping documentation gate (still no charge / RCL / mmax)
 
 ### Code-context selector trust fix
 
