@@ -53,6 +53,14 @@ Re-tested public engineering identities (sensible CFM, hydronic GPM, duct veloci
 
 Verify harness now includes accuracy regressions (`scripts/verify.mjs`).
 
+## Second accuracy pass (2026-09-13)
+
+Follow-on audit after the first accuracy/unit expansion:
+
+- Hardened remaining non-finite edges: gas heat content, multizone `Ev` / critical `Vpz`, equivalent-duct sides, grease-duct run length, kW/ton COP rows when power is zero, and total-enthalpy factor.
+- Unit converter grown from **26 → 32** groups (mass flow, absolute humidity, thermal conductivity, kinematic viscosity, electrical potential/current) with Rankine, metric hp, and more SI/IP members in existing groups.
+
+
 ## Priority additions completed in this audit
 
 ### IMC §307.2.3 condensate overflow protection

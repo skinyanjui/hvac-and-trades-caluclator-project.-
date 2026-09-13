@@ -16,18 +16,18 @@ const calculators=[
 {id:'geometry',name:'Area & volume',group:'ENERGY & MATH',icon:'duct',desc:'Calculate rectangular floor area and room volume.',badge:'Room geometry',sources:[],fields:[field('length','Length','ft',20,.001),field('width','Width','ft',15,.001),field('height','Height','ft',8,.001)],calculate:v=>result(v.length*v.width,'ft²',[['Room volume',v.length*v.width*v.height,'ft³'],['Floor perimeter',2*(v.length+v.width),'ft']],`Area = L × W; volume = L × W × H`,'For rectangular rooms. Divide irregular spaces into simpler shapes, calculate each, then add their areas or volumes.')}
 ];
 const units={
-'Power / capacity':{'BTU/h':.2930710701722222,'W':1,'kW':1000,'tons refrigeration':3516.852842066667,'hp (mechanical)':745.6998715822702},
-'Temperature':{'°F':1,'°C':1,'K':1},'Temperature difference':{'Δ°F':5/9,'Δ°C':1,'ΔK':1},
-'Airflow':{'CFM':.0004719474432,'L/s':.001,'m³/h':1/3600,'m³/s':1,'L/min':.001/60},
-'Pressure':{'Pa':1,'kPa':1000,'bar':1e5,'psi':6894.757293168,'atm':101325,'in. w.c. (conventional)':249.08891,'ft w.c. (conventional)':2989.06692,'inHg (0 °C)':3386.389,'mmHg (torr)':133.322387415},
-'Length':{'ft':.3048,'in':.0254,'yd':.9144,'m':1,'cm':.01,'mm':.001,'mil':.0000254,'mile':1609.344},
-'Area':{'ft²':.09290304,'in²':.00064516,'yd²':.83612736,'m²':1},
-'Volume':{'ft³':.028316846592,'m³':1,'L':.001,'mL':1e-6,'US gal':.003785411784,'US qt':.000946352946},
-'Energy':{'BTU (IT)':1055.05585262,'kWh':3600000,'Wh':3600,'J':1,'therm (US)':105480400,'MMBtu':1.05505585262e9,'kcal (IT)':4186.8},
-'Velocity':{'ft/min':.00508,'ft/s':.3048,'m/s':1,'mph':.44704,'km/h':1/3.6},
-'Water flow':{'US gpm':.003785411784/60,'US gph':.003785411784/3600,'L/min':.001/60,'L/s':.001,'m³/h':1/3600}
+'Power / capacity':{'BTU/h':.2930710701722222,'W':1,'kW':1000,'tons refrigeration':3516.852842066667,'hp (mechanical)':745.6998715822702,'hp (metric)':735.49875},
+'Temperature':{'°F':1,'°C':1,'K':1,'°R':1},'Temperature difference':{'Δ°F':5/9,'Δ°C':1,'ΔK':1,'Δ°R':5/9},
+'Airflow':{'CFM':.0004719474432,'L/s':.001,'m³/h':1/3600,'m³/s':1,'L/min':.001/60,'m³/min':1/60},
+'Pressure':{'Pa':1,'kPa':1000,'mbar':100,'bar':1e5,'psi':6894.757293168,'oz/in²':430.922330788,'atm':101325,'kgf/cm²':98066.5,'in. w.c. (conventional)':249.08891,'ft w.c. (conventional)':2989.06692,'inHg (0 °C)':3386.389,'mmHg (torr)':133.322387415},
+'Length':{'ft':.3048,'in':.0254,'yd':.9144,'m':1,'cm':.01,'mm':.001,'mil':.0000254,'km':1000,'mile':1609.344},
+'Area':{'ft²':.09290304,'in²':.00064516,'yd²':.83612736,'m²':1,'acre':4046.8564224,'hectare':10000},
+'Volume':{'ft³':.028316846592,'m³':1,'L':.001,'mL':1e-6,'US gal':.003785411784,'US qt':.000946352946,'US pt':.000473176473,'US fl oz':.0000295735295625},
+'Energy':{'BTU (IT)':1055.05585262,'kWh':3600000,'Wh':3600,'J':1,'kJ':1000,'MJ':1e6,'therm (US)':105480400,'MMBtu':1.05505585262e9,'kcal (IT)':4186.8,'cal (IT)':4.1868},
+'Velocity':{'ft/min':.00508,'ft/s':.3048,'m/s':1,'mph':.44704,'km/h':1/3.6,'knot':0.514444},
+'Water flow':{'US gpm':.003785411784/60,'US gph':.003785411784/3600,'L/min':.001/60,'L/s':.001,'m³/h':1/3600,'m³/s':1}
 };
-function convert(category,value,from,to){let x;if(category==='Temperature'){x=from==='°F'?(value-32)*5/9+273.15:from==='°C'?value+273.15:value;if(x<-.00000001)throw Error('Temperature cannot be below absolute zero.');return to==='°F'?(x-273.15)*9/5+32:to==='°C'?x-273.15:x;}return value*units[category][from]/units[category][to];}
+function convert(category,value,from,to){let x;if(category==='Temperature'){x=from==='°F'?(value-32)*5/9+273.15:from==='°C'?value+273.15:from==='°R'?value*5/9:value;if(x<-.00000001)throw Error('Temperature cannot be below absolute zero.');return to==='°F'?(x-273.15)*9/5+32:to==='°C'?x-273.15:to==='°R'?x*9/5:x;}return value*units[category][from]/units[category][to];}
 
 // IAPWS saturation relations referenced by ASHRAE Fundamentals (2021), ch. 1, eqs. 5–6.
 // Pressure in kPa; liquid water at/above 0 C, ice below 0 C.
@@ -600,7 +600,7 @@ choice('arcInstall','§310.3 · installed per listing (bonding per mfr if requir
 ],calculate:v=>{
   const method=gasPipeMethods.find(([k])=>k===v.method);if(!method)throw Error('Choose a valid sizing method.');
   const cls=gasPipeTables[v.tableClass];if(!cls)throw Error('Choose a valid gas / pressure / material class.');
-  const heat=v.heatContent;
+  const heat=v.heatContent;if(!(heat>0))throw Error('Gas heat content must be greater than zero.');
   let cfh,btuh;
   if(v.loadUnit==='btuh'){
     btuh=v.loadBtuh;cfh=v.loadBtuh/heat;
@@ -1420,6 +1420,9 @@ field('ev','System ventilation efficiency Ev','0–1',0.9,0.01,1,'any','Enter a 
 field('criticalVoz','Critical-zone outdoor airflow Voz','cfm',100,0,1e8),
 field('criticalVpz','Critical-zone primary airflow Vpz','cfm',500,0.001,1e8)
 ],calculate:v=>{
+  if(!(v.ev>0))throw Error('System ventilation efficiency Ev must be greater than zero.');
+if(!(v.criticalVpz>0))throw Error('Critical-zone primary airflow must be greater than zero.');
+if(!(v.sumZonePopulation>0))throw Error('Sum of zone population must be greater than zero.');
   const D=Math.min(1,v.systemPopulation/v.sumZonePopulation);
   const Zp=v.criticalVoz/v.criticalVpz;
   const Vou=D*v.sumPeopleOA+v.sumAreaOA;
@@ -1594,6 +1597,7 @@ calculators.push(
 field('width','Inside width','in',12,.001,1000),
 field('height','Inside height','in',8,.001,1000)
 ],calculate:v=>{
+  if(!(v.width>0&&v.height>0))throw Error('Duct width and height must be greater than zero.');
   const a=Math.max(v.width,v.height),b=Math.min(v.width,v.height);
   const area=v.width*v.height/144;
   const de=1.30*Math.pow(v.width*v.height,0.625)/Math.pow(v.width+v.height,0.25);
@@ -1705,6 +1709,7 @@ field('days','Number of days','days',30,1,3660,1),
 field('rate','Gas rate','$/therm',1.2,0,100),
 field('heatContent','Heat content','BTU/ft³',1000,1,5000,'any','Local utility heating value. Used only to report approximate cubic feet.')
 ],calculate:v=>{
+  if(!(v.heatContent>0))throw Error('Gas heat content must be greater than zero.');
   const btus=v.input*v.hours*v.days;
   const therms=btus/100000;
   const cuft=btus/v.heatContent;
@@ -1829,6 +1834,7 @@ field('run','Horizontal duct run length','ft',40,.001,1000),
 field('drop','Vertical drop toward hood / reservoir along that run','in',10,0,1000),
 choice('factoryBuilt','Factory-built grease duct installed per listing slope?',[['no','No / field-fabricated'],['yes','Yes — follow listing'],['unk','Unknown']],'no')
 ],calculate:v=>{
+  if(v.factoryBuilt!=='yes'&&!(v.run>0))throw Error('Horizontal run length must be greater than zero.');
   if(v.factoryBuilt==='yes'){
     return result(1,'follow listing slope',[
       ['Factory-built path',1,'yes'],
@@ -2127,15 +2133,11 @@ field('output','Boiler heat output','BTU/h',334750,0)
 field('power','Electrical input','kW',70,0),
 field('capacity','Cooling capacity','tons',200,.001)
 ],calculate:v=>{
-  if(!(v.capacity>0))throw Error('Cooling capacity must be greater than zero.');const kwton=v.power/v.capacity;
-  const cop=3.5168525/kwton;
-  const eer=cop*3.412141633;
-  return result(kwton,'kW/ton',[
-    ['Electrical input',v.power,'kW'],
-    ['Cooling capacity',v.capacity,'tons'],
-    ['Approximate COP',cop,''],
-    ['Approximate EER',eer,'BTU/Wh']
-  ],`kW/ton = kW ÷ tons = ${fmt(v.power)} ÷ ${fmt(v.capacity)}; COP ≈ 3.51685 ÷ (kW/ton)`,
+  if(!(v.capacity>0))throw Error('Cooling capacity must be greater than zero.');if(v.power<0)throw Error('Electrical input cannot be negative.');const kwton=v.power/v.capacity;
+  const rows=[['Electrical input',v.power,'kW'],['Cooling capacity',v.capacity,'tons'],['kW per ton',kwton,'kW/ton']];
+  let formula=`kW/ton = kW ÷ tons = ${fmt(v.power)} ÷ ${fmt(v.capacity)}`;
+  if(v.power>0){const cop=3.5168525/kwton,eer=cop*3.412141633;rows.push(['Approximate COP',cop,''],['Approximate EER',eer,'BTU/Wh']);formula+=`; COP ≈ 3.51685 ÷ (kW/ton)`;}
+  return result(kwton,'kW/ton',rows,formula,
   'Same operating condition and system boundary for power and capacity. Does not calculate IPLV/NPLV or certify a rated efficiency.');
 }},
 {id:'tower',name:'Cooling tower approach',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower range and approach from water and ambient wet-bulb temperatures.',badge:'Tower temperatures',sources:[],fields:[
@@ -3752,6 +3754,7 @@ field('cfm','Airflow','cfm',1400,0),
 field('dh','Enthalpy change','BTU/lb',8,.001,50),
 field('factor','Total-heat factor','BTU/h·cfm·(BTU/lb)',4.5,2,6)
 ],calculate:v=>{
+  if(!(v.factor>0))throw Error('Total factor must be greater than zero.');
   const q=v.factor*v.cfm*v.dh;
   return result(q,'BTU/h',[
     ['Airflow',v.cfm,'cfm'],
@@ -4359,21 +4362,27 @@ choice('support','Support, slope, and joints documented for the vent material?',
 
 const advancedFields={airflow:['density','cp'],rise:['density','cp'],humidity:['pressure'],latent:['specificvolume','hfg'],totalheat:['specificvolume'],waterflow:['density','cp'],outdoorair:['ezMode','ezOverride'],combustionair:['freeAreaPct'],gaspipesize:['heatContent','fittings','csstFit','otherEL'],mrvent:['charge2','dp2','charge3','dp3','riseNote'],gascost:['heatContent']};
 Object.assign(units,{
-'Mass':{'lb':.45359237,'oz':.028349523125,'grain':6.479891e-5,'kg':1,'g':.001,'ton (short)':907.18474,'tonne':1000},
+'Mass':{'lb':.45359237,'oz':.028349523125,'grain':6.479891e-5,'kg':1,'g':.001,'ton (short)':907.18474,'tonne':1000,'slug':14.593902937},
+'Mass flow':{'lb/h':.0001259978805556,'lb/min':.007559872833333,'kg/h':1/3600,'kg/s':1},
 'Specific enthalpy':{'BTU/lb':2326,'kJ/kg':1000,'J/kg':1},
 'Humidity ratio':{'grains/lb':1/7000,'lb/lb':1,'g/kg':.001,'kg/kg':1},
+'Absolute humidity':{'grains/ft³':.0022883519,'g/m³':.001,'kg/m³':1},
 'Thermal resistance':{'h·ft²·°F/BTU':.1761101838,'m²·K/W':1},
 'Thermal transmittance':{'BTU/(h·ft²·°F)':5.678263341,'W/(m²·K)':1},
-'Force':{'lbf':4.4482216152605,'N':1,'kgf':9.80665},
-'Torque':{'lbf·ft':1.3558179483314004,'N·m':1},
-'Density':{'lb/ft³':16.01846337396,'kg/m³':1,'lb/US gal':119.8264273167187},
+'Thermal conductivity':{'BTU/(h·ft·°F)':1.73073467,'W/(m·K)':1},
+'Force':{'lbf':4.4482216152605,'N':1,'kgf':9.80665,'kip':4448.2216152605},
+'Torque':{'lbf·ft':1.3558179483314004,'lbf·in':.1129848290276167,'N·m':1},
+'Density':{'lb/ft³':16.01846337396,'kg/m³':1,'g/cm³':1000,'lb/US gal':119.8264273167187},
 'Specific heat':{'BTU/(lb·°F)':4186.8,'kJ/(kg·K)':1000,'J/(kg·K)':1},
-'Specific volume':{'ft³/lb':.0624279605761446,'m³/kg':1},
-'Heat flux':{'BTU/(h·ft²)':3.15459075,'W/m²':1},
+'Specific volume':{'ft³/lb':.0624279605761446,'m³/kg':1,'L/kg':.001},
+'Heat flux':{'BTU/(h·ft²)':3.15459075,'W/m²':1,'kW/m²':1000},
 'Dynamic viscosity':{'cP':.001,'Pa·s':1,'lb/(ft·h)':.00041337887},
-'Time':{'s':1,'min':60,'h':3600,'day':86400},
-'Frequency':{'Hz':1,'rpm':1/60},
-'Angle':{'deg':Math.PI/180,'rad':1}
+'Kinematic viscosity':{'cSt':1e-6,'m²/s':1,'ft²/s':.09290304},
+'Time':{'ms':.001,'s':1,'min':60,'h':3600,'day':86400,'week':604800},
+'Frequency':{'Hz':1,'rpm':1/60,'rps':1},
+'Angle':{'deg':Math.PI/180,'rad':1,'grad':Math.PI/200},
+'Electrical potential':{'V':1,'mV':.001,'kV':1000},
+'Electrical current':{'A':1,'mA':.001}
 });
 
 const icons={air:'M3 8h12a3 3 0 1 0-3-3M3 12h16a2 2 0 1 1-2 2M3 16h8a3 3 0 1 1-3 3',print:'M6 8V3h12v5M6 17H3V9h18v8h-3M6 14h12v7H6z',search:'M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 6 6',book:'M12 5v16M3 3c4 0 6 0 9 2 3-2 5-2 9-2v15c-4 0-6 0-9 3-3-3-5-3-9-3Z',convert:'M4 7h15l-4-4m5 14H5l4 4',snow:'M12 2v20M4.9 7l14.2 10M19.1 7 4.9 17M2 12h20',heat:'M12 21a5 5 0 0 0 5-5c0-3-2.5-4.5-3.5-7-.5 2-2 3-2 5.5C11.5 16 10 15 9.5 13 8 16 7 17.5 7 19a5 5 0 0 0 5 2z',duct:'M3 9h18v6H3zM7 9v6M17 9v6M3 12h18',water:'M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11z',bolt:'M13 2 4 14h7l-1 8 9-12h-7l1-8z',cost:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4v2m0 8v2m-3-7.5c.5-1.5 2-2.5 3.5-2 1.8.5 2.5 1.5 2.5 2.5S14.5 13 12 13s-3 1-3 2.5 1.5 2.5 3.5 2c1.5-.4 2.5-1.3 3-2.5'};
@@ -5114,7 +5123,7 @@ function converter(){
   const resultBody=`<div class="result-hero"><div class="result-label">Converted value</div><div class="result-number" id="conversion-result" role="status" aria-live="polite"></div></div><div class="conversion-equation" id="conversion-formula"></div><p class="method-note converter-note" id="conversion-note"></p><details class="method"><summary>References</summary><div class="method-body">${links(['conversion','nist'])}</div></details>`;
   return heading('Unit converter','Convert HVAC measurements without losing the units.',Object.keys(units).length+' measurement groups')+workspace(inputBody,resultBody);
 }function bindConverter(){document.querySelector('#category').onchange=e=>{conv.category=e.target.value;[conv.from,conv.to]=Object.keys(units[conv.category]);render();};document.querySelector('#convert-value').oninput=e=>{conv.value=e.target.value;updateConversion();};document.querySelector('#from-unit').onchange=e=>{conv.from=e.target.value;updateConversion();};document.querySelector('#to-unit').onchange=e=>{conv.to=e.target.value;updateConversion();};document.querySelector('#swap').onclick=()=>{[conv.from,conv.to]=[conv.to,conv.from];document.querySelector('#from-unit').value=conv.from;document.querySelector('#to-unit').value=conv.to;updateConversion();};updateConversion();}
-function updateConversion(){try{if(String(conv.value).trim()===''||!Number.isFinite(Number(conv.value)))throw Error('Enter a numeric value.');const v=Number(conv.value),n=convert(conv.category,v,conv.from,conv.to);if(!Number.isFinite(n))throw Error('Value exceeds the supported range.');document.querySelector('#print').disabled=false;document.querySelector('#conversion-result').innerHTML=`${pretty(n,7)}<small>${esc(conv.to)}</small>`;document.querySelector('#conversion-formula').textContent=`${pretty(v,7)} ${conv.from} = ${pretty(n,7)} ${conv.to}`;const notes={Temperature:'For a temperature rise or drop, select Temperature difference; absolute temperatures include a scale offset.','Temperature difference':'A change of 1 °C equals a change of 1.8 °F. No 32-degree offset is applied.','Power / capacity':'Thermal kW and electrical input kW describe different quantities, even though they use the same unit. Mechanical horsepower is 745.7 W.',Pressure:'Conventional water-column and mercury columns use standard conversions. Gauge-to-absolute pressure needs a reference pressure and is not performed here.','Specific enthalpy':'Unit conversion only. Enthalpy reference datums are not changed; values from different charts may use different zero points.','Humidity ratio':'Moisture mass per dry-air mass, not relative humidity.','Thermal resistance':'Converts area-normalized R-value, not total resistance in K/W.',Force:'lbf is the international pound-force.',Frequency:'rpm is treated as cycles per minute (1 rpm = 1/60 Hz).',Angle:'Plane angle only.',Time:'A day is exactly 86400 seconds here.'};document.querySelector('#conversion-note').textContent=notes[conv.category]||'US liquid gallons and US therm; International Table BTU. Full precision is retained until display.';document.querySelector('#conversion-error').textContent='';}catch(e){document.querySelector('#print').disabled=true;document.querySelector('#conversion-result').textContent='—';document.querySelector('#conversion-formula').textContent='';document.querySelector('#conversion-note').textContent='';document.querySelector('#conversion-error').textContent=e.message;}}
+function updateConversion(){try{if(String(conv.value).trim()===''||!Number.isFinite(Number(conv.value)))throw Error('Enter a numeric value.');const v=Number(conv.value),n=convert(conv.category,v,conv.from,conv.to);if(!Number.isFinite(n))throw Error('Value exceeds the supported range.');document.querySelector('#print').disabled=false;document.querySelector('#conversion-result').innerHTML=`${pretty(n,7)}<small>${esc(conv.to)}</small>`;document.querySelector('#conversion-formula').textContent=`${pretty(v,7)} ${conv.from} = ${pretty(n,7)} ${conv.to}`;const notes={Temperature:'For a temperature rise or drop, select Temperature difference; absolute temperatures include a scale offset.','Temperature difference':'A change of 1 °C equals a change of 1.8 °F. No 32-degree offset is applied.','Power / capacity':'Thermal kW and electrical input kW describe different quantities, even though they use the same unit. Mechanical horsepower is 745.7 W.',Pressure:'Conventional water-column and mercury columns use standard conversions. Gauge-to-absolute pressure needs a reference pressure and is not performed here.','Specific enthalpy':'Unit conversion only. Enthalpy reference datums are not changed; values from different charts may use different zero points.','Humidity ratio':'Moisture mass per dry-air mass, not relative humidity.','Thermal resistance':'Converts area-normalized R-value, not total resistance in K/W.',Force:'lbf is the international pound-force.',Frequency:'rpm is treated as cycles per minute (1 rpm = 1/60 Hz). rps is revolutions per second.',Angle:'Plane angle only.',Time:'A day is exactly 86400 seconds here.','Mass flow':'Mass per unit time, not volume flow.','Absolute humidity':'Moisture mass per moist-air volume, not humidity ratio.','Thermal conductivity':'k-value of a material, not an assembly U-factor.','Kinematic viscosity':'ν = μ/ρ. Enter consistent fluid properties.','Electrical potential':'Unit conversion only; not a circuit analysis.','Electrical current':'Unit conversion only; not a circuit analysis.'};document.querySelector('#conversion-note').textContent=notes[conv.category]||'US liquid gallons and US therm; International Table BTU. Full precision is retained until display.';document.querySelector('#conversion-error').textContent='';}catch(e){document.querySelector('#print').disabled=true;document.querySelector('#conversion-result').textContent='—';document.querySelector('#conversion-formula').textContent='';document.querySelector('#conversion-note').textContent='';document.querySelector('#conversion-error').textContent=e.message;}}
 function editionNote(body){return `<div class="edition-note"><strong>Code editions note.</strong> ${body}</div>`;}
 function referenceRow(topic,title,description,url){return `<article class="reference-row"><div class="ref-topic">${esc(topic)}</div><div><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(title)} ↗</a><p>${esc(description)}</p></div></article>`;}
 function changelogItem(when,title,html){return `<article class="changelog-item"><h3>${esc(title)}</h3><p class="when">${esc(when)}</p>${html}</article>`;}
@@ -5153,7 +5162,7 @@ function references(){const entries=[
 return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+editionNote(`This workbench provides <em>national US model-code / model-standard screening</em> against the embedded <em>2024 model-code pack</em> (${esc(codeEditionLabel())}). The model pack is not the law. <strong>The AHJ-adopted edition, local amendments, and PE judgment always govern.</strong> ${LEGAL_DISCLAIMER}`)+`<p class="reference-intro">Linked IMC / IFGC / IPC / IECC / ASHRAE 15 materials are reference editions. Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions. Code tools (outdoor air, exhaust, IRC bath/kitchen + WHMV, ASHRAE 15.2 path gate, condensate, dryer duct, hood capacity, combustion air, venting, gas pipe, machinery-room ventilation, T&amp;P discharge) use published model values or EXAMPLE_UNVERIFIED screens for screening only. Appendices apply only if adopted by the AHJ. ASHRAE standards are referenced to the extent cited; where they conflict with IMC text, the IMC governs (§102.8). Fuel-gas piping, appliances and venting are IFGC scope (IMC §101.2).</p><div class="reference-list">${entries.map(([topic,title,description,url])=>referenceRow(topic,title,description,url)).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
 function changelog(){
   const items=[
-    ["2026-09-13","Accuracy audit + expanded unit converters","<ul><li>Audited public engineering formulas and added zero-division guards on duct, fan/pump laws, compression ratio, pipe/duct geometry, airflow/hydronic factors, EER, Reynolds, valve Cv, friction rate, kW/ton, belt length, and pump head.</li><li>Expanded the unit converter from <strong>16 → 26</strong> groups (force, torque, density, specific heat/volume, heat flux, viscosity, time, frequency, angle) and more SI/IP units in existing groups.</li><li>Moved the AHJ / 2024 model-code screening note to the site footer.</li></ul>"],['2026-09-13','Audit continue — public math + code docs','<ul><li>Added <strong>24</strong> calculators from the coverage audit: fluid Q from SG·cp, water ΔT, leaving-air DB, SCFM↔ACFM, pump BHP, hp↔kW, ton-hours, gas MCF, propane gallons, tower evaporation, blowdown/COC, chiller lift, diversity, load factor, series U-factor, wind velocity pressure, Stull wet-bulb, heat reclaim, VAV fraction, plus IMC §504 / §928 / §309 / §603 and IFGC Chapter 5 documentation gates.</li><li>Still deferred: IFGC pipe/vent capacity tables, ASHRAE 15 charge/RCL cells, Manual J/D/S, IECC numeric efficiency tables.</li><li>Calculator count: <strong>209</strong>.</li></ul>'],
+    ["2026-09-13","Accuracy audit + expanded unit converters","<ul><li>Audited public engineering formulas and added zero-division guards on duct, fan/pump laws, compression ratio, pipe/duct geometry, airflow/hydronic factors, EER, Reynolds, valve Cv, friction rate, kW/ton, belt length, and pump head.</li><li>Expanded the unit converter from <strong>16 → 26</strong> groups (force, torque, density, specific heat/volume, heat flux, viscosity, time, frequency, angle) and more SI/IP units in existing groups.</li><li>Moved the AHJ / 2024 model-code screening note to the site footer.</li></ul>"],['2026-09-13','Second accuracy pass + more converters','<ul><li>Hardened remaining zero-division edges (gas heat content, multizone Ev / Vpz, equivalent-duct sides, grease-duct run, kW/ton COP rows, total-enthalpy factor).</li><li>Grew the unit converter again with metric hp, Rankine, more pressure/length/area/volume/energy/velocity units, plus mass-flow, absolute humidity, thermal conductivity, kinematic viscosity, and electrical V/A groups.</li></ul>'],['2026-09-13','Audit continue — public math + code docs','<ul><li>Added <strong>24</strong> calculators from the coverage audit: fluid Q from SG·cp, water ΔT, leaving-air DB, SCFM↔ACFM, pump BHP, hp↔kW, ton-hours, gas MCF, propane gallons, tower evaporation, blowdown/COC, chiller lift, diversity, load factor, series U-factor, wind velocity pressure, Stull wet-bulb, heat reclaim, VAV fraction, plus IMC §504 / §928 / §309 / §603 and IFGC Chapter 5 documentation gates.</li><li>Still deferred: IFGC pipe/vent capacity tables, ASHRAE 15 charge/RCL cells, Manual J/D/S, IECC numeric efficiency tables.</li><li>Calculator count: <strong>209</strong>.</li></ul>'],
     ['2026-09-13','Simplify top navigation','<ul><li>Removed <strong>Sources</strong> and <strong>Changelog</strong> from the top header (and mobile reference menu).</li><li>Unit converter and Print remain in the header. Deep links to sources/changelog still work if bookmarked.</li></ul>'],
     ['2026-09-13','Public field formulas + remove Please note banner','<ul><li>Removed the global <strong>Please note</strong> legal banner from the app shell (AHJ model-code bar remains).</li><li>Added calculators from publicly published technician/field formulas (Belimo-style / TAB continuity constants — no licensed code tables): <strong>CFM from sensible load</strong>, <strong>air ΔT from load</strong>, <strong>latent from grains (0.69)</strong>, <strong>total from enthalpy (4.5)</strong>, <strong>GPM from load</strong>, <strong>velocity from VP (4005)</strong>, <strong>CFM = A×V</strong>, <strong>gas CFH</strong>, <strong>BTU↔therms</strong>, <strong>chiller GPM (tons×24/ΔT)</strong>, <strong>tons from 400 CFM/ton</strong>, <strong>moisture lb/h</strong>, <strong>EIR from COP</strong>, <strong>grille CFM</strong>, <strong>altitude density factor</strong>, <strong>oil GPH</strong>, <strong>motor FLA estimate</strong>, <strong>mixed-air grains</strong>, and <strong>static regain</strong>.</li><li>Calculator count: <strong>185</strong>.</li></ul>'],
     ['2026-09-13','Audit gap fill — HVACR code docs + field math','<ul><li><strong>Hazardous exhaust docs</strong> — IMC Chapter 5 documentation gate.</li><li><strong>Smoke control docs</strong> — IMC §513 documentation gate.</li><li><strong>Ventilation control docs</strong> — IECC C403 DCV documentation gate.</li><li><strong>Duct insulation docs</strong> — IECC R-value documentation gate (no table cells).</li><li><strong>Gas piping docs</strong> — IFGC Chapter 4 documentation gate.</li><li><strong>Radiant floor docs</strong> — IMC §1209 documentation gate.</li><li><strong>Makeup-air heater docs</strong> and <strong>refrigerant joint/test docs</strong>.</li><li><strong>EER from capacity</strong>, <strong>heating COP</strong>, <strong>electric heat kW</strong>, <strong>gas input from output</strong>, <strong>NPSHa</strong>, <strong>head→psi</strong>, <strong>hydronic load from GPM</strong>, <strong>tower rejection</strong>, <strong>duct area</strong>, <strong>reheat</strong>, <strong>contact factor</strong>, <strong>flash steam</strong>, <strong>pressurization CFM</strong>, <strong>SG flow index</strong>, <strong>infiltration from ACH</strong>, and <strong>manifold pressure convert</strong>.</li><li>Calculator count: <strong>166</strong>.</li></ul>'],

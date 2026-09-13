@@ -70,7 +70,7 @@ const run = (id, vals = {}) => {
 
 assert('calculator count', calculators.length === 209, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
-assert('unit groups 26', Object.keys(units).length === 26, Object.keys(units).join(', '));
+assert('unit groups 32', Object.keys(units).length === 32, Object.keys(units).join(', '));
 
 const usedIcons = [...new Set(calculators.map(c => c.icon))];
 assert('icon coverage', usedIcons.every(i => icons[i]), usedIcons.filter(i => !icons[i]).join(','));
@@ -426,6 +426,19 @@ assert('ventingdocs defaults need attention', run('ventingdocs', {}).value >= 1)
   assert('convert 1 bar → kPa', near(convert('Pressure', 1, 'bar', 'kPa'), 100, 1e-12));
   assert('convert 1800 rpm → Hz', near(convert('Frequency', 1800, 'rpm', 'Hz'), 30, 1e-12));
   assert('convert 1 hp → W', near(convert('Power / capacity', 1, 'hp (mechanical)', 'W'), 745.6998715822702, 1e-9));
+  assert('convert °R → °F', near(convert('Temperature', 491.67, '°R', '°F'), 32, 1e-6));
+  assert('convert 1 mbar → Pa', near(convert('Pressure', 1, 'mbar', 'Pa'), 100, 1e-12));
+  assert('convert 1 cSt → m²/s', near(convert('Kinematic viscosity', 1, 'cSt', 'm²/s'), 1e-6, 1e-12));
+  assert('convert 3600 kg/h → kg/s', near(convert('Mass flow', 3600, 'kg/h', 'kg/s'), 1, 1e-12));
+  assert('convert 1 BTU/(h·ft·°F) → W/(m·K)', near(convert('Thermal conductivity', 1, 'BTU/(h·ft·°F)', 'W/(m·K)'), 1.73073467, 1e-9));
+  assert('convert 1000 mV → V', near(convert('Electrical potential', 1000, 'mV', 'V'), 1, 1e-12));
+  let blocked2=false; try{ run('gaspipesize',{heatContent:0}); }catch{ blocked2=true; }
+  assert('gaspipesize rejects zero heat content', blocked2);
+  blocked2=false; try{ run('multizoneoa',{ev:0}); }catch{ blocked2=true; }
+  assert('multizoneoa rejects zero Ev', blocked2);
+  blocked2=false; try{ run('equivduct',{width:0,height:8}); }catch{ blocked2=true; }
+  assert('equivduct rejects zero side', blocked2);
+
   let blocked = false;
   try { run('duct', {shape:'round', diameter:0, width:12, height:8, flow:400}); } catch { blocked = true; }
   assert('duct rejects zero area', blocked);
