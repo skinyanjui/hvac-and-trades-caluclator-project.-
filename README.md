@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **127** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **142** calculators with code-oriented screening tools:
 
 - **2024 model-code screening** — fixed to the latest embedded 2024 IMC / IFGC / IPC / IECC pack, with a strong legal disclaimer (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog (national US screening against 2024 model codes; AHJ always)
@@ -36,7 +36,7 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **More trades math** — net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude correction, open-belt length, hydraulic diameter, velocity pressure, stack effect, pipe volume, LMTD, evaporator/condenser TD, and net oil pressure
 - **More kitchen / combustion screens** — IMC §506.3.8 grease-duct cleanout spacing, IFGC §304.9 mechanical combustion air (0.35 cfm/1,000 BTU/h), IMC §507 Type I hood documentation, and IMC §603.6 flexible-duct installation checklist
 - **More access / termination / trades tools** — IMC §306.5 roof-appliance access docs, IMC §908 cooling-tower documentation, IMC §504.9 dryer termination key-row screen, duct aspect ratio, fan BHP, coil sensible capacity, condenser heat rejection, wet-bulb depression, Reynolds number, valve Cv flow, expansion-tank estimate, and condensate from latent load
-- **More HVACR / 2024-code screens** — IMC §607 dampers, Ch 10 boilers, Ch 11 refrigerant class, Ch 12 hydronics, IECC C403 economizer docs, IFGC Ch 5 vent-connector docs, plus COP/EER, Carnot COP, flash-gas quality, line velocity, balance point, and chiller approach
+- **Continued HVACR / 2024-code screens** — IMC §602 plenums, §505 kitchen exhaust, §918 furnaces, §1109 shaft piping, IECC C403 fan-power docs, plus CHW flow, tower range, heat of compression, NRE, vacuum units, PLR, tons↔kW, duct leakage %, filter face velocity, oil-cooler heat\n- **More HVACR / 2024-code screens** — IMC §607 dampers, Ch 10 boilers, Ch 11 refrigerant class, Ch 12 hydronics, IECC C403 economizer docs, IFGC Ch 5 vent-connector docs, plus COP/EER, Carnot COP, flash-gas quality, line velocity, balance point, and chiller approach
 - **Attic / underfloor / machinery docs + more trades math** — IMC §306.3 attic access, IMC §306.4 underfloor access, IMC §603.10 duct support docs, IMC §1105 machinery-room docs, outdoor-air fraction, coil bypass factor, air horsepower, heat-exchanger effectiveness, Darcy friction head (user f), steam mass from load, refrigerant mass flow, and fitting equivalent-length sum
 
 See [`AUDIT.md`](AUDIT.md) for the current coverage audit, explicit source-data blockers, and prioritized follow-up work.

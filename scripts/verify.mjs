@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 127, calculators.length);
+assert('calculator count', calculators.length === 142, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -288,6 +288,23 @@ assert('voleff 20/25 → 0.8', Math.abs(run('voleff', {}).value - 0.8) < 1e-12);
 assert('balancept linear solve', Math.abs(run('balancept', {}).value - 24.857142857142858) < 1e-9);
 assert('chillerapp evap 44-40 → 4', Math.abs(run('chillerapp', {}).value - 4) < 1e-12);
 assert('chillerapp cond 105-95 → 10', Math.abs(run('chillerapp', {side:'cond', fluid:95, sat:105}).value - 10) < 1e-12);
+
+
+assert('plenumdocs defaults need attention', run('plenumdocs', {}).value >= 1);
+assert('kitchenexdocs defaults need attention', run('kitchenexdocs', {}).value >= 1);
+assert('furnacedocs defaults need attention', run('furnacedocs', {}).value >= 1);
+assert('fanpowerdocs defaults need attention', run('fanpowerdocs', {}).value >= 1);
+assert('shaftpipdocs defaults need attention', run('shaftpipdocs', {}).value >= 1);
+assert('chwflow 120000/(500×10) → 24', Math.abs(run('chwflow', {}).value - 24) < 1e-12);
+assert('towerrange 95-85 → 10', Math.abs(run('towerrange', {}).value - 10) < 1e-12);
+assert('heatofcomp 45000-36000 → 9000', Math.abs(run('heatofcomp', {}).value - 9000) < 1e-12);
+assert('refeffect 110-40 → 70', Math.abs(run('refeffect', {}).value - 70) < 1e-12);
+assert('vacmicron 500 → 0.5 torr', Math.abs(run('vacmicron', {}).value - 0.5) < 1e-12);
+assert('partload 24000/36000 → 2/3', Math.abs(run('partload', {}).value - 24000/36000) < 1e-12);
+assert('tonstokw 10 tons', Math.abs(run('tonstokw', {}).value - 10*12000/3412.141633) < 1e-9);
+assert('ductleakpct 120/2000 → 6', Math.abs(run('ductleakpct', {}).value - 6) < 1e-12);
+assert('filterface 2000/4 → 500', Math.abs(run('filterface', {}).value - 500) < 1e-12);
+assert('oilcooler 800×0.45×20', Math.abs(run('oilcooler', {}).value - 800*0.45*20) < 1e-12);
 
 
 const failed = tests.filter(t => !t.ok);

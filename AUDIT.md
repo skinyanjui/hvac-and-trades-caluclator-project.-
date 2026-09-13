@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 127 calculators across:
+The app now contains 142 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -120,6 +120,16 @@ Added published-distance and formula screens without inventing proprietary table
 - Outdoor-air fraction, coil bypass factor, air horsepower
 - Heat-exchanger effectiveness, Darcy friction head (user-supplied f)
 - Steam mass from load, refrigerant mass flow, fitting equivalent-length sum
+
+### Continued HVACR expansion on 2024 codes
+
+- IMC §602 plenum documentation
+- IMC §505 domestic kitchen exhaust documentation
+- IMC §918 forced-air furnace documentation
+- IECC C403 fan-power path documentation
+- IMC §1109 refrigerant shaft/concealed piping documentation
+- Chilled-water GPM, tower/condenser range, heat of compression, net refrigeration effect
+- Vacuum unit conversion, part-load ratio, tons→thermal kW, duct leakage %, filter face velocity, oil-cooler heat
 
 ### More HVACR tools on 2024 model codes
 
