@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 142, calculators.length);
+assert('calculator count', calculators.length === 166, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -305,6 +305,32 @@ assert('tonstokw 10 tons', Math.abs(run('tonstokw', {}).value - 10*12000/3412.14
 assert('ductleakpct 120/2000 → 6', Math.abs(run('ductleakpct', {}).value - 6) < 1e-12);
 assert('filterface 2000/4 → 500', Math.abs(run('filterface', {}).value - 500) < 1e-12);
 assert('oilcooler 800×0.45×20', Math.abs(run('oilcooler', {}).value - 800*0.45*20) < 1e-12);
+
+
+assert('hazexdocs defaults need attention', run('hazexdocs', {}).value >= 1);
+assert('smokecontroldocs defaults need attention', run('smokecontroldocs', {}).value >= 1);
+assert('ventctrldocs defaults need attention', run('ventctrldocs', {}).value >= 1);
+assert('ductinsdocs defaults need attention', run('ductinsdocs', {}).value >= 1);
+assert('gaspipedocs defaults need attention', run('gaspipedocs', {}).value >= 1);
+assert('radiantfloor defaults need attention', run('radiantfloor', {}).value >= 1);
+assert('makeupheaterdocs defaults need attention', run('makeupheaterdocs', {}).value >= 1);
+assert('refrigjointdocs defaults need attention', run('refrigjointdocs', {}).value >= 1);
+assert('eerfromcap 36000/3000 → 12', Math.abs(run('eerfromcap', {}).value - 12) < 1e-12);
+assert('cophp defaults', Math.abs(run('cophp', {}).value - ((36000/3412.141633)/(3000/1000))) < 1e-9);
+assert('electricheat 34121 → ~10', Math.abs(run('electricheat', {}).value - 34121/3412.141633) < 1e-9);
+assert('gasinput 80000/0.8 → 100000', Math.abs(run('gasinput', {}).value - 100000) < 1e-9);
+assert('npsha 34+5-0.8-2 → 36.2', Math.abs(run('npsha', {}).value - 36.2) < 1e-12);
+assert('headtopsi 40/2.31', Math.abs(run('headtopsi', {}).value - 40/2.31) < 1e-12);
+assert('chwload 500×24×10 → 120000', Math.abs(run('chwload', {}).value - 120000) < 1e-12);
+assert('towerload 500×300×10 → 1.5e6', Math.abs(run('towerload', {}).value - 1500000) < 1e-9);
+assert('ductarea 1000/800 → 1.25', Math.abs(run('ductarea', {}).value - 1.25) < 1e-12);
+assert('reheat 1.08×1000×15 → 16200', Math.abs(run('reheat', {}).value - 16200) < 1e-12);
+assert('contactfac 1-0.2 → 0.8', Math.abs(run('contactfac', {}).value - 0.8) < 1e-12);
+assert('flashsteam (298-180)/(1150-180)', Math.abs(run('flashsteam', {}).value - (298-180)/(1150-180)) < 1e-12);
+assert('presscfm 2000-1800-0 → 200', Math.abs(run('presscfm', {}).value - 200) < 1e-12);
+assert('sgflow 100×1.05 → 105', Math.abs(run('sgflow', {}).value - 105) < 1e-12);
+assert('infilcfm 0.35×12000/60', Math.abs(run('infilcfm', {}).value - 0.35*12000/60) < 1e-12);
+assert('manifoldkpa 3.5 inwc', Math.abs(run('manifoldkpa', {}).value - 3.5*249.089/1000) < 1e-9);
 
 
 const failed = tests.filter(t => !t.ok);

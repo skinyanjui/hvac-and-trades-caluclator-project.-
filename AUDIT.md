@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 142 calculators across:
+The app now 166 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -120,6 +120,32 @@ Added published-distance and formula screens without inventing proprietary table
 - Outdoor-air fraction, coil bypass factor, air horsepower
 - Heat-exchanger effectiveness, Darcy friction head (user-supplied f)
 - Steam mass from load, refrigerant mass flow, fitting equivalent-length sum
+
+### Audit gap fill — missing HVACR calculators built
+
+Gap analysis against common HVACR field/design tasks and 2024 IMC / IFGC / IECC scopes (still no invented table cells):
+
+**Code documentation gates added**
+- IMC Chapter 5 hazardous exhaust
+- IMC §513 smoke control
+- IECC C403 ventilation / DCV controls
+- IECC duct insulation (R-value from adopted table, not digitized here)
+- IFGC Chapter 4 gas piping
+- IMC §1209 radiant floor
+- Makeup-air heater documentation
+- IMC Chapter 11 refrigerant joints / strength & leak tests
+
+**Formula / conversion tools added**
+- EER from capacity & watts, heating COP, electric heat kW, gas input from output/efficiency
+- NPSHa, head→psi, hydronic load from GPM, tower heat rejection
+- Duct area from velocity, reheat load, coil contact factor, flash-steam fraction
+- Pressurization CFM, SG flow index, infiltration from ACH, manifold pressure unit convert
+
+**Still deferred (need licensed tables / methodology)**
+- IFGC vent capacity and gas-pipe diameter tables
+- ASHRAE 15 / 15.2 charge, RCL, mmax, and A2L ppm rows
+- Full Manual J / D / S
+- IECC efficiency / economizer / insulation numeric tables
 
 ### Continued HVACR expansion on 2024 codes
 
