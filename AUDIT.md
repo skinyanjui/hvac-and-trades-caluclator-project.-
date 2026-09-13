@@ -60,6 +60,14 @@ Follow-on audit after the first accuracy/unit expansion:
 - Hardened remaining non-finite edges: gas heat content, multizone `Ev` / critical `Vpz`, equivalent-duct sides, grease-duct run length, kW/ton COP rows when power is zero, and total-enthalpy factor.
 - Unit converter grown from **26 → 32** groups (mass flow, absolute humidity, thermal conductivity, kinematic viscosity, electrical potential/current) with Rankine, metric hp, and more SI/IP members in existing groups.
 
+## Navigation chrome (2026-09-13)
+
+Shell improvements for denser calculator browsing:
+
+- Favorites and recent tools (persisted in `localStorage`)
+- Sidebar filter chips: All · Math · Code · Favorites; collapsible groups
+- Header/mobile search with `/` focus, ↑/↓/Enter list navigation, and an active-tool context chip with favorite toggle
+- Sidebar footer links to Units, Sources, and Changelog
 
 ## Priority additions completed in this audit
 
