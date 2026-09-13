@@ -1,19 +1,19 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src https://cdn.jsdelivr.net; img-src data:; base-uri 'none'; form-action 'none'"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="209 calm HVAC calculators with live results, clear formulas, unit conversion, and source references."><title>HVAC Workbench</title><style>@font-face{font-family:'Geist Sans';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}:root{font-family:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif;font-size:16px;color:#0a0a0a;background:#f5f5f5;font-synthesis:none;--ink:#0a0a0a;--ink-soft:#262626;--accent:#0070f3;--accent-ink:#0761d1;--accent-soft:#ebf5ff;--accent-ring:rgba(0,112,243,.18);--success:#29a383;--success-soft:#e8f7f0;--warn:#a35200;--warn-edge:#f5a623;--warn-soft:#fff6e6;--danger:#cd2b31;--danger-soft:#fff0f0;--danger-edge:#f4c0c0;--purple:#8e4ec6;--purple-soft:#f3ebfd;--line:#e5e5e5;--muted:#6b6b6b;--quiet:#999;--paper:#fff;--canvas:#f5f5f5;--g:var(--accent);--g-ink:var(--accent-ink);--g-soft:var(--accent-soft);--geist-font:'Geist Sans',Geist,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}[data-group="HEATING & COOLING"]{--g:#e5484d;--g-ink:#b3261e;--g-soft:#fff1f0}[data-group="AIR & DUCTS"]{--g:#12a594;--g-ink:#0b7a6e;--g-soft:#e6f8f5}[data-group="CODE & VENTILATION"]{--g:#8e4ec6;--g-ink:#6b3fa0;--g-soft:#f3ebfd}[data-group="CODE & FUEL GAS"]{--g:#f5a623;--g-ink:#a35200;--g-soft:#fff6e6}[data-group="REFRIGERATION"]{--g:#0070f3;--g-ink:#0761d1;--g-soft:#ebf5ff}[data-group="HYDRONICS"]{--g:#29a383;--g-ink:#1b7f63;--g-soft:#e8f7f0}[data-group="ENERGY & MATH"]{--g:#d6409f;--g-ink:#a5257a;--g-soft:#fdeef7}[data-group="REFERENCE"]{--g:#5b6b73;--g-ink:#3f515b;--g-soft:#f0f3f5}body{margin:0;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button,summary{cursor:pointer}button{border:0;background:none;color:inherit}a{color:var(--accent);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.4;cursor:default}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-80px;left:12px;z-index:5}.skip:focus{top:8px;padding:10px;background:white}.app-header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);background:var(--paper);gap:12px;position:sticky;top:0;z-index:3}.brand{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:560;text-decoration:none;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:22px;height:22px;background:linear-gradient(135deg,#0070f3,#12a594);color:#fff;border-radius:6px}.brand-mark svg{width:13px;height:13px;stroke-width:2}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{min-height:36px;padding:6px 14px;font-size:13px;color:var(--muted);border-radius:999px;background:transparent;transition:background .15s ease,color .15s ease}.header-actions button:hover{background:var(--accent-soft);color:var(--accent-ink)}.print-button{display:flex;align-items:center;gap:7px}.layout{display:grid;grid-template-columns:200px minmax(0,1fr);min-height:calc(100vh - 56px)}.sidebar{background:var(--paper);border-right:1px solid var(--line);padding:12px 10px;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;min-height:0}.search-wrap{position:relative;flex:none;margin-bottom:8px}.search-wrap svg{position:absolute;top:11px;left:9px;width:15px;height:15px;color:#7e8f98}.search-wrap input:focus,.header-search input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring);background:var(--paper)}.search-wrap input{background:var(--canvas);border:1px solid var(--line);padding:9px 10px 9px 32px;width:100%;border-radius:999px;font-size:13px;color:var(--ink-soft);height:36px;min-width:0}.search-wrap input::placeholder{color:var(--quiet)}nav{min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#dce5e9 transparent;padding-bottom:10px}.nav-group{margin-bottom:8px}.nav-group h2{margin:0 0 6px;padding:2px 10px;color:var(--quiet);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-item{display:flex;align-items:center;gap:4px;width:100%;text-align:left;min-height:0;padding:6px 9px;border-radius:6px;font-size:13px;line-height:1.3;color:var(--ink-soft);transition:background .15s ease,color .15s ease}.nav-item:hover{background:rgba(0,0,0,.04)}.nav-item.active{background:var(--g-soft);color:var(--g-ink);font-weight:560;box-shadow:inset 2px 0 0 var(--g)}.nav-group[data-group] .nav-group-head>span::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--g);margin-right:7px;vertical-align:1px}.nav-group[data-group] .nav-group-head:hover>span{color:var(--g-ink)}.sidebar-foot{margin-top:auto;padding:10px 4px 0;font-size:11px;color:#7e8c94;border-top:1px solid #eef1f3}.sidebar-foot-meta{white-space:nowrap;margin-bottom:8px}.sidebar-foot-links{display:flex;flex-wrap:wrap;gap:4px 10px}.sidebar-foot-links button{font-size:11px;color:var(--muted);padding:0;min-height:0;background:none;border-radius:0}.sidebar-foot-links button:hover{color:var(--ink)}.nav-empty{padding:9px;font-size:14px;color:var(--muted)}.mobile-tools{display:none}.header-center{flex:1;display:flex;align-items:center;gap:10px;min-width:0;max-width:520px;margin:0 8px}.header-search{position:relative;flex:1;min-width:0;display:none}.header-search svg{position:absolute;top:10px;left:10px;width:15px;height:15px;color:#7e8f98;pointer-events:none}.header-search input{width:100%;height:36px;border:1px solid var(--line);background:var(--canvas);border-radius:999px;padding:8px 42px 8px 32px;font-size:13px;color:var(--ink-soft);min-width:0}.header-search input::placeholder{color:var(--quiet)}.header-search kbd{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:10px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;color:var(--quiet);background:var(--paper);font-family:inherit}.nav-group-head{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;min-height:0;border-radius:6px;background:transparent}.nav-group-head:hover{background:rgba(0,0,0,.03);color:var(--muted)}.nav-group-head svg{width:12px;height:12px;transition:transform .15s ease;flex:none}.nav-group.collapsed .nav-group-head svg{transform:rotate(-90deg)}.nav-group.collapsed .nav-group-body{display:none}.nav-group h2.nav-group-title{padding:0}.nav-group-head{font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;padding:2px 6px 2px 10px}.mobile-results{display:none;flex-direction:column;gap:2px;max-height:50vh;overflow:auto;border-top:1px solid var(--line);padding-top:6px}.mobile-results.open{display:flex}.mobile-results button{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:40px;padding:8px 10px;border-radius:6px;background:transparent;color:var(--ink-soft);font-size:15px;text-align:left}.mobile-results button:hover,.mobile-results button:focus-visible{background:rgba(0,0,0,.04)}.mobile-results button.active{color:var(--accent);font-weight:500}.mobile-results button small{color:var(--quiet);font-size:12px;flex:none}.mobile-results .nav-empty{padding:8px 10px}.nav-item-row{display:flex;align-items:center;gap:2px}.nav-item-row .nav-item{flex:1;min-width:0}.nav-item-label{flex:1;min-width:0;text-align:left;overflow:hidden;text-overflow:ellipsis}.nav-item-row .fav-toggle{flex:none;width:24px;height:24px;min-height:0;padding:0;display:grid;place-items:center;border-radius:4px;color:var(--quiet);opacity:0;background:transparent}.nav-item-row:hover .fav-toggle,.nav-item-row .nav-item.active+.fav-toggle,.nav-item-row .fav-toggle[aria-pressed="true"]{opacity:1}.nav-item-row .fav-toggle:hover,.nav-item-row .fav-toggle[aria-pressed="true"]{color:var(--warn-edge);background:var(--warn-soft)}.nav-item-row .fav-toggle svg{width:12px;height:12px}.fav-toggle[aria-pressed="true"] svg{fill:currentColor}.nav-item.nav-kbd-focus{outline:2px solid var(--accent);outline-offset:-2px}.nav-special{margin-bottom:10px}.mobile-tools-inner{padding:8px 12px;display:flex;flex-direction:column;gap:8px}@media(max-width:800px){.header-center{max-width:none;margin:0 4px;flex:1}.header-search{display:block}.header-search kbd{display:none}.sidebar-search-desktop{display:none}}main{width:100%;max-width:1120px;min-width:0;padding:20px clamp(14px,2.2vw,28px);margin:0 auto;outline:none}.page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}h1{font-size:clamp(22px,2.8vw,30px);letter-spacing:-.035em;line-height:1.12;font-weight:560;margin:0 0 6px;color:var(--ink)}main[data-group] h1::before{content:'';display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--g);margin-right:10px;vertical-align:2px}.page-title p{font-size:13.5px;line-height:1.45;color:var(--muted);margin:0;max-width:42em}.tag{font-size:11px;font-weight:500;padding:4px 10px;border:1px solid transparent;border-radius:999px;background:var(--g-soft);color:var(--g-ink);white-space:nowrap;flex:none;margin-top:2px;height:fit-content}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0;overflow:hidden;box-shadow:none;height:fit-content;align-self:start}.input-panel,.result-panel{height:fit-content}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-bottom:1px solid #e9eef0;min-height:0}.panel-head h2{font-size:14px;font-weight:600;margin:0}.text-button{font-size:13px;color:var(--accent);padding:8px 0;min-height:32px;font-weight:500}.text-button:hover{text-decoration:underline}.fields{padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}.field{min-width:0;display:flex;flex-direction:column;gap:4px;height:100%}.field label{display:block;font-size:12.5px;font-weight:500;line-height:1.25;margin:0;color:var(--ink-soft)}.input-wrap{display:flex;align-items:center;border:1px solid #d4d4d4;border-radius:8px;background:var(--paper);min-height:36px;min-width:0;margin-top:auto;transition:border-color .15s ease,box-shadow .15s ease}.input-wrap:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring)}.input-wrap input{padding:7px 9px;border:0;background:transparent;width:100%;min-width:40px;color:#243d49;font-size:16px;outline:0;font-variant-numeric:tabular-nums}.input-wrap span{padding-right:8px;color:#5b6b73;font-size:11px;line-height:1.2;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46%;flex:none}.field select:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring);outline:0}.field select{width:100%;min-height:36px;border:1px solid #d4d4d4;border-radius:8px;padding:6px 28px 6px 10px;background:var(--paper);color:var(--ink-soft);font-size:14px;margin-top:auto}.full{grid-column:1/-1}.fields>.field:last-child:nth-child(odd){grid-column:1/-1}.advanced{border-top:1px solid #e9eef0;margin:0 12px}.advanced summary{font-size:13px;color:#576f7b;min-height:0;padding:8px 0}.advanced .fields{padding:2px 0 10px}.field-hint{font-size:12px;line-height:1.45;color:#6a7f89;margin:6px 0 0}.code-disclaimer{font-size:12px;line-height:1.45;color:#6b4a1f;background:var(--warn-soft);border:1px solid #f6e4c4;border-left:3px solid var(--warn-edge);border-radius:2px;padding:8px 10px;margin:0 12px 10px}.app-footer{display:block;padding:12px 24px;background:var(--paper);border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.5}.changelog-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden;margin-top:14px}.changelog-item{padding:15px 18px;border-bottom:1px solid #e5ecef}.changelog-item:last-child{border:0}.changelog-item h3{margin:0 0 6px;font-size:15px;font-weight:600;color:var(--accent-ink)}.changelog-item .when{font-size:12px;color:#778b96;margin:0 0 8px}.changelog-item p,.changelog-item li{font-size:13px;line-height:1.55;color:#687d88;margin:0}.changelog-item ul{margin:6px 0 0;padding-left:18px}.edition-note{font-size:13px;line-height:1.65;color:#4f6874;background:var(--accent-soft);border:1px solid #cfe3fb;border-left:3px solid var(--accent);border-radius:6px;padding:12px 14px;margin:0 0 16px;max-width:840px}@media(max-width:620px){.app-footer{padding-left:12px;padding-right:12px}}.form-status{font-size:12px;color:#5b6b73;padding:4px 12px 10px}.advanced+.form-status{padding-top:0}.result-hero{padding:12px 14px 12px;background:linear-gradient(180deg,var(--g-soft),var(--paper));border-bottom:1px solid var(--line);border-top:3px solid var(--g)}.result-label{font-size:12px;font-weight:560;color:var(--g-ink);letter-spacing:.02em}.result-number{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;font-size:clamp(26px,3.8vw,36px);font-weight:560;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-top:4px;margin-bottom:2px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.result-number small{font-size:13px;font-weight:500;letter-spacing:0;color:#4b5c66;white-space:nowrap}.cite-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:12px}.cite-tags span{background:var(--purple-soft);color:#6b3fa0;border-radius:5px;padding:3px 8px;line-height:1.3}.cite-tags b{color:inherit;font-size:12px;font-weight:550}.equivalents{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12px;color:#63808a}.equivalents b{color:var(--g-ink);font-size:14px;font-weight:550}.result-rows{padding:2px 14px 8px}.result-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;column-gap:12px;padding:6px 0;font-size:13px;line-height:1.35;color:#3f515b;border-top:1px solid #eef2f4}.result-rows>.result-row:first-child{border-top:0}.result-row>span:last-child{color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}.result-row small{color:#5b6b73;font-weight:400}.method{border-top:1px solid #e5ecef}.method summary{font-size:12.5px;min-height:0;padding:8px 14px;color:#3f515b;background:transparent;font-weight:500}.method-body{padding:0 14px 12px}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;background:var(--g-soft);color:var(--ink-soft);border-left:3px solid var(--g);border-radius:4px;padding:12px;overflow-wrap:anywhere;margin-top:6px}.method-note{font-size:13px;line-height:1.6;color:#607581;margin:12px 0}.source-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.source-links a{font-size:12px;line-height:1.5}.workspace-foot{font-size:12px;line-height:1.5;color:#71818c;margin-top:8px}.workspace-foot>span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--g);margin-right:7px;vertical-align:1px}.negative-note{font-size:13px;line-height:1.5;margin:0 14px 10px;padding:8px 10px;color:var(--warn);background:var(--warn-soft);border-radius:4px}.empty-result{padding:12px 14px;min-height:0;height:fit-content;background:#fafafa;color:var(--muted)}.empty-result>span{font-size:13px}.empty-result strong{display:block;font-size:28px;font-weight:400;margin:4px 0;color:var(--g-ink)}.empty-result p{font-size:14px;margin:0}#error:not(:empty),#conversion-error:not(:empty){font-size:13px;line-height:1.5;margin:0 17px 15px;padding:10px;background:var(--danger-soft);color:var(--danger);border:1px solid var(--danger-edge);border-radius:4px}.converter-foot{display:flex;justify-content:space-between;gap:9px;align-items:center;padding:0 12px 8px}.converter-foot>span{font-size:12px;color:#7b8b93}.conversion-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.6;padding:15px 19px 0;overflow-wrap:anywhere}.converter-note{padding:0 19px}.reference-intro{font-size:14px;line-height:1.7;color:#617682;max-width:840px;margin:0 0 18px}.reference-list{border:1px solid var(--line);background:#fff;border-radius:7px;overflow:hidden}.reference-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #e5ecef}.reference-row:last-child{border:0}.ref-topic{font-size:12px;color:var(--accent-ink);font-weight:500;padding-top:2px}.reference-row a{font-size:14px;font-weight:550;text-decoration:none}.reference-row a:hover{text-decoration:underline}.reference-row p{font-size:13px;line-height:1.55;color:#687d88;margin:6px 0 0}.smallprint{font-size:12px;line-height:1.6;color:#7c8e98;margin-top:14px}[hidden]{display:none!important}.crosscode-chips{padding:0 14px 10px;display:grid;gap:8px}.crosscode-chip{border:1px solid #e4d7f7;background:var(--purple-soft);border-radius:4px;padding:10px 12px}.crosscode-chip-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:var(--purple);margin:0 0 4px}.crosscode-chip-title{font-size:13px;font-weight:560;color:var(--ink);margin:0 0 6px}.crosscode-chip p{font-size:12px;line-height:1.5;color:#5a7380;margin:0 0 8px}.crosscode-chip dl{margin:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4px 10px;font-size:12px}.crosscode-chip dt{color:#6a808a}.crosscode-chip dd{margin:0;color:#243d49;overflow-wrap:anywhere}@media(max-width:620px){.crosscode-chips{padding:0 17px 12px}.crosscode-chip dl{grid-template-columns:1fr}}@media(min-width:1650px){main{margin-left:30px}}@media(max-width:1100px){.layout{grid-template-columns:180px minmax(0,1fr)}main{padding:16px 16px}.tag{display:none}.workspace{gap:10px}.nav-item{font-size:12.5px}.result-number{font-size:30px}.fields{gap:9px}}@media(max-width:800px){.app-header{padding:0 12px}.sidebar{display:none}.layout{display:block}.mobile-tools{display:block;border-bottom:1px solid var(--line);background:white}.mobile-tools select{border:1px solid #d8e2e7;border-radius:5px;background:#fff;min-height:40px;width:100%;padding:7px 10px;color:#254b5b;font-size:16px}.workspace{grid-template-columns:1fr;gap:10px}main{padding:14px 12px}.page-title{margin-bottom:10px}.field select{font-size:16px}.brand{font-size:14px}.header-actions{gap:1px}.header-actions button{padding:6px 8px}h1{font-size:22px}.result-row{font-size:13px}}@media(max-width:620px){.workspace{grid-template-columns:1fr;gap:10px}.app-header{gap:8px}.header-actions{gap:2px}.header-actions button{padding:6px 8px;font-size:12px;min-height:32px}.brand{font-size:14px;gap:7px}.fields{grid-template-columns:1fr;padding:10px;gap:10px}.field label{min-height:0}.app-header{height:48px;padding:0 10px}.header-actions button{font-size:13px}.print-button span{display:none}.header-actions .print-button{padding:6px}.brand{gap:6px;font-size:14px;letter-spacing:-.2px}.brand-mark{width:20px;height:20px}.page-title p{font-size:13px}.result-number{font-size:28px}.result-hero{padding:10px 12px}.result-rows{padding:4px 12px}.result-row{font-size:13px;padding:4px 0}.panel-head{padding:5px 10px}.advanced{margin:0 10px}.form-status{padding:0 10px 8px}.method summary{padding:8px 12px}.reference-row{grid-template-columns:1fr;gap:5px;padding:12px}.ref-topic{font-size:12px}.workspace-foot{margin-top:8px}.empty-result{padding:10px 12px}}@media(max-width:360px){.fields{grid-template-columns:1fr}.header-actions button{padding:6px}.brand{font-size:14px}.brand-mark{display:none}.result-number{font-size:31px}.result-row{font-size:13px}.mobile-tools{padding:7px 12px}main{padding:17px 12px}}@media(pointer:coarse){.header-actions button,.text-button,summary,.mobile-tools select{min-height:44px}.input-wrap,.field select{min-height:44px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{body{background:white}.app-header,.sidebar,.mobile-tools,.text-button,.form-status,.converter-foot,.skip{display:none!important}.layout{display:block}main{margin:0;padding:0;max-width:none}.workspace{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.result-hero{background:#fff}.panel{break-inside:avoid}.page-title{margin-bottom:15px}.method-body{display:block}.reference-row{break-inside:avoid}.tag{display:none}a{color:#263e4b}.result-hero{border-top-color:#999}main[data-group] h1::before{display:none}}</style></head><body><div id="app"></div><noscript>Enable JavaScript to use the HVAC calculators.</noscript><script>const fmt=(n,d=2)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});const BANDS=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]];
-const sourceLinks={energy:['ENERGY STAR · Room AC sizing','https://www.energystar.gov/products/room_air_conditioners'],calc:['Calculator.net · BTU reference','https://www.calculator.net/btu-calculator.html'],conversion:['Calculator.net · Conversion reference','https://www.calculator.net/conversion-calculator.html'],manual:['ACCA · Manual J','https://www.acca.org/standards/technical-manuals/manual-j'],ashrae:['ASHRAE · Psychrometrics','https://handbook.ashrae.org/Handbooks/F21/SI/F21_Ch01/F21_Ch01_si.aspx'],nist:['NIST · SI conversion reference','https://www.nist.gov/pml/special-publication-811'],imc:['ICC · 2024 IMC','https://codes.iccsafe.org/content/IMC2024V1.0'],ipc:['ICC · 2024 IPC','https://codes.iccsafe.org/content/IPC2024P1'],ifc:['ICC · 2024 IFC','https://codes.iccsafe.org/content/IFC2024V1.0'],ifgc:['ICC · 2024 IFGC','https://codes.iccsafe.org/content/IFGC2024V1.0'],iecc:['ICC · 2024 IECC','https://codes.iccsafe.org/content/IECC2024V1.0'],ashrae15:['ASHRAE · Standard 15','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],irc:['ICC · 2024 IRC','https://codes.iccsafe.org/content/IRC2024P1'],ashrae152:['ASHRAE · Standard 15.2','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],nistco2:['NIST · Quick Indoor CO₂ (QICO2) tool','https://pages.nist.gov/CONTAM-apps/webapps/CO2Tool/'],nistiaq:['NIST · Multizone modeling & ventilation tools','https://www.nist.gov/el/beed/nist-multizone-modeling'],nisthb135:['NIST · Handbook 135 (FEMP life-cycle costing)','https://nvlpubs.nist.gov/nistpubs/hb/2025/NIST.HB.135e2025.pdf'],nistblcc:['NIST · BLCC web application','https://blcc.nist.gov/'],nistwebbook:['NIST · Chemistry WebBook fluid properties','https://webbook.nist.gov/chemistry/fluid/']};
+const sourceLinks={energy:['ENERGY STAR · Room AC sizing','https://www.energystar.gov/products/room_air_conditioners'],calc:['Calculator.net · BTU reference','https://www.calculator.net/btu-calculator.html'],conversion:['Calculator.net · Conversion reference','https://www.calculator.net/conversion-calculator.html'],manual:['ACCA · Manual J','https://www.acca.org/standards/technical-manuals/manual-j'],ashrae:['ASHRAE · Psychrometrics','https://handbook.ashrae.org/Handbooks/F21/SI/F21_Ch01/F21_Ch01_si.aspx'],nist:['NIST · SI conversion reference','https://www.nist.gov/pml/special-publication-811'],imc:['ICC · 2024 IMC','https://codes.iccsafe.org/content/IMC2024V1.0'],ipc:['ICC · 2024 IPC','https://codes.iccsafe.org/content/IPC2024P1'],ifc:['ICC · 2024 IFC','https://codes.iccsafe.org/content/IFC2024V1.0'],ifgc:['ICC · 2024 IFGC','https://codes.iccsafe.org/content/IFGC2024V1.0'],iecc:['ICC · 2024 IECC','https://codes.iccsafe.org/content/IECC2024V1.0'],ashrae15:['ASHRAE · Standard 15','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],irc:['ICC · 2024 IRC','https://codes.iccsafe.org/content/IRC2024P1'],ashrae152:['ASHRAE · Standard 15.2','https://www.ashrae.org/technical-resources/bookstore/standards-15-34'],nistco2:['NIST · Quick Indoor CO₂ (QICO2) tool','https://pages.nist.gov/CONTAM-apps/webapps/CO2Tool/'],nistiaq:['NIST · Multizone modeling & ventilation tools','https://www.nist.gov/el/beed/nist-multizone-modeling'],nisthb135:['NIST · Handbook 135 (FEMP life-cycle costing)','https://nvlpubs.nist.gov/nistpubs/hb/2025/NIST.HB.135e2025.pdf'],nistblcc:['NIST · BLCC web application','https://blcc.nist.gov/'],ashraefund:['ASHRAE · Handbook—Fundamentals','https://www.ashrae.org/technical-resources/ashrae-handbook/description-2021-ashrae-handbook-fundamentals'],ashraeheq:['ASHRAE · Handbook—HVAC Systems and Equipment','https://www.ashrae.org/technical-resources/ashrae-handbook/description-2024-ashrae-handbook-hvac-systems-and-equipment'],ashraeref:['ASHRAE · Handbook—Refrigeration','https://www.ashrae.org/technical-resources/ashrae-handbook/description-2022-ashrae-handbook-refrigeration'],amca:['AMCA · Fan application and fan laws','https://www.amca.org/'],smacna:['SMACNA · HVAC duct design & leakage','https://www.smacna.org/'],hi:['Hydraulic Institute · Pump fundamentals','https://www.pumps.org/'],cti:['Cooling Technology Institute','https://www.cti.org/'],ahri:['AHRI · Equipment rating standards','https://www.ahrinet.org/'],eia:['US EIA · Energy units and calculators','https://www.eia.gov/energyexplained/units-and-calculators/'],asce7:['ASCE 7 · Minimum design loads','https://www.asce.org/publications-and-news/asce-7'],stull:['Stull (2011) · Wet-bulb temperature from RH and T','https://doi.org/10.1175/JAMC-D-11-0143.1'],isa75:['ISA-75.01 · Control valve sizing equations','https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa75'],nistwebbook:['NIST · Chemistry WebBook fluid properties','https://webbook.nist.gov/chemistry/fluid/']};
 const field=(key,label,unit,value,min=0,max=1e9,step='any',hint='')=>({key,label,unit,value,min,max,step,hint});
 const choice=(key,label,options,value,hint='')=>({key,label,options,value,hint});
 const result=(value,unit,rows,formula,note,extra=[],cites=[],chips=[])=>({value,unit,rows,formula,note,extra,cites,chips});
 const calculators=[
 {id:'btu',name:'Room cooling',group:'HEATING & COOLING',icon:'snow',desc:'Estimate the cooling a room air conditioner needs.',badge:'Room estimate',sources:['energy','calc','manual'],fields:[field('area','Floor area','ft²',500,100,2500,'any','Floor area of the single room being cooled.'),field('height','Ceiling height','ft',8,1,30,'any','Average ceiling height; the table assumes 8 ft.'),field('people','Regular occupants','people',2,0,1000,1,'People regularly in the room; each adds about 600 BTU/h beyond two.'),choice('sun','Sun exposure',[['normal','Typical'],['shade','Heavily shaded'],['sunny','Very sunny']],'normal','Shade lowers the estimate; heavy sun raises it.'),choice('room','Room type',[['room','Living space'],['kitchen','Kitchen']],'room','Kitchens add about 4,000 BTU/h for appliance heat.')],calculate:v=>{if(v.height!==8)throw Error('This table is based on an 8 ft ceiling. Use a detailed load calculation for other ceiling heights.');const base=BANDS.find(([end],i)=>v.area<end||i===BANDS.length-1)[1];const sun=base*({normal:0,shade:-.1,sunny:.1}[v.sun]);const people=Math.max(0,v.people-2)*600;const kitchen=v.room==='kitchen'?4000:0;const total=base+sun+people+kitchen;return result(total,'BTU/h',[['Floor-area table',base,'BTU/h'],['Sun exposure',sun,'BTU/h'],['Additional occupants',people,'BTU/h'],['Kitchen adjustment',kitchen,'BTU/h']],`${fmt(base)} ${sun<0?'−':'+'} ${fmt(Math.abs(sun))} + ${fmt(people)} + ${fmt(kitchen)} = ${fmt(total)} BTU/h`,'Room AC screening estimate. Insulation, local climate, glazing, humidity, and duct losses are not modeled. Whole-home equipment selection needs a detailed load calculation.',[[total/12000,'tons cooling'],[total/3412.141633,'kW thermal']]);}},
 {id:'heat',name:'Heat transfer',group:'HEATING & COOLING',icon:'heat',desc:'Find steady heat flow through one building assembly.',badge:'Assembly heat flow',sources:['manual'],fields:[field('u','Assembly U-factor','BTU/h·ft²·°F',.06,.000001,1000,'any','Assembly U-factor (1 ÷ total R). Use the effective value including framing.'),field('area','Assembly area','ft²',1000,.001,1e9,'any','Net area of the assembly, excluding windows and doors handled separately.'),field('inside','Indoor temperature','°F',70,-459.66,1000,'any','Design indoor air temperature next to the assembly.'),field('outside','Outdoor temperature','°F',20,-459.66,1000,'any','Design outdoor (or adjacent-space) temperature.')],calculate:v=>{let dt=Math.abs(v.inside-v.outside),q=v.u*v.area*dt;return result(q,'BTU/h',[['Temperature difference',dt,'°F'],['Assembly area',v.area,'ft²']],`Q = U × A × |ΔT| = ${v.u} × ${v.area} × ${fmt(dt)}`,'One assembly only. Use the whole-assembly U-factor, including layers and thermal bridges. Excludes solar gain, internal loads, moisture and air leakage. Heat flows from the warmer side to the cooler side.');}},
-{id:'furnace',name:'Furnace efficiency',group:'HEATING & COOLING',icon:'heat',desc:'Compare rated heat output with rated fuel input.',badge:'Nameplate ratio',sources:[],fields:[field('input','Rated input','BTU/h',80000,.001,1e9,'any','Nameplate fuel input rate.'),field('output','Rated output','BTU/h',74000,0,1e9,'any','Nameplate heating output (bonnet capacity).')],calculate:v=>{if(v.output>v.input)throw Error('For a fuel-burning furnace, rated output cannot exceed rated input. Check the nameplate values.');return result(v.output/v.input*100,'%', [['Rated fuel input',v.input,'BTU/h'],['Rated heat output',v.output,'BTU/h'],['Input − output',v.input-v.output,'BTU/h']],`Efficiency = output ÷ input × 100 = ${v.output} ÷ ${v.input} × 100`,'This is the nameplate output/input ratio, not a measured seasonal AFUE. Use the manufacturer’s certified AFUE for seasonal comparisons. The difference does not separately identify each type of loss.');}},
+{id:'furnace',name:'Furnace efficiency',group:'HEATING & COOLING',icon:'heat',desc:'Compare rated heat output with rated fuel input.',badge:'Nameplate ratio',sources:['ahri','eia'],fields:[field('input','Rated input','BTU/h',80000,.001,1e9,'any','Nameplate fuel input rate.'),field('output','Rated output','BTU/h',74000,0,1e9,'any','Nameplate heating output (bonnet capacity).')],calculate:v=>{if(v.output>v.input)throw Error('For a fuel-burning furnace, rated output cannot exceed rated input. Check the nameplate values.');return result(v.output/v.input*100,'%', [['Rated fuel input',v.input,'BTU/h'],['Rated heat output',v.output,'BTU/h'],['Input − output',v.input-v.output,'BTU/h']],`Efficiency = output ÷ input × 100 = ${v.output} ÷ ${v.input} × 100`,'This is the nameplate output/input ratio, not a measured seasonal AFUE. Use the manufacturer’s certified AFUE for seasonal comparisons. The difference does not separately identify each type of loss.');}},
 {id:'airflow',name:'Sensible airflow',group:'AIR & DUCTS',icon:'air',desc:'Find the airflow needed to carry a sensible heating or cooling load.',badge:'Airflow estimate',sources:['ashrae'],fields:[field('load','Sensible load','BTU/h',24000,.001,1e9,'any','Sensible heating or cooling load carried by the air stream.'),field('dt','Air ΔT','°F',20,.001,300,'any','Supply-to-return temperature difference.'),field('density','Air density','lb/ft³',.075,.001,1,'any','Standard air is 0.075 lb/ft³; lower at altitude.'),field('cp','Air specific heat','BTU/(lb·°F)',.24,.001,10,'any','Specific heat of air; 0.24 is standard.')],calculate:v=>{if(!(v.dt>0))throw Error('Temperature difference must be greater than zero.');if(!(v.density>0&&v.cp>0))throw Error('Density and specific heat must be greater than zero.');let c=60*v.density*v.cp,q=v.load/(c*v.dt);return result(q,'CFM',[['Air coefficient',c,''],['Sensible load',v.load,'BTU/h']],`CFM = Q ÷ (60 × ρ × cₚ × ΔT) = ${v.load} ÷ (${fmt(c,4)} × ${v.dt})`,'Sensible heat only. The default density and specific heat give the familiar 1.08 coefficient. Adjust properties for altitude and air conditions. This does not calculate latent load or outdoor-air code requirements.');}},
-{id:'ach',name:'Air changes',group:'AIR & DUCTS',icon:'air',desc:'Turn measured airflow and room volume into air changes per hour.',badge:'Room air changes',sources:[],fields:[field('flow','Airflow','CFM',200,0,1e9,'any','Total supply (or exhaust) airflow to the room.'),field('length','Room length','ft',20,.001,1e9,'any','Room length.'),field('width','Room width','ft',15,.001,1e9,'any','Room width.'),field('height','Ceiling height','ft',8,.001,1e9,'any','Room ceiling height.')],calculate:v=>{let vol=v.length*v.width*v.height;if(!(vol>0))throw Error('Room dimensions must be greater than zero.');return result(v.flow*60/vol,'ACH',[['Room volume',vol,'ft³'],['Airflow',v.flow,'CFM']],`ACH = CFM × 60 ÷ volume = ${v.flow} × 60 ÷ ${fmt(vol)}`,'Counts theoretical volume exchanges. Recirculated airflow is not outdoor ventilation. This calculator does not select a required ACH or certify ventilation compliance.');}},
-{id:'duct',name:'Duct velocity',group:'AIR & DUCTS',icon:'duct',desc:'Find air speed from airflow and the duct’s inside size.',badge:'Air speed',sources:[],fields:[choice('shape','Duct shape',[['round','Round'],['rect','Rectangular']],'round','Round uses diameter; rectangular uses width × height.'),field('flow','Airflow','CFM',400,0,1e9,'any','Airflow through the duct section.'),field('diameter','Inside diameter','in',10,.001,1000,'any','Inside diameter of the round duct.'),field('width','Inside width','in',12,.001,1000,'any','Inside width of the rectangular duct.'),field('height','Inside height','in',8,.001,1000,'any','Inside height of the rectangular duct.')],calculate:v=>{let area=v.shape==='round'?Math.PI*(v.diameter/12)**2/4:v.width*v.height/144;if(!(area>0))throw Error('Duct cross-section must be greater than zero.');return result(v.flow/area,'ft/min',[['Cross-sectional area',area,'ft²'],['Airflow',v.flow,'CFM']],`Velocity = CFM ÷ area = ${v.flow} ÷ ${fmt(area,4)}`,'Uses clear internal dimensions. Velocity alone does not size a duct system; pressure loss, fittings, available static pressure, leakage and sound limits must also be evaluated.');}},
-{id:'water',name:'Hydronic heat',group:'HEATING & COOLING',icon:'water',desc:'Estimate heat carried by flowing water.',badge:'Water heat flow',sources:[],fields:[field('flow','Water flow','US gpm',4,0,1e9,'any','Water flow rate through the coil or loop.'),field('dt','Water temperature difference','°F',20,0,300,'any','Entering-to-leaving water temperature difference.')],calculate:v=>result(500*v.flow*v.dt,'BTU/h',[['Water flow',v.flow,'US gpm'],['Temperature difference',v.dt,'°F']],`Q ≈ 500 × GPM × ΔT = 500 × ${v.flow} × ${v.dt}`,'Uses approximately 8.33 lb/US gal and 1 BTU/(lb·°F), with 60 min/h. For liquid water only; glycol mixes and other temperatures need corrected density and specific heat.')},
-{id:'electric',name:'Electrical power',group:'ENERGY & MATH',icon:'bolt',desc:'Calculate real electrical power from voltage and current.',badge:'Electrical input',sources:[],fields:[choice('phase','Circuit type',[['dc','DC / resistive'],['single','Single-phase AC'],['three','Balanced three-phase AC']],'single','Three-phase applies the √3 factor; DC ignores power factor.'),field('volts','Voltage (3φ line-to-line)','V',240,.001,100000,'any','Measured or nameplate line voltage.'),field('amps','Current (3φ line)','A',20,0,100000,'any','Measured or nameplate line current.'),field('pf','Power factor','0–1',1,.001,1,'any','Power factor; motors typically 0.8–0.9, resistance heat 1.0.')],calculate:v=>{let pf=v.phase==='dc'?1:v.pf,m=v.phase==='three'?Math.sqrt(3):1,p=m*v.volts*v.amps*pf;return result(p/1000,'kW',[['Real power',p,'W'],['Power factor used',pf,'']],`P = ${v.phase==='three'?'√3 × ':''}V × I${v.phase==='dc'?'':' × PF'} = ${fmt(p)} W`,'AC calculations assume sinusoidal voltage/current; three-phase assumes a balanced load. Electrical input is not a heat pump’s thermal output. This does not size wiring, breakers or disconnects.');}},
-{id:'cost',name:'Operating cost',group:'ENERGY & MATH',icon:'cost',desc:'Estimate electricity use and cost for a run schedule.',badge:'Energy cost',sources:[],fields:[field('power','Electrical input','kW',3.5,0,100000,'any','Average electrical draw while running.'),field('hours','Hours per day','h',8,0,24,'any','Run hours per day.'),field('days','Number of days','days',30,1,3660,1,'Days in the billing period.'),field('rate','Electricity rate','$/kWh',.15,0,100,'any','Blended electric rate from the utility bill.')],calculate:v=>{let e=v.power*v.hours*v.days;return result(e*v.rate,'USD',[['Energy consumed',e,'kWh'],['Operating time',v.hours*v.days,'h']],`Cost = kW × hours/day × days × $/kWh = ${v.power} × ${v.hours} × ${v.days} × ${v.rate}`,'Assumes constant input power during the entered run hours. Excludes demand charges, fixed fees, taxes and variable compressor speed. Enter electrical input kW, not thermal capacity.');}},
-{id:'geometry',name:'Area & volume',group:'ENERGY & MATH',icon:'duct',desc:'Calculate rectangular floor area and room volume.',badge:'Room geometry',sources:[],fields:[field('length','Length','ft',20,.001,1e9,'any','Room length.'),field('width','Width','ft',15,.001,1e9,'any','Room width.'),field('height','Height','ft',8,.001,1e9,'any','Room ceiling height for the volume result.')],calculate:v=>result(v.length*v.width,'ft²',[['Room volume',v.length*v.width*v.height,'ft³'],['Floor perimeter',2*(v.length+v.width),'ft']],`Area = L × W; volume = L × W × H`,'For rectangular rooms. Divide irregular spaces into simpler shapes, calculate each, then add their areas or volumes.')}
+{id:'ach',name:'Air changes',group:'AIR & DUCTS',icon:'air',desc:'Turn measured airflow and room volume into air changes per hour.',badge:'Room air changes',sources:['ashraefund','nistiaq'],fields:[field('flow','Airflow','CFM',200,0,1e9,'any','Total supply (or exhaust) airflow to the room.'),field('length','Room length','ft',20,.001,1e9,'any','Room length.'),field('width','Room width','ft',15,.001,1e9,'any','Room width.'),field('height','Ceiling height','ft',8,.001,1e9,'any','Room ceiling height.')],calculate:v=>{let vol=v.length*v.width*v.height;if(!(vol>0))throw Error('Room dimensions must be greater than zero.');return result(v.flow*60/vol,'ACH',[['Room volume',vol,'ft³'],['Airflow',v.flow,'CFM']],`ACH = CFM × 60 ÷ volume = ${v.flow} × 60 ÷ ${fmt(vol)}`,'Counts theoretical volume exchanges. Recirculated airflow is not outdoor ventilation. This calculator does not select a required ACH or certify ventilation compliance.');}},
+{id:'duct',name:'Duct velocity',group:'AIR & DUCTS',icon:'duct',desc:'Find air speed from airflow and the duct’s inside size.',badge:'Air speed',sources:['ashraefund','smacna'],fields:[choice('shape','Duct shape',[['round','Round'],['rect','Rectangular']],'round','Round uses diameter; rectangular uses width × height.'),field('flow','Airflow','CFM',400,0,1e9,'any','Airflow through the duct section.'),field('diameter','Inside diameter','in',10,.001,1000,'any','Inside diameter of the round duct.'),field('width','Inside width','in',12,.001,1000,'any','Inside width of the rectangular duct.'),field('height','Inside height','in',8,.001,1000,'any','Inside height of the rectangular duct.')],calculate:v=>{let area=v.shape==='round'?Math.PI*(v.diameter/12)**2/4:v.width*v.height/144;if(!(area>0))throw Error('Duct cross-section must be greater than zero.');return result(v.flow/area,'ft/min',[['Cross-sectional area',area,'ft²'],['Airflow',v.flow,'CFM']],`Velocity = CFM ÷ area = ${v.flow} ÷ ${fmt(area,4)}`,'Uses clear internal dimensions. Velocity alone does not size a duct system; pressure loss, fittings, available static pressure, leakage and sound limits must also be evaluated.');}},
+{id:'water',name:'Hydronic heat',group:'HEATING & COOLING',icon:'water',desc:'Estimate heat carried by flowing water.',badge:'Water heat flow',sources:['ashraeheq'],fields:[field('flow','Water flow','US gpm',4,0,1e9,'any','Water flow rate through the coil or loop.'),field('dt','Water temperature difference','°F',20,0,300,'any','Entering-to-leaving water temperature difference.')],calculate:v=>result(500*v.flow*v.dt,'BTU/h',[['Water flow',v.flow,'US gpm'],['Temperature difference',v.dt,'°F']],`Q ≈ 500 × GPM × ΔT = 500 × ${v.flow} × ${v.dt}`,'Uses approximately 8.33 lb/US gal and 1 BTU/(lb·°F), with 60 min/h. For liquid water only; glycol mixes and other temperatures need corrected density and specific heat.')},
+{id:'electric',name:'Electrical power',group:'ENERGY & MATH',icon:'bolt',desc:'Calculate real electrical power from voltage and current.',badge:'Electrical input',sources:['nec'],fields:[choice('phase','Circuit type',[['dc','DC / resistive'],['single','Single-phase AC'],['three','Balanced three-phase AC']],'single','Three-phase applies the √3 factor; DC ignores power factor.'),field('volts','Voltage (3φ line-to-line)','V',240,.001,100000,'any','Measured or nameplate line voltage.'),field('amps','Current (3φ line)','A',20,0,100000,'any','Measured or nameplate line current.'),field('pf','Power factor','0–1',1,.001,1,'any','Power factor; motors typically 0.8–0.9, resistance heat 1.0.')],calculate:v=>{let pf=v.phase==='dc'?1:v.pf,m=v.phase==='three'?Math.sqrt(3):1,p=m*v.volts*v.amps*pf;return result(p/1000,'kW',[['Real power',p,'W'],['Power factor used',pf,'']],`P = ${v.phase==='three'?'√3 × ':''}V × I${v.phase==='dc'?'':' × PF'} = ${fmt(p)} W`,'AC calculations assume sinusoidal voltage/current; three-phase assumes a balanced load. Electrical input is not a heat pump’s thermal output. This does not size wiring, breakers or disconnects.');}},
+{id:'cost',name:'Operating cost',group:'ENERGY & MATH',icon:'cost',desc:'Estimate electricity use and cost for a run schedule.',badge:'Energy cost',sources:['eia'],fields:[field('power','Electrical input','kW',3.5,0,100000,'any','Average electrical draw while running.'),field('hours','Hours per day','h',8,0,24,'any','Run hours per day.'),field('days','Number of days','days',30,1,3660,1,'Days in the billing period.'),field('rate','Electricity rate','$/kWh',.15,0,100,'any','Blended electric rate from the utility bill.')],calculate:v=>{let e=v.power*v.hours*v.days;return result(e*v.rate,'USD',[['Energy consumed',e,'kWh'],['Operating time',v.hours*v.days,'h']],`Cost = kW × hours/day × days × $/kWh = ${v.power} × ${v.hours} × ${v.days} × ${v.rate}`,'Assumes constant input power during the entered run hours. Excludes demand charges, fixed fees, taxes and variable compressor speed. Enter electrical input kW, not thermal capacity.');}},
+{id:'geometry',name:'Area & volume',group:'ENERGY & MATH',icon:'duct',desc:'Calculate rectangular floor area and room volume.',badge:'Room geometry',sources:['nist'],fields:[field('length','Length','ft',20,.001,1e9,'any','Room length.'),field('width','Width','ft',15,.001,1e9,'any','Room width.'),field('height','Height','ft',8,.001,1e9,'any','Room ceiling height for the volume result.')],calculate:v=>result(v.length*v.width,'ft²',[['Room volume',v.length*v.width*v.height,'ft³'],['Floor perimeter',2*(v.length+v.width),'ft']],`Area = L × W; volume = L × W × H`,'For rectangular rooms. Divide irregular spaces into simpler shapes, calculate each, then add their areas or volumes.')}
 ];
 const units={
 'Power / capacity':{'BTU/h':.2930710701722222,'W':1,'kW':1000,'tons refrigeration':3516.852842066667,'hp (mechanical)':745.6998715822702,'hp (metric)':735.49875},
@@ -60,14 +60,14 @@ calculators.push(
 {id:'subcooling',name:'Subcooling',group:'REFRIGERATION',icon:'snow',desc:'Compare liquid saturation temperature with liquid-line temperature.',badge:'Temperature difference',sources:['copeland','nistwebbook'],fields:[field('saturation','Saturation · bubble point','°F',110,-150,300,'any','Saturation temperature from liquid pressure (bubble point for blends).'),field('line','Liquid-line temperature','°F',100,-150,300,'any','Liquid-line temperature measured near the condenser outlet.')],calculate:v=>{let sc=v.saturation-v.line;return result(sc,'Δ°F',[['Liquid saturation temperature',v.saturation,'°F'],['Liquid-line temperature',v.line,'°F']],`Subcooling = Tsat,bubble − Tline = ${v.saturation} − ${v.line}`,`${sc<0?'Negative difference: no positive subcooling is indicated; verify the readings. ':''}Use the correct refrigerant’s bubble-point saturation temperature at the measured liquid-line pressure. This does not select a charging target. Follow manufacturer procedures.`,[[sc/1.8,'Δ°C']]);}},
 {id:'totalheat',name:'Total air capacity',group:'HEATING & COOLING',icon:'snow',desc:'Estimate total air-side heat transfer from an enthalpy change.',badge:'Enthalpy balance',sources:['ashrae'],fields:[field('cfm','Airflow','CFM',1200,.001,1e9,'any','Airflow across the coil.'),field('hin','Entering enthalpy','BTU/lb dry air',30,-50,150,'any','Entering-air enthalpy.'),field('hout','Leaving enthalpy','BTU/lb dry air',24,-50,150,'any','Leaving-air enthalpy.'),field('specificvolume','Entering specific volume','ft³/lb dry air',13.333333,.1,1000,'any','Specific volume of the air; 13.33 ft³/lb is standard.')],calculate:v=>{if(!(v.specificvolume>0))throw Error('Specific volume must be greater than zero.');let m=60*v.cfm/v.specificvolume,q=m*(v.hin-v.hout);return result(q,'BTU/h',[['Dry-air mass flow',m,'lb/h'],['Enthalpy decrease',v.hin-v.hout,'BTU/lb dry air']],`Q = (60 × CFM / v) × (henter − hleave)`,'Positive means heat removed from air; negative means heat added. Use enthalpies with the same reference datum and volume at the airflow measurement condition. Omits condensate enthalpy correction.',[[q/12000,'tons cooling equivalent']]);}},
 {id:'latent',name:'Latent heat',group:'HEATING & COOLING',icon:'water',desc:'Estimate the heat tied to a change in moisture content.',badge:'Moisture heat',sources:['ashrae'],fields:[field('cfm','Airflow','CFM',1200,.001,1e9,'any','Airflow across the coil.'),field('gin','Entering moisture','grains/lb dry air',70,0,300,'any','Entering-air moisture content.'),field('gout','Leaving moisture','grains/lb dry air',50,0,300,'any','Leaving-air moisture content.'),field('specificvolume','Entering specific volume','ft³/lb dry air',13.333333,.1,1000,'any','Specific volume of the air; 13.33 ft³/lb is standard.'),field('hfg','Latent heat of vaporization','BTU/lb water',1061,900,1200,'any','Latent heat of vaporization; about 1,060 BTU/lb near coil conditions.')],calculate:v=>{if(!(v.specificvolume>0))throw Error('Specific volume must be greater than zero.');let water=60*v.cfm/v.specificvolume*(v.gin-v.gout)/7000;return result(water*v.hfg,'BTU/h',[['Water removal rate',water,'lb/h'],['Moisture decrease',v.gin-v.gout,'grains/lb dry air']],`Qlatent = (60 × CFM / v) × (grainsin − grainsout) / 7000 × hfg`,'Positive means moisture removed; negative means moisture added. Latent heat varies with temperature. Sensible heat is excluded.');}},
-{id:'fan',name:'Fan laws',group:'AIR & DUCTS',icon:'air',desc:'See how a change in fan speed affects airflow, pressure, and power.',badge:'Affinity laws',sources:[],fields:[field('rpm1','Original speed','rpm',1000,.001,100000,'any','Current fan speed.'),field('rpm2','New speed','rpm',1200,.001,100000,'any','Proposed fan speed.'),field('cfm','Original airflow','CFM',1000,.001,1e9,'any','Airflow at the current speed.'),field('pressure','Original static pressure','in. w.c.',.5,0,100,'any','Static pressure at the current speed.'),field('power','Original shaft power','hp',.5,0,100000,'any','Brake horsepower at the current speed.')],calculate:v=>{if(!(v.rpm1>0))throw Error('Base fan speed must be greater than zero.');let r=v.rpm2/v.rpm1;return result(v.cfm*r,'CFM',[['Speed ratio',r,'×'],['New static pressure',v.pressure*r*r,'in. w.c.'],['New shaft power',v.power*r**3,'hp'],['Power change',(r**3-1)*100,'%']],`r = N₂/N₁; Q₂ = Q₁r; Δp₂ = Δp₁r²; P₂ = P₁r³`,'Same fan geometry, air density and similar operating conditions. Check the fan curve, motor capacity and maximum safe rpm. Shaft power is not electrical input power.');}},
-{id:'targetach',name:'Airflow from ACH',group:'AIR & DUCTS',icon:'air',desc:'Convert a chosen air-change target into airflow.',badge:'Target airflow',sources:[],fields:[field('ach','Specified air changes','ACH',6,0,1000,'any','Design air changes per hour for the space.'),field('volume','Room volume','ft³',2400,.001,1e9,'any','Room volume (length × width × height).')],calculate:v=>result(v.ach*v.volume/60,'CFM',[['Specified air changes',v.ach,'ACH'],['Room volume',v.volume,'ft³']],`CFM = ACH × volume / 60`,'You supply the target; no code-required ACH is selected. Outdoor air, exhaust and recirculated air must be distinguished for the actual application.')},
+{id:'fan',name:'Fan laws',group:'AIR & DUCTS',icon:'air',desc:'See how a change in fan speed affects airflow, pressure, and power.',badge:'Affinity laws',sources:['amca','ashraefund'],fields:[field('rpm1','Original speed','rpm',1000,.001,100000,'any','Current fan speed.'),field('rpm2','New speed','rpm',1200,.001,100000,'any','Proposed fan speed.'),field('cfm','Original airflow','CFM',1000,.001,1e9,'any','Airflow at the current speed.'),field('pressure','Original static pressure','in. w.c.',.5,0,100,'any','Static pressure at the current speed.'),field('power','Original shaft power','hp',.5,0,100000,'any','Brake horsepower at the current speed.')],calculate:v=>{if(!(v.rpm1>0))throw Error('Base fan speed must be greater than zero.');let r=v.rpm2/v.rpm1;return result(v.cfm*r,'CFM',[['Speed ratio',r,'×'],['New static pressure',v.pressure*r*r,'in. w.c.'],['New shaft power',v.power*r**3,'hp'],['Power change',(r**3-1)*100,'%']],`r = N₂/N₁; Q₂ = Q₁r; Δp₂ = Δp₁r²; P₂ = P₁r³`,'Same fan geometry, air density and similar operating conditions. Check the fan curve, motor capacity and maximum safe rpm. Shaft power is not electrical input power.');}},
+{id:'targetach',name:'Airflow from ACH',group:'AIR & DUCTS',icon:'air',desc:'Convert a chosen air-change target into airflow.',badge:'Target airflow',sources:['ashraefund'],fields:[field('ach','Specified air changes','ACH',6,0,1000,'any','Design air changes per hour for the space.'),field('volume','Room volume','ft³',2400,.001,1e9,'any','Room volume (length × width × height).')],calculate:v=>result(v.ach*v.volume/60,'CFM',[['Specified air changes',v.ach,'ACH'],['Room volume',v.volume,'ft³']],`CFM = ACH × volume / 60`,'You supply the target; no code-required ACH is selected. Outdoor air, exhaust and recirculated air must be distinguished for the actual application.')},
 {id:'mixed',name:'Mixed-air temperature',group:'AIR & DUCTS',icon:'air',desc:'Estimate dry-bulb temperature after mixing two air streams.',badge:'Mixed air',sources:['ashrae'],fields:[field('outdoor','Outdoor air temperature','°F',95,-100,200,'any','Outdoor-air temperature entering the mixing box.'),field('return','Return air temperature','°F',75,-100,200,'any','Return-air temperature entering the mixing box.'),field('fraction','Outdoor air mass share','%',20,0,100,'any','Outdoor-air share of the mixed airflow by mass.')],calculate:v=>{let f=v.fraction/100,t=f*v.outdoor+(1-f)*v.return;return result(t,'°F',[['Outdoor dry-air mass share',v.fraction,'%'],['Return dry-air mass share',100-v.fraction,'%']],`Tmix ≈ f × Toutdoor + (1 − f) × Treturn`,'Assumes equal specific heats, complete mixing, no condensation and no heat gain. Use dry-air mass fractions; unequal-density CFM streams need mass conversion first.');}},
 {id:'roundduct',name:'Round duct diameter',group:'AIR & DUCTS',icon:'duct',desc:'Find a starting duct diameter for a chosen airflow and velocity.',badge:'Preliminary size',sources:['manuald'],fields:[field('flow','Airflow','CFM',400,.001,1e9,'any','Design airflow for the duct.'),field('velocity','Chosen air velocity','ft/min',700,.001,20000,'any','Target velocity; 600–900 ft/min is typical for residential trunks.')],calculate:v=>{if(!(v.velocity>0))throw Error('Design velocity must be greater than zero.');let a=v.flow/v.velocity,d=12*Math.sqrt(4*a/Math.PI);return result(d,'in',[['Required internal area',a,'ft²'],['Chosen velocity',v.velocity,'ft/min']],`A = CFM / velocity; diameter = 12√(4A/π)`,'The result is an internal geometric diameter, not a final duct size or standard product selection. Manual D design also accounts for pressure, fittings, leakage and sound.');}},
 {id:'static',name:'External static pressure',group:'AIR & DUCTS',icon:'duct',desc:'Combine signed supply and return static-pressure readings.',badge:'Static pressure',sources:['manuald'],fields:[field('supply','Supply reading · positive','in. w.c.',.3,0,100,'any','Static pressure downstream of the unit (positive).'),field('return','Return reading · negative','in. w.c.',-.2,-100,0,'any','Static pressure upstream of the unit (enter as a negative reading).')],calculate:v=>result(v.supply-v.return,'in. w.c.',[['Supply reading',v.supply,'in. w.c.'],['Return reading',v.return,'in. w.c.']],`TESP = Psupply − Preturn = ${v.supply} − (${v.return})`,'Use the same reference pressure and manufacturer-specified measurement locations. Compare against the specific equipment rating; no universal pass/fail limit is applied.')},
-{id:'waterflow',name:'Hydronic flow',group:'HYDRONICS',icon:'water',desc:'Find the liquid flow needed for a heat-transfer rate.',badge:'Flow estimate',sources:[],fields:[field('load','Heat-transfer rate','BTU/h',40000,0,1e9,'any','Heating or cooling load carried by the fluid.'),field('dt','Liquid temperature difference','Δ°F',20,.001,300,'any','Design temperature difference across the load.'),field('density','Liquid density','lb/US gal',8.33,.001,100,'any','Fluid density; water is about 8.33 lb/gal.'),field('cp','Liquid specific heat','BTU/(lb·°F)',1,.001,10,'any','Fluid specific heat; water is 1.0.')],calculate:v=>{if(!(v.dt>0))throw Error('Temperature difference must be greater than zero.');if(!(v.density>0&&v.cp>0))throw Error('Density and specific heat must be greater than zero.');return result(v.load/(60*v.density*v.cp*v.dt),'US gpm',[['Fluid coefficient',60*v.density*v.cp,''],['Heat-transfer rate',v.load,'BTU/h']],`GPM = Q / (60 × density × cp × ΔT)`,'Defaults approximate liquid water. For glycol, use density and specific heat for the actual concentration and operating temperature. Pump sizing also requires head loss.')}},
+{id:'waterflow',name:'Hydronic flow',group:'HYDRONICS',icon:'water',desc:'Find the liquid flow needed for a heat-transfer rate.',badge:'Flow estimate',sources:['ashraeheq'],fields:[field('load','Heat-transfer rate','BTU/h',40000,0,1e9,'any','Heating or cooling load carried by the fluid.'),field('dt','Liquid temperature difference','Δ°F',20,.001,300,'any','Design temperature difference across the load.'),field('density','Liquid density','lb/US gal',8.33,.001,100,'any','Fluid density; water is about 8.33 lb/gal.'),field('cp','Liquid specific heat','BTU/(lb·°F)',1,.001,10,'any','Fluid specific heat; water is 1.0.')],calculate:v=>{if(!(v.dt>0))throw Error('Temperature difference must be greater than zero.');if(!(v.density>0&&v.cp>0))throw Error('Density and specific heat must be greater than zero.');return result(v.load/(60*v.density*v.cp*v.dt),'US gpm',[['Fluid coefficient',60*v.density*v.cp,''],['Heat-transfer rate',v.load,'BTU/h']],`GPM = Q / (60 × density × cp × ΔT)`,'Defaults approximate liquid water. For glycol, use density and specific heat for the actual concentration and operating temperature. Pump sizing also requires head loss.')}},
 {id:'eer',name:'EER & COP',group:'ENERGY & MATH',icon:'bolt',desc:'Compare cooling capacity with electrical input at one condition.',badge:'Efficiency ratio',sources:['nist'],fields:[field('capacity','Cooling capacity','BTU/h',36000,.001,1e9,'any','Rated cooling capacity at the test condition.'),field('input','Electrical input','W',3000,.001,1e9,'any','Total electrical input at the same condition.')],calculate:v=>{if(!(v.input>0))throw Error('Electrical input must be greater than zero.');let eer=v.capacity/v.input,cop=eer/3.412141633;return result(eer,'BTU/Wh',[['Coefficient of performance',cop,'COP'],['Thermal capacity',v.capacity/3412.141633,'kW'],['Electrical input',v.input/1000,'kW']],`EER = cooling BTU/h / input W; COP = EER / 3.412141633`,'Use capacity and electrical input from the same operating conditions and system boundary. This does not calculate SEER2, HSPF2 or certify a rated EER.');}},
-{id:'rvalue',name:'R-value & U-factor',group:'HEATING & COOLING',icon:'heat',desc:'Convert effective thermal resistance into thermal transmittance.',badge:'R and U',sources:[],fields:[field('r','Effective R-value','h·ft²·°F/BTU',20,.000001,10000,'any','Total thermal resistance of the assembly, layers added in series.')],calculate:v=>{if(!(v.r>0))throw Error('R-value must be greater than zero.');return result(1/v.r,'BTU/h·ft²·°F',[['Effective R-value',v.r,'h·ft²·°F/BTU'],['Resistance in SI',v.r*.1761101838,'m²·K/W']],`U = 1 / Rtotal = 1 / ${v.r}`,'Use effective whole-assembly resistance, not insulation’s label value alone. Parallel heat-flow paths and thermal bridges need an assembly calculation.')}},
+{id:'rvalue',name:'R-value & U-factor',group:'HEATING & COOLING',icon:'heat',desc:'Convert effective thermal resistance into thermal transmittance.',badge:'R and U',sources:['ashraefund'],fields:[field('r','Effective R-value','h·ft²·°F/BTU',20,.000001,10000,'any','Total thermal resistance of the assembly, layers added in series.')],calculate:v=>{if(!(v.r>0))throw Error('R-value must be greater than zero.');return result(1/v.r,'BTU/h·ft²·°F',[['Effective R-value',v.r,'h·ft²·°F/BTU'],['Resistance in SI',v.r*.1761101838,'m²·K/W']],`U = 1 / Rtotal = 1 / ${v.r}`,'Use effective whole-assembly resistance, not insulation’s label value alone. Parallel heat-flow paths and thermal bridges need an assembly calculation.')}},
 {id:'rise',name:'Air temperature change',group:'HEATING & COOLING',icon:'heat',desc:'Estimate air temperature rise or drop from sensible heat and airflow.',badge:'Temperature change',sources:['ashrae'],fields:[field('load','Sensible heat rate','BTU/h',74000,0,1e9,'any','Heating output delivered to the air.'),field('cfm','Airflow','CFM',1400,.001,1e9,'any','Airflow across the heat exchanger.'),field('density','Air density','lb/ft³',.075,.001,1,'any','Standard air is 0.075 lb/ft³; lower at altitude.'),field('cp','Air specific heat','BTU/(lb·°F)',.24,.001,10,'any','Specific heat of air; 0.24 is standard.')],calculate:v=>{if(!(v.cfm>0))throw Error('Airflow must be greater than zero.');if(!(v.density>0&&v.cp>0))throw Error('Density and specific heat must be greater than zero.');return result(v.load/(60*v.density*v.cp*v.cfm),'Δ°F',[['Sensible heat rate',v.load,'BTU/h'],['Airflow',v.cfm,'CFM']],`ΔT = Q / (60 × ρ × cp × CFM)`,'For a furnace, enter heat output rather than fuel input. Compare the temperature rise with the unit’s nameplate range. This estimate excludes latent heat.')}}
 );
 calculators.find(c=>c.id==='water').group='HYDRONICS';
@@ -1610,7 +1610,7 @@ field('height','Inside height','in',8,.001,1000,'any','Inside height of the rect
   'Uses the common ASHRAE / Manual D equivalent-diameter relationship for equal friction. This is not a product size, fitting catalog selection, or a complete duct design. Extreme aspect ratios increase friction and noise beyond what diameter alone conveys.',
   [[area,'ft² area'],[aspect,'aspect']],['ASHRAE duct geometry','ACCA Manual D']);
 }},
-{id:'facevelocity',name:'Face velocity',group:'AIR & DUCTS',icon:'air',desc:'Find air speed across a coil, filter, grille, or other rectangular face.',badge:'Coil / grille check',sources:[],fields:[
+{id:'facevelocity',name:'Face velocity',group:'AIR & DUCTS',icon:'air',desc:'Find air speed across a coil, filter, grille, or other rectangular face.',badge:'Coil / grille check',sources:['ashraeheq'],fields:[
 field('flow','Airflow','CFM',1200,0,1e9,'any','Airflow through the coil, filter or grille face.'),
 field('width','Face width','in',30,.001,1000,'any','Gross face width of the coil, filter or grille.'),
 field('height','Face height','in',24,.001,1000,'any','Gross face height of the coil, filter or grille.')
@@ -1625,7 +1625,7 @@ field('height','Face height','in',24,.001,1000,'any','Gross face height of the c
   ],`Velocity = CFM ÷ face area = ${v.flow} ÷ ${fmt(area,4)}`,
   'Uses the clear rectangular face only. Manufacturer limits for coils, filters, and grilles differ; this does not check throw, pressure drop, or condensate carryover.');
 }},
-{id:'cfmton',name:'Airflow per ton',group:'AIR & DUCTS',icon:'air',desc:'Express supply airflow relative to cooling capacity in tons.',badge:'System check',sources:[],fields:[
+{id:'cfmton',name:'Airflow per ton',group:'AIR & DUCTS',icon:'air',desc:'Express supply airflow relative to cooling capacity in tons.',badge:'System check',sources:['manual','ahri'],fields:[
 field('flow','Supply airflow','CFM',1400,0,1e9,'any','Total supply airflow across the evaporator coil.'),
 field('capacity','Cooling capacity','BTU/h',36000,.001,1e9,'any','Total cooling capacity at the rating condition; 12,000 BTU/h per ton.')
 ],calculate:v=>{
@@ -1667,7 +1667,7 @@ field('capacity','Cooling capacity','BTU/h',36000,0,1e9,'any','Cooling capacity 
   'One ton of refrigeration equals 12,000 BTU/h by definition. This converts capacity only; it does not select equipment or prove a load calculation.',
   [[v.capacity/3412.141633,'kW thermal']]);
 }},
-{id:'pumplaws',name:'Pump affinity laws',group:'HYDRONICS',icon:'water',desc:'See how a change in pump speed affects flow, head, and power.',badge:'Affinity laws',sources:[],fields:[
+{id:'pumplaws',name:'Pump affinity laws',group:'HYDRONICS',icon:'water',desc:'See how a change in pump speed affects flow, head, and power.',badge:'Affinity laws',sources:['hi'],fields:[
 field('rpm1','Original speed','rpm',1750,.001,100000,'any','Speed at which the original flow, head and power were measured.'),
 field('rpm2','New speed','rpm',1450,.001,100000,'any','New pump speed; affinity laws assume the same impeller and fluid.'),
 field('flow','Original flow','US gpm',40,.001,1e9,'any','Flow at the original speed.'),
@@ -1684,7 +1684,7 @@ field('power','Original shaft power','hp',1.5,0,100000,'any','Shaft power at the
   ],`r = N₂/N₁; Q₂ = Q₁r; H₂ = H₁r²; P₂ = P₁r³`,
   'Same pump geometry, fluid density, and similar operating conditions. Check the pump curve, NPSH, motor capacity, and maximum safe speed. Shaft power is not electrical input.');
 }},
-{id:'pipevelocity',name:'Pipe velocity',group:'HYDRONICS',icon:'water',desc:'Find liquid speed from flow rate and the pipe’s inside diameter.',badge:'Pipe flow check',sources:[],fields:[
+{id:'pipevelocity',name:'Pipe velocity',group:'HYDRONICS',icon:'water',desc:'Find liquid speed from flow rate and the pipe’s inside diameter.',badge:'Pipe flow check',sources:['ashraefund'],fields:[
 field('flow','Liquid flow','US gpm',20,0,1e9,'any','Liquid flow through the pipe.'),
 field('diameter','Inside diameter','in',1.049,.001,100,'any','Actual inside diameter; 1.049 in is 1-in Schedule 40 steel.')
 ],calculate:v=>{
@@ -1702,7 +1702,7 @@ field('diameter','Inside diameter','in',1.049,.001,100,'any','Actual inside diam
   'Uses clear internal diameter, not nominal pipe size. Velocity alone does not size a hydronic circuit; friction loss, fittings, pump head, and noise limits also matter.',
   [[fpm,'ft/min']]);
 }},
-{id:'gascost',name:'Fuel-gas operating cost',group:'ENERGY & MATH',icon:'cost',desc:'Estimate natural-gas use and cost from rated input and a run schedule.',badge:'Gas energy cost',sources:[],fields:[
+{id:'gascost',name:'Fuel-gas operating cost',group:'ENERGY & MATH',icon:'cost',desc:'Estimate natural-gas use and cost from rated input and a run schedule.',badge:'Gas energy cost',sources:['eia'],fields:[
 field('input','Rated fuel input','BTU/h',80000,0,1e9,'any','Rated fuel input from the appliance nameplate (input, not output).'),
 field('hours','Hours per day','h',8,0,24,'any','Average burner run hours per day.'),
 field('days','Number of days','days',30,1,3660,1,'Days in the period being estimated.'),
@@ -1722,7 +1722,7 @@ field('heatContent','Heat content','BTU/ft³',1000,1,5000,'any','Local utility h
   ],`therms = BTU/h × hours × days ÷ 100,000; cost = therms × $/therm`,
   'Assumes constant rated input during the entered hours. Not a billed-therm forecast: excludes part-load modulation, AFUE/UEF, demand charges, fixed fees, and taxes. Confirm the utility’s therm definition and heating value.');
 }},
-{id:'sheave',name:'Sheave / belt RPM',group:'ENERGY & MATH',icon:'bolt',desc:'Find driven speed from driver speed and sheave diameters.',badge:'Belt drive',sources:[],fields:[
+{id:'sheave',name:'Sheave / belt RPM',group:'ENERGY & MATH',icon:'bolt',desc:'Find driven speed from driver speed and sheave diameters.',badge:'Belt drive',sources:['ashraeheq'],fields:[
 field('rpmDriver','Driver speed','rpm',1750,.001,100000,'any','Motor (driver) shaft speed.'),
 field('driverDia','Driver pitch diameter','in',4,.001,1000,'any','Pitch diameter of the motor sheave.'),
 field('drivenDia','Driven pitch diameter','in',6,.001,1000,'any','Pitch diameter of the fan or pump sheave.')
@@ -2101,7 +2101,7 @@ choice('access','Dampers and access openings remain operable after sealing?',irc
   'IMC §603.9 sealing documentation gate only. It does not set IECC/IRC leakage percentages or test pressures. Confirm adopted mechanical and energy-code duct-sealing/testing requirements, listed tapes/mastic, and AHJ amendments.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §603.9','Adopted energy code','AHJ']);
 }},
-{id:'netfree',name:'Net free area',group:'AIR & DUCTS',icon:'air',desc:'Convert a louver, grille, or combustion-air opening’s gross area into net free area.',badge:'Opening free area',sources:[],fields:[
+{id:'netfree',name:'Net free area',group:'AIR & DUCTS',icon:'air',desc:'Convert a louver, grille, or combustion-air opening’s gross area into net free area.',badge:'Opening free area',sources:['ashraefund'],fields:[
 field('width','Opening width','in',24,.001,1000,'any','Gross width of one opening.'),
 field('height','Opening height','in',12,.001,1000,'any','Gross height of one opening.'),
 field('freePct','Free-area percentage','%',60,0.1,100,'any','Free-area percentage of the louver or grille from the manufacturer.'),
@@ -2129,7 +2129,7 @@ field('output','Boiler heat output','BTU/h',334750,0,1e9,'any','Gross boiler out
   ],`boiler hp = BTU/h ÷ 33,475 = ${fmt(v.output)} ÷ 33,475`,
   'One boiler horsepower equals 33,475 BTU/h by definition (also associated with 34.5 lb/h evaporation from and at 212 °F). This converts capacity only; it does not size a boiler, burner, or relief valve.');
 }},
-{id:'kwton',name:'Chiller kW per ton',group:'ENERGY & MATH',icon:'bolt',desc:'Express cooling efficiency as electrical input per ton of refrigeration.',badge:'Efficiency ratio',sources:[],fields:[
+{id:'kwton',name:'Chiller kW per ton',group:'ENERGY & MATH',icon:'bolt',desc:'Express cooling efficiency as electrical input per ton of refrigeration.',badge:'Efficiency ratio',sources:['ahri'],fields:[
 field('power','Electrical input','kW',70,0,1e9,'any','Total electrical input of the chiller (and included auxiliaries) at the rating point.'),
 field('capacity','Cooling capacity','tons',200,.001,1e9,'any','Cooling capacity at the same rating point.')
 ],calculate:v=>{
@@ -2140,7 +2140,7 @@ field('capacity','Cooling capacity','tons',200,.001,1e9,'any','Cooling capacity 
   return result(kwton,'kW/ton',rows,formula,
   'Same operating condition and system boundary for power and capacity. Does not calculate IPLV/NPLV or certify a rated efficiency.');
 }},
-{id:'tower',name:'Cooling tower approach',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower range and approach from water and ambient wet-bulb temperatures.',badge:'Tower temperatures',sources:[],fields:[
+{id:'tower',name:'Cooling tower approach',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower range and approach from water and ambient wet-bulb temperatures.',badge:'Tower temperatures',sources:['cti'],fields:[
 field('hot','Hot water temperature','°F',95,32,212,'any','Water temperature entering the tower (leaving the condenser).'),
 field('cold','Cold water temperature','°F',85,32,212,'any','Water temperature leaving the tower basin.'),
 field('wetbulb','Entering air wet-bulb temperature','°F',78,-40,120,'any','Design entering-air wet-bulb temperature.')
@@ -2170,7 +2170,7 @@ field('discharge','Discharge pressure','psia',250,0.1,10000,'any','Absolute disc
   ],`CR = Pdischarge ÷ Psuction = ${fmt(v.discharge)} ÷ ${fmt(v.suction)}`,
   'Use absolute pressures (psia), not gauge. Does not set manufacturer limits or account for pressure drop in valves and lines.');
 }},
-{id:'pumphead',name:'Pump head from pressure',group:'HYDRONICS',icon:'water',desc:'Convert a differential pressure reading into feet of fluid head.',badge:'Head convert',sources:[],fields:[
+{id:'pumphead',name:'Pump head from pressure',group:'HYDRONICS',icon:'water',desc:'Convert a differential pressure reading into feet of fluid head.',badge:'Head convert',sources:['hi'],fields:[
 field('dp','Differential pressure','psi',12,0,10000,'any','Pressure difference across the pump or circuit.'),
 field('sg','Fluid specific gravity','—',1,.1,3,'any','Specific gravity of the fluid; water ≈ 1.0, 30 % propylene glycol ≈ 1.03.')
 ],calculate:v=>{
@@ -2201,7 +2201,7 @@ field('seaLevelCfm','Sea-level or standard-density airflow','cfm',1000,0,1e9,'an
   'Standard-atmosphere approximation at roughly 59 °F. Does not replace manufacturer altitude tables, psychrometric density, or fan selection software. Heating capacity and motor cooling also change with altitude.',
   [[actualCfm,'cfm same mass'],[pr,'pressure ratio']]);
 }},
-{id:'beltlength',name:'Belt length',group:'ENERGY & MATH',icon:'bolt',desc:'Estimate open-belt length from two sheave diameters and center distance.',badge:'Belt geometry',sources:[],fields:[
+{id:'beltlength',name:'Belt length',group:'ENERGY & MATH',icon:'bolt',desc:'Estimate open-belt length from two sheave diameters and center distance.',badge:'Belt geometry',sources:['ashraeheq'],fields:[
 field('d1','Sheave 1 pitch diameter','in',4,.001,1000,'any','Pitch diameter of the first sheave.'),
 field('d2','Sheave 2 pitch diameter','in',6,.001,1000,'any','Pitch diameter of the second sheave.'),
 field('centers','Center distance','in',20,.001,1000,'any','Shaft-to-shaft center distance.')
@@ -2304,7 +2304,7 @@ choice('exposed','Not used where the code / listing prohibits the location?',irc
   'IMC §603.6 installation documentation gate only. It does not invent a single universal maximum flexible-duct length. Confirm listing class, manufacturer limits, adopted energy-code length rules, and AHJ amendments.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §603.6','Listing / manufacturer','Energy code / AHJ']);
 }},
-{id:'hyddiam',name:'Hydraulic diameter',group:'AIR & DUCTS',icon:'duct',desc:'Convert a rectangular duct’s inside width and height into hydraulic diameter.',badge:'Duct geometry',sources:[],fields:[
+{id:'hyddiam',name:'Hydraulic diameter',group:'AIR & DUCTS',icon:'duct',desc:'Convert a rectangular duct’s inside width and height into hydraulic diameter.',badge:'Duct geometry',sources:['ashraefund'],fields:[
 field('width','Inside width','in',12,.001,1000,'any','Inside width of the rectangular duct or channel.'),
 field('height','Inside height','in',8,.001,1000,'any','Inside height of the rectangular duct or channel.')
 ],calculate:v=>{
@@ -2347,7 +2347,7 @@ field('outdoor','Outdoor air temperature','°F',20,-60,140,'any','Outdoor dry-bu
   ],`ΔP ≈ 7.65 × H × (1/To − 1/Ti) with T in °R`,
   'Common I-P stack-effect approximation at roughly sea-level density. Positive when indoor air is warmer than outdoor (upward buoyancy at the top). Does not include wind, mechanical imbalance, or leakage-network effects.');
 }},
-{id:'pipevolume',name:'Pipe volume & fill',group:'HYDRONICS',icon:'water',desc:'Find internal pipe volume and an approximate fill time from flow rate.',badge:'Pipe volume',sources:[],fields:[
+{id:'pipevolume',name:'Pipe volume & fill',group:'HYDRONICS',icon:'water',desc:'Find internal pipe volume and an approximate fill time from flow rate.',badge:'Pipe volume',sources:['nist'],fields:[
 field('id','Inside diameter','in',1.049,.001,100,'any','Actual inside diameter; 1.049 in is 1-in Schedule 40 steel.'),
 field('length','Pipe length','ft',100,.001,1e6,'any','Total pipe length being filled or flushed.'),
 field('flow','Fill / flush flow rate','gpm',10,0,1e5,'any','Fill or flush flow rate for the time estimate; 0 skips the time row.')
@@ -2364,7 +2364,7 @@ field('flow','Fill / flush flow rate','gpm',10,0,1e5,'any','Fill or flush flow r
   ],`V = π(d/24)² × L; gallons = V × 7.4805; t ≈ gallons ÷ gpm`,
   'Uses clear inside diameter, not nominal size. Ignores fittings volume and trapped air. Confirm fluid density if converting mass.');
 }},
-{id:'lmtd',name:'LMTD',group:'HYDRONICS',icon:'water',desc:'Calculate log-mean temperature difference for a counterflow or parallel-flow heat exchanger.',badge:'Heat exchanger',sources:[],fields:[
+{id:'lmtd',name:'LMTD',group:'HYDRONICS',icon:'water',desc:'Calculate log-mean temperature difference for a counterflow or parallel-flow heat exchanger.',badge:'Heat exchanger',sources:['ashraefund'],fields:[
 choice('flow','Flow arrangement',[['counter','Counterflow'],['parallel','Parallel flow']],'counter','Counterflow uses opposite-end differences; parallel uses same-end differences.'),
 field('thIn','Hot-fluid inlet temperature','°F',180,0,1000,'any','Hot fluid entering the exchanger.'),
 field('thOut','Hot-fluid outlet temperature','°F',120,0,1000,'any','Hot fluid leaving the exchanger.'),
@@ -2383,7 +2383,7 @@ field('tcOut','Cold-fluid outlet temperature','°F',100,-40,500,'any','Cold flui
   ],`LMTD = (ΔT₁ − ΔT₂) / ln(ΔT₁/ΔT₂)`,
   'Ideal single-pass LMTD. Crossflow/multipass exchangers need a correction factor F. Does not size UA or select a heat exchanger.');
 }},
-{id:'evaptd',name:'Evaporator TD',group:'REFRIGERATION',icon:'snow',desc:'Find evaporator temperature difference from box or return-air temperature and saturated suction temperature.',badge:'Coil TD',sources:[],fields:[
+{id:'evaptd',name:'Evaporator TD',group:'REFRIGERATION',icon:'snow',desc:'Find evaporator temperature difference from box or return-air temperature and saturated suction temperature.',badge:'Coil TD',sources:['copeland','ashraeref'],fields:[
 field('box','Box / entering-air temperature','°F',35,-50,100,'any','Air temperature entering the evaporator (box or return air).'),
 field('sst','Saturated suction temperature','°F',25,-60,80,'any','Saturated suction temperature from suction pressure on the refrigerant P-T chart.')
 ],calculate:v=>{
@@ -2396,7 +2396,7 @@ field('sst','Saturated suction temperature','°F',25,-60,80,'any','Saturated suc
   ],`TD = Tbox − TSST = ${fmt(v.box)} − ${fmt(v.sst)}`,
   'Definitional coil TD only. Target TD depends on application and manufacturer data. Does not set superheat or select a TXV.');
 }},
-{id:'condtd',name:'Condenser TD',group:'REFRIGERATION',icon:'snow',desc:'Find condenser temperature difference from saturated condensing temperature and entering air or water temperature.',badge:'Condenser TD',sources:[],fields:[
+{id:'condtd',name:'Condenser TD',group:'REFRIGERATION',icon:'snow',desc:'Find condenser temperature difference from saturated condensing temperature and entering air or water temperature.',badge:'Condenser TD',sources:['copeland','ashraeref'],fields:[
 field('sct','Saturated condensing temperature','°F',110,0,250,'any','Saturated condensing temperature from discharge pressure.'),
 field('enter','Entering air / water temperature','°F',95,-20,200,'any','Ambient air (or water) temperature entering the condenser.')
 ],calculate:v=>{
@@ -2409,7 +2409,7 @@ field('enter','Entering air / water temperature','°F',95,-20,200,'any','Ambient
   ],`TD = TSCT − Tenter = ${fmt(v.sct)} − ${fmt(v.enter)}`,
   'Definitional condenser TD only. Design targets vary with equipment type and ambient conditions. Does not set subcooling or select a condenser.');
 }},
-{id:'oilpd',name:'Oil pressure net',group:'REFRIGERATION',icon:'snow',desc:'Calculate net oil pressure from oil-pump discharge and crankcase / suction pressure.',badge:'Oil safety',sources:[],fields:[
+{id:'oilpd',name:'Oil pressure net',group:'REFRIGERATION',icon:'snow',desc:'Calculate net oil pressure from oil-pump discharge and crankcase / suction pressure.',badge:'Oil safety',sources:['copeland'],fields:[
 field('oil','Oil-pump discharge pressure','psig',60,-15,1000,'any','Oil-pump discharge pressure at the compressor.'),
 field('crank','Crankcase / suction pressure','psig',20,-15,500,'any','Crankcase or suction pressure at the same time.')
 ],calculate:v=>{
@@ -2487,7 +2487,7 @@ choice('screen','Outlet protected from weather / debris without blocking flow?',
   'Model 2024 IMC §504.9 key-row termination screen. Confirm adopted numbering, exceptions, manufacturer termination fittings, and AHJ amendments. Not a duct design approval.',
   [[fails,'open']],['IMC §504.9','Listing / manufacturer','AHJ']);
 }},
-{id:'aspect',name:'Duct aspect ratio',group:'AIR & DUCTS',icon:'duct',desc:'Find the aspect ratio of a rectangular duct from inside width and height.',badge:'Duct geometry',sources:[],fields:[
+{id:'aspect',name:'Duct aspect ratio',group:'AIR & DUCTS',icon:'duct',desc:'Find the aspect ratio of a rectangular duct from inside width and height.',badge:'Duct geometry',sources:['smacna','manuald'],fields:[
 field('width','Inside width','in',24,.001,1000,'any','Inside width of the rectangular duct.'),
 field('height','Inside height','in',8,.001,1000,'any','Inside height of the rectangular duct.')
 ],calculate:v=>{
@@ -2501,7 +2501,7 @@ field('height','Inside height','in',8,.001,1000,'any','Inside height of the rect
   ],`AR = long ÷ short = ${fmt(long)} ÷ ${fmt(short)}`,
   'Geometric aspect ratio only. Equal-friction design often prefers AR ≤ 4:1 as a practice guideline — that preference is not applied as a code limit here.');
 }},
-{id:'fanbhp',name:'Fan brake horsepower',group:'AIR & DUCTS',icon:'air',desc:'Estimate fan shaft brake horsepower from airflow, static pressure, and fan efficiency.',badge:'Fan power',sources:[],fields:[
+{id:'fanbhp',name:'Fan brake horsepower',group:'AIR & DUCTS',icon:'air',desc:'Estimate fan shaft brake horsepower from airflow, static pressure, and fan efficiency.',badge:'Fan power',sources:['amca'],fields:[
 field('cfm','Airflow','cfm',2000,0,1e9,'any','Fan airflow at the operating point.'),
 field('sp','Fan static pressure','in. w.c.',1.5,0,50,'any','Fan static pressure at the same point.'),
 field('eff','Fan static efficiency','%',65,1,100,'any','Fan static efficiency from the fan curve; 55–75 % is typical for centrifugal fans.')
@@ -2533,7 +2533,7 @@ field('factor','Air sensible factor','BTU/(h·cfm·°F)',1.08,.5,1.5,'any','1.08
   ],`Qs = factor × CFM × ΔT = ${fmt(v.factor)} × ${fmt(v.cfm)} × ${fmt(v.dt)}`,
   'Sensible heat only. The default 1.08 factor is for standard-density air; adjust for altitude and mixed-air conditions. Does not include latent capacity.');
 }},
-{id:'heatrej',name:'Condenser heat rejection',group:'REFRIGERATION',icon:'snow',desc:'Estimate condenser / heat-rejection load from cooling capacity plus compressor electrical input.',badge:'Heat rejection',sources:[],fields:[
+{id:'heatrej',name:'Condenser heat rejection',group:'REFRIGERATION',icon:'snow',desc:'Estimate condenser / heat-rejection load from cooling capacity plus compressor electrical input.',badge:'Heat rejection',sources:['ahri'],fields:[
 field('cooling','Net cooling capacity','BTU/h',36000,0,1e9,'any','Net cooling capacity of the system.'),
 field('power','Compressor / unit electrical input','kW',3.5,0,1e9,'any','Compressor (and unit) electrical input converted to heat at the condenser.')
 ],calculate:v=>{
@@ -2548,7 +2548,7 @@ field('power','Compressor / unit electrical input','kW',3.5,0,1e9,'any','Compres
   ],`Qreject ≈ Qcool + 3412.14 × kW = ${fmt(v.cooling)} + 3412.14 × ${fmt(v.power)}`,
   'Steady-state energy balance for the refrigeration loop. Enter electrical input at the same operating condition as capacity. Does not size a condenser or cooling tower by itself.');
 }},
-{id:'wbdep',name:'Wet-bulb depression',group:'AIR & DUCTS',icon:'air',desc:'Find wet-bulb depression from dry-bulb and wet-bulb temperatures.',badge:'Psychrometric delta',sources:[],fields:[
+{id:'wbdep',name:'Wet-bulb depression',group:'AIR & DUCTS',icon:'air',desc:'Find wet-bulb depression from dry-bulb and wet-bulb temperatures.',badge:'Psychrometric delta',sources:['ashrae'],fields:[
 field('db','Dry-bulb temperature','°F',80,-40,140,'any','Dry-bulb temperature of the air.'),
 field('wb','Wet-bulb temperature','°F',67,-40,140,'any','Wet-bulb temperature of the same air.')
 ],calculate:v=>{
@@ -2561,7 +2561,7 @@ field('wb','Wet-bulb temperature','°F',67,-40,140,'any','Wet-bulb temperature o
   ],`Depression = Tdb − Twb = ${fmt(v.db)} − ${fmt(v.wb)}`,
   'Definitional psychrometric difference. Useful for evaporative cooling and cooling-tower discussions. Does not compute relative humidity by itself.');
 }},
-{id:'reynolds',name:'Reynolds number (pipe)',group:'HYDRONICS',icon:'water',desc:'Estimate pipe-flow Reynolds number from velocity, inside diameter, and kinematic viscosity.',badge:'Flow regime',sources:[],fields:[
+{id:'reynolds',name:'Reynolds number (pipe)',group:'HYDRONICS',icon:'water',desc:'Estimate pipe-flow Reynolds number from velocity, inside diameter, and kinematic viscosity.',badge:'Flow regime',sources:['ashraefund'],fields:[
 field('velocity','Mean velocity','ft/s',4,0,100,'any','Average fluid velocity in the pipe.'),
 field('id','Inside diameter','in',1.049,.001,100,'any','Actual inside diameter of the pipe.'),
 field('nu','Kinematic viscosity','ft²/s',0.0000121,1e-8,1e-3,'any','Kinematic viscosity; water ≈ 1.21×10⁻⁵ ft²/s at 60 °F.')
@@ -2579,7 +2579,7 @@ field('nu','Kinematic viscosity','ft²/s',0.0000121,1e-8,1e-3,'any','Kinematic v
   ],`Re = V × D / ν = ${fmt(v.velocity)} × ${fmt(dFt)} / ${v.nu}`,
   'Default viscosity approximates 60 °F water (~1.21×10⁻⁵ ft²/s). Adjust ν for temperature and glycol mixes. Regime bands are approximate engineering guides, not code limits.');
 }},
-{id:'valvecv',name:'Valve Cv flow',group:'HYDRONICS',icon:'water',desc:'Estimate liquid flow from valve flow coefficient, pressure drop, and specific gravity.',badge:'Valve sizing helper',sources:[],fields:[
+{id:'valvecv',name:'Valve Cv flow',group:'HYDRONICS',icon:'water',desc:'Estimate liquid flow from valve flow coefficient, pressure drop, and specific gravity.',badge:'Valve sizing helper',sources:['isa75'],fields:[
 field('cv','Valve flow coefficient Cv','—',10,.001,1e6,'any','Valve Cv from the manufacturer: gpm of 60 °F water at 1 psi drop.'),
 field('dp','Pressure drop across valve','psi',5,0,10000,'any','Pressure drop across the valve.'),
 field('sg','Fluid specific gravity','—',1,.1,3,'any','Fluid specific gravity; water = 1.0.')
@@ -2594,7 +2594,7 @@ field('sg','Fluid specific gravity','—',1,.1,3,'any','Fluid specific gravity; 
   ],`Q = Cv × √(ΔP / SG) = ${fmt(v.cv)} × √(${fmt(v.dp)} / ${fmt(v.sg)})`,
   'Liquid Cv definition at the stated conditions. Does not include flashing, cavitation, or compressible-flow corrections. Confirm manufacturer Cv charts.');
 }},
-{id:'expansank',name:'Expansion tank volume',group:'HYDRONICS',icon:'water',desc:'Estimate closed-system expansion-tank acceptance volume from system volume and fluid expansion.',badge:'Expansion tank',sources:[],fields:[
+{id:'expansank',name:'Expansion tank volume',group:'HYDRONICS',icon:'water',desc:'Estimate closed-system expansion-tank acceptance volume from system volume and fluid expansion.',badge:'Expansion tank',sources:['ashraeheq'],fields:[
 field('system','System fluid volume','gal',200,.001,1e9,'any','Total water volume in the system: piping, boiler or chiller, coils and terminals.'),
 field('expandPct','Net fluid expansion (fill to hot)','%',3,0,20,'any','Net expansion from fill to operating temperature; water 40→180 °F is about 3 %.'),
 field('acceptance','Tank acceptance factor','—',0.5,.05,0.95,'any','Acceptance factor from the tank manufacturer; diaphragm tanks are often 0.4–0.6.')
@@ -2610,7 +2610,7 @@ field('acceptance','Tank acceptance factor','—',0.5,.05,0.95,'any','Acceptance
   ],`Vtank ≈ Vsystem × (% expansion) / acceptance = ${fmt(v.system)} × ${fmt(v.expandPct)}% / ${fmt(v.acceptance)}`,
   'Preliminary closed-loop estimate. Acceptance factor depends on fill pressure, relief setting, and precharge — enter the manufacturer’s value when available. Does not replace ASME/manufacturer sizing methods.');
 }},
-{id:'latcond',name:'Condensate from latent',group:'HEATING & COOLING',icon:'water',desc:'Estimate condensate generation from latent cooling load and water latent heat.',badge:'Condensate rate',sources:[],fields:[
+{id:'latcond',name:'Condensate from latent',group:'HEATING & COOLING',icon:'water',desc:'Estimate condensate generation from latent cooling load and water latent heat.',badge:'Condensate rate',sources:['ashrae'],fields:[
 field('latent','Latent cooling load','BTU/h',6000,0,1e9,'any','Latent (moisture) portion of the cooling load.'),
 field('hfg','Latent heat of vaporization','BTU/lb',1061,900,1200,'any','Latent heat of vaporization of water; ≈ 1,061 BTU/lb at typical coil conditions.')
 ],calculate:v=>{
@@ -2714,7 +2714,7 @@ choice('emergency','Emergency remote controls / signs / lighting path documented
   'IMC §1105 documentation gate only. It does not invent continuous/emergency ventilation rates or detector setpoints. Use the machinery-room ventilation tool for formula screens and confirm adopted IMC / ASHRAE 15 text with the AHJ.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §1105','ASHRAE 15','AHJ']);
 }},
-{id:'oafrac',name:'Outdoor-air fraction',group:'AIR & DUCTS',icon:'air',desc:'Find the outdoor-air fraction of mixed airflow from outdoor and supply (or mixed) airflow.',badge:'OA fraction',sources:[],fields:[
+{id:'oafrac',name:'Outdoor-air fraction',group:'AIR & DUCTS',icon:'air',desc:'Find the outdoor-air fraction of mixed airflow from outdoor and supply (or mixed) airflow.',badge:'OA fraction',sources:['ashraefund'],fields:[
 field('oa','Outdoor-airflow','cfm',300,0,1e9,'any','Outdoor airflow entering the mixing box.'),
 field('supply','Supply / total mixed airflow','cfm',1200,.001,1e9,'any','Total supply (mixed) airflow.')
 ],calculate:v=>{
@@ -2731,7 +2731,7 @@ field('supply','Supply / total mixed airflow','cfm',1200,.001,1e9,'any','Total s
   ],`xOA = OAcfm / Supplycfm = ${fmt(v.oa)} / ${fmt(v.supply)}`,
   'Volumetric outdoor-air fraction at the stated airstreams. Equal-density assumption. Does not set IMC ventilation compliance by itself.');
 }},
-{id:'bypassfac',name:'Coil bypass factor',group:'HEATING & COOLING',icon:'snow',desc:'Estimate coil bypass factor from entering, leaving, and apparatus-dew-point temperatures.',badge:'Bypass factor',sources:[],fields:[
+{id:'bypassfac',name:'Coil bypass factor',group:'HEATING & COOLING',icon:'snow',desc:'Estimate coil bypass factor from entering, leaving, and apparatus-dew-point temperatures.',badge:'Bypass factor',sources:['ashraefund'],fields:[
 field('eat','Entering air temperature','°F',80,-40,140,'any','Air temperature entering the coil.'),
 field('lat','Leaving air temperature','°F',55,-40,140,'any','Air temperature leaving the coil.'),
 field('adp','Apparatus dew-point temperature','°F',50,-40,140,'any','Apparatus dew point: coil surface temperature where the condition line meets saturation.')
@@ -2748,7 +2748,7 @@ field('adp','Apparatus dew-point temperature','°F',50,-40,140,'any','Apparatus 
   ],`BF = (Tlat − Tadp) / (Teat − Tadp) = (${fmt(v.lat)} − ${fmt(v.adp)}) / (${fmt(v.eat)} − ${fmt(v.adp)})`,
   'Classic coil contact/bypass definition using the same temperature basis (usually dry-bulb or enthalpy-consistent ADP). Does not replace manufacturer coil data.');
 }},
-{id:'airhp',name:'Air horsepower',group:'AIR & DUCTS',icon:'air',desc:'Estimate ideal air horsepower from airflow and fan static pressure (100% efficient).',badge:'Air power',sources:[],fields:[
+{id:'airhp',name:'Air horsepower',group:'AIR & DUCTS',icon:'air',desc:'Estimate ideal air horsepower from airflow and fan static pressure (100% efficient).',badge:'Air power',sources:['amca'],fields:[
 field('cfm','Airflow','cfm',2000,0,1e9,'any','Airflow delivered by the fan.'),
 field('sp','Fan static pressure','in. w.c.',1.5,0,50,'any','Fan static pressure.')
 ],calculate:v=>{
@@ -2761,7 +2761,7 @@ field('sp','Fan static pressure','in. w.c.',1.5,0,50,'any','Fan static pressure.
   ],`Air hp = CFM × SP / 6356 = ${fmt(v.cfm)} × ${fmt(v.sp)} / 6356`,
   'Ideal fluid power only (η = 100%). Divide by fan efficiency to estimate brake horsepower. Does not size the motor.');
 }},
-{id:'hxeff',name:'Heat-exchanger effectiveness',group:'ENERGY & MATH',icon:'heat',desc:'Find heat-exchanger effectiveness from actual heat transfer and the thermodynamic maximum.',badge:'Effectiveness',sources:[],fields:[
+{id:'hxeff',name:'Heat-exchanger effectiveness',group:'ENERGY & MATH',icon:'heat',desc:'Find heat-exchanger effectiveness from actual heat transfer and the thermodynamic maximum.',badge:'Effectiveness',sources:['ashraefund'],fields:[
 field('actual','Actual heat transfer rate','BTU/h',48000,0,1e9,'any','Heat actually transferred at the operating point.'),
 field('max','Maximum possible heat transfer rate','BTU/h',60000,.001,1e9,'any','Thermodynamic maximum: minimum capacity rate × entering temperature difference.')
 ],calculate:v=>{
@@ -2777,7 +2777,7 @@ field('max','Maximum possible heat transfer rate','BTU/h',60000,.001,1e9,'any','
   ],`ε = Qactual / Qmax = ${fmt(v.actual)} / ${fmt(v.max)}`,
   'Definitional ε = Q/Qmax. You must supply a consistent Qmax (typically Cmin×ΔTinlet). Does not select NTU-ε curves or size the exchanger.');
 }},
-{id:'darcyhead',name:'Darcy friction head',group:'HYDRONICS',icon:'water',desc:'Estimate pipe friction head loss from the Darcy–Weisbach equation with a user-supplied friction factor.',badge:'Friction head',sources:[],fields:[
+{id:'darcyhead',name:'Darcy friction head',group:'HYDRONICS',icon:'water',desc:'Estimate pipe friction head loss from the Darcy–Weisbach equation with a user-supplied friction factor.',badge:'Friction head',sources:['ashraefund'],fields:[
 field('f','Darcy friction factor f','—',0.02,.0001,1,'any','Darcy friction factor from a Moody chart or Colebrook; 0.02 is typical for turbulent flow in steel pipe.'),
 field('length','Pipe length','ft',100,0,1e9,'any','Straight pipe length.'),
 field('id','Inside diameter','in',1.049,.001,100,'any','Actual inside diameter of the pipe.'),
@@ -2795,7 +2795,7 @@ field('velocity','Mean velocity','ft/s',4,0,100,'any','Average fluid velocity.')
   ],`hf = f × (L/D) × V² / (2g) = ${fmt(v.f)} × (${fmt(v.length)} / ${fmt(d)}) × ${fmt(v.velocity)}² / (2 × 32.174)`,
   'Uses g = 32.174 ft/s². Enter a Moody/Colebrook friction factor for the Reynolds number and roughness — this tool does not invent f. Minor losses are excluded.');
 }},
-{id:'steamflow',name:'Steam mass from load',group:'HYDRONICS',icon:'heat',desc:'Estimate steam mass flow from heating load and latent heat of vaporization.',badge:'Steam flow',sources:[],fields:[
+{id:'steamflow',name:'Steam mass from load',group:'HYDRONICS',icon:'heat',desc:'Estimate steam mass flow from heating load and latent heat of vaporization.',badge:'Steam flow',sources:['nistwebbook','ashraeheq'],fields:[
 field('load','Heating load','BTU/h',500000,0,1e9,'any','Heating load to be met by condensing steam.'),
 field('hfg','Latent heat of vaporization','BTU/lb',970,800,1200,'any','Latent heat at the steam pressure; ≈ 970 BTU/lb at atmospheric, lower at higher pressure.')
 ],calculate:v=>{
@@ -2809,7 +2809,7 @@ field('hfg','Latent heat of vaporization','BTU/lb',970,800,1200,'any','Latent he
   ],`ṁ = Q / hfg = ${fmt(v.load)} / ${fmt(v.hfg)}`,
   'Saturated-steam latent-only estimate. Feedwater sensible heat, flash, and distribution losses are not included. Confirm hfg at the actual steam pressure.');
 }},
-{id:'refrigmass',name:'Refrigerant mass flow',group:'REFRIGERATION',icon:'snow',desc:'Estimate refrigerant mass flow from capacity and evaporator enthalpy change.',badge:'Mass flow',sources:[],fields:[
+{id:'refrigmass',name:'Refrigerant mass flow',group:'REFRIGERATION',icon:'snow',desc:'Estimate refrigerant mass flow from capacity and evaporator enthalpy change.',badge:'Mass flow',sources:['nistwebbook'],fields:[
 field('capacity','Refrigeration capacity','BTU/h',36000,0,1e9,'any','Refrigeration capacity of the evaporator.'),
 field('dh','Enthalpy change across evaporator','BTU/lb',70,.001,500,'any','Enthalpy gain across the evaporator from the refrigerant P-h diagram.')
 ],calculate:v=>{
@@ -2823,7 +2823,7 @@ field('dh','Enthalpy change across evaporator','BTU/lb',70,.001,500,'any','Entha
   ],`ṁ = Q / Δh = ${fmt(v.capacity)} / ${fmt(v.dh)}`,
   'Uses the evaporator enthalpy rise you enter from a pressure-enthalpy chart or software. Does not look up refrigerant properties or size piping.');
 }},
-{id:'fittingel',name:'Fitting equivalent length',group:'AIR & DUCTS',icon:'duct',desc:'Sum straight duct length and fitting equivalent lengths for a preliminary total effective length.',badge:'Effective length',sources:[],fields:[
+{id:'fittingel',name:'Fitting equivalent length',group:'AIR & DUCTS',icon:'duct',desc:'Sum straight duct length and fitting equivalent lengths for a preliminary total effective length.',badge:'Effective length',sources:['manuald','ashraefund'],fields:[
 field('straight','Straight duct / pipe length','ft',50,0,1e9,'any','Straight duct or pipe length in the run.'),
 field('fit1','Fitting 1 equivalent length','ft',15,0,1e9,'any','Equivalent length of the first fitting from the manufacturer or ACCA Manual D tables.'),
 field('fit2','Fitting 2 equivalent length','ft',10,0,1e9,'any','Equivalent length of the second fitting; 0 if none.'),
@@ -2948,7 +2948,7 @@ choice('common','Common-vent / manifold rules reviewed where multiple appliances
   'IFGC Chapter 5 documentation gate only. It does not invent Table 504.2 / 504.3 capacities. Confirm adopted IFGC Chapter 5, listing, and AHJ amendments.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IFGC Ch 5','Listing / manufacturer','AHJ']);
 }}
-,{id:'coilface',name:'Coil face area',group:'AIR & DUCTS',icon:'air',desc:'Find required coil or filter face area from airflow and design face velocity.',badge:'Face area',sources:[],fields:[
+,{id:'coilface',name:'Coil face area',group:'AIR & DUCTS',icon:'air',desc:'Find required coil or filter face area from airflow and design face velocity.',badge:'Face area',sources:['ashraeheq'],fields:[
 field('cfm','Airflow','cfm',2000,0,1e9,'any','Airflow across the coil.'),
 field('fpm','Design face velocity','fpm',500,.001,1e9,'any','Target face velocity; 400–550 fpm is common for cooling coils to limit moisture carry-over.')
 ],calculate:v=>{
@@ -2961,7 +2961,7 @@ field('fpm','Design face velocity','fpm',500,.001,1e9,'any','Target face velocit
   ],`A = CFM / Vface = ${fmt(v.cfm)} / ${fmt(v.fpm)}`,
   'Clear face area at the stated velocity. Does not select coil rows/fins or account for blank-offs. Compare with manufacturer face-velocity limits.');
 }}
-,{id:'copeer',name:'COP from EER',group:'ENERGY & MATH',icon:'bolt',desc:'Convert Energy Efficiency Ratio (EER) to Coefficient of Performance (COP).',badge:'EER → COP',sources:[],fields:[
+,{id:'copeer',name:'COP from EER',group:'ENERGY & MATH',icon:'bolt',desc:'Convert Energy Efficiency Ratio (EER) to Coefficient of Performance (COP).',badge:'EER → COP',sources:['ahri'],fields:[
 field('eer','Energy Efficiency Ratio (EER)','BTU/Wh',12,.001,40,'any','Energy Efficiency Ratio at a rating point; COP = EER ÷ 3.412.')
 ],calculate:v=>{
   const cop=v.eer/3.412;
@@ -2972,7 +2972,7 @@ field('eer','Energy Efficiency Ratio (EER)','BTU/Wh',12,.001,40,'any','Energy Ef
   ],`COP = EER / 3.412 = ${fmt(v.eer)} / 3.412`,
   'Same-condition conversion using 3.412 BTU/Wh. Not SEER2, IEER, or HSPF2. Enter the EER at the rating condition you intend to compare.');
 }}
-,{id:'carnotcop',name:'Carnot COP',group:'REFRIGERATION',icon:'snow',desc:'Compute the ideal Carnot cooling COP from cold and hot absolute temperatures.',badge:'Carnot COP',sources:[],fields:[
+,{id:'carnotcop',name:'Carnot COP',group:'REFRIGERATION',icon:'snow',desc:'Compute the ideal Carnot cooling COP from cold and hot absolute temperatures.',badge:'Carnot COP',sources:['ashraefund'],fields:[
 field('tcold','Cold-side temperature','°F',40,-40,100,'any','Evaporating (cold-side) temperature.'),
 field('thot','Hot-side temperature','°F',105,0,200,'any','Condensing (hot-side) temperature.')
 ],calculate:v=>{
@@ -2987,7 +2987,7 @@ field('thot','Hot-side temperature','°F',105,0,200,'any','Condensing (hot-side)
   ],`COPc = Tc / (Th − Tc) with T in °R = ${fmt(Tc)} / (${fmt(Th)} − ${fmt(Tc)})`,
   'Ideal reversible limit only. Real vapor-compression COP is lower. Use saturation temperatures that match the cycle you are screening.');
 }}
-,{id:'psigpsia',name:'Gauge to absolute',group:'REFRIGERATION',icon:'bolt',desc:'Convert gauge pressure to absolute pressure with a user-entered atmospheric pressure.',badge:'psig → psia',sources:[],fields:[
+,{id:'psigpsia',name:'Gauge to absolute',group:'REFRIGERATION',icon:'bolt',desc:'Convert gauge pressure to absolute pressure with a user-entered atmospheric pressure.',badge:'psig → psia',sources:['nist'],fields:[
 field('psig','Gauge pressure','psig',70,-14.7,1000,'any','Gauge pressure reading; vacuum reads negative.'),
 field('atm','Atmospheric pressure','psia',14.7,.001,20,'any','Local atmospheric pressure; 14.7 psia at sea level, lower at altitude.')
 ],calculate:v=>{
@@ -3000,7 +3000,7 @@ field('atm','Atmospheric pressure','psia',14.7,.001,20,'any','Local atmospheric 
   ],`Psia = Psig + Patm = ${fmt(v.psig)} + ${fmt(v.atm)}`,
   'Enter local atmospheric pressure when altitude or barometer differs from 14.7 psia. Required for compression-ratio and property lookups.');
 }}
-,{id:'flashgas',name:'Flash-gas quality',group:'REFRIGERATION',icon:'snow',desc:'Estimate flash-gas mass quality after an isenthalpic expansion from liquid and vapor enthalpies.',badge:'Flash gas',sources:[],fields:[
+,{id:'flashgas',name:'Flash-gas quality',group:'REFRIGERATION',icon:'snow',desc:'Estimate flash-gas mass quality after an isenthalpic expansion from liquid and vapor enthalpies.',badge:'Flash gas',sources:['nistwebbook'],fields:[
 field('h1','Enthalpy entering expansion','BTU/lb',40,-50,150,'any','Enthalpy of liquid entering the expansion device.'),
 field('hf','Saturated liquid enthalpy at leaving pressure','BTU/lb',25,-50,150,'any','Saturated-liquid enthalpy at the evaporator pressure.'),
 field('hg','Saturated vapor enthalpy at leaving pressure','BTU/lb',80,-50,200,'any','Saturated-vapor enthalpy at the evaporator pressure.')
@@ -3017,7 +3017,7 @@ field('hg','Saturated vapor enthalpy at leaving pressure','BTU/lb',80,-50,200,'a
   ],`x = (h1 − hf) / (hg − hf) = (${fmt(v.h1)} − ${fmt(v.hf)}) / (${fmt(v.hg)} − ${fmt(v.hf)})`,
   'Isenthalpic-expansion quality at the evaporator pressure. Enter enthalpies from a P-h chart or property software — this tool does not look up refrigerant properties. x outside 0–1 means check inputs.');
 }}
-,{id:'voleff',name:'Volumetric efficiency',group:'REFRIGERATION',icon:'snow',desc:'Find compressor volumetric efficiency from actual and theoretical displacement volume flow.',badge:'Volumetric η',sources:[],fields:[
+,{id:'voleff',name:'Volumetric efficiency',group:'REFRIGERATION',icon:'snow',desc:'Find compressor volumetric efficiency from actual and theoretical displacement volume flow.',badge:'Volumetric η',sources:['ashraeheq'],fields:[
 field('actual','Actual inlet volume flow','ft³/min',20,0,1e9,'any','Actual volume flow drawn in at the compressor inlet.'),
 field('theoretical','Theoretical / displacement volume flow','ft³/min',25,.001,1e9,'any','Swept displacement volume flow of the compressor.')
 ],calculate:v=>{
@@ -3032,7 +3032,7 @@ field('theoretical','Theoretical / displacement volume flow','ft³/min',25,.001,
   ],`ηvol = Vactual / Vtheoretical = ${fmt(v.actual)} / ${fmt(v.theoretical)}`,
   'Definitional volumetric efficiency at the stated inlet condition. Does not invent compressor maps or clearances.');
 }}
-,{id:'linevel',name:'Refrigerant line velocity',group:'REFRIGERATION',icon:'snow',desc:'Estimate mean refrigerant velocity from mass flow, density, and tubing inside diameter.',badge:'Line velocity',sources:[],fields:[
+,{id:'linevel',name:'Refrigerant line velocity',group:'REFRIGERATION',icon:'snow',desc:'Estimate mean refrigerant velocity from mass flow, density, and tubing inside diameter.',badge:'Line velocity',sources:['ashraeref'],fields:[
 field('lbh','Refrigerant mass flow','lb/h',500,0,1e9,'any','Refrigerant mass flow in the line.'),
 field('density','Density at line condition','lb/ft³',0.5,.0001,100,'any','Refrigerant density at the line temperature and pressure (vapor ≈ 0.3–1 lb/ft³, liquid ≈ 60–80).'),
 field('id','Tube inside diameter','in',0.545,.01,6,'any','Tube inside diameter; 0.545 in is 5/8-in OD ACR copper.')
@@ -3051,7 +3051,7 @@ field('id','Tube inside diameter','in',0.545,.01,6,'any','Tube inside diameter; 
   ],`V = ṁ / (ρA) with ṁ in lb/s and A = π(d/24)² = ${fmt(lbs,4)} / (${fmt(v.density)} × ${fmt(area,6)})`,
   'Mean velocity only. Enter density at the actual line pressure/temperature. Does not size lines for oil return, pressure drop, or noise — compare with manufacturer piping guides.');
 }}
-,{id:'balancept',name:'Heat-pump balance point',group:'HEATING & COOLING',icon:'heat',desc:'Estimate the outdoor balance-point temperature where linear heat-pump capacity equals building heat loss.',badge:'Balance point',sources:[],fields:[
+,{id:'balancept',name:'Heat-pump balance point',group:'HEATING & COOLING',icon:'heat',desc:'Estimate the outdoor balance-point temperature where linear heat-pump capacity equals building heat loss.',badge:'Balance point',sources:['ahri','manual'],fields:[
 field('designLoad','Design heating load','BTU/h',40000,0,1e9,'any','Heating load at the design outdoor temperature (Manual J or equivalent).'),
 field('designOAT','Design outdoor air temperature','°F',10,-40,60,'any','Outdoor design temperature the load was calculated at.'),
 field('indoor','Indoor design temperature','°F',70,50,80,'any','Indoor design temperature used in the load.'),
@@ -3079,7 +3079,7 @@ field('capAt47','Heat-pump capacity at 47°F','BTU/h',36000,0,1e9,'any','Heat-pu
   ],`UA = Qdes/(Tin − Toat,des); set UA(Tin − T) = Cap17 + (Cap47−Cap17)/(47−17)·(T−17) and solve for T`,
   'Linear capacity and UA model between the two rating points. Real heat-pump curves and building loads are nonlinear; use manufacturer expanded data and Manual J loads for design.');
 }}
-,{id:'chillerapp',name:'Chiller approach',group:'HYDRONICS',icon:'water',desc:'Find evaporator or condenser approach from fluid temperature and saturated refrigerant temperature.',badge:'Approach',sources:[],fields:[
+,{id:'chillerapp',name:'Chiller approach',group:'HYDRONICS',icon:'water',desc:'Find evaporator or condenser approach from fluid temperature and saturated refrigerant temperature.',badge:'Approach',sources:['ahri'],fields:[
 choice('side','Approach side',[['evap','Evaporator (leaving CHW − SST)'],['cond','Condenser (SCT − leaving CW)']],'evap','Evaporator approach = leaving CHW − SST; condenser approach = SCT − leaving CW.'),
 field('fluid','Leaving fluid temperature','°F',44,20,120,'any','Leaving chilled-water (evaporator) or leaving condenser-water temperature.'),
 field('sat','Saturated refrigerant temperature','°F',40,-40,150,'any','Saturated evaporating or condensing refrigerant temperature.')
@@ -3185,7 +3185,7 @@ choice('pressureTest','Pressure / strength / leak test documentation available?'
   'IMC §1109 documentation gate only. It does not invent shaft ratings, detection setpoints, or charge limits. Confirm adopted IMC Chapter 11, listing, and AHJ amendments.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC §1109','ASHRAE 15','AHJ']);
 }}
-,{id:'chwflow',name:'Chilled-water flow',group:'HYDRONICS',icon:'water',desc:'Estimate chilled- or hot-water flow from load and water temperature difference.',badge:'GPM from load',sources:[],fields:[
+,{id:'chwflow',name:'Chilled-water flow',group:'HYDRONICS',icon:'water',desc:'Estimate chilled- or hot-water flow from load and water temperature difference.',badge:'GPM from load',sources:['ashraeheq'],fields:[
 field('load','Sensible / coil load','BTU/h',120000,0,1e9,'any','Coil or system load carried by the water.'),
 field('dt','Water temperature difference','°F',10,.001,80,'any','Design supply-to-return water temperature difference.'),
 field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'any','500 for water (8.33 lb/gal × 60 min/h × cp 1.0); lower for glycol mixes.')
@@ -3202,7 +3202,7 @@ field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'
   ],`GPM = Load / (factor × ΔT) = ${fmt(v.load)} / (${fmt(v.factor)} × ${fmt(v.dt)})`,
   'Uses the familiar 500 factor for water (8.33 lb/gal × 60 min/h × 1 BTU/lb·°F). Adjust the factor for glycol or other fluids. Does not size pipe or pumps.');
 }}
-,{id:'towerrange',name:'Tower / condenser range',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower or condenser water range from entering and leaving water temperatures.',badge:'Range',sources:[],fields:[
+,{id:'towerrange',name:'Tower / condenser range',group:'HYDRONICS',icon:'water',desc:'Find cooling-tower or condenser water range from entering and leaving water temperatures.',badge:'Range',sources:['cti'],fields:[
 field('ewt','Entering water temperature','°F',95,40,150,'any','Water temperature entering the tower.'),
 field('lwt','Leaving water temperature','°F',85,40,150,'any','Water temperature leaving the tower.')
 ],calculate:v=>{
@@ -3214,7 +3214,7 @@ field('lwt','Leaving water temperature','°F',85,40,150,'any','Water temperature
   ],`Range = EWT − LWT = ${fmt(v.ewt)} − ${fmt(v.lwt)}`,
   'Definitional range only. Pair with the cooling-tower approach tool for approach = LWT − Twb. Negative range usually means swapped temperatures.');
 }}
-,{id:'heatofcomp',name:'Heat of compression',group:'REFRIGERATION',icon:'snow',desc:'Estimate compressor heat of compression as condenser rejection minus evaporator capacity.',badge:'Heat of compression',sources:[],fields:[
+,{id:'heatofcomp',name:'Heat of compression',group:'REFRIGERATION',icon:'snow',desc:'Estimate compressor heat of compression as condenser rejection minus evaporator capacity.',badge:'Heat of compression',sources:['ashraeref'],fields:[
 field('qcond','Condenser heat rejection','BTU/h',45000,0,1e9,'any','Total heat rejected at the condenser.'),
 field('qevap','Evaporator refrigerating capacity','BTU/h',36000,0,1e9,'any','Refrigerating capacity absorbed at the evaporator.')
 ],calculate:v=>{
@@ -3227,7 +3227,7 @@ field('qevap','Evaporator refrigerating capacity','BTU/h',36000,0,1e9,'any','Ref
   ],`HOC = Qcond − Qevap = ${fmt(v.qcond)} − ${fmt(v.qevap)}`,
   'Energy balance around the compressor/condenser for a single-stage vapor-compression loop. Ignores oil coolers, heat reclaim, and non-steady states.');
 }}
-,{id:'refeffect',name:'Net refrigeration effect',group:'REFRIGERATION',icon:'snow',desc:'Find net refrigeration effect per pound from suction and liquid enthalpies.',badge:'NRE',sources:[],fields:[
+,{id:'refeffect',name:'Net refrigeration effect',group:'REFRIGERATION',icon:'snow',desc:'Find net refrigeration effect per pound from suction and liquid enthalpies.',badge:'NRE',sources:['nistwebbook','ashraeref'],fields:[
 field('hsuc','Suction / evaporator outlet enthalpy','BTU/lb',110,0,200,'any','Refrigerant enthalpy leaving the evaporator (suction).'),
 field('hliq','Liquid entering expansion enthalpy','BTU/lb',40,0,150,'any','Refrigerant enthalpy entering the expansion device.')
 ],calculate:v=>{
@@ -3239,7 +3239,7 @@ field('hliq','Liquid entering expansion enthalpy','BTU/lb',40,0,150,'any','Refri
   ],`NRE = hsuc − hliq = ${fmt(v.hsuc)} − ${fmt(v.hliq)}`,
   'Enter enthalpies from a P-h chart or property software. Negative NRE means swapped points. Does not look up refrigerant properties.');
 }}
-,{id:'vacmicron',name:'Vacuum units',group:'REFRIGERATION',icon:'bolt',desc:'Convert deep-vacuum readings among microns, torr, and inches of mercury absolute.',badge:'Vacuum convert',sources:[],fields:[
+,{id:'vacmicron',name:'Vacuum units',group:'REFRIGERATION',icon:'bolt',desc:'Convert deep-vacuum readings among microns, torr, and inches of mercury absolute.',badge:'Vacuum convert',sources:['nist'],fields:[
 field('microns','Absolute pressure','microns',500,0,760000,'any','Absolute pressure read on a micron gauge during evacuation.')
 ],calculate:v=>{
   if(v.microns<0)throw Error('Pressure cannot be negative.');
@@ -3254,7 +3254,7 @@ field('microns','Absolute pressure','microns',500,0,760000,'any','Absolute press
   ],`1 torr = 1000 microns; inHg abs = torr / 25.4`,
   'Absolute vacuum scale for evacuation. Gauge “inches vacuum” depends on local barometer — confirm instrument units before comparing to manufacturer micron targets.');
 }}
-,{id:'partload',name:'Part-load ratio',group:'ENERGY & MATH',icon:'bolt',desc:'Find part-load ratio from building or coil load and equipment capacity.',badge:'PLR',sources:[],fields:[
+,{id:'partload',name:'Part-load ratio',group:'ENERGY & MATH',icon:'bolt',desc:'Find part-load ratio from building or coil load and equipment capacity.',badge:'PLR',sources:['ahri'],fields:[
 field('load','Current load','BTU/h',24000,0,1e9,'any','Load the equipment is meeting right now.'),
 field('capacity','Available capacity at condition','BTU/h',36000,.001,1e9,'any','Capacity available at the current operating condition.')
 ],calculate:v=>{
@@ -3270,7 +3270,7 @@ field('capacity','Available capacity at condition','BTU/h',36000,.001,1e9,'any',
   ],`PLR = Load / Capacity = ${fmt(v.load)} / ${fmt(v.capacity)}`,
   'Definitional PLR at one operating condition. Not an IEER/IPLV weighting. PLR > 1 means the load exceeds available capacity.');
 }}
-,{id:'tonstokw',name:'Tons to kW (thermal)',group:'ENERGY & MATH',icon:'bolt',desc:'Convert tons of refrigeration to thermal kilowatts (and BTU/h).',badge:'Tons ↔ kW',sources:[],fields:[
+,{id:'tonstokw',name:'Tons to kW (thermal)',group:'ENERGY & MATH',icon:'bolt',desc:'Convert tons of refrigeration to thermal kilowatts (and BTU/h).',badge:'Tons ↔ kW',sources:['nist'],fields:[
 field('tons','Cooling capacity','tons',10,0,10000,'any','Cooling capacity in tons of refrigeration.')
 ],calculate:v=>{
   const btuh=v.tons*12000;
@@ -3282,7 +3282,7 @@ field('tons','Cooling capacity','tons',10,0,10000,'any','Cooling capacity in ton
   ],`kW = tons × 12000 / 3412.141633 = ${fmt(v.tons)} × 12000 / 3412.141633`,
   'Thermal conversion only (1 ton = 12,000 BTU/h). Not electrical input kW — use chiller kW/ton for efficiency.');
 }}
-,{id:'ductleakpct',name:'Duct leakage percent',group:'AIR & DUCTS',icon:'duct',desc:'Express measured leakage airflow as a percent of design supply airflow.',badge:'Leakage %',sources:[],fields:[
+,{id:'ductleakpct',name:'Duct leakage percent',group:'AIR & DUCTS',icon:'duct',desc:'Express measured leakage airflow as a percent of design supply airflow.',badge:'Leakage %',sources:['smacna'],fields:[
 field('leak','Measured leakage airflow','cfm',120,0,1e9,'any','Leakage airflow measured by the duct leakage tester at the test pressure.'),
 field('design','Design / rated system airflow','cfm',2000,.001,1e9,'any','Design or rated system airflow used as the base for the percentage.')
 ],calculate:v=>{
@@ -3297,7 +3297,7 @@ field('design','Design / rated system airflow','cfm',2000,.001,1e9,'any','Design
   ],`%leak = 100 × Qleak / Qdesign = 100 × ${fmt(v.leak)} / ${fmt(v.design)}`,
   'Arithmetic percent only. Does not invent IECC/IMC leakage class limits or convert CFM25 to percent — enter comparable test and design airflows.');
 }}
-,{id:'filterface',name:'Filter face velocity',group:'AIR & DUCTS',icon:'air',desc:'Find filter or coil bank face velocity from airflow and clear face area.',badge:'Face velocity',sources:[],fields:[
+,{id:'filterface',name:'Filter face velocity',group:'AIR & DUCTS',icon:'air',desc:'Find filter or coil bank face velocity from airflow and clear face area.',badge:'Face velocity',sources:['ashraeheq'],fields:[
 field('cfm','Airflow through face','cfm',2000,0,1e9,'any','Airflow through the filter bank.'),
 field('area','Clear face area','ft²',4,.001,1e9,'any','Clear face area of the filter bank (sum of filter faces).')
 ],calculate:v=>{
@@ -3310,7 +3310,7 @@ field('area','Clear face area','ft²',4,.001,1e9,'any','Clear face area of the f
   ],`Vface = CFM / A = ${fmt(v.cfm)} / ${fmt(v.area)}`,
   'Clear face velocity only. Compare with filter/coil manufacturer limits; blank-offs reduce effective area.');
 }}
-,{id:'oilcooler',name:'Oil-cooler heat',group:'REFRIGERATION',icon:'heat',desc:'Estimate oil-cooler heat rejection from oil mass flow, specific heat, and temperature rise.',badge:'Oil cooler',sources:[],fields:[
+,{id:'oilcooler',name:'Oil-cooler heat',group:'REFRIGERATION',icon:'heat',desc:'Estimate oil-cooler heat rejection from oil mass flow, specific heat, and temperature rise.',badge:'Oil cooler',sources:['ashraeref'],fields:[
 field('lbh','Oil mass flow','lb/h',800,0,1e9,'any','Oil mass flow through the cooler.'),
 field('cp','Oil specific heat','BTU/lb·°F',0.45,.05,1,'any','Specific heat of the oil; mineral and POE oils are about 0.45 BTU/(lb·°F).'),
 field('dt','Oil temperature rise across cooler','°F',20,0,200,'any','Oil temperature change across the cooler.')
@@ -3469,7 +3469,7 @@ choice('marking','Piping marked / identified where required?',ircInstallYn,'unk'
   'IMC Chapter 11 documentation gate only. It does not invent strength-test pressures or charge limits. Confirm adopted IMC Chapter 11, listing, and AHJ amendments.',
   [[ok,'OK'],[fail,'deficient'],[unk,'unknown']],['IMC Ch 11','Listing / manufacturer','AHJ']);
 }}
-,{id:'eerfromcap',name:'EER from capacity',group:'ENERGY & MATH',icon:'bolt',desc:'Compute Energy Efficiency Ratio from total cooling capacity and electrical input power.',badge:'EER',sources:[],fields:[
+,{id:'eerfromcap',name:'EER from capacity',group:'ENERGY & MATH',icon:'bolt',desc:'Compute Energy Efficiency Ratio from total cooling capacity and electrical input power.',badge:'EER',sources:['ahri'],fields:[
 field('capacity','Total cooling capacity','BTU/h',36000,0,1e9,'any','Total cooling capacity at the rating point.'),
 field('watts','Electrical input power','W',3000,.001,1e9,'any','Total electrical input in watts at the same point.')
 ],calculate:v=>{
@@ -3484,7 +3484,7 @@ field('watts','Electrical input power','W',3000,.001,1e9,'any','Total electrical
   ],`EER = Capacity / Watts = ${fmt(v.capacity)} / ${fmt(v.watts)}`,
   'Same-condition EER only. Not SEER2, IEER, or IPLV. Enter total cooling capacity and coincident electrical input.');
 }}
-,{id:'cophp',name:'Heating COP',group:'ENERGY & MATH',icon:'heat',desc:'Find heating coefficient of performance from heating capacity and electrical input.',badge:'Heating COP',sources:[],fields:[
+,{id:'cophp',name:'Heating COP',group:'ENERGY & MATH',icon:'heat',desc:'Find heating coefficient of performance from heating capacity and electrical input.',badge:'Heating COP',sources:['ahri'],fields:[
 field('capacity','Heating capacity','BTU/h',36000,0,1e9,'any','Heating capacity delivered.'),
 field('watts','Electrical input power','W',3000,.001,1e9,'any','Electrical input in watts, including fans if the rating includes them.')
 ],calculate:v=>{
@@ -3501,7 +3501,7 @@ field('watts','Electrical input power','W',3000,.001,1e9,'any','Electrical input
   ],`COP = (Capacity / 3412.141633) / (Watts / 1000)`,
   'Heating COP at one operating condition. Not HSPF2. Enter capacity and power at the same outdoor/indoor condition.');
 }}
-,{id:'electricheat',name:'Electric heat kW',group:'HEATING & COOLING',icon:'bolt',desc:'Convert electric heating capacity between BTU/h and kilowatts.',badge:'Electric heat',sources:[],fields:[
+,{id:'electricheat',name:'Electric heat kW',group:'HEATING & COOLING',icon:'bolt',desc:'Convert electric heating capacity between BTU/h and kilowatts.',badge:'Electric heat',sources:['nist'],fields:[
 field('btuh','Heating capacity','BTU/h',34121,0,1e9,'any','Heating capacity to convert; 1 kW = 3,412 BTU/h.')
 ],calculate:v=>{
   const kw=v.btuh/3412.141633;
@@ -3512,7 +3512,7 @@ field('btuh','Heating capacity','BTU/h',34121,0,1e9,'any','Heating capacity to c
   ],`kW = BTU/h / 3412.141633 = ${fmt(v.btuh)} / 3412.141633`,
   'Resistance-heat conversion only (1 kW ≈ 3412 BTU/h). Does not size breakers, conductors, or disconnects.');
 }}
-,{id:'gasinput',name:'Gas input from output',group:'HEATING & COOLING',icon:'heat',desc:'Estimate required fuel input from heating output and steady-state efficiency.',badge:'Gas input',sources:[],fields:[
+,{id:'gasinput',name:'Gas input from output',group:'HEATING & COOLING',icon:'heat',desc:'Estimate required fuel input from heating output and steady-state efficiency.',badge:'Gas input',sources:['ahri'],fields:[
 field('output','Heating output','BTU/h',80000,0,1e9,'any','Heating output required from the appliance.'),
 field('eff','Steady-state efficiency','%',80,1,100,'any','Steady-state thermal efficiency from the nameplate or test data.')
 ],calculate:v=>{
@@ -3526,7 +3526,7 @@ field('eff','Steady-state efficiency','%',80,1,100,'any','Steady-state thermal e
   ],`Input = Output / (η/100) = ${fmt(v.output)} / (${fmt(v.eff)}/100)`,
   'Steady-state conversion only. Not AFUE. Use nameplate efficiency for the operating mode you intend to compare.');
 }}
-,{id:'npsha',name:'NPSH available',group:'HYDRONICS',icon:'water',desc:'Estimate net positive suction head available at a pump from absolute pressures and suction losses.',badge:'NPSHa',sources:[],fields:[
+,{id:'npsha',name:'NPSH available',group:'HYDRONICS',icon:'water',desc:'Estimate net positive suction head available at a pump from absolute pressures and suction losses.',badge:'NPSHa',sources:['hi'],fields:[
 field('patm','Absolute surface / tank pressure','ft head',34,0,100,'any','Absolute pressure on the liquid surface expressed as head; 34 ft for open water at sea level.'),
 field('static','Static suction head (positive) or lift (negative)','ft',5,-50,50,'any','Liquid level above the pump centerline (positive) or below it (negative).'),
 field('vp','Liquid vapor pressure head','ft head',0.8,0,50,'any','Vapor pressure of the liquid at pumping temperature, as head.'),
@@ -3542,7 +3542,7 @@ field('losses','Suction friction + fitting losses','ft',2,0,50,'any','Friction a
   ],`NPSHa = Patm + Hstatic − Hvp − Hlosses`,
   'Engineering estimate only. Convert absolute pressures to feet of the pumped fluid. Compare with manufacturer NPSHr and apply the project safety margin — this tool does not invent NPSHr.');
 }}
-,{id:'headtopsi',name:'Head to pressure',group:'HYDRONICS',icon:'water',desc:'Convert pump head in feet to differential pressure in psi for a given specific gravity.',badge:'Head → psi',sources:[],fields:[
+,{id:'headtopsi',name:'Head to pressure',group:'HYDRONICS',icon:'water',desc:'Convert pump head in feet to differential pressure in psi for a given specific gravity.',badge:'Head → psi',sources:['hi'],fields:[
 field('head','Head','ft',40,0,1e9,'any','Head to convert.'),
 field('sg','Specific gravity','—',1,.1,2,'any','Specific gravity of the fluid; water = 1.0.')
 ],calculate:v=>{
@@ -3555,7 +3555,7 @@ field('sg','Specific gravity','—',1,.1,2,'any','Specific gravity of the fluid;
   ],`psi = head × SG / 2.31 = ${fmt(v.head)} × ${fmt(v.sg)} / 2.31`,
   'Uses the common 2.31 ft-wc per psi water factor, scaled by SG. Inverse of the pump-head-from-ΔP tool.');
 }}
-,{id:'chwload',name:'Hydronic load from GPM',group:'HYDRONICS',icon:'water',desc:'Estimate water-side load from flow and temperature difference (500 × GPM × ΔT for water).',badge:'Load from GPM',sources:[],fields:[
+,{id:'chwload',name:'Hydronic load from GPM',group:'HYDRONICS',icon:'water',desc:'Estimate water-side load from flow and temperature difference (500 × GPM × ΔT for water).',badge:'Load from GPM',sources:['ashraeheq'],fields:[
 field('gpm','Volume flow','gpm',24,0,1e9,'any','Water flow through the coil or loop.'),
 field('dt','Temperature difference','°F',10,.001,80,'any','Measured or design water temperature difference.'),
 field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'any','500 for water; adjust for glycol density and specific heat.')
@@ -3571,7 +3571,7 @@ field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'
   ],`Q = factor × GPM × ΔT = ${fmt(v.factor)} × ${fmt(v.gpm)} × ${fmt(v.dt)}`,
   'Companion to chilled-water flow. Adjust factor for glycol. Does not size coils or pumps.');
 }}
-,{id:'towerload',name:'Tower heat rejection',group:'HYDRONICS',icon:'water',desc:'Estimate cooling-tower or condenser-water heat rejection from flow and range.',badge:'Tower rejection',sources:[],fields:[
+,{id:'towerload',name:'Tower heat rejection',group:'HYDRONICS',icon:'water',desc:'Estimate cooling-tower or condenser-water heat rejection from flow and range.',badge:'Tower rejection',sources:['cti'],fields:[
 field('gpm','Condenser / tower water flow','gpm',300,0,1e9,'any','Condenser-water flow through the tower.'),
 field('range','Range (EWT − LWT)','°F',10,.001,40,'any','Entering minus leaving water temperature.'),
 field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'any','500 for water; adjust for treated or glycol water.')
@@ -3587,7 +3587,7 @@ field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'
   ],`Q = factor × GPM × Range = ${fmt(v.factor)} × ${fmt(v.gpm)} × ${fmt(v.range)}`,
   'Water-side rejection only. Pair with tower approach/range tools. Does not select tower model or account for blowdown heat.');
 }}
-,{id:'ductarea',name:'Duct area from velocity',group:'AIR & DUCTS',icon:'duct',desc:'Find required free duct area from airflow and design velocity.',badge:'Duct area',sources:[],fields:[
+,{id:'ductarea',name:'Duct area from velocity',group:'AIR & DUCTS',icon:'duct',desc:'Find required free duct area from airflow and design velocity.',badge:'Duct area',sources:['manuald','smacna'],fields:[
 field('cfm','Airflow','cfm',1000,0,1e9,'any','Airflow the duct must carry.'),
 field('fpm','Design velocity','fpm',800,.001,1e9,'any','Design velocity; 600–900 fpm for residential trunks, higher for commercial mains.')
 ],calculate:v=>{
@@ -3602,7 +3602,7 @@ field('fpm','Design velocity','fpm',800,.001,1e9,'any','Design velocity; 600–9
   ],`A = CFM / V = ${fmt(v.cfm)} / ${fmt(v.fpm)}`,
   'Free internal area only. Still check friction rate, fittings, noise, and available static pressure.');
 }}
-,{id:'reheat',name:'Reheat load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate sensible reheat from airflow and temperature rise (1.08 × CFM × ΔT default).',badge:'Reheat',sources:[],fields:[
+,{id:'reheat',name:'Reheat load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate sensible reheat from airflow and temperature rise (1.08 × CFM × ΔT default).',badge:'Reheat',sources:['ashraefund'],fields:[
 field('cfm','Airflow','cfm',1000,0,1e9,'any','Airflow through the reheat coil.'),
 field('dt','Temperature rise','°F',15,.001,100,'any','Temperature rise the coil must add.'),
 field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.2,'any','1.08 at standard air; adjust for altitude.')
@@ -3617,7 +3617,7 @@ field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.2,'any','1.08 a
   ],`Q = factor × CFM × ΔT = ${fmt(v.factor)} × ${fmt(v.cfm)} × ${fmt(v.dt)}`,
   'Sensible reheat only at the stated airstream. Default 1.08 is for standard-density air. Does not size valves or coils.');
 }}
-,{id:'contactfac',name:'Coil contact factor',group:'HEATING & COOLING',icon:'snow',desc:'Find coil contact factor from bypass factor (CF = 1 − BF).',badge:'Contact factor',sources:[],fields:[
+,{id:'contactfac',name:'Coil contact factor',group:'HEATING & COOLING',icon:'snow',desc:'Find coil contact factor from bypass factor (CF = 1 − BF).',badge:'Contact factor',sources:['ashraefund'],fields:[
 field('bf','Bypass factor','—',0.2,0,1,'any','Coil bypass factor; contact factor = 1 − BF.')
 ],calculate:v=>{
   if(v.bf<0||v.bf>1)throw Error('Bypass factor must be between 0 and 1.');
@@ -3629,7 +3629,7 @@ field('bf','Bypass factor','—',0.2,0,1,'any','Coil bypass factor; contact fact
   ],`CF = 1 − BF = 1 − ${fmt(v.bf)}`,
   'Companion to the coil bypass-factor tool. Does not replace manufacturer coil selection data.');
 }}
-,{id:'flashsteam',name:'Flash steam fraction',group:'HYDRONICS',icon:'heat',desc:'Estimate flash-steam mass fraction from condensate enthalpy and flash-tank saturated liquid/vapor enthalpies.',badge:'Flash steam',sources:[],fields:[
+,{id:'flashsteam',name:'Flash steam fraction',group:'HYDRONICS',icon:'heat',desc:'Estimate flash-steam mass fraction from condensate enthalpy and flash-tank saturated liquid/vapor enthalpies.',badge:'Flash steam',sources:['nistwebbook'],fields:[
 field('h1','Condensate enthalpy before flash','BTU/lb',298,0,1200,'any','Enthalpy of the hot condensate before the pressure drop.'),
 field('hf','Saturated liquid enthalpy after flash','BTU/lb',180,0,1200,'any','Saturated-liquid enthalpy at the lower (receiver) pressure.'),
 field('hg','Saturated vapor enthalpy after flash','BTU/lb',1150,100,1500,'any','Saturated-vapor enthalpy at the lower pressure.')
@@ -3646,7 +3646,7 @@ field('hg','Saturated vapor enthalpy after flash','BTU/lb',1150,100,1500,'any','
   ],`x = (h1 − hf) / (hg − hf)`,
   'Enter steam-table enthalpies at the condensate and flash pressures. Does not size flash tanks. x outside 0–1 means check inputs.');
 }}
-,{id:'presscfm',name:'Pressurization airflow',group:'AIR & DUCTS',icon:'air',desc:'Find net pressurization airflow as supply minus return and exhaust.',badge:'Pressurization',sources:[],fields:[
+,{id:'presscfm',name:'Pressurization airflow',group:'AIR & DUCTS',icon:'air',desc:'Find net pressurization airflow as supply minus return and exhaust.',badge:'Pressurization',sources:['ashraefund'],fields:[
 field('supply','Supply airflow','cfm',2000,0,1e9,'any','Total supply airflow into the space.'),
 field('return','Return airflow','cfm',1800,0,1e9,'any','Return airflow drawn from the space.'),
 field('exhaust','Relief / exhaust airflow','cfm',0,0,1e9,'any','Relief or exhaust airflow leaving the space.')
@@ -3660,7 +3660,7 @@ field('exhaust','Relief / exhaust airflow','cfm',0,0,1e9,'any','Relief or exhaus
   ],`Qnet = Qsa − Qra − Qex = ${fmt(v.supply)} − ${fmt(v.return)} − ${fmt(v.exhaust)}`,
   'Volumetric balance only. Positive means net outward (typically positive pressure). Does not set a room pressure target or account for envelope leakage curves.');
 }}
-,{id:'sgflow',name:'SG-corrected flow',group:'HYDRONICS',icon:'water',desc:'Correct a water-calibrated flow reading for fluid specific gravity (volume flow unchanged; mass/pressure effects noted).',badge:'SG correction',sources:[],fields:[
+,{id:'sgflow',name:'SG-corrected flow',group:'HYDRONICS',icon:'water',desc:'Correct a water-calibrated flow reading for fluid specific gravity (volume flow unchanged; mass/pressure effects noted).',badge:'SG correction',sources:['hi'],fields:[
 field('gpm','Indicated volume flow','gpm',100,0,1e9,'any','Flow indicated by a meter calibrated for water.'),
 field('sg','Fluid specific gravity','—',1.05,.5,2,'any','Specific gravity of the actual fluid.')
 ],calculate:v=>{
@@ -3675,7 +3675,7 @@ field('sg','Fluid specific gravity','—',1.05,.5,2,'any','Specific gravity of t
   ],`Mass-flow index ≈ GPM × SG; volume flow remains ${fmt(v.gpm)} gpm`,
   'Volume flow (gpm) is independent of SG; mass flow and pump head scale with SG. For differential-pressure meters calibrated on water, follow the meter manufacturer’s SG correction — this tool does not invent meter equations.');
 }}
-,{id:'infilcfm',name:'Infiltration from ACH',group:'AIR & DUCTS',icon:'air',desc:'Convert infiltration or ventilation air changes per hour into airflow.',badge:'Infiltration CFM',sources:[],fields:[
+,{id:'infilcfm',name:'Infiltration from ACH',group:'AIR & DUCTS',icon:'air',desc:'Convert infiltration or ventilation air changes per hour into airflow.',badge:'Infiltration CFM',sources:['ashraefund','nistiaq'],fields:[
 field('ach','Air changes','ACH',0.35,0,60,'any','Air changes per hour from a blower-door test or an assumed infiltration rate.'),
 field('volume','Zone / building volume','ft³',12000,.001,1e9,'any','Conditioned volume of the zone or building.')
 ],calculate:v=>{
@@ -3687,7 +3687,7 @@ field('volume','Zone / building volume','ft³',12000,.001,1e9,'any','Conditioned
   ],`CFM = ACH × volume / 60 = ${fmt(v.ach)} × ${fmt(v.volume)} / 60`,
   'You supply the ACH. This does not select ASHRAE infiltration rates or IMC outdoor-air requirements by itself.');
 }}
-,{id:'manifoldkpa',name:'Manifold pressure convert',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert gas manifold / draft pressures among inches water column, psi, and pascals.',badge:'Pressure convert',sources:[],fields:[
+,{id:'manifoldkpa',name:'Manifold pressure convert',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert gas manifold / draft pressures among inches water column, psi, and pascals.',badge:'Pressure convert',sources:['nist'],fields:[
 field('inwc','Pressure','in. w.c.',3.5,-20,100,'any','Manifold or supply gas pressure in inches of water column.')
 ],calculate:v=>{
   const psi=v.inwc/27.707;
@@ -3701,7 +3701,7 @@ field('inwc','Pressure','in. w.c.',3.5,-20,100,'any','Manifold or supply gas pre
   ],`1 in. w.c. ≈ 249.089 Pa ≈ 1/27.707 psi`,
   'Unit conversion for manifold, draft, and differential pressures. Confirm instrument units before adjusting gas valves.');
 }}
-,{id:'cfmfromq',name:'CFM from sensible load',group:'HEATING & COOLING',icon:'air',desc:'Solve airflow from a sensible load using the public 1.08 × CFM × ΔT field formula.',badge:'Airflow solve',sources:[],fields:[
+,{id:'cfmfromq',name:'CFM from sensible load',group:'HEATING & COOLING',icon:'air',desc:'Solve airflow from a sensible load using the public 1.08 × CFM × ΔT field formula.',badge:'Airflow solve',sources:['ashraefund'],fields:[
 field('load','Sensible load','BTU/h',25920,0,1e9,'any','Sensible heating or cooling load to be carried by the air.'),
 field('dt','Air temperature difference','°F',20,.001,100,'any','Supply-to-room (or entering-to-leaving) dry-bulb difference.'),
 field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.5,'any','1.08 at standard air; adjust for altitude or temperature.')
@@ -3717,7 +3717,7 @@ field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.5,'any','1.08 a
   ],`CFM = Q ÷ (factor × ΔT) = ${fmt(v.load)} ÷ (${fmt(v.factor)} × ${fmt(v.dt)})`,
   'Public field rearrange of Q ≈ 1.08 × CFM × ΔT (standard-density air). Adjust the factor for altitude or nonstandard density. Sensible heat only.');
 }}
-,{id:'dtairfromq',name:'Air ΔT from load',group:'HEATING & COOLING',icon:'heat',desc:'Solve air temperature change from sensible load and airflow using the 1.08 field constant.',badge:'ΔT solve',sources:[],fields:[
+,{id:'dtairfromq',name:'Air ΔT from load',group:'HEATING & COOLING',icon:'heat',desc:'Solve air temperature change from sensible load and airflow using the 1.08 field constant.',badge:'ΔT solve',sources:['ashraefund'],fields:[
 field('load','Sensible load','BTU/h',25920,0,1e9,'any','Sensible load carried by the airstream.'),
 field('cfm','Airflow','cfm',1200,0,1e9,'any','Airflow carrying that load.'),
 field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.5,'any','1.08 at standard air; adjust for altitude or temperature.')
@@ -3733,7 +3733,7 @@ field('factor','Air sensible factor','BTU/h·cfm·°F',1.08,.5,1.5,'any','1.08 a
   ],`ΔT = Q ÷ (factor × CFM) = ${fmt(v.load)} ÷ (${fmt(v.factor)} × ${fmt(v.cfm)})`,
   'Public field rearrange of Q ≈ 1.08 × CFM × ΔT. Compare furnace rise with the nameplate range. Latent heat is excluded.');
 }}
-,{id:'latent069',name:'Latent from grains',group:'HEATING & COOLING',icon:'water',desc:'Estimate latent coil capacity from airflow and humidity-ratio change in grains (0.69 × CFM × ΔW).',badge:'Latent field',sources:[],fields:[
+,{id:'latent069',name:'Latent from grains',group:'HEATING & COOLING',icon:'water',desc:'Estimate latent coil capacity from airflow and humidity-ratio change in grains (0.69 × CFM × ΔW).',badge:'Latent field',sources:['ashrae'],fields:[
 field('cfm','Airflow','cfm',1200,0,1e9,'any','Airflow across the coil.'),
 field('dgrains','Moisture change','grains/lb',20,0,200,'any','Humidity-ratio change across the coil in grains per pound of dry air.'),
 field('factor','Latent factor','BTU/h·cfm·grain',0.69,.4,1,'any','0.69 at standard air (4.5 lb/h per cfm × 1,076 BTU/lb ÷ 7,000 grains).')
@@ -3749,7 +3749,7 @@ field('factor','Latent factor','BTU/h·cfm·grain',0.69,.4,1,'any','0.69 at stan
   ],`Q ≈ factor × CFM × Δgrains = ${fmt(v.factor)} × ${fmt(v.cfm)} × ${fmt(v.dgrains)}`,
   'Published technician field formula (often 0.69 at standard density). Uses grains of moisture per pound of dry air. Not a substitute for a psychrometric chart with measured specific volume.');
 }}
-,{id:'total45',name:'Total from enthalpy',group:'HEATING & COOLING',icon:'snow',desc:'Estimate total air-side capacity from airflow and enthalpy change using the 4.5 × CFM × Δh field formula.',badge:'Total field',sources:[],fields:[
+,{id:'total45',name:'Total from enthalpy',group:'HEATING & COOLING',icon:'snow',desc:'Estimate total air-side capacity from airflow and enthalpy change using the 4.5 × CFM × Δh field formula.',badge:'Total field',sources:['ashrae'],fields:[
 field('cfm','Airflow','cfm',1400,0,1e9,'any','Airflow across the coil.'),
 field('dh','Enthalpy change','BTU/lb',8,.001,50,'any','Enthalpy change of the air across the coil.'),
 field('factor','Total-heat factor','BTU/h·cfm·(BTU/lb)',4.5,2,6,'any','4.5 lb/h of air per cfm at standard density.')
@@ -3765,7 +3765,7 @@ field('factor','Total-heat factor','BTU/h·cfm·(BTU/lb)',4.5,2,6,'any','4.5 lb/
   ],`Q ≈ factor × CFM × Δh = ${fmt(v.factor)} × ${fmt(v.cfm)} × ${fmt(v.dh)}`,
   'Public field formula combining sensible and latent capacity. Enter enthalpies on the same psychrometric datum. Adjust the factor for altitude/density.');
 }}
-,{id:'gpmfromq',name:'GPM from load',group:'HYDRONICS',icon:'water',desc:'Solve water flow from load and ΔT using the public 500 × GPM × ΔT hydronic formula.',badge:'Flow solve',sources:[],fields:[
+,{id:'gpmfromq',name:'GPM from load',group:'HYDRONICS',icon:'water',desc:'Solve water flow from load and ΔT using the public 500 × GPM × ΔT hydronic formula.',badge:'Flow solve',sources:['ashraeheq'],fields:[
 field('load','Heat-transfer rate','BTU/h',80000,0,1e9,'any','Heat to be carried by the water.'),
 field('dt','Water temperature difference','°F',20,.001,80,'any','Design supply-to-return water temperature difference.'),
 field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'any','500 for water; adjust for glycol.')
@@ -3781,7 +3781,7 @@ field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'
   ],`GPM = Q ÷ (factor × ΔT) = ${fmt(v.load)} ÷ (${fmt(v.factor)} × ${fmt(v.dt)})`,
   'Public rearrange of Q ≈ 500 × GPM × ΔT for liquid water. Lower the factor for glycol mixtures. Pump head is not included.');
 }}
-,{id:'airfromvp',name:'Velocity from VP',group:'AIR & DUCTS',icon:'air',desc:'Convert pitot velocity pressure to air speed with the public V = 4005 √VP relationship.',badge:'Pitot velocity',sources:[],fields:[
+,{id:'airfromvp',name:'Velocity from VP',group:'AIR & DUCTS',icon:'air',desc:'Convert pitot velocity pressure to air speed with the public V = 4005 √VP relationship.',badge:'Pitot velocity',sources:['ashraefund','amca'],fields:[
 field('vp','Velocity pressure','in. w.c.',0.2,0,10,'any','Velocity pressure from a pitot traverse.')
 ],calculate:v=>{
   if(v.vp<0)throw Error('Velocity pressure cannot be negative.');
@@ -3792,7 +3792,7 @@ field('vp','Velocity pressure','in. w.c.',0.2,0,10,'any','Velocity pressure from
   ],`V ≈ 4005 × √VP = 4005 × √${fmt(v.vp)}`,
   'Standard-density I-P pitot formula used widely in TAB field guides. Average several traverse points. Pair with duct area to get CFM.');
 }}
-,{id:'ductcfmva',name:'CFM from area × velocity',group:'AIR & DUCTS',icon:'duct',desc:'Compute airflow from free area and measured or design velocity (CFM = A × V).',badge:'Continuity',sources:[],fields:[
+,{id:'ductcfmva',name:'CFM from area × velocity',group:'AIR & DUCTS',icon:'duct',desc:'Compute airflow from free area and measured or design velocity (CFM = A × V).',badge:'Continuity',sources:['ashraefund'],fields:[
 field('area','Free area','ft²',1.5,.0001,1e9,'any','Free (net) area the air passes through.'),
 field('velocity','Air velocity','fpm',800,0,1e9,'any','Average velocity across that area.')
 ],calculate:v=>{
@@ -3806,7 +3806,7 @@ field('velocity','Air velocity','fpm',800,0,1e9,'any','Average velocity across t
   ],`CFM = area × velocity = ${fmt(v.area)} × ${fmt(v.velocity)}`,
   'Public continuity relationship from TAB / duct math references. Use clear free area, not nominal OD. Not a complete duct design.');
 }}
-,{id:'gascfh',name:'Gas CFH from input',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert appliance gas input to cubic feet per hour using heating value.',badge:'Gas volume',sources:[],fields:[
+,{id:'gascfh',name:'Gas CFH from input',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert appliance gas input to cubic feet per hour using heating value.',badge:'Gas volume',sources:['eia','ifgc'],fields:[
 field('input','Gas input','BTU/h',100000,0,1e9,'any','Appliance or system gas input.'),
 field('hv','Gas heating value','BTU/ft³',1000,100,2000,'any','Heating value of the gas; natural gas ≈ 1,000 BTU/ft³, propane ≈ 2,500.')
 ],calculate:v=>{
@@ -3819,7 +3819,7 @@ field('hv','Gas heating value','BTU/ft³',1000,100,2000,'any','Heating value of 
   ],`CFH = input ÷ heating value = ${fmt(v.input)} ÷ ${fmt(v.hv)}`,
   'Public unit relationship used before IFGC pipe tables. Enter the utility heating value for the site. This does not select pipe diameter.');
 }}
-,{id:'therms',name:'BTU ↔ therms',group:'ENERGY & MATH',icon:'cost',desc:'Convert between BTU and therms (1 therm = 100,000 BTU).',badge:'Fuel units',sources:[],fields:[
+,{id:'therms',name:'BTU ↔ therms',group:'ENERGY & MATH',icon:'cost',desc:'Convert between BTU and therms (1 therm = 100,000 BTU).',badge:'Fuel units',sources:['eia'],fields:[
 field('btu','Energy','BTU',100000,0,1e9,'any','Energy to convert; 1 therm = 100,000 BTU.')
 ],calculate:v=>{
   const therms=v.btu/100000;
@@ -3831,7 +3831,7 @@ field('btu','Energy','BTU',100000,0,1e9,'any','Energy to convert; 1 therm = 100,
   ],`therms = BTU ÷ 100,000 = ${fmt(v.btu)} ÷ 100,000`,
   'Definitional US utility conversion. Natural-gas bills often use therms or CCF with a billed heat factor.');
 }}
-,{id:'chillgpm24',name:'Chiller GPM from tons',group:'HYDRONICS',icon:'water',desc:'Estimate chilled-water flow from tons and range using the public tons × 24 / ΔT rule.',badge:'CHW flow',sources:[],fields:[
+,{id:'chillgpm24',name:'Chiller GPM from tons',group:'HYDRONICS',icon:'water',desc:'Estimate chilled-water flow from tons and range using the public tons × 24 / ΔT rule.',badge:'CHW flow',sources:['ashraeheq'],fields:[
 field('tons','Cooling load','tons',100,0,1e9,'any','Cooling load in tons.'),
 field('dt','Water range','°F',10,.001,40,'any','Chilled-water temperature range; 24 ÷ ΔT gives gpm per ton.')
 ],calculate:v=>{
@@ -3846,7 +3846,7 @@ field('dt','Water range','°F',10,.001,40,'any','Chilled-water temperature range
   ],`GPM ≈ tons × 24 / ΔT = ${fmt(v.tons)} × 24 / ${fmt(v.dt)}`,
   'Public rule of thumb from Q = 500 × GPM × ΔT with 12,000 BTU/h per ton (24 = 12000/500). Confirm fluid factor for glycol.');
 }}
-,{id:'tonfrom400',name:'Tons from 400 CFM/ton',group:'AIR & DUCTS',icon:'snow',desc:'Back-calculate cooling tons from supply airflow using the common 400 CFM/ton rule of thumb.',badge:'Rule of thumb',sources:[],fields:[
+,{id:'tonfrom400',name:'Tons from 400 CFM/ton',group:'AIR & DUCTS',icon:'snow',desc:'Back-calculate cooling tons from supply airflow using the common 400 CFM/ton rule of thumb.',badge:'Rule of thumb',sources:['manual'],fields:[
 field('cfm','Supply airflow','cfm',1600,0,1e9,'any','Total supply airflow.'),
 field('ratio','Airflow per ton','cfm/ton',400,200,600,'any','Rule-of-thumb airflow per ton; 350–450 cfm/ton depending on climate and latent load.')
 ],calculate:v=>{
@@ -3860,7 +3860,7 @@ field('ratio','Airflow per ton','cfm/ton',400,200,600,'any','Rule-of-thumb airfl
   ],`tons ≈ CFM ÷ (CFM/ton) = ${fmt(v.cfm)} ÷ ${fmt(v.ratio)}`,
   'Common field rule of thumb only. High-latent or high-altitude systems often use other ratios. Not a Manual J/S selection.');
 }}
-,{id:'moistlbhr',name:'Moisture removal rate',group:'HEATING & COOLING',icon:'water',desc:'Convert airflow and grains difference into pounds of water removed (or added) per hour.',badge:'lb/h moisture',sources:[],fields:[
+,{id:'moistlbhr',name:'Moisture removal rate',group:'HEATING & COOLING',icon:'water',desc:'Convert airflow and grains difference into pounds of water removed (or added) per hour.',badge:'lb/h moisture',sources:['ashrae'],fields:[
 field('cfm','Airflow','cfm',1200,0,1e9,'any','Airflow across the coil or through the space.'),
 field('dgrains','Moisture change','grains/lb',20,-200,200,'any','Humidity-ratio change; negative means moisture added.')
 ],calculate:v=>{
@@ -3874,7 +3874,7 @@ field('dgrains','Moisture change','grains/lb',20,-200,200,'any','Humidity-ratio 
   ],`lb/h = CFM × Δgrains × 60 / 7000 = ${fmt(v.cfm)} × ${fmt(v.dgrains)} × 60 / 7000`,
   'Public mass-balance from 7000 grains per pound. Positive means moisture removed from the air stream. Assumes standard dry-air mass from CFM without specific-volume correction.');
 }}
-,{id:'eir',name:'EIR from COP',group:'ENERGY & MATH',icon:'bolt',desc:'Convert coefficient of performance into energy input ratio (EIR = 1 / COP).',badge:'Efficiency',sources:[],fields:[
+,{id:'eir',name:'EIR from COP',group:'ENERGY & MATH',icon:'bolt',desc:'Convert coefficient of performance into energy input ratio (EIR = 1 / COP).',badge:'Efficiency',sources:['ahri'],fields:[
 field('cop','Coefficient of performance','COP',3.5,.001,20,'any','Coefficient of performance; EIR = 1 ÷ COP.')
 ],calculate:v=>{
   if(v.cop<=0)throw Error('COP must be greater than zero.');
@@ -3887,7 +3887,7 @@ field('cop','Coefficient of performance','COP',3.5,.001,20,'any','Coefficient of
   ],`EIR = 1 / COP = 1 / ${fmt(v.cop)}`,
   'Definitional reciprocal used in many public energy models. Same operating condition as the COP. Not SEER2 or HSPF2.');
 }}
-,{id:'grillecfm',name:'Grille CFM from free area',group:'AIR & DUCTS',icon:'air',desc:'Estimate grille or register airflow from net free area and face velocity.',badge:'Grille flow',sources:[],fields:[
+,{id:'grillecfm',name:'Grille CFM from free area',group:'AIR & DUCTS',icon:'air',desc:'Estimate grille or register airflow from net free area and face velocity.',badge:'Grille flow',sources:['manuald'],fields:[
 field('nfa','Net free area','in²',48,.001,1e9,'any','Net free area of the grille from the manufacturer.'),
 field('velocity','Face velocity','fpm',500,0,1e9,'any','Face velocity through the free area.')
 ],calculate:v=>{
@@ -3901,7 +3901,7 @@ field('velocity','Face velocity','fpm',500,0,1e9,'any','Face velocity through th
   ],`CFM = (NFA ÷ 144) × V = (${fmt(v.nfa)} ÷ 144) × ${fmt(v.velocity)}`,
   'Public continuity check for grilles/registers. Use manufacturer net free area, not duct collar size. Throw and noise limits are separate.');
 }}
-,{id:'altfactor',name:'Altitude density factor',group:'AIR & DUCTS',icon:'air',desc:'Estimate the standard-atmosphere density ratio and scaled 1.08 / 4.5 / 0.69 air factors for elevation.',badge:'Altitude factor',sources:[],fields:[
+,{id:'altfactor',name:'Altitude density factor',group:'AIR & DUCTS',icon:'air',desc:'Estimate the standard-atmosphere density ratio and scaled 1.08 / 4.5 / 0.69 air factors for elevation.',badge:'Altitude factor',sources:['ashraefund'],fields:[
 field('elev','Elevation','ft',5000,0,15000,'any','Site elevation above sea level.')
 ],calculate:v=>{
   const pr=Math.pow(1-6.87535e-6*v.elev,5.2559);
@@ -3914,7 +3914,7 @@ field('elev','Elevation','ft',5000,0,15000,'any','Site elevation above sea level
   ],`DF ≈ (1 − 6.87535×10⁻⁶ × z)⁵·²⁵⁵⁹`,
   'US standard-atmosphere pressure ratio used as a public density correction for sea-level air constants. Local temperature and humidity still matter. Not a weather file.');
 }}
-,{id:'oilgph',name:'Oil GPH from load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate fuel-oil gallons per hour from heating load, heating value, and efficiency.',badge:'Oil firing',sources:[],fields:[
+,{id:'oilgph',name:'Oil GPH from load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate fuel-oil gallons per hour from heating load, heating value, and efficiency.',badge:'Oil firing',sources:['eia'],fields:[
 field('load','Heat output','BTU/h',140000,0,1e9,'any','Heat output required from the oil burner.'),
 field('hv','Oil heating value','BTU/gal',140000,50000,200000,'any','No. 2 fuel oil is about 138,000–140,000 BTU/gal.'),
 field('eff','Efficiency','%',80,1,100,'any','Steady-state combustion efficiency.')
@@ -3931,7 +3931,7 @@ field('eff','Efficiency','%',80,1,100,'any','Steady-state combustion efficiency.
   ],`GPH = (output ÷ η) ÷ (BTU/gal)`,
   'Public fuel arithmetic for nozzle/firing checks. Enter the oil heating value and steady-state efficiency from the appliance data. Not a combustion-analysis certificate.');
 }}
-,{id:'motorfla',name:'Motor FLA estimate',group:'ENERGY & MATH',icon:'bolt',desc:'Estimate full-load amps from horsepower, voltage, efficiency, and power factor.',badge:'Motor amps',sources:[],fields:[
+,{id:'motorfla',name:'Motor FLA estimate',group:'ENERGY & MATH',icon:'bolt',desc:'Estimate full-load amps from horsepower, voltage, efficiency, and power factor.',badge:'Motor amps',sources:['nec'],fields:[
 choice('phase','Power system',[['single','Single-phase'],['three','Three-phase']],'three','Single-phase or three-phase supply; three-phase applies the √3 factor.'),
 field('hp','Shaft power','hp',5,.001,1e9,'any','Motor shaft output horsepower.'),
 field('volts','Line voltage','V',460,1,1e9,'any','Line voltage at the motor.'),
@@ -3953,7 +3953,7 @@ field('pf','Power factor','—',.86,.1,1,'any','Motor power factor at the load p
   ],`I ≈ (HP × 746) ÷ (V × η × PF${v.phase==='three'?' × √3':''})`,
   'Public electrical estimate for planning. Use the motor nameplate FLA for conductors, overloads, and disconnects.');
 }}
-,{id:'mixgrains',name:'Mixed-air grains',group:'AIR & DUCTS',icon:'water',desc:'Mix two airstream moisture contents by mass share (outdoor fraction × grains).',badge:'Humidity mix',sources:[],fields:[
+,{id:'mixgrains',name:'Mixed-air grains',group:'AIR & DUCTS',icon:'water',desc:'Mix two airstream moisture contents by mass share (outdoor fraction × grains).',badge:'Humidity mix',sources:['ashrae'],fields:[
 field('oa','Outdoor moisture','grains/lb',90,0,300,'any','Outdoor-air humidity ratio in grains per pound.'),
 field('ra','Return moisture','grains/lb',65,0,300,'any','Return-air humidity ratio in grains per pound.'),
 field('fraction','Outdoor air mass share','%',25,0,100,'any','Outdoor-air share of the mixed airflow (mass basis ≈ volume basis for small ΔT).')
@@ -3968,7 +3968,7 @@ field('fraction','Outdoor air mass share','%',25,0,100,'any','Outdoor-air share 
   ],`Wmix ≈ f × Woa + (1 − f) × Wra`,
   'Public linear mixing of humidity ratio. Assumes complete mixing and equal dry-air specific heats. Condensation in the mix chamber is not modeled.');
 }}
-,{id:'staticregain',name:'Static regain',group:'AIR & DUCTS',icon:'duct',desc:'Estimate available static-pressure regain from a duct velocity reduction (ΔVP).',badge:'Regain',sources:[],fields:[
+,{id:'staticregain',name:'Static regain',group:'AIR & DUCTS',icon:'duct',desc:'Estimate available static-pressure regain from a duct velocity reduction (ΔVP).',badge:'Regain',sources:['ashraefund','smacna'],fields:[
 field('v1','Upstream velocity','fpm',1500,0,1e9,'any','Velocity in the upstream (larger-velocity) duct section.'),
 field('v2','Downstream velocity','fpm',900,0,1e9,'any','Velocity in the downstream section after the transition.'),
 field('eff','Regain effectiveness','%',75,1,100,'any','Fraction of velocity-pressure reduction recovered as static; 50–90 % depending on fitting.')
@@ -3986,7 +3986,7 @@ field('eff','Regain effectiveness','%',75,1,100,'any','Fraction of velocity-pres
   ],`ΔPs ≈ η × (VP₁ − VP₂) with VP = (V/4005)²`,
   'Public static-regain concept used in duct design texts. Effectiveness depends on fitting geometry. This is not a full duct-pressure simulation.');
 }}
-,{id:'fluidq',name:'Fluid heat from SG·cp',group:'HYDRONICS',icon:'water',desc:'Estimate hydronic heat transfer from GPM, ΔT, specific gravity, and specific heat (public 8.33×60×SG×cp form).',badge:'Fluid Q',sources:[],fields:[
+,{id:'fluidq',name:'Fluid heat from SG·cp',group:'HYDRONICS',icon:'water',desc:'Estimate hydronic heat transfer from GPM, ΔT, specific gravity, and specific heat (public 8.33×60×SG×cp form).',badge:'Fluid Q',sources:['ashraefund'],fields:[
 field('gpm','Volume flow','gpm',40,0,1e9,'any','Fluid volume flow.'),
 field('dt','Temperature difference','°F',12,.001,80,'any','Temperature difference across the load or exchanger.'),
 field('sg','Specific gravity','—',1,.5,2,'any','Fluid specific gravity; water = 1.0.'),
@@ -4003,7 +4003,7 @@ field('cp','Specific heat','BTU/(lb·°F)',1,.2,1.5,'any','Fluid specific heat; 
   ],`Q = 8.33 × 60 × SG × cp × GPM × ΔT`,
   'Public hydronic form. Water at ~60 °F is about SG 1 and cp 1 → factor ≈ 500. Enter glycol properties from the fluid data sheet; do not invent mixture tables here.');
 }}
-,{id:'waterdt',name:'Water ΔT from load',group:'HYDRONICS',icon:'water',desc:'Solve water temperature difference from load and flow using the public Q = factor × GPM × ΔT relationship.',badge:'Water ΔT',sources:[],fields:[
+,{id:'waterdt',name:'Water ΔT from load',group:'HYDRONICS',icon:'water',desc:'Solve water temperature difference from load and flow using the public Q = factor × GPM × ΔT relationship.',badge:'Water ΔT',sources:['ashraeheq'],fields:[
 field('load','Heat-transfer rate','BTU/h',120000,0,1e9,'any','Heat carried by the water.'),
 field('gpm','Volume flow','gpm',24,0,1e9,'any','Water flow.'),
 field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'any','500 for water; adjust for glycol.')
@@ -4019,7 +4019,7 @@ field('factor','Fluid factor (≈500 for water)','BTU/h·gpm·°F',500,100,800,'
   ],`ΔT = Q ÷ (factor × GPM)`,
   'Public rearrange of the hydronic load equation. Companion to GPM-from-load and load-from-GPM tools.');
 }}
-,{id:'leaveair',name:'Leaving-air temperature',group:'HEATING & COOLING',icon:'snow',desc:'Estimate coil leaving dry-bulb from entering temperature, sensible capacity, and airflow (1.08 field factor).',badge:'Leaving DB',sources:[],fields:[
+,{id:'leaveair',name:'Leaving-air temperature',group:'HEATING & COOLING',icon:'snow',desc:'Estimate coil leaving dry-bulb from entering temperature, sensible capacity, and airflow (1.08 field factor).',badge:'Leaving DB',sources:['ashraefund'],fields:[
 field('eat','Entering air temperature','°F',75,-40,140,'any','Air temperature entering the coil.'),
 field('load','Sensible capacity','BTU/h',36000,0,1e9,'any','Sensible capacity of the coil (positive number).'),
 field('cfm','Airflow','cfm',1200,0,1e9,'any','Airflow across the coil.'),
@@ -4037,7 +4037,7 @@ choice('mode','Coil mode',[['cool','Cooling (temperature drop)'],['heat','Heatin
   ],`LAT = EAT ${v.mode==='cool'?'−':'+'} Q/(factor×CFM)`,
   'Public field rearrange of Q ≈ 1.08 × CFM × ΔT. Latent effects are excluded. Adjust the factor for altitude/density.');
 }}
-,{id:'scfmacfm',name:'SCFM ↔ ACFM',group:'AIR & DUCTS',icon:'air',desc:'Convert standard CFM to actual CFM using a density ratio (or the reverse).',badge:'Density flow',sources:[],fields:[
+,{id:'scfmacfm',name:'SCFM ↔ ACFM',group:'AIR & DUCTS',icon:'air',desc:'Convert standard CFM to actual CFM using a density ratio (or the reverse).',badge:'Density flow',sources:['ashraefund'],fields:[
 choice('dir','Conversion',[['s2a','SCFM → ACFM'],['a2s','ACFM → SCFM']],'s2a','Standard-to-actual divides by the density ratio; actual-to-standard multiplies.'),
 field('flow','Known airflow','cfm',2000,0,1e9,'any','Airflow you already know, in the direction chosen below.'),
 field('ratio','Density ÷ standard density','—',0.85,.2,1.5,'any','Actual air density divided by standard 0.075 lb/ft³; about 0.83 at 5,000 ft.')
@@ -4051,7 +4051,7 @@ field('ratio','Density ÷ standard density','—',0.85,.2,1.5,'any','Actual air 
   ],v.dir==='s2a'?`ACFM = SCFM ÷ (ρ/ρstd)`:`SCFM = ACFM × (ρ/ρstd)`,
   'Public continuity conversion between standard and actual volumetric flow. Obtain the density ratio from altitude/temperature tools or site measurement.');
 }}
-,{id:'pumpbhp',name:'Pump brake horsepower',group:'HYDRONICS',icon:'water',desc:'Estimate pump shaft power from flow, head, specific gravity, and efficiency.',badge:'Pump BHP',sources:[],fields:[
+,{id:'pumpbhp',name:'Pump brake horsepower',group:'HYDRONICS',icon:'water',desc:'Estimate pump shaft power from flow, head, specific gravity, and efficiency.',badge:'Pump BHP',sources:['hi'],fields:[
 field('gpm','Flow','gpm',120,0,1e9,'any','Pump flow.'),
 field('head','Head','ft',60,0,1e9,'any','Pump total head.'),
 field('sg','Specific gravity','—',1,.5,2,'any','Fluid specific gravity; water = 1.0.'),
@@ -4070,7 +4070,7 @@ field('eff','Pump efficiency','%',70,1,100,'any','Pump efficiency at the duty po
   ],`BHP = GPM × head × SG / (3960 × η)`,
   'Public pump hydraulic power identity. Motor input is higher after motor efficiency and drive losses. Confirm against the pump curve.');
 }}
-,{id:'bhptokw',name:'Horsepower ↔ kW',group:'ENERGY & MATH',icon:'bolt',desc:'Convert mechanical horsepower to kilowatts (and show the reverse equivalent).',badge:'Power convert',sources:[],fields:[
+,{id:'bhptokw',name:'Horsepower ↔ kW',group:'ENERGY & MATH',icon:'bolt',desc:'Convert mechanical horsepower to kilowatts (and show the reverse equivalent).',badge:'Power convert',sources:['nist'],fields:[
 field('hp','Horsepower','hp',5,0,1e9,'any','Horsepower to convert; 1 hp = 0.7457 kW.')
 ],calculate:v=>{
   const kw=v.hp*0.745699872;
@@ -4080,7 +4080,7 @@ field('hp','Horsepower','hp',5,0,1e9,'any','Horsepower to convert; 1 hp = 0.7457
   ],`kW = hp × 0.745699872`,
   'Definitional mechanical-horsepower conversion (exact 746 W definition rounded). Not electrical input unless motor efficiency is 100%.');
 }}
-,{id:'tonhours',name:'Ton-hours',group:'ENERGY & MATH',icon:'snow',desc:'Accumulate cooling energy as ton-hours from average tons and operating hours.',badge:'Cooling energy',sources:[],fields:[
+,{id:'tonhours',name:'Ton-hours',group:'ENERGY & MATH',icon:'snow',desc:'Accumulate cooling energy as ton-hours from average tons and operating hours.',badge:'Cooling energy',sources:['nist'],fields:[
 field('tons','Average cooling rate','tons',20,0,1e9,'any','Average cooling rate over the period.'),
 field('hours','Operating hours','h',8,0,1e9,'any','Hours the load was present.')
 ],calculate:v=>{
@@ -4094,7 +4094,7 @@ field('hours','Operating hours','h',8,0,1e9,'any','Hours the load was present.')
   ],`ton·h = tons × hours`,
   'Definitional energy accumulation. Use average delivered tons over the period, not nameplate alone.');
 }}
-,{id:'mcfgas',name:'Gas MCF from CFH',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert gas volume flow and run hours into MCF (thousand cubic feet).',badge:'Gas volume',sources:[],fields:[
+,{id:'mcfgas',name:'Gas MCF from CFH',group:'CODE & FUEL GAS',icon:'heat',desc:'Convert gas volume flow and run hours into MCF (thousand cubic feet).',badge:'Gas volume',sources:['eia'],fields:[
 field('cfh','Gas flow','cfh',100,0,1e9,'any','Gas flow in cubic feet per hour.'),
 field('hours','Operating hours','h',24,0,1e9,'any','Hours of flow at that rate.')
 ],calculate:v=>{
@@ -4108,7 +4108,7 @@ field('hours','Operating hours','h',24,0,1e9,'any','Hours of flow at that rate.'
   ],`MCF = CFH × hours / 1000`,
   'Public unit relationship used on many utility bills. Multiply by billed heat content if therms are required.');
 }}
-,{id:'propanegal',name:'Propane gallons from load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate propane gallons from heat output, tank heating value, and efficiency.',badge:'Propane fuel',sources:[],fields:[
+,{id:'propanegal',name:'Propane gallons from load',group:'HEATING & COOLING',icon:'heat',desc:'Estimate propane gallons from heat output, tank heating value, and efficiency.',badge:'Propane fuel',sources:['eia'],fields:[
 field('load','Heat output','BTU/h',80000,0,1e9,'any','Heat output required from the appliance.'),
 field('hv','Propane heating value','BTU/gal',91500,50000,120000,'any','Propane is about 91,500 BTU/gal.'),
 field('eff','Efficiency','%',80,1,100,'any','Steady-state combustion efficiency.'),
@@ -4126,7 +4126,7 @@ field('hours','Run hours','h',1,0,1e9,'any','Run hours for the gallons estimate.
   ],`gal = (output/η) / (BTU/gal) × hours`,
   'Public fuel arithmetic. Enter the propane heating value used by the site/supplier. Not a combustion-analysis certificate.');
 }}
-,{id:'towerevap',name:'Tower evaporation estimate',group:'HYDRONICS',icon:'water',desc:'Estimate cooling-tower evaporation with the common public rule E ≈ GPM × range × 0.001.',badge:'Tower evaporation',sources:[],fields:[
+,{id:'towerevap',name:'Tower evaporation estimate',group:'HYDRONICS',icon:'water',desc:'Estimate cooling-tower evaporation with the common public rule E ≈ GPM × range × 0.001.',badge:'Tower evaporation',sources:['cti'],fields:[
 field('gpm','Circulating water','gpm',1000,0,1e9,'any','Circulating condenser-water flow.'),
 field('range','Tower range','°F',10,.001,40,'any','Entering minus leaving water temperature.'),
 field('factor','Evaporation factor','gal/h per gpm·°F',0.001,0.0005,0.002,'any','Rule of thumb: about 0.1 % of flow evaporates per 1 °F of range (0.001 gal/h per gpm·°F).')
@@ -4140,7 +4140,7 @@ field('factor','Evaporation factor','gal/h per gpm·°F',0.001,0.0005,0.002,'any
   ],`E ≈ GPM × range × factor (default 0.001)`,
   'Widely published cooling-tower rule of thumb (~1% of circulating flow per 10 °F range). Drift and blowdown are separate. Prefer manufacturer thermal data for design.');
 }}
-,{id:'blowdown',name:'Blowdown from cycles',group:'HYDRONICS',icon:'water',desc:'Estimate required blowdown from evaporation and cycles of concentration (BD = E / (COC − 1)).',badge:'Blowdown',sources:[],fields:[
+,{id:'blowdown',name:'Blowdown from cycles',group:'HYDRONICS',icon:'water',desc:'Estimate required blowdown from evaporation and cycles of concentration (BD = E / (COC − 1)).',badge:'Blowdown',sources:['cti'],fields:[
 field('evap','Evaporation rate','gpm',10,0,1e9,'any','Evaporation rate from the tower.'),
 field('coc','Cycles of concentration','—',4,1.1,20,'any','Cycles of concentration set by the water-treatment program (makeup ÷ blowdown conductivity).')
 ],calculate:v=>{
@@ -4155,7 +4155,7 @@ field('coc','Cycles of concentration','—',4,1.1,20,'any','Cycles of concentrat
   ],`BD = E / (COC − 1); makeup ≈ E + BD`,
   'Public water-balance identity for recirculating towers (drift neglected). Chemistry limits set the allowable COC.');
 }}
-,{id:'chillerlift',name:'Chiller lift',group:'REFRIGERATION',icon:'snow',desc:'Compute refrigeration lift as condenser leaving temperature minus evaporator leaving temperature.',badge:'Lift',sources:[],fields:[
+,{id:'chillerlift',name:'Chiller lift',group:'REFRIGERATION',icon:'snow',desc:'Compute refrigeration lift as condenser leaving temperature minus evaporator leaving temperature.',badge:'Lift',sources:['ahri'],fields:[
 field('te','Evaporator leaving','°F',44,-50,80,'any','Leaving chilled-water or evaporating temperature.'),
 field('tc','Condenser leaving','°F',95,40,150,'any','Leaving condenser-water or condensing temperature.')
 ],calculate:v=>{
@@ -4167,7 +4167,7 @@ field('tc','Condenser leaving','°F',95,40,150,'any','Leaving condenser-water or
   ],`Lift = Tcond,leave − Tevap,leave`,
   'Definitional lift screen using leaving fluid temperatures. Saturated refrigerant lift needs PT data for the refrigerant.');
 }}
-,{id:'diversity',name:'Diversity / coincident load',group:'ENERGY & MATH',icon:'cost',desc:'Apply a diversity (coincidence) factor to a connected load total.',badge:'Diversity',sources:[],fields:[
+,{id:'diversity',name:'Diversity / coincident load',group:'ENERGY & MATH',icon:'cost',desc:'Apply a diversity (coincidence) factor to a connected load total.',badge:'Diversity',sources:['ashraefund'],fields:[
 field('connected','Connected load','BTU/h',500000,0,1e9,'any','Sum of all connected peak loads.'),
 field('df','Diversity factor','%',70,1,100,'any','Expected simultaneous fraction of the connected load.')
 ],calculate:v=>{
@@ -4180,7 +4180,7 @@ field('df','Diversity factor','%',70,1,100,'any','Expected simultaneous fraction
   ],`Qdiv = Qconn × DF`,
   'You supply the diversity factor from engineering judgment or an adopted diversity study. This tool does not invent coincidence ratios.');
 }}
-,{id:'loadfactor',name:'Load factor',group:'ENERGY & MATH',icon:'cost',desc:'Compute load factor as average load divided by peak load over a period.',badge:'Load factor',sources:[],fields:[
+,{id:'loadfactor',name:'Load factor',group:'ENERGY & MATH',icon:'cost',desc:'Compute load factor as average load divided by peak load over a period.',badge:'Load factor',sources:['eia'],fields:[
 field('avg','Average load','kW',120,0,1e9,'any','Average demand over the period (energy ÷ hours).'),
 field('peak','Peak load','kW',200,0,1e9,'any','Peak demand in the same period.')
 ],calculate:v=>{
@@ -4194,7 +4194,7 @@ field('peak','Peak load','kW',200,0,1e9,'any','Peak demand in the same period.')
   ],`LF = average ÷ peak`,
   'Definitional utilization metric. Units must match (kW, tons, BTU/h, etc.).');
 }}
-,{id:'uaseries',name:'Series U-factor',group:'HEATING & COOLING',icon:'heat',desc:'Combine series R-values into an assembly U-factor (U = 1 / ΣR).',badge:'Assembly U',sources:[],fields:[
+,{id:'uaseries',name:'Series U-factor',group:'HEATING & COOLING',icon:'heat',desc:'Combine series R-values into an assembly U-factor (U = 1 / ΣR).',badge:'Assembly U',sources:['ashraefund'],fields:[
 field('r1','Layer R-value 1','h·ft²·°F/BTU',0.68,0,1e9,'any','R-value of the first layer, including air films (inside film ≈ 0.68).'),
 field('r2','Layer R-value 2','h·ft²·°F/BTU',13,0,1e9,'any','R-value of the second layer, e.g. cavity insulation.'),
 field('r3','Layer R-value 3','h·ft²·°F/BTU',0.45,0,1e9,'any','R-value of the third layer, e.g. sheathing or the outside air film.'),
@@ -4209,7 +4209,7 @@ field('r4','Layer R-value 4 (optional)','h·ft²·°F/BTU',0,0,1e9,'any','Option
   ],`U = 1 / (R1+R2+R3+R4)`,
   'Series-path only. Parallel framing paths and thermal bridges need a weighted assembly calculation.');
 }}
-,{id:'windpressure',name:'Wind velocity pressure',group:'AIR & DUCTS',icon:'air',desc:'Estimate velocity pressure from wind speed using the public q = 0.00256 V² (psf) relationship.',badge:'Wind q',sources:[],fields:[
+,{id:'windpressure',name:'Wind velocity pressure',group:'AIR & DUCTS',icon:'air',desc:'Estimate velocity pressure from wind speed using the public q = 0.00256 V² (psf) relationship.',badge:'Wind q',sources:['asce7'],fields:[
 field('mph','Wind speed','mph',90,0,250,'any','Design wind speed; 3-second gust from the adopted code map or site data.')
 ],calculate:v=>{
   const psf=0.00256*v.mph*v.mph;
@@ -4221,7 +4221,7 @@ field('mph','Wind speed','mph',90,0,250,'any','Design wind speed; 3-second gust 
   ],`q = 0.00256 × V²`,
   'Public ASCE/SEI-style velocity-pressure identity for standard air. Building pressures need exposure, height, and gust coefficients from the adopted structural standard.');
 }}
-,{id:'wetbulbstull',name:'Wet-bulb (Stull)',group:'AIR & DUCTS',icon:'water',desc:'Approximate wet-bulb temperature from dry-bulb and RH using the publicly published Stull (2011) formula.',badge:'Wet-bulb approx',sources:[],fields:[
+,{id:'wetbulbstull',name:'Wet-bulb (Stull)',group:'AIR & DUCTS',icon:'water',desc:'Approximate wet-bulb temperature from dry-bulb and RH using the publicly published Stull (2011) formula.',badge:'Wet-bulb approx',sources:['stull'],fields:[
 field('db','Dry-bulb','°F',80,32,122,'any','Dry-bulb temperature; Stull’s fit covers roughly 32–122 °F.'),
 field('rh','Relative humidity','%',50,.1,100,'any','Relative humidity; the fit is least accurate below about 5 % RH.')
 ],calculate:v=>{
@@ -4238,7 +4238,7 @@ field('rh','Relative humidity','%',50,.1,100,'any','Relative humidity; the fit i
   ],`Stull (2011) wet-bulb approximation (°C inputs)`,
   'Open literature approximation for 0.5–99% RH and typical comfort temperatures. Not a substitute for a calibrated psychrometer or full ASHRAE psychrometrics.');
 }}
-,{id:'heatreclaim',name:'Heat reclaim portion',group:'REFRIGERATION',icon:'heat',desc:'Estimate reclaim heat as a fraction of condenser heat rejection.',badge:'Heat reclaim',sources:[],fields:[
+,{id:'heatreclaim',name:'Heat reclaim portion',group:'REFRIGERATION',icon:'heat',desc:'Estimate reclaim heat as a fraction of condenser heat rejection.',badge:'Heat reclaim',sources:['ashraeheq'],fields:[
 field('reject','Condenser heat rejection','BTU/h',48000,0,1e9,'any','Total condenser heat available.'),
 field('frac','Reclaim fraction','%',40,0,100,'any','Share of that heat the reclaim coil or desuperheater captures.')
 ],calculate:v=>{
@@ -4253,7 +4253,7 @@ field('frac','Reclaim fraction','%',40,0,100,'any','Share of that heat the recla
   ],`Qreclaim = Qreject × fraction`,
   'Simple allocation screen. Actual reclaim depends on entering water temperatures, exchanger effectiveness, and controls.');
 }}
-,{id:'vavfraction',name:'VAV box airflow',group:'AIR & DUCTS',icon:'air',desc:'Scale design box airflow by damper/command fraction for a quick field estimate.',badge:'VAV fraction',sources:[],fields:[
+,{id:'vavfraction',name:'VAV box airflow',group:'AIR & DUCTS',icon:'air',desc:'Scale design box airflow by damper/command fraction for a quick field estimate.',badge:'VAV fraction',sources:['ashraeheq'],fields:[
 field('design','Design / max box CFM','cfm',800,0,1e9,'any','Design or maximum box airflow.'),
 field('pct','Airflow command','%',60,0,100,'any','Damper or airflow command as a percent of design.')
 ],calculate:v=>{
@@ -5459,7 +5459,7 @@ function references(){const entries=[
 ['Indoor CO₂','NIST TN 2213 · QICO2 tool','Single-zone steady-state and transient CO₂ concentrations from occupant generation (Schofield BMR × met, RQ 0.85) and outdoor-air rate. Our indoor-CO₂ and outdoor-air-from-CO₂ tools implement the published equations; the NIST web tool adds predefined ASHRAE 62.1/62.2 cases.',sourceLinks.nistco2[1]],
 ['Ventilation tools','NIST multizone modeling (CONTAM, LoopDA, Climate Suitability)','NIST’s IAQ and Ventilation Group publishes CONTAM (multizone airflow), LoopDA (natural-ventilation opening sizing) and the Climate Suitability Tool. Our ventilative-cooling and CO₂-decay tools use their published single-zone relations; whole-building airflow networks remain with CONTAM.',sourceLinks.nistiaq[1]],
 ['Life-cycle cost','NIST Handbook 135 · FEMP LCC method','Present-value factors (SPV, UPV, UPV*), net savings, SIR, AIRR and payback per Handbook 135 chapters 6 and 17. The FEMP fuel-price indices in the annual supplement (NISTIR 85-3273) and BLCC remain the authority for federal analyses.',sourceLinks.nisthb135[1]],
-['Fluid properties','NIST Chemistry WebBook · Thermophysical Properties of Fluid Systems','Saturation, isobaric and isothermal properties for water, CO₂, ammonia and common refrigerants (R-22, R-32, R-125, R-134a, R-143a, R-152a, R-245fa and more). Use it to obtain the saturation temperatures entered in the superheat and subcooling tools.',sourceLinks.nistwebbook[1]],
+['Handbooks','ASHRAE Handbook series (Fundamentals · Systems and Equipment · Refrigeration)','Engineering relationships behind the air, water, coil, refrigeration and psychrometric tools: sensible/latent air factors, fan and pump laws, LMTD, friction, effectiveness and bypass factor. Chapters are referenced, not reproduced.',sourceLinks.ashraefund[1]],['Fans & ducts','AMCA · SMACNA','Fan laws, air horsepower and brake horsepower conventions (AMCA); duct design, aspect ratio, leakage classes and static regain (SMACNA). Our tools show the arithmetic only.',sourceLinks.amca[1]],['Pumps & towers','Hydraulic Institute · Cooling Technology Institute','Pump affinity laws, head, NPSH and brake horsepower (HI); cooling-tower approach, range, evaporation and blowdown conventions (CTI).',sourceLinks.hi[1]],['Ratings','AHRI','Equipment rating conventions for EER, COP, kW/ton, part-load ratio and heat-pump capacity points (17 °F / 47 °F). Published ratings, not this app, certify performance.',sourceLinks.ahri[1]],['Energy units','US EIA · Energy units and calculators','Public heating values and unit relationships behind the therm, MCF, propane, oil and operating-cost tools. Use the delivered fuel’s actual heating value when known.',sourceLinks.eia[1]],['Fluid properties','NIST Chemistry WebBook · Thermophysical Properties of Fluid Systems','Saturation, isobaric and isothermal properties for water, CO₂, ammonia and common refrigerants (R-22, R-32, R-125, R-134a, R-143a, R-152a, R-245fa and more). Use it to obtain the saturation temperatures entered in the superheat and subcooling tools.',sourceLinks.nistwebbook[1]],
 ['Product reference','Calculator.net · BTU calculator','Reference for the room-calculation input flow. Our estimate uses the published ENERGY STAR method.',sourceLinks.calc[1]],
 ['Product reference','Calculator.net · Conversion calculator','Reference for the familiar value/from/to conversion flow.',sourceLinks.conversion[1]]];
 return heading('Codes & sources','Open the source behind a calculation.','Reference editions')+editionNote(`This workbench provides <em>national US model-code / model-standard screening</em> against the embedded <em>2024 model-code pack</em> (${esc(codeEditionLabel())}). The model pack is not the law. <strong>The AHJ-adopted edition, local amendments, and PE judgment always govern.</strong> ${LEGAL_DISCLAIMER}`)+`<p class="reference-intro">Linked IMC / IFGC / IPC / IECC / ASHRAE 15 materials are reference editions. Confirm your jurisdiction’s adopted codes and amendments. Calculators are estimates or engineering relationships, not compliance decisions. Code tools (outdoor air, exhaust, IRC bath/kitchen + WHMV, ASHRAE 15.2 path gate, condensate, dryer duct, hood capacity, combustion air, venting, gas pipe, machinery-room ventilation, T&amp;P discharge) use published model values or EXAMPLE_UNVERIFIED screens for screening only. Appendices apply only if adopted by the AHJ. ASHRAE standards are referenced to the extent cited; where they conflict with IMC text, the IMC governs (§102.8). Fuel-gas piping, appliances and venting are IFGC scope (IMC §101.2).</p><div class="reference-list">${entries.map(([topic,title,description,url])=>referenceRow(topic,title,description,url)).join('')}</div><p class="smallprint">Reviewed September 11, 2026. No full code text or proprietary calculator algorithms are reproduced. Fan laws use the standard same-geometry affinity relationships; measurement and geometry tools show their mathematical derivations.</p>`;}
