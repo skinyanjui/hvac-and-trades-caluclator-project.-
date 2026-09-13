@@ -87,11 +87,31 @@ Content audit of all 209 calculators (script-driven: description, badge, icon, g
 | Code-group tools without a model-code disclaimer block | 58 | 0 | generic IMC / IFGC fallback block; `manifoldkpa`, `gascfh`, `mcfgas` excluded as pure conversions |
 | Hero label falling back to "Result" | 27 | 0 | named labels for the 22 original engineering tools and the five IMC gates |
 | Duplicate field labels within a tool | 3 | 0 material | hood duties renamed Second/Third; `outdoorair` manual population relabelled; `gaspipesize` keeps two "Section gas load" fields that are mutually exclusive by unit toggle |
-| Fields without a hint | 751 across 206 tools | 668 across 181 tools | hints added for the 26 core engineering tools; the remainder are mostly yes/no checklist items and single-purpose math inputs whose labels carry units |
-| Tools with no source links | 117 | 117 | all are pure-math relationships; the Method panel states that no code threshold applies |
+| Fields without a hint | 751 across 206 tools | 0 | see the content follow-up below |
+| Tools with no source links | 117 | 0 | see the content follow-up below |
 | Defaults that throw | 1 (`condensateoverflow`) | 1 | intentional path-gate that requires an answer first |
 
-Remaining gaps are content, not structure: field hints for the 181 math and checklist tools, and optional reference links (ASHRAE Fundamentals, ACCA manuals) for the pure-math group.
+## Content follow-up: hints, references, glossary, color (2026-09-13)
+
+- **Hints.** The remaining 668 hint-less fields on 181 tools now carry one. 373 numeric and non-checklist choice inputs received individually written hints (what the value is, where to read it, a typical magnitude or the governing section); the 295 yes / no / N/A / unknown checklist items share one answer legend ("Yes = verified … Unknown = not yet confirmed and counts as needing attention"). Consecutive identical hints render once visually and stay in every field's `aria-describedby`, so a 20-item checklist is not padded with 20 copies of the legend. Inventory after the pass: 0 fields without a hint, 0 dangling `aria-describedby` ids (headless check across all 214 tools).
+- **Reference links.** All 117 pure-math tools now link a public authority for the relationship they compute: ASHRAE Handbook—Fundamentals / HVAC Systems and Equipment / Refrigeration, AMCA (fan laws), SMACNA (duct design and leakage), Hydraulic Institute (pump laws, NPSH), Cooling Technology Institute (approach, range, evaporation, blowdown), AHRI (EER / COP / kW-per-ton conventions), US EIA (fuel heating values and energy units), ASCE 7 (wind pressure), Stull 2011 (wet-bulb fit), ISA-75.01 (Cv), NIST SP 811 / Chemistry WebBook. Five matching rows were added to the Sources page. The Method panel now shows the links instead of the "no code threshold" sentence, and every Method panel links to the glossary for notation.
+- **Glossary & symbols page** (`#glossary`). 170 terms in nine topics (codes and compliance; ventilation and IAQ; airflow and ducts; loads; psychrometrics; refrigeration; hydronics and piping; fuel gas and venting; energy and economics), each with the expanded abbreviation, a working definition and "Used in" links to the calculators that rely on it, plus 25 notation entries covering every non-ASCII symbol the app prints (Δ Σ × ÷ − ≈ ≥ ≤ √ ² ³ ° η ρ ṁ ν μ ε π φ § · → ↔ ⇄ ↗ ★ subscripts, superscripts, em dash). A filter box narrows terms and symbols; the sidebar search shows a "Glossary · N matching terms" row that opens the page pre-filtered. Reachable from the sidebar footer, the mobile menu and any Method panel.
+- **Color.** The Geist palette is applied on top of the neutral base: blue accent for links, focus rings and header actions; one hue per calculator group (heating red, air teal, ventilation purple, fuel-gas amber, refrigeration blue, hydronics green, energy pink, reference slate) driving the sidebar group dot, the active nav row, the page badge, the result hero, the formula block and the "Used in" markers; semantic tints for the amber code-disclaimer and negative-result notes and the red error box; cite chips in purple. The header mark shrank from 28 px to 22 px (20 px on phones) and carries a blue→teal gradient.
+
+## NIST security survey (2026-09-13)
+
+Reviewed NIST publications for controls that apply to a public, static, no-backend web app: CSF 2.0 and SP 1300 (small-business quick start), SP 800-53 Rev. 5, SP 800-218 SSDF v1.1, SP 800-52 Rev. 2 (TLS), SP 800-44 v2 (public web servers), SP 800-122 (PII). SP 800-63 (digital identity) and SP 800-95 (SOAP web services) do not apply — there are no accounts and no API.
+
+| NIST reference | Applied | Where |
+| --- | --- | --- |
+| SC-8 / SP 800-52 transport protection | `Strict-Transport-Security: max-age=63072000; includeSubDomains`; CSP `upgrade-insecure-requests` | `vercel.json` |
+| PR.PS-01 / CM-6 / CM-7 hardened configuration | Existing CSP, `frame-ancestors 'none'`, `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` (+ `interest-cohort=()`), COOP; added `Cross-Origin-Resource-Policy: same-origin`, `X-Permitted-Cross-Domain-Policies: none`, `X-DNS-Prefetch-Control: off` | `vercel.json`, CSP meta |
+| GV.SC / SSDF PS.1, PW.4 supply chain | Removed the only runtime third-party dependency: the Geist variable font is self-hosted at `/fonts/Geist-Variable.woff2` (SIL OFL 1.1 licence alongside; SHA-256 `28258d06…7630`), so `font-src` is now `'self'` and no CDN is contacted at runtime | `index.html`, `fonts/` |
+| SI-2 / RV.1 flaw remediation and disclosure | `Cache-Control: public, max-age=0, must-revalidate` on the document (fonts immutable); RFC 9116 `/.well-known/security.txt` (contact, policy, expiry 2027-09-13); `SECURITY.md` with scope, reporting path and the control mapping | `vercel.json`, `.well-known/`, `SECURITY.md` |
+| SI-10 input validation, PR.DS data minimisation | Already in place: range-checked numeric parsing, option allow-lists, `esc()` on every rendered string, route validation, sanitised `localStorage`, no PII / analytics / cookies | documented in `SECURITY.md` |
+| Residual risk | `'unsafe-inline'` for script and style remains because the app is one HTML file; hash-pinned CSP would need a build step | `SECURITY.md` |
+
+Verification for this pass: `scripts/verify.mjs` 502/502; headless fuzz 8,560 runs, 0 findings other than the known intentional hood-style error messages; all 214 tools plus the four reference pages rendered with no page or console errors; self-hosted font confirmed loaded from the same origin; `security.txt` served.
 
 ## NIST.gov calculator survey (2026-09-13)
 
