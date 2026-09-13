@@ -148,6 +148,12 @@ Enumerating every result row across all tools (defaults plus each option of each
 
 Fix: `evaluateCalculator` now passes rows through `presentRows`, which (a) swaps a field-key label for the field's label, (b) replaces an option code with the option's text when the row belongs to that field, or when the code belongs to exactly one choice field in the tool and the row is an echo (count 0 / ±1) rather than a quantity, (c) spells `yes / no / na / unk` as Yes / No / N/A / Unknown, and (d) spaces out any remaining snake_case code. Rows presented as text drop the meaningless −1 / 0 / 1 score. Calculator `calculate()` output is untouched, so the verify suite's machine-readable expectations still hold; a new guard asserts no rendered row carries a raw key or code. Related copy fixes: the IRC ventilation banner no longer starts with `imc_delta_banner:`, the 15.2 path gate hero reads "Residential refrigeration path" instead of `15_2_residential`, the gas pipe sizing note lost a doubled "This This", and the manifold converter's `psi` row is labelled "Pounds per square inch".
 
+## Shareable links and a parse guard (2026-09-13)
+
+- **Copy link** in every Inputs panel writes the non-default inputs into the hash (`#tool?key=value`) and copies the URL; `applyQuery` accepts only known keys, listed option codes and finite numbers (range errors still surface through the normal error box). Reset clears the query. A hashchange to the same tool with a new query re-renders; navigation writes a clean `#tool`.
+- **Regression:** a changelog entry containing an unescaped apostrophe shipped a syntax error that blanked the page for roughly two minutes before the fix deployed. The verify suite only executed the script up to the bootstrap cut, so it passed. It now compiles the entire inline script with `new vm.Script` before anything else, so any syntax error anywhere fails the suite.
+- Static `<meta name="description">` no longer hard-codes a stale tool count; added an SVG data-URI favicon (allowed by `img-src data:`) and `theme-color`.
+
 ## NIST security survey (2026-09-13)
 
 Reviewed NIST publications for controls that apply to a public, static, no-backend web app: CSF 2.0 and SP 1300 (small-business quick start), SP 800-53 Rev. 5, SP 800-218 SSDF v1.1, SP 800-52 Rev. 2 (TLS), SP 800-44 v2 (public web servers), SP 800-122 (PII). SP 800-63 (digital identity) and SP 800-95 (SOAP web services) do not apply — there are no accounts and no API.
