@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **76** calculators with code-oriented screening tools:
+Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **88** calculators with code-oriented screening tools:
 
 - **Global AHJ / code-edition setting** — one app-wide model-pack picker plus a strong legal disclaimer banner (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog and Code Editions note (national US screening; model packs; AHJ always)
@@ -33,7 +33,8 @@ Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math too
 - **Engineering & trades helpers** — equivalent round duct, coil/grille face velocity, CFM per ton, sensible heat ratio, cooling tons, pump affinity laws, hydronic pipe velocity, fuel-gas operating cost, and sheave/belt RPM
 - **Model-code location & kitchen screens** — IMC outdoor-air intake separation, exhaust outlet termination, Type I grease-duct velocity (≥500 fpm) and slope, grease-duct clearances, dryer makeup-air triggers, and duct-sealing documentation
 - **Access / return / gas / refrigerant gates** — IMC §306 appliance access checklist, IMC return-air source restrictions, IFGC appliance shutoff & connector length, IFGC §503.8 vent-terminal key-row screen, and IMC Chapter 11 refrigerant-pipe documentation (no charge limits)
-- **More trades math** — net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude correction, and open-belt length
+- **More trades math** — net free area, boiler horsepower, chiller kW/ton, cooling-tower approach, compression ratio, pump head from ΔP, air-density altitude correction, open-belt length, hydraulic diameter, velocity pressure, stack effect, pipe volume, LMTD, evaporator/condenser TD, and net oil pressure
+- **More kitchen / combustion screens** — IMC §506.3.8 grease-duct cleanout spacing, IFGC §304.9 mechanical combustion air (0.35 cfm/1,000 BTU/h), IMC §507 Type I hood documentation, and IMC §603.6 flexible-duct installation checklist
 
 See [`AUDIT.md`](AUDIT.md) for the current coverage audit, explicit source-data blockers, and prioritized follow-up work.
 

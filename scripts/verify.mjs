@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 76, calculators.length);
+assert('calculator count', calculators.length === 88, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -202,6 +202,31 @@ assert('pumphead 12 psi SG1 → ~27.727', Math.abs(run('pumphead', {dp: 12, sg: 
   const expect = 2 * 20 + 1.57 * (4 + 6) + Math.pow(2, 2) / (4 * 20);
   assert('beltlength 4/6/20', Math.abs(run('beltlength', {d1: 4, d2: 6, centers: 20}).value - expect) < 1e-9);
 }
+
+assert('greasecleanout 18 ft clear path', run('greasecleanout', {horizRun: 18, atChanges: 'yes', tight: 'yes', access: 'yes', vertical: 'na'}).value === 0);
+assert('greasecleanout 25 ft fails spacing', run('greasecleanout', {horizRun: 25, atChanges: 'yes', tight: 'yes', access: 'yes', vertical: 'na'}).value >= 1);
+assert('mechcombair 200k → 70 cfm', Math.abs(run('mechcombair', {input: 200000, provided: 80, interlock: 'yes', source: 'yes'}).value - 70) < 1e-12);
+assert('hooddocs defaults need attention', run('hooddocs', {}).value >= 1);
+assert('flexduct defaults need attention', run('flexduct', {}).value >= 1);
+assert('hyddiam 12×8 → 9.6', Math.abs(run('hyddiam', {width: 12, height: 8}).value - 9.6) < 1e-12);
+assert('velpress 4005 → 1', Math.abs(run('velpress', {velocity: 4005}).value - 1) < 1e-9);
+{
+  const expect = 7.65 * 30 * (1 / (20 + 460) - 1 / (70 + 460));
+  assert('stackeffect 30 ft 70/20', Math.abs(run('stackeffect', {height: 30, indoor: 70, outdoor: 20}).value - expect) < 1e-9);
+}
+{
+  const area = Math.PI * Math.pow(1.049 / 24, 2);
+  const expect = area * 100 * 7.48051948;
+  assert('pipevolume 1.049 in × 100 ft', Math.abs(run('pipevolume', {id: 1.049, length: 100, flow: 10}).value - expect) < 1e-9);
+}
+{
+  const dt1 = 180 - 100, dt2 = 120 - 60;
+  const expect = (dt1 - dt2) / Math.log(dt1 / dt2);
+  assert('lmtd counterflow defaults', Math.abs(run('lmtd', {}).value - expect) < 1e-9);
+}
+assert('evaptd 35−25 → 10', Math.abs(run('evaptd', {box: 35, sst: 25}).value - 10) < 1e-12);
+assert('condtd 110−95 → 15', Math.abs(run('condtd', {sct: 110, enter: 95}).value - 15) < 1e-12);
+assert('oilpd 60−20 → 40', Math.abs(run('oilpd', {oil: 60, crank: 20}).value - 40) < 1e-12);
 
 const failed = tests.filter(t => !t.ok);
 const passed = tests.length - failed.length;

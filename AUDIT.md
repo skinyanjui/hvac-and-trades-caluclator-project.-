@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now contains 76 calculators across:
+The app now contains 88 calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -26,11 +26,11 @@ The app now contains 76 calculators across:
 - IPC T&P discharge screening,
 - IRC local/whole-house ventilation and installation path gates,
 - ASHRAE 15 / 15.2 path routing,
-- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM, net free area, boiler hp, kW/ton, tower approach, compression ratio, pump head, air density, belt length),
-- IMC intake/exhaust location and grease-duct velocity/slope/clearance screens,
-- IMC dryer makeup-air and duct-sealing documentation gates,
+- additional engineering/trades math (equivalent duct, face velocity, CFM/ton, SHR, tons, pump laws, pipe velocity, gas cost, sheave RPM, net free area, boiler hp, kW/ton, tower approach, compression ratio, pump head, air density, belt length, hydraulic diameter, velocity pressure, stack effect, pipe volume, LMTD, evaporator/condenser TD, net oil pressure),
+- IMC intake/exhaust location and grease-duct velocity/slope/clearance/cleanout screens,
+- IMC dryer makeup-air, duct-sealing, Type I hood documentation, and flexible-duct installation gates,
 - IMC appliance-access and return-air restriction gates,
-- IFGC shutoff/connector and §503.8 vent-terminal screening, plus IMC Chapter 11 refrigerant-piping documentation.
+- IFGC shutoff/connector, §503.8 vent-terminal, and §304.9 mechanical combustion-air screening, plus IMC Chapter 11 refrigerant-piping documentation.
 
 ## Priority additions completed in this audit
 
