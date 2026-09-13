@@ -142,6 +142,12 @@ Before: 16 distinct colour pairs failed, from 2.85:1 (`#999` section labels) thr
 
 Fix: one `--text-muted:#5c6b73` token (≥ 4.7:1 on white, canvas and every group tint) replaces the nine greys; `--quiet` moves from `#999` to `#6b6b6b`; links, text buttons and the skip link use `--accent-ink` (5.8:1) instead of `--accent` (4.55:1 on white, 4.2:1 on canvas); the hydronics and purple ink tones are darkened to 5.4–5.5:1 on their tints. After: zero failing pairs on any page.
 
+## Result-row presentation (2026-09-13)
+
+Enumerating every result row across all tools (defaults plus each option of each choice field) found 219 rows on 40 checklist / handoff / path-gate tools whose label was the raw field key (`bondPoint`, `electrodePath`, `pressureTest`) and whose value was the option code (`-1 unk`, `storage`, `one_two_family`). tpdischarge and ircinstall had done the mapping by hand; the other 40 pushed `[key, score, code]`.
+
+Fix: `evaluateCalculator` now passes rows through `presentRows`, which (a) swaps a field-key label for the field's label, (b) replaces an option code with the option's text when the row belongs to that field, or when the code belongs to exactly one choice field in the tool and the row is an echo (count 0 / ±1) rather than a quantity, (c) spells `yes / no / na / unk` as Yes / No / N/A / Unknown, and (d) spaces out any remaining snake_case code. Rows presented as text drop the meaningless −1 / 0 / 1 score. Calculator `calculate()` output is untouched, so the verify suite's machine-readable expectations still hold; a new guard asserts no rendered row carries a raw key or code. Related copy fixes: the IRC ventilation banner no longer starts with `imc_delta_banner:`, the 15.2 path gate hero reads "Residential refrigeration path" instead of `15_2_residential`, the gas pipe sizing note lost a doubled "This This", and the manifold converter's `psi` row is labelled "Pounds per square inch".
+
 ## NIST security survey (2026-09-13)
 
 Reviewed NIST publications for controls that apply to a public, static, no-backend web app: CSF 2.0 and SP 1300 (small-business quick start), SP 800-53 Rev. 5, SP 800-218 SSDF v1.1, SP 800-52 Rev. 2 (TLS), SP 800-44 v2 (public web servers), SP 800-122 (PII). SP 800-63 (digital identity) and SP 800-95 (SOAP web services) do not apply — there are no accounts and no API.

@@ -54,9 +54,10 @@ vm.runInContext(body + `
   globalThis.sourceLinks = sourceLinks;
   globalThis.glossaryTopics = glossaryTopics;
   globalThis.glossarySymbols = glossarySymbols;
+  globalThis.evaluateCalculator = evaluateCalculator;
 `, sandbox);
 
-const {calculators, essentials, keywords, units, icons, convert, sourceLinks, glossaryTopics, glossarySymbols} = sandbox;
+const {calculators, essentials, keywords, units, icons, convert, sourceLinks, glossaryTopics, glossarySymbols, evaluateCalculator} = sandbox;
 const byId = Object.fromEntries(calculators.map(c => [c.id, c]));
 const tests = [];
 const assert = (name, cond, detail) => {
@@ -131,8 +132,8 @@ for (const [vals, expect] of pathCases) {
 }
 {
   const r = run('ashrae152path', {building_type: 'commercial', system_listed: 'yes', serves_single_dwelling_or_sleeping_unit: 'yes', system_serves_common_or_multiple_units: 'no'});
-  const reasons = (r.rows.find(row => row[0] === 'reasons') || [])[2] || '';
-  assert('commercial reason not misleading', /commercial_building_not_15_2_residential/.test(reasons), reasons);
+  const reasons = (r.rows.find(row => row[0] === 'Path reasons') || [])[2] || '';
+  assert('commercial reason not misleading', /commercial building not 15 2 residential/.test(reasons), reasons);
 }
 
 {
@@ -576,6 +577,20 @@ for (const id of ['co2ss', 'co2vent', 'co2decay', 'ventcool', 'lcc']) {
   assert('field keys do not collide with structural ids', clash.length === 0, clash.join(', '));
   const dupKeys = calculators.flatMap(c => c.fields.map(f => f.key).filter((k, i, a) => a.indexOf(k) !== i).map(k => `${c.id}.${k}`));
   assert('field keys unique within each tool', dupKeys.length === 0, dupKeys.join(', '));
+}
+
+{
+  // Rows that echo a checklist answer must present the field label and option text, never the raw key / value code.
+  const raw = [];
+  for (const c of calculators) {
+    let r;
+    try { r = evaluateCalculator(c, Object.fromEntries(c.fields.map(f => [f.key, f.value]))); } catch { continue; }
+    const keys = new Set(c.fields.map(f => f.key));
+    for (const [label, , unit, text] of r.rows) {
+      if (keys.has(label) || (!text && /^[a-z0-9]+(_[a-z0-9]+)+$/.test(String(unit)))) raw.push(`${c.id}: ${label} / ${unit}`);
+    }
+  }
+  assert('result rows never show raw field keys or value codes', raw.length === 0, raw.slice(0, 5).join('; '));
 }
 
 const failed = tests.filter(t => !t.ok);
