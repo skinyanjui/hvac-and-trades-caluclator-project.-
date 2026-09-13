@@ -126,6 +126,8 @@ Method: screenshots and DOM measurements of representative tools (`btu`, `combus
 | Between 801 and 1000 px the two panels sat side by side at ~300 px each, and between 1000 and 1250 px the two field columns were ~180 px, so select text such as "Outdoor · two openings (vertical ducts)" was clipped. | Workspace stacks below 1000 px; a container query drops `.fields` to one column whenever the panel is narrower than 430 px, independent of viewport. |
 | 57 choice fields have option labels longer than 28 characters and were clipped even at half a 1280 px panel. | Choice fields with any option over 28 characters span both columns; a field left alone in its row (because the next field is full-width or a neighbour is conditionally hidden) also spans both. Re-evaluated on every input, not only at render. |
 
+Follow-up: form controls are now driven by one set of tokens (`--control-h` 38 px, 44 px on coarse pointers; `--control-font` 15 px, 16 px under 800 px; shared border, radius, text colour and 10 px inset). Number inputs, selects, the converter controls, the sidebar/header/glossary search fields, the mobile tool picker and header buttons all resolve to the same height, and inputs and selects share the same text size and colour (they were 16 px vs 14 px, and different inks). A scripted pass over every control on all 214 tools plus the reference pages at 1280/1920 shows a single height for every input and select and no row where two controls differ in top or height.
+
 After the pass: 0 misaligned rows and 0 clipped selects at 1280/1920; at 1024 the only remaining clipped selects are single-column 85-character option labels (the open list shows the full text). Verify 512/512, all-page smoke and fuzz unchanged.
 
 ## NIST security survey (2026-09-13)
