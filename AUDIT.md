@@ -134,6 +134,14 @@ Chrome and reference pages: the header now pads 20 px so the brand mark sits on 
 
 After the pass: 0 misaligned rows and 0 clipped selects at 1280/1920; at 1024 the only remaining clipped selects are single-column 85-character option labels (the open list shows the full text). Verify 512/512, all-page smoke and fuzz unchanged.
 
+## Contrast audit (2026-09-13)
+
+Method: for every visible text node on all 214 tools and the four reference pages (details opened), compute the effective foreground over the composited background (including hero gradients and translucent tints) and compare against WCAG 2.2 AA (4.5:1 for body text, 3:1 for ≥ 24 px or bold ≥ 18.66 px).
+
+Before: 16 distinct colour pairs failed, from 2.85:1 (`#999` section labels) through 3.1–3.9:1 (sidebar meta, smallprint, hero equivalents on tinted heroes, workspace footnotes, changelog dates) to 4.2–4.4:1 (field hints, reference descriptions, the skip link and any link on the canvas background). Nine hand-picked blue-greys were in use for muted text.
+
+Fix: one `--text-muted:#5c6b73` token (≥ 4.7:1 on white, canvas and every group tint) replaces the nine greys; `--quiet` moves from `#999` to `#6b6b6b`; links, text buttons and the skip link use `--accent-ink` (5.8:1) instead of `--accent` (4.55:1 on white, 4.2:1 on canvas); the hydronics and purple ink tones are darkened to 5.4–5.5:1 on their tints. After: zero failing pairs on any page.
+
 ## NIST security survey (2026-09-13)
 
 Reviewed NIST publications for controls that apply to a public, static, no-backend web app: CSF 2.0 and SP 1300 (small-business quick start), SP 800-53 Rev. 5, SP 800-218 SSDF v1.1, SP 800-52 Rev. 2 (TLS), SP 800-44 v2 (public web servers), SP 800-122 (PII). SP 800-63 (digital identity) and SP 800-95 (SOAP web services) do not apply — there are no accounts and no API.
