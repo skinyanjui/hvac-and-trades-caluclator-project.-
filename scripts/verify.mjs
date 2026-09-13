@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 112, calculators.length);
+assert('calculator count', calculators.length === 127, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -263,6 +263,31 @@ assert('hxeff 48k/60k → 0.8', Math.abs(run('hxeff', {actual: 48000, max: 60000
 assert('steamflow 500000/970', Math.abs(run('steamflow', {load: 500000, hfg: 970}).value - 500000 / 970) < 1e-9);
 assert('refrigmass 36000/70', Math.abs(run('refrigmass', {capacity: 36000, dh: 70}).value - 36000 / 70) < 1e-9);
 assert('fittingel 50+15+10+5 → 80', Math.abs(run('fittingel', {}).value - 80) < 1e-12);
+
+
+assert('damperdocs defaults need attention', run('damperdocs', {}).value >= 1);
+assert('hydropipedocs defaults need attention', run('hydropipedocs', {}).value >= 1);
+assert('boilerdocs defaults need attention', run('boilerdocs', {}).value >= 1);
+assert('economizerdocs defaults need attention', run('economizerdocs', {}).value >= 1);
+assert('refrigclassdocs defaults need attention', run('refrigclassdocs', {}).value >= 1);
+assert('ventconndocs defaults need attention', run('ventconndocs', {}).value >= 1);
+assert('coilface 2000/500 → 4', Math.abs(run('coilface', {}).value - 4) < 1e-12);
+assert('copeer 12 → ~3.517', Math.abs(run('copeer', {eer: 12}).value - 12/3.412) < 1e-12);
+{
+  const Tc=40+459.67, Th=105+459.67;
+  assert('carnotcop 40/105', Math.abs(run('carnotcop', {}).value - Tc/(Th-Tc)) < 1e-9);
+}
+assert('psigpsia 70+14.7', Math.abs(run('psigpsia', {}).value - 84.7) < 1e-12);
+assert('flashgas (40-25)/(80-25)', Math.abs(run('flashgas', {}).value - 15/55) < 1e-12);
+assert('voleff 20/25 → 0.8', Math.abs(run('voleff', {}).value - 0.8) < 1e-12);
+{
+  const area=Math.PI*Math.pow(0.545/24,2);
+  const expect=(500/3600)/(0.5*area);
+  assert('linevel defaults', Math.abs(run('linevel', {}).value - expect) < 1e-9);
+}
+assert('balancept linear solve', Math.abs(run('balancept', {}).value - 24.857142857142858) < 1e-9);
+assert('chillerapp evap 44-40 → 4', Math.abs(run('chillerapp', {}).value - 4) < 1e-12);
+assert('chillerapp cond 105-95 → 10', Math.abs(run('chillerapp', {side:'cond', fluid:95, sat:105}).value - 10) < 1e-12);
 
 
 const failed = tests.filter(t => !t.ok);
