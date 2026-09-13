@@ -14,7 +14,7 @@ HVAC Workbench is a national-US **screening and engineering-math** utility. It i
 
 ## Current coverage
 
-The app now 166 calculators across:
+The app now has **185** calculators across:
 
 - heating and cooling engineering math,
 - air and duct calculations,
@@ -31,6 +31,12 @@ The app now 166 calculators across:
 - IMC dryer makeup-air, duct-sealing, Type I hood documentation, and flexible-duct installation gates,
 - IMC appliance-access and return-air restriction gates,
 - IFGC shutoff/connector, §503.8 vent-terminal, and §304.9 mechanical combustion-air screening, plus IMC Chapter 11 refrigerant-piping documentation.
+
+## Public field-formula batch (no licensed tables)
+
+Added technician/field relationships published on open vendor and trade references (e.g. Belimo-style 1.08 / 0.69 / 4.5 / 500 constants, pitot V=4005√VP, CFM=A×V, therms, chiller GPM≈tons×24/ΔT). These do not digitize IFGC/IMC pipe or vent tables.
+
+Removed the global **Please note** legal banner; the AHJ model-code bar remains.
 
 ## Priority additions completed in this audit
 

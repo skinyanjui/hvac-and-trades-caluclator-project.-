@@ -4,7 +4,7 @@ Single-file static HVAC calculator workbench (`index.html`).
 
 Live site: https://hvac-workbench.vercel.app
 
-Includes heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **166** calculators with code-oriented screening tools:
+Includes public field-formula helpers (1.08/0.69/4.5/500, pitot velocity, therms, etc.) plus heating/cooling, air & ducts, refrigeration, hydronics, energy/math tools, unit conversion, and **185** calculators with code-oriented screening tools:
 
 - **2024 model-code screening** — fixed to the latest embedded 2024 IMC / IFGC / IPC / IECC pack, with a strong legal disclaimer (not a substitute for adopted code, AHJ, or PE)
 - **Changelog** — public SPA changelog (national US screening against 2024 model codes; AHJ always)

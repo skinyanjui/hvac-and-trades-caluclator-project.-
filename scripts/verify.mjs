@@ -67,7 +67,7 @@ const run = (id, vals = {}) => {
   return c.calculate({...defaults, ...vals});
 };
 
-assert('calculator count', calculators.length === 166, calculators.length);
+assert('calculator count', calculators.length === 185, calculators.length);
 assert('unique ids', new Set(calculators.map(c => c.id)).size === calculators.length);
 assert('unit groups 16', Object.keys(units).length === 16, Object.keys(units).join(', '));
 
@@ -331,6 +331,33 @@ assert('presscfm 2000-1800-0 → 200', Math.abs(run('presscfm', {}).value - 200)
 assert('sgflow 100×1.05 → 105', Math.abs(run('sgflow', {}).value - 105) < 1e-12);
 assert('infilcfm 0.35×12000/60', Math.abs(run('infilcfm', {}).value - 0.35*12000/60) < 1e-12);
 assert('manifoldkpa 3.5 inwc', Math.abs(run('manifoldkpa', {}).value - 3.5*249.089/1000) < 1e-9);
+
+assert('cfmfromq 25920/(1.08*20) → 1200', Math.abs(run('cfmfromq', {}).value - 25920/(1.08*20)) < 1e-9);
+assert('dtairfromq 25920/(1.08*1200) → 20', Math.abs(run('dtairfromq', {}).value - 25920/(1.08*1200)) < 1e-9);
+assert('latent069 0.69*1200*20', Math.abs(run('latent069', {}).value - 0.69*1200*20) < 1e-9);
+assert('total45 4.5*1400*8', Math.abs(run('total45', {}).value - 4.5*1400*8) < 1e-9);
+assert('gpmfromq 80000/(500*20) → 8', Math.abs(run('gpmfromq', {}).value - 8) < 1e-12);
+assert('airfromvp 4005*sqrt(0.2)', Math.abs(run('airfromvp', {}).value - 4005*Math.sqrt(0.2)) < 1e-9);
+assert('ductcfmva 1.5*800 → 1200', Math.abs(run('ductcfmva', {}).value - 1200) < 1e-12);
+assert('gascfh 100000/1000 → 100', Math.abs(run('gascfh', {}).value - 100) < 1e-12);
+assert('therms 100000 → 1', Math.abs(run('therms', {}).value - 1) < 1e-12);
+assert('chillgpm24 100*24/10 → 240', Math.abs(run('chillgpm24', {}).value - 240) < 1e-12);
+assert('tonfrom400 1600/400 → 4', Math.abs(run('tonfrom400', {}).value - 4) < 1e-12);
+assert('moistlbhr 1200*20*60/7000', Math.abs(run('moistlbhr', {}).value - 1200*20*60/7000) < 1e-9);
+assert('eir 1/3.5', Math.abs(run('eir', {}).value - 1/3.5) < 1e-12);
+assert('grillecfm (48/144)*500', Math.abs(run('grillecfm', {}).value - (48/144)*500) < 1e-12);
+{
+  const pr=Math.pow(1-6.87535e-6*5000,5.2559);
+  assert('altfactor 5000 ft', Math.abs(run('altfactor', {}).value - pr) < 1e-9, run('altfactor', {}).value);
+}
+assert('oilgph (140000/0.8)/140000 → 1.25', Math.abs(run('oilgph', {}).value - 1.25) < 1e-12);
+assert('motorfla 5hp 460V 3ph', Math.abs(run('motorfla', {}).value - (5*746)/(460*0.92*0.86*Math.sqrt(3))) < 1e-9);
+assert('mixgrains 0.25*90+0.75*65', Math.abs(run('mixgrains', {}).value - (0.25*90+0.75*65)) < 1e-12);
+{
+  const vp1=Math.pow(1500/4005,2), vp2=Math.pow(900/4005,2);
+  assert('staticregain defaults', Math.abs(run('staticregain', {}).value - (vp1-vp2)*0.75) < 1e-9);
+}
+
 
 
 const failed = tests.filter(t => !t.ok);
