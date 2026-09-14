@@ -1,4 +1,4 @@
-# HVAC Workbench — vulnerability disclosure (RFC 9116)
+# HVACCAL — vulnerability disclosure (RFC 9116)
 Contact: https://github.com/skinyanjui/hvac-and-trades-caluclator-project.-/issues/new
 Policy: https://github.com/skinyanjui/hvac-and-trades-caluclator-project.-/blob/main/SECURITY.md
 Preferred-Languages: en

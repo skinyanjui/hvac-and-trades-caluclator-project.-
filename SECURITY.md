@@ -1,6 +1,6 @@
 # Security policy
 
-HVAC Workbench is a static, single-file web application. It runs entirely in the browser, has no
+HVACCAL is a static, single-file web application. It runs entirely in the browser, has no
 server-side code, no accounts, no cookies and no analytics, and stores only navigation preferences
 (favorites, recent tools, collapsed groups) in the browser's `localStorage`.
 

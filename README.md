@@ -1,4 +1,4 @@
-# HVAC Workbench
+# HVACCAL
 
 Single-file static HVAC calculator workbench (`index.html`).
 

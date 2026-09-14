@@ -1,10 +1,10 @@
-# HVAC Workbench coverage audit
+# HVACCAL coverage audit
 
 Reviewed September 12, 2026.
 
 ## Scope
 
-HVAC Workbench is a national-US **screening and engineering-math** utility. It is not an adopted-code database, load-calculation package, fire-alarm design tool, or compliance certificate. The AHJ-adopted code, local amendments, equipment listings, manufacturer instructions, and licensed design professionals govern.
+HVACCAL is a national-US **screening and engineering-math** utility. It is not an adopted-code database, load-calculation package, fire-alarm design tool, or compliance certificate. The AHJ-adopted code, local amendments, equipment listings, manufacturer instructions, and licensed design professionals govern.
 
 “All codes” is not a safe or finite implementation target: adoption varies by jurisdiction, many referenced standards and tables are licensed, and project-specific exceptions change outcomes. This audit therefore separates:
 
@@ -147,6 +147,10 @@ Fix: one `--text-muted:#5c6b73` token (≥ 4.7:1 on white, canvas and every grou
 Enumerating every result row across all tools (defaults plus each option of each choice field) found 219 rows on 40 checklist / handoff / path-gate tools whose label was the raw field key (`bondPoint`, `electrodePath`, `pressureTest`) and whose value was the option code (`-1 unk`, `storage`, `one_two_family`). tpdischarge and ircinstall had done the mapping by hand; the other 40 pushed `[key, score, code]`.
 
 Fix: `evaluateCalculator` now passes rows through `presentRows`, which (a) swaps a field-key label for the field's label, (b) replaces an option code with the option's text when the row belongs to that field, or when the code belongs to exactly one choice field in the tool and the row is an echo (count 0 / ±1) rather than a quantity, (c) spells `yes / no / na / unk` as Yes / No / N/A / Unknown, and (d) spaces out any remaining snake_case code. Rows presented as text drop the meaningless −1 / 0 / 1 score. Calculator `calculate()` output is untouched, so the verify suite's machine-readable expectations still hold; a new guard asserts no rendered row carries a raw key or code. Related copy fixes: the IRC ventilation banner no longer starts with `imc_delta_banner:`, the 15.2 path gate hero reads "Residential refrigeration path" instead of `15_2_residential`, the gas pipe sizing note lost a doubled "This This", and the manifold converter's `psi` row is labelled "Pounds per square inch".
+
+## Wordmark and corner radius (2026-09-14)
+
+Brand renamed to HVACCAL (header wordmark, `<title>`, docs). A headless sweep of computed `border-top-left-radius` on every rendered element across tool, converter, glossary and sources pages at 1440 px and 390 px found five radii in use (999 px pills on search fields, header buttons and tags; 8 px controls; 6 px surfaces; 5 px citation tags; 4 px callouts and kbd). All now resolve to one `--radius: 6px` token (`--radius-surface`, `--radius-callout` and `--control-radius` alias it). The 10 px / 8 px heading markers became circles to match the existing group and footer dots, so the only non-6 px value left is `50%` on true dots.
 
 ## Shareable links and a parse guard (2026-09-13)
 
